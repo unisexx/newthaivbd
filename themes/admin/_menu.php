@@ -169,16 +169,16 @@
           </ul>
         </li>
         
-        <li>
+        <li <?php echo menu_active('abouts','abouts','form','active open')?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>เกี่ยวกับองค์กร</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="abouts/admin/abouts/form/1"><i class="icon-double-angle-right"></i> บุคลากร</a></li>
-            <li><a href="abouts/admin/abouts/form/2"><i class="icon-double-angle-right"></i> โครงสร้างองค์กร</a></li>
-            <li><a href="abouts/admin/abouts/form/3"><i class="icon-double-angle-right"></i> วิสัยทัศน์ พันธกิจ ยุทธศาสตร์</a></li>
+            <li <?php echo ($_GET['title'] == 'บุคลากร')?'class="active"':'';?>><a href="abouts/admin/abouts/form/1?title=บุคลากร"><i class="icon-double-angle-right"></i> บุคลากร</a></li>
+            <li <?php echo ($_GET['title'] == 'โครงสร้างองค์กร')?'class="active"':'';?>><a href="abouts/admin/abouts/form/2?title=โครงสร้างองค์กร"><i class="icon-double-angle-right"></i> โครงสร้างองค์กร</a></li>
+            <li <?php echo ($_GET['title'] == 'วิสัยทัศน์ พันธกิจ ยุทธศาสตร์')?'class="active"':'';?>><a href="abouts/admin/abouts/form/3?title=วิสัยทัศน์ พันธกิจ ยุทธศาสตร์"><i class="icon-double-angle-right"></i> วิสัยทัศน์ พันธกิจ ยุทธศาสตร์</a></li>
           </ul>
         </li>
         
