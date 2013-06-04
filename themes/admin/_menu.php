@@ -28,29 +28,214 @@
           </ul>
         </li>
         
-        <li <?php echo menu_active('forms',false,'categories','active open')?><?php echo menu_active('forms',false,'wants','active open')?><?php echo menu_active('forms',false,'types','active open')?><?php echo menu_active('adfrees','adfrees',FALSE,'active open')?>>
-          <a href="#" class="dropdown-toggle">
-            <i class="icon-bullhorn"></i>
-            <span>Adfree</span>
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>สถานการณ์</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li <?php echo menu_active('forms',false,'categories')?>><a href="forms/admin/forms/categories"><i class="icon-double-angle-right"></i> หมวดหมู่สินค้า</a></li>
-            <li <?php echo menu_active('forms',false,'wants')?>><a href="forms/admin/forms/wants"><i class="icon-double-angle-right"></i> ความต้องการ</a></li>
-            <li <?php echo menu_active('forms',false,'types')?>><a href="forms/admin/forms/types"><i class="icon-double-angle-right"></i> ประเภทสินค้า</a></li>
-            <li <?php echo menu_active('adfrees','adfrees')?>><a href="adfrees/admin/adfrees"><i class="icon-double-angle-right"></i> ฟรีประกาศ</a></li>
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> สถานการณ์ไข้เลือดออก</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สถานการณ์ไข้ปวดข้อยุงลาย</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สถานการณ์มาลาเรีย</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สถานการณ์เท้าช้าง</a></li>
           </ul>
         </li>
         
-        <li <?php echo menu_active('contents',false,'index','active open')?>>
+        <li>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
-            <span>Content</span>
+            <span>ความรู้ทั่วไปสำหรับประชาชน</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li <?php echo menu_active('contents',false,'index')?>><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> บทความ</a></li>
-            <li <?php echo menu_active('contents',false,'index')?>><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ลิ้งค์เพื่อนบ้าน</a></li>
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> โรคไข้เลือดออก</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โรคไข้ปวดข้อยุงลาย</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ไข้มาลาเรีย</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โรคเท้าช้าง</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โรคติดต่อนำโดยแมลงอื่นๆ</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>ข่าว</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> ข่าวประชาสัมพันธ์</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ข่าวประกวดราคา</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ข่าว Highlights</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> Hot issue</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ข่าวประกาศภายใน</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>ศุูนย์เอกสารและสื่ออิเลคโทรนิค</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> วารสารโรคติดต่อนำโดยแมลง</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> แนวทางและคู่มือปฏิบัติการ</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> แฟ้มภาพ</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> วีดีโอ</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สื่อต้นแบบ</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> งานวิจัย</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สาระน่ารู้</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="demo/admin/demo/index">
+            <i class="icon-dashboard"></i>
+            <span>โพล</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>กิจกรรม</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> ปฏิทินปฏิบัติงาน</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> แผนงานด้าน Knowledge management</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>ข้อมูลย้อนหลัง</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> มาลาเรียรายสัปดาห์</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> มาลาเรียรายเดือน</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ไข้เลือดออก</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> เท้าช้างรายเดือน</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โรคติดต่อนำโดยแมลงอื่นๆ</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ไข้ปวดข้อยุงลาย</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> เท้าช้างรายปี</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>ข้อมูลย้อนหลัง</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> มาลาเรียรายสัปดาห์</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> มาลาเรียรายเดือน</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ไข้เลือดออก</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> เท้าช้างรายเดือน</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โรคติดต่อนำโดยแมลงอื่นๆ</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ไข้ปวดข้อยุงลาย</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> เท้าช้างรายปี</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>แผนงาน/โครงการ และตัวชี้วัด ประจำปี</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> แผนงาน/โครงการตามยุทธศาสตร์</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โครงการ Global Fund for Malaria</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โครงการ Bill and Melinda Gates Foundation</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> คำรับรองปฏิบัติราชการประจำปี</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> รายงานผลความก้าวหน้าของโครงการ</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>ฐานข้อมูลการวิเคราะห์ข้อมูล GIS</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> ไข้เลือดออก</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ไข้มาลาเรีย</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>เกี่ยวกับองค์กร</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li><a href="abouts/admin/abouts/form/1"><i class="icon-double-angle-right"></i> บุคลากร</a></li>
+            <li><a href="abouts/admin/abouts/form/2"><i class="icon-double-angle-right"></i> โครงสร้างองค์กร</a></li>
+            <li><a href="abouts/admin/abouts/form/3"><i class="icon-double-angle-right"></i> วิสัยทัศน์ พันธกิจ ยุทธศาสตร์</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>Intranet</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> ข่าวเด่นประเด็นร้อน</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> รายงานการประชุม</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ประชาสัมพันธ์จากไอที</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="demo/admin/demo/index">
+            <i class="icon-dashboard"></i>
+            <span>ตารางใช้งานห้องประชุม</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="demo/admin/demo/index">
+            <i class="icon-dashboard"></i>
+            <span>Site map</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>การพัฒนาองค์กร (PMQA)</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> หมวด 1 การนำองค์กร</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หมวด 2 การวางแผนเชิงยุทธศาสตร์</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หมวด 3 ผู้ให้บริการ และ ผู้มีส่วนได้ส่วนเสีย</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หมวด 4 การวัด การวิเคราะห์ และ จักการความรู้</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หมวด 5 ทรัพยากรบุคคล</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หมวด 6 กระบวนการ</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>สำหรับบุคลากร</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> เอกสารทั่วไป</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> คำสั่ง</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> รายงานการประชุม</a></li>
+            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หนังสือแจ้งเวียน</a></li>
           </ul>
         </li>
         

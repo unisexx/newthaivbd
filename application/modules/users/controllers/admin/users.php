@@ -11,7 +11,7 @@ class Users extends Admin_Controller
 	public function index()
 	{
 		$data['users'] = new User;
-		$data['users']->where('level_id',2)->order_by('id','desc')->get_page();
+		$data['users']->where('level_id',2)->order_by('id','desc')->get();
 		$this->template->build('admin/users/index',$data);
 	}
 	

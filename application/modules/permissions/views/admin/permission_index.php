@@ -7,7 +7,7 @@
 
 <div class="row-fluid">
     <div class="span12">
-        <table id="table_bug_report" class="table table-striped table-bordered table-hover">
+        <table id="table_report" class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
                 	<th>สิทธิ์การใช้งาน</th>
@@ -43,3 +43,14 @@
 
 <!-- PAGE CONTENT ENDS HERE -->
 </div>
+
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+$(function() {
+    var oTable1 = $('#table_report').dataTable( {
+    "aoColumns": [
+      null,
+      { "bSortable": false }
+    ] } );
+})
+</script>

@@ -7,7 +7,7 @@
 
 <div class="row-fluid">
     <div class="span12">
-        <table id="table_bug_report" class="table table-striped table-bordered table-hover">
+        <table id="table_report" class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
                     <th>สถานะ</th>
@@ -49,7 +49,6 @@
             </tbody>
         </table>
         
-        <?php echo $users->pagination()?>
     </div><!--/span-->
 </div><!--/row-->
 
@@ -65,5 +64,25 @@ $(document).ready(function(){
         jsonOptions[name]= value;
         $.post("users/admin/users/approve/" + this.value,jsonOptions);
     });
+    
+    var oTable1 = $('#table_report').dataTable( {
+    "aoColumns": [
+      { "bSortable": false },
+      null, null,null, null,
+      { "bSortable": false }
+    ] } );
+    
+    
+    $('table th input:checkbox').on('click' , function(){
+        var that = this;
+        $(this).closest('table').find('tr > td:first-child input:checkbox')
+        .each(function(){
+            this.checked = that.checked;
+            $(this).closest('tr').toggleClass('selected');
+        });
+            
+    });
+
+    $('[data-rel=tooltip]').tooltip();
 });
 </script>
