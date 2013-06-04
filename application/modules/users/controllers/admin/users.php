@@ -11,7 +11,7 @@ class Users extends Admin_Controller
 	public function index()
 	{
 		$data['users'] = new User;
-		$data['users']->where('level_id',2);
+		$data['users']->where('level_id',2)->order_by('id','desc')->get_page();
 		$this->template->build('admin/users/index',$data);
 	}
 	
@@ -50,6 +50,16 @@ class Users extends Admin_Controller
 		redirect('users/admin/users');
 	}
 	
+	function approve($id)
+    {
+        if($_POST)
+        {
+            $user = new User($id);
+            $user->from_array($_POST);
+            $user->save();
+        }
+
+    }
 }
 
 ?>

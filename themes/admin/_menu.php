@@ -15,6 +15,47 @@
     </div><!-- #sidebar-shortcuts -->
 
     <ul class="nav nav-list">
+        
+        <li <?php echo menu_active('users','users',false,'active open')?><?php echo menu_active('permissions','permissions',FALSE,'active open')?>>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-user"></i>
+            <span>User</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li <?php echo menu_active('users','users')?>><a href="users/admin/users"><i class="icon-double-angle-right"></i> สมาชิก</a></li>
+            <li <?php echo menu_active('permissions','permissions')?>><a href="permissions/admin/permissions"><i class="icon-double-angle-right"></i> กลุ่มผู้ใช้งาน</a></li>
+          </ul>
+        </li>
+        
+        <li <?php echo menu_active('forms',false,'categories','active open')?><?php echo menu_active('forms',false,'wants','active open')?><?php echo menu_active('forms',false,'types','active open')?><?php echo menu_active('adfrees','adfrees',FALSE,'active open')?>>
+          <a href="#" class="dropdown-toggle">
+            <i class="icon-bullhorn"></i>
+            <span>Adfree</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li <?php echo menu_active('forms',false,'categories')?>><a href="forms/admin/forms/categories"><i class="icon-double-angle-right"></i> หมวดหมู่สินค้า</a></li>
+            <li <?php echo menu_active('forms',false,'wants')?>><a href="forms/admin/forms/wants"><i class="icon-double-angle-right"></i> ความต้องการ</a></li>
+            <li <?php echo menu_active('forms',false,'types')?>><a href="forms/admin/forms/types"><i class="icon-double-angle-right"></i> ประเภทสินค้า</a></li>
+            <li <?php echo menu_active('adfrees','adfrees')?>><a href="adfrees/admin/adfrees"><i class="icon-double-angle-right"></i> ฟรีประกาศ</a></li>
+          </ul>
+        </li>
+        
+        <li <?php echo menu_active('contents',false,'index','active open')?>>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>Content</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li <?php echo menu_active('contents',false,'index')?>><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> บทความ</a></li>
+            <li <?php echo menu_active('contents',false,'index')?>><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ลิ้งค์เพื่อนบ้าน</a></li>
+          </ul>
+        </li>
+        
+        <li>---- demo ----</li>
+        
         <li <?php echo menu_active('demo',false,'index')?>>
           <a href="demo/admin/demo/index">
             <i class="icon-dashboard"></i>
@@ -116,46 +157,6 @@
             <li <?php echo menu_active('demo',false,'error_404')?>><a href="demo/admin/demo/error_404"><i class="icon-double-angle-right"></i> Error 404</a></li>
             <li <?php echo menu_active('demo',false,'error_500')?>><a href="demo/admin/demo/error_500"><i class="icon-double-angle-right"></i> Error 500</a></li>
             <li <?php echo menu_active('demo',false,'blank')?>><a href="demo/admin/demo/blank"><i class="icon-double-angle-right"></i> Blank Page</a></li>
-          </ul>
-        </li>
-        
-        <li>----- END Demo -----</li>
-
-        <li <?php echo menu_active('users','administrators',false,'active open')?><?php echo menu_active('users','users',FALSE,'active open')?>>
-          <a href="#" class="dropdown-toggle" >
-            <i class="icon-user"></i>
-            <span>User</span>
-            <b class="arrow icon-angle-down"></b>
-          </a>
-          <ul class="submenu">
-            <li <?php echo menu_active('users','administrators')?>><a href="users/admin/administrators"><i class="icon-double-angle-right"></i> ผู้ดูแล</a></li>
-            <li <?php echo menu_active('users','users')?>><a href="users/admin/users"><i class="icon-double-angle-right"></i> สมาชิก</a></li>
-          </ul>
-        </li>
-        
-        <li <?php echo menu_active('forms',false,'categories','active open')?><?php echo menu_active('forms',false,'wants','active open')?><?php echo menu_active('forms',false,'types','active open')?><?php echo menu_active('adfrees','adfrees',FALSE,'active open')?>>
-          <a href="#" class="dropdown-toggle">
-            <i class="icon-bullhorn"></i>
-            <span>Adfree</span>
-            <b class="arrow icon-angle-down"></b>
-          </a>
-          <ul class="submenu">
-            <li <?php echo menu_active('forms',false,'categories')?>><a href="forms/admin/forms/categories"><i class="icon-double-angle-right"></i> หมวดหมู่สินค้า</a></li>
-            <li <?php echo menu_active('forms',false,'wants')?>><a href="forms/admin/forms/wants"><i class="icon-double-angle-right"></i> ความต้องการ</a></li>
-            <li <?php echo menu_active('forms',false,'types')?>><a href="forms/admin/forms/types"><i class="icon-double-angle-right"></i> ประเภทสินค้า</a></li>
-            <li <?php echo menu_active('adfrees','adfrees')?>><a href="adfrees/admin/adfrees"><i class="icon-double-angle-right"></i> ฟรีประกาศ</a></li>
-          </ul>
-        </li>
-        
-        <li <?php echo menu_active('contents',false,'index','active open')?>>
-          <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
-            <span>Content</span>
-            <b class="arrow icon-angle-down"></b>
-          </a>
-          <ul class="submenu">
-            <li <?php echo menu_active('contents',false,'index')?>><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> บทความ</a></li>
-            <li <?php echo menu_active('contents',false,'index')?>><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ลิ้งค์เพื่อนบ้าน</a></li>
           </ul>
         </li>
         

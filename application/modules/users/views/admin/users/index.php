@@ -1,31 +1,69 @@
-<ul class="breadcrumb">
-  <li class="active">สมาชิก</li>
-</ul>
+<div class="page-header position-relative">
+    <h1>Users <small><i class="icon-double-angle-right"></i> สมาชิก</small></h1>
+</div><!--/page-header-->
 
-<div class="page-header">
-    <h1>สมาชิก</h1>
+<div class="row-fluid">
+<!-- PAGE CONTENT BEGINS HERE -->
+
+<div class="row-fluid">
+    <div class="span12">
+        <table id="table_bug_report" class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>สถานะ</th>
+                    <th>หมายเลขสมาชิก</th>
+					<th>ยูสเซอร์เนม</th>
+					<th>อีเมล์</th>
+					<th>ลงทะเบียนเมื่อ</th>
+                    <th><a class="btn btn-mini btn-primary" href="users/admin/users/form"><i class="icon-pencil"></i> เพิ่มรายการ </a></th>
+                </tr>
+            </thead>
+                                    
+            <tbody>
+            <?php foreach($users as $user):?>
+                <tr>
+                    <td>
+                        <label><input class="ace-switch ace-switch-4" type="checkbox" name="status" value="<?php echo $user->id ?>" <?php echo ($user->status=="approve")?'checked="checked"':'' ?>/><span class="lbl"></span></label>
+                    </td>
+                    <td><?php echo sprintf("%05d",$user->id)?></td>
+					<td><?php echo $user->username?></td>
+					<td><?php echo $user->email?></td>
+			        <td><?php echo mysql_to_th($user->created,'S',TRUE) ?></td>
+                    <td>
+                        <div class='hidden-phone visible-desktop btn-group'>
+                            <a href="users/admin/users/form/<?php echo $user->id?>" class='btn btn-mini btn-info'><i class='icon-edit'></i></a>
+                            <a class='btn btn-mini btn-danger' href="users/admin/users/delete/<?php echo $user->id?>" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><i class='icon-trash'></i></a>
+                        </div>
+                        <div class='hidden-desktop visible-phone'>
+                            <div class="inline position-relative">
+                                <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down icon-only"></i></button>
+                                <ul class="dropdown-menu dropdown-icon-only dropdown-yellow pull-right dropdown-caret dropdown-close">
+                                    <li><a href="users/admin/users/form/<?php echo $user->id?>" class="tooltip-success" data-rel="tooltip" title="Edit" data-placement="left"><span class="green"><i class="icon-edit"></i></span></a></li>
+                                    <li><a href="users/admin/users/delete/<?php echo $user->id?>" class="tooltip-error" data-rel="tooltip" title="Delete" data-placement="left" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><span class="red"><i class="icon-trash"></i></span> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            <?php endforeach;?>
+            </tbody>
+        </table>
+        
+        <?php echo $users->pagination()?>
+    </div><!--/span-->
+</div><!--/row-->
+
+<!-- PAGE CONTENT ENDS HERE -->
 </div>
 
-<table class="table table-hover">
-	<tr>
-    	<th>หมายเลขสมาชิก</th>
-		<th>ยูสเซอร์เนม</th>
-		<th>อีเมล์</th>
-		<th>ลงทะเบียนเมื่อ</th>
-		<th width="100"><?php echo anchor('users/admin/users/form','เพิ่มรายการ','class="btn btn-mini"')?></th>
-	</tr>
-	<?php foreach($users->order_by('id','desc')->get_page() as $user):?>
-	<tr <?php echo cycle()?>>
-    	<td><?php echo sprintf("%05d",$user->id)?></td>
-		<td><?php echo $user->username?></td>
-		<td><?php echo $user->email?></td>
-		<!--<td><?php echo $user->level->level?></td>-->
-        <td><?php echo mysql_to_th($user->created,'S',TRUE) ?></td>
-		<td>
-			<?php echo anchor('users/admin/users/form/'.$user->id,'แก้ไข','class="btn btn-mini"')?>
-			<?php echo anchor('users/admin/users/delete/'.$user->id,'ลบ','class="btn btn-mini" onclick="return confirm(\''.lang('confirm_delete').'\')"')?>
-		</td>
-	</tr>
-	<?php endforeach?>
-</table>
-<?php echo $users->pagination()?>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("input:checkbox").click(function(){
+        var value = this.checked ? "approve" : "draft";
+        var name = $(this).attr("name");
+        var jsonOptions= {};
+        jsonOptions[name]= value;
+        $.post("users/admin/users/approve/" + this.value,jsonOptions);
+    });
+});
+</script>

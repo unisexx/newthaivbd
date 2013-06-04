@@ -43,7 +43,6 @@ window.jQuery || document.write("<script src='media/js/jquery-1.9.1.min.js'>\x3C
 <script type="text/javascript" src="themes/admin/media/js/fuelux.tree.min.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/markdown.min.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/bootstrap-markdown.min.js"></script>
-<script type="text/javascript" src="themes/admin/media/js/jquery.hotkeys.min.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/bootstrap-wysiwyg.min.js"></script>
 
 

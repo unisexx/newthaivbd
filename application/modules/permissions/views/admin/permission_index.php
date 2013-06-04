@@ -1,27 +1,45 @@
-<h1>สิทธิ์การใช้งาน</h1>
-<table class="list">
-	<tr>
-		<th>ลำดับ</th>
-		<th>สิทธิ์การใช้งาน</th>
-		<th width="100">
-			<?php if(permission('permissions', 'create')):?>
-				<?php echo anchor('permissions/admin/permissions/form',lang('btn_add'),'class="btn"')?>
-			<?php endif;?>
-		</th>
-	</tr>
-	<?php foreach($user_types as $key=>$user_type):?>
-	<tr <?php echo cycle()?>>
-		<td><?php echo $key+1?></td>
-		<td><?php echo $user_type->name?></td>
-		<td>
-			<?php if(permission('permissions', 'update')):?>
-			<?php echo anchor('permissions/admin/permissions/form/'.$user_type->id,lang('btn_edit'),'class="btn"')?>
-			<?php endif;?>
-			<?php if(permission('permissions', 'delete')):?>
-			<?php echo anchor('permissions/admin/permissions/delete/'.$user_type->id,lang('btn_delete'),'class="btn" onclick="return confirm(\''.lang('confirm_delete').'\')"')?>
-			<?php endif;?>
-		</td>
-	</tr>
-	<?php endforeach?>
-</table>
-<?php echo $user_types->pagination()?>
+<div class="page-header position-relative">
+    <h1>Permission <small><i class="icon-double-angle-right"></i> กลุ่มผู้ใช้งาน & กำหนดสิทธิ์</small></h1>
+</div><!--/page-header-->
+
+<div class="row-fluid">
+<!-- PAGE CONTENT BEGINS HERE -->
+
+<div class="row-fluid">
+    <div class="span12">
+        <table id="table_bug_report" class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                	<th>สิทธิ์การใช้งาน</th>
+                    <th><a class="btn btn-mini btn-primary" href="permissions/admin/permissions/form"><i class="icon-pencil"></i> เพิ่มรายการ </a></th>
+                </tr>
+            </thead>
+                                    
+            <tbody>
+            <?php foreach($user_types as $user_type):?>
+                <tr>
+                    <td><?php echo $user_type->name?></td>
+                    <td>
+                        <div class='hidden-phone visible-desktop btn-group'>
+                            <a href="permissions/admin/permissions/form/<?php echo $user_type->id?>" class='btn btn-mini btn-info'><i class='icon-edit'></i></a>
+                            <a class='btn btn-mini btn-danger' href="permissions/admin/permissions/delete/<?php echo $user_type->id?>" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><i class='icon-trash'></i></a>
+                        </div>
+                        <div class='hidden-desktop visible-phone'>
+                            <div class="inline position-relative">
+                                <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down icon-only"></i></button>
+                                <ul class="dropdown-menu dropdown-icon-only dropdown-yellow pull-right dropdown-caret dropdown-close">
+                                    <li><a href="permissions/admin/permissions/form/<?php echo $user_type->id?>" class="tooltip-success" data-rel="tooltip" title="Edit" data-placement="left"><span class="green"><i class="icon-edit"></i></span></a></li>
+                                    <li><a href="permissions/admin/permissions/delete/<?php echo $user_type->id?>" class="tooltip-error" data-rel="tooltip" title="Delete" data-placement="left" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><span class="red"><i class="icon-trash"></i></span> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            <?php endforeach;?>
+            </tbody>
+        </table>
+    </div><!--/span-->
+</div><!--/row-->
+
+<!-- PAGE CONTENT ENDS HERE -->
+</div>

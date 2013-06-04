@@ -313,6 +313,7 @@
                     </div><!--/row-->
 
 
+<script type="text/javascript" src="themes/admin/media/js/jquery.hotkeys.min.js"></script>
 <script type="text/javascript">
     $(function(){
         function initToolbarBootstrapBindings() {

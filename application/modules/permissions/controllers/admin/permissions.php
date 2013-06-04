@@ -3,17 +3,17 @@ class Permissions extends Admin_Controller
 {
 	
 	public $module = array(
-		'administrators' => array('label' => 'ผู้ดูแล', 'permission' => array('read','create','update','delete')),
-		'coverpages' => array('label' => 'หน้าแรก', 'permission' => array('read','create','update','delete')),
-		'hilights' => array('label' => 'ไฮไลท์', 'permission' => array('read','create','update','delete')),
-		'informations' => array('label' => 'ข่าวประชาสัมพันธ์', 'permission' => array('read','create','update','delete')),
-		'articles' => array('label' => 'บทความน่าสนใจ', 'permission' => array('read','create','update','delete')),
-		'vdos' => array('label' => 'vdo แนะนำ', 'permission' => array('read','create','update','delete')),
-		'downloads' => array('label' => 'เอกสารดาวน์โหลด', 'permission' => array('read','create','update','delete')),
-		'galleries' => array('label' => 'ภาพกิจกรรม', 'permission' => array('read','create','update','delete')),
-		'calendars' => array('label' => 'ปฎิทินกิจกรรม', 'permission' => array('read','create','update','delete')),
-		'permissions' => array('label' => 'สิทธิ์การใช้งาน', 'permission' => array('read','create','update','delete')),
-		'dashboards' => array('label' => 'สถิติโดยรวม', 'permission' => array('read')),
+		'administrators' => array('label' => 'ผู้ดูแล', 'permission' => array('full')),
+		'coverpages' => array('label' => 'หน้าแรก', 'permission' => array('full')),
+		'hilights' => array('label' => 'ไฮไลท์', 'permission' => array('full')),
+		'informations' => array('label' => 'ข่าวประชาสัมพันธ์', 'permission' => array('full')),
+		'articles' => array('label' => 'บทความน่าสนใจ', 'permission' => array('full')),
+		'vdos' => array('label' => 'vdo แนะนำ', 'permission' => array('full')),
+		'downloads' => array('label' => 'เอกสารดาวน์โหลด', 'permission' => array('full')),
+		'galleries' => array('label' => 'ภาพกิจกรรม', 'permission' => array('full')),
+		'calendars' => array('label' => 'ปฎิทินกิจกรรม', 'permission' => array('full')),
+		'permissions' => array('label' => 'สิทธิ์การใช้งาน', 'permission' => array('full')),
+		'dashboards' => array('label' => 'สถิติโดยรวม', 'permission' => array('full')),
 	);
 	
 	public $crud = array(
@@ -21,7 +21,8 @@ class Permissions extends Admin_Controller
 		'create' => 'เพิ่ม',
 		'update' => 'แก้ไข',
 		'delete' => 'ลบ',
-		'download' => 'ดาวน์โหลด'
+		'download' => 'ดาวน์โหลด',
+		'full' => 'ทั้งหมด'
 	);
 	
 	public function __construct()
@@ -57,7 +58,8 @@ class Permissions extends Admin_Controller
 					'create' => $item->create,
 					'update' => $item->update,
 					'delete' => $item->delete,
-					'download' => $item->download
+					'download' => $item->download,
+					'full' => $item->full
 				);
 			}
 			return @$perm;
