@@ -72,7 +72,7 @@
           </ul>
         </li>
         
-        <li <?php echo (@$_GET['module'] == 'สาระน่ารู้')?'class="active"':'';?>>
+        <li <?php echo (@$_GET['module'] == 'สาระน่ารู้')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>ศุูนย์เอกสารและสื่ออิเลคโทรนิค</span>
@@ -96,7 +96,7 @@
           </a>
         </li>
         
-        <li>
+        <li <?php echo (@$_GET['module'] == 'แผนงานด้าน Knowledge management')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>กิจกรรม</span>
@@ -104,7 +104,7 @@
           </a>
           <ul class="submenu">
             <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> ปฏิทินปฏิบัติงาน</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> แผนงานด้าน Knowledge management</a></li>
+            <li <?php echo (@$_GET['module'] == 'แผนงานด้าน Knowledge management')?'class="active"':'';?>><a href="projects/admin/projects?module=แผนงานด้าน Knowledge management"><i class="icon-double-angle-right"></i> แผนงานด้าน Knowledge management</a></li>
           </ul>
         </li>
         
@@ -125,35 +125,18 @@
           </ul>
         </li>
         
-        <li>
-          <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
-            <span>ข้อมูลย้อนหลัง</span>
-            <b class="arrow icon-angle-down"></b>
-          </a>
-          <ul class="submenu">
-            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> มาลาเรียรายสัปดาห์</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> มาลาเรียรายเดือน</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ไข้เลือดออก</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> เท้าช้างรายเดือน</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โรคติดต่อนำโดยแมลงอื่นๆ</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ไข้ปวดข้อยุงลาย</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> เท้าช้างรายปี</a></li>
-          </ul>
-        </li>
-        
-        <li>
+        <li <?php echo (@$_GET['module'] == 'แผนงาน/โครงการตามยุทธศาสตร์' or @$_GET['module'] == 'โครงการ Global Fund for Malaria' or @$_GET['module'] == 'โครงการ Bill and Melinda Gates Foundation' or @$_GET['module'] == 'คำรับรองปฏิบัติราชการประจำปี' or @$_GET['module'] == 'รายงานผลความก้าวหน้าของโครงการ')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>แผนงาน/โครงการ และตัวชี้วัด ประจำปี</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> แผนงาน/โครงการตามยุทธศาสตร์</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โครงการ Global Fund for Malaria</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โครงการ Bill and Melinda Gates Foundation</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> คำรับรองปฏิบัติราชการประจำปี</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> รายงานผลความก้าวหน้าของโครงการ</a></li>
+            <li <?php echo (@$_GET['module'] == 'แผนงาน/โครงการตามยุทธศาสตร์')?'class="active"':'';?>><a href="projects/admin/projects?module=แผนงาน/โครงการตามยุทธศาสตร์"><i class="icon-double-angle-right"></i> แผนงาน/โครงการตามยุทธศาสตร์</a></li>
+            <li <?php echo (@$_GET['module'] == 'โครงการ Global Fund for Malaria')?'class="active"':'';?>><a href="projects/admin/projects?module=โครงการ Global Fund for Malaria"><i class="icon-double-angle-right"></i> โครงการ Global Fund for Malaria</a></li>
+            <li <?php echo (@$_GET['module'] == 'โครงการ Bill and Melinda Gates Foundation')?'class="active"':'';?>><a href="projects/admin/projects?module=โครงการ Bill and Melinda Gates Foundation"><i class="icon-double-angle-right"></i> โครงการ Bill and Melinda Gates Foundation</a></li>
+            <li <?php echo (@$_GET['module'] == 'คำรับรองปฏิบัติราชการประจำปี')?'class="active"':'';?>><a href="projects/admin/projects?module=คำรับรองปฏิบัติราชการประจำปี"><i class="icon-double-angle-right"></i> คำรับรองปฏิบัติราชการประจำปี</a></li>
+            <li <?php echo (@$_GET['module'] == 'รายงานผลความก้าวหน้าของโครงการ')?'class="active"':'';?>><a href="projects/admin/projects?module=รายงานผลความก้าวหน้าของโครงการ"><i class="icon-double-angle-right"></i> รายงานผลความก้าวหน้าของโครงการ</a></li>
           </ul>
         </li>
         
@@ -225,17 +208,17 @@
           </ul>
         </li>
         
-        <li>
+        <li <?php echo (@$_GET['module'] == 'เอกสารทั่วไป' or @$_GET['module'] == 'คำสั่ง' or @$_GET['module'] == 'รายงานการประชุม' or @$_GET['module'] == 'หนังสือแจ้งเวียน')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>สำหรับบุคลากร</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> เอกสารทั่วไป</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> คำสั่ง</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> รายงานการประชุม</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หนังสือแจ้งเวียน</a></li>
+            <li <?php echo (@$_GET['module'] == 'เอกสารทั่วไป')?'class="active"':'';?>><a href="projects/admin/projects?module=เอกสารทั่วไป"><i class="icon-double-angle-right"></i> เอกสารทั่วไป</a></li>
+            <li><a href="projects/admin/projects?module=คำสั่ง"><i class="icon-double-angle-right"></i> คำสั่ง</a></li>
+            <li><a href="projects/admin/projects?module=รายงานการประชุม"><i class="icon-double-angle-right"></i> รายงานการประชุม</a></li>
+            <li><a href="projects/admin/projects?module=หนังสือแจ้งเวียน"><i class="icon-double-angle-right"></i> หนังสือแจ้งเวียน</a></li>
           </ul>
         </li>
         

@@ -33,7 +33,7 @@ class Contents extends Admin_Controller
             }
 			if(!$id)$_POST['user_id'] = $this->session->userdata('id');
 			if(!$id)$_POST['status'] = "approve";
-			$data['title'] = clean_url($data['title']);
+			$_POST['slug'] = clean_url($_POST['title']);
 			$_POST['module'] = $_GET['module'];
             $content->from_array($_POST);
             $content->save();
