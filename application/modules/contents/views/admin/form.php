@@ -1,92 +1,118 @@
+<div class="page-header position-relative">
+    <h1>Content <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small></h1>
+</div><!--/page-header-->
+
+<div class="row-fluid">
+<!-- PAGE CONTENT BEGINS HERE -->
+    <form id="validation-form" class="form-horizontal" method="post" action="contents/admin/contents/save/<?php echo $content->id?>?module=<?php echo $_GET['module']?>" enctype="multipart/form-data">
+        
+        <div class="control-group">
+            <label class="control-label" for="id-input-file-1">ภาพประกอบข่าว</label>
+            <div class="controls">
+                <?php if($content->image):?>
+                <img class="img" style="width:150px;" src="<?php echo (is_file('uploads/content/'.$content->image))? 'uploads/content/'.$content->image : 'media/images/dummy/656x253.gif' ?>"  /> <br><br>
+                <?php endif;?>
+                <div class="input-xxlarge">
+                    <input type="file" id="id-input-file-1" name="image"/>
+                </div>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label" for="form-field-1">หัวข้อ</label>
+            <div class="controls">
+                <input type="text" id="form-field-1" class="input-xxlarge" name="title" value="<?php echo $content->title?>">
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label" for="form-field-9">รายละเอียด</label>
+            <div class="controls">
+                <textarea class="input-xxlarge" rows="5" id="form-field-9" name="detail"><?php echo $content->detail?></textarea>
+            </div>
+        </div>
+        
+        <div class="form-actions">
+        	<?php echo form_referer() ?>
+            <button class="btn btn-info" type="submit"><i class="icon-ok"></i> Submit</button>
+            &nbsp; &nbsp; &nbsp;
+            <button class="btn" type="reset"><i class="icon-undo"></i> Reset</button>
+        </div>
+        
+    </form>
+<!-- PAGE CONTENT ENDS HERE -->
+</div>
+
+
+<!-- inline scripts related to this page -->
 <!-- Load TinyMCE -->
 <script type="text/javascript" src="media/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript" src="media/tiny_mce/config.js"></script>
-<script type="text/javascript" src="media/js/jquery.validate.min.js"></script>
 <script type="text/javascript">
-tiny('detail');
-$(document).ready(function(){
-    $(".addpage").click(function(){
-        var $tr    = $(this).closest("tr").next("tr");
-        var $clone = $tr.clone();
-        $clone.find(':text').val('');
-        $clone.find('input[type=hidden]').val('');
-        $clone.find('span').hide();
-        $(".form tr:last").before($clone);
+    tiny('detail');
+</script>
+
+<script type="text/javascript">
+$(function() {
+    
+    $('#id-input-file-1').ace_file_input({
+        no_file:'No File ...',
+        btn_choose:'Choose',
+        btn_change:'Change',
+        droppable:false,
+        onchange:null,
+        thumbnail:false //| true | large
+        //whitelist:'gif|png|jpg|jpeg'
+        //blacklist:'exe|php'
+        //onchange:''
+        //
     });
     
-    $(".delfile").click(function(){
-        var ans = confirm("ต้องการลบไฟล์นี้");
-        if(ans){
-            var id = $(this).closest('tr').find("input[type=hidden]").val();
-            $.post('contents/admin/contents/delfile', {
-                "id":id
-            });
-            $(this).closest("tr").fadeOut();
-        }
+    $('#validation-form').validate({
+        errorElement: 'span',
+        errorClass: 'help-inline',
+        focusInvalid: false,
+        rules: {
+            title: {
+                required: true
+            }
+        },
+
+        messages: {
+            title: {
+                required: "กรุณากรอกหัวข้อ"
+            }
+        },
+
+        invalidHandler: function (event, validator) { //display error alert on form submit   
+            $('.alert-error', $('.login-form')).show();
+        },
+
+        highlight: function (e) {
+            $(e).closest('.control-group').removeClass('info').addClass('error');
+        },
+
+        success: function (e) {
+            $(e).closest('.control-group').removeClass('error').addClass('info');
+            $(e).remove();
+        },
+
+        errorPlacement: function (error, element) {
+            if(element.is(':checkbox') || element.is(':radio')) {
+                var controls = element.closest('.controls');
+                if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                else error.insertAfter(element.nextAll('.lbl').eq(0));
+            } 
+            else if(element.is('.chzn-select')) {
+                error.insertAfter(element.nextAll('[class*="chzn-container"]').eq(0));
+            }
+            else error.insertAfter(element);
+        },
+
+        // submitHandler: function (form) {
+        // },
+        // invalidHandler: function (form) {
+        // }
     });
 });
 </script>
-
-<ul class="breadcrumb mywizard">
-  <li><a href="contents/admin/contents/index/<?=$type?>"><?=$type_name?></a></li>
-  <li class="active">ฟอร์ม</li>
-</ul>
-
-<div class="page-header">
-	<h1><?=$type_name?></h1>
-</div>
-
-<form id="frmMain" action="contents/admin/contents/save/<?=$type?>/<?php echo $content->id ?>" method="post" enctype="multipart/form-data" >
-	
-<table class="form">
-	<!-- <tr>
-		<th></th>
-		<td>
-			<?php if($content->image != ""):?><?php echo thumb("uploads/content/".$content->image,115,77,1);?><?php endif;?>
-		</td>
-	</tr>
-	<tr><th>รูปภาพ :</th><td><input type="file" name="image" /></td></tr> -->
-	<?php if($type == 'articles'):?>
-	<tr><th>หมวดหมู่ :</th><td><?php echo form_dropdown('category_id',get_option('id','name','categories where module="'.$type.'" and parents <> 0'),$content->category_id,'');?></td></tr>
-	<!-- get_option('id','name','categories where module="'.$type.'" and parents <> 0') -->
-	<?php endif;?>
-	<tr>
-		<th>หัวข้อ :</th>
-		<td>
-			<input type="text" name="title" rel="th" value="<?php echo lang_decode($content->title,'th')?>" class="input-xxlarge" />
-		</td>
-	</tr>
-	<tr>
-		<th>รายละเอียด :</th>
-		<td>
-			<div rel="th"><textarea name="detail" class="full tinymce"><?php echo lang_decode($content->detail,'th')?></textarea></div>
-		</td>
-	</tr>
-	<!-- <tr>
-        <th></th>
-        <td><input class="addpage" type="button" value=" เพิ่มไฟล์แนบ "/></td>
-    </tr>
-    <?php if($content->id):?>
-    <?php foreach($attachs as $row):?>
-        <tr>
-            <th>ไฟล์แนบ :</th>
-            <td>
-                <input type="hidden" name="attach_id[]" value="<?=$row->id?>">
-                <input type="text" name="file_name[]" placeholder="ชื่อไฟล์" value="<?=$row->file_name?>">
-                <input type="text" name="file[]" value="<?=$row->file?>"/><input type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'files')" />
-                <span class="btn delfile">x</span>
-            </td>
-        </tr>
-    <?php endforeach;?>
-    <?php endif;?>
-	<tr>
-		<th>ไฟล์แนบ :</th>
-		<td>
-		    <input type="text" name="file_name[]" placeholder="ชื่อไฟล์" value="">
-		    <input type="text" name="file[]" value=""/><input type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'files')" />
-		</td>
-	</tr> -->
-	<tr><th></th><td><input class="btn" type="submit" value="บันทึก" /> <?php echo form_back() ?></td></tr>
-</table>
-<?php echo form_referer() ?>
-</form>

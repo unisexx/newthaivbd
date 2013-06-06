@@ -28,51 +28,51 @@
           </ul>
         </li>
         
-        <li>
+        <li <?php echo (@$_GET['module'] == 'สถานการณ์ไข้ปวดข้อยุงลาย' or @$_GET['module'] == 'สถานการณ์มาลาเรีย' or @$_GET['module'] == 'สถานการณ์เท้าช้าง')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>สถานการณ์</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> สถานการณ์ไข้เลือดออก</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สถานการณ์ไข้ปวดข้อยุงลาย</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สถานการณ์มาลาเรีย</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สถานการณ์เท้าช้าง</a></li>
+            <li><a href="#"><i class="icon-double-angle-right"></i> สถานการณ์ไข้เลือดออก</a></li>
+            <li <?php echo (@$_GET['module'] == 'สถานการณ์ไข้ปวดข้อยุงลาย')?'class="active"':'';?>><a href="contents/admin/contents?module=สถานการณ์ไข้ปวดข้อยุงลาย"><i class="icon-double-angle-right"></i> สถานการณ์ไข้ปวดข้อยุงลาย</a></li>
+            <li <?php echo (@$_GET['module'] == 'สถานการณ์มาลาเรีย')?'class="active"':'';?>><a href="contents/admin/contents?module=สถานการณ์มาลาเรีย"><i class="icon-double-angle-right"></i> สถานการณ์มาลาเรีย</a></li>
+            <li <?php echo (@$_GET['module'] == 'สถานการณ์เท้าช้าง')?'class="active"':'';?>><a href="contents/admin/contents?module=สถานการณ์เท้าช้าง"><i class="icon-double-angle-right"></i> สถานการณ์เท้าช้าง</a></li>
           </ul>
         </li>
         
-        <li>
+        <li <?php echo (@$_GET['module'] == 'โรคไข้เลือดออก' or @$_GET['module'] == 'โรคไข้ปวดข้อยุงลาย' or @$_GET['module'] == 'ไข้มาลาเรีย' or @$_GET['module'] == 'โรคเท้าช้าง' or @$_GET['module'] == 'โรคติดต่อนำโดยแมลงอื่นๆ')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>ความรู้ทั่วไปสำหรับประชาชน</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> โรคไข้เลือดออก</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โรคไข้ปวดข้อยุงลาย</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ไข้มาลาเรีย</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โรคเท้าช้าง</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> โรคติดต่อนำโดยแมลงอื่นๆ</a></li>
+            <li <?php echo (@$_GET['module'] == 'โรคไข้เลือดออก')?'class="active"':'';?>><a href="contents/admin/contents?module=โรคไข้เลือดออก"><i class="icon-double-angle-right"></i> โรคไข้เลือดออก</a></li>
+            <li <?php echo (@$_GET['module'] == 'โรคไข้ปวดข้อยุงลาย')?'class="active"':'';?>><a href="contents/admin/contents?module=โรคไข้ปวดข้อยุงลาย"><i class="icon-double-angle-right"></i> โรคไข้ปวดข้อยุงลาย</a></li>
+            <li <?php echo (@$_GET['module'] == 'ไข้มาลาเรีย')?'class="active"':'';?>><a href="contents/admin/contents?module=ไข้มาลาเรีย"><i class="icon-double-angle-right"></i> ไข้มาลาเรีย</a></li>
+            <li <?php echo (@$_GET['module'] == 'โรคเท้าช้าง')?'class="active"':'';?>><a href="contents/admin/contents?module=โรคเท้าช้าง"><i class="icon-double-angle-right"></i> โรคเท้าช้าง</a></li>
+            <li <?php echo (@$_GET['module'] == 'โรคติดต่อนำโดยแมลงอื่นๆ')?'class="active"':'';?>><a href="contents/admin/contents?module=โรคติดต่อนำโดยแมลงอื่นๆ"><i class="icon-double-angle-right"></i> โรคติดต่อนำโดยแมลงอื่นๆ</a></li>
           </ul>
         </li>
         
-        <li>
+        <li <?php echo (@$_GET['module'] == 'ข่าว Highlights' or @$_GET['module'] == 'ข่าวประชาสัมพันธ์' or @$_GET['module'] == 'ข่าวประกวดราคา' or @$_GET['module'] == 'Hot issue' or @$_GET['module'] == 'ข่าวประกาศภายใน')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>ข่าว</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> ข่าวประชาสัมพันธ์</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ข่าวประกวดราคา</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ข่าว Highlights</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> Hot issue</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ข่าวประกาศภายใน</a></li>
+            <li <?php echo (@$_GET['module'] == 'ข่าวประชาสัมพันธ์')?'class="active"':'';?>><a href="contents/admin/contents?module=ข่าวประชาสัมพันธ์"><i class="icon-double-angle-right"></i> ข่าวประชาสัมพันธ์</a></li>
+            <li <?php echo (@$_GET['module'] == 'ข่าวประกวดราคา')?'class="active"':'';?>><a href="contents/admin/contents?module=ข่าวประกวดราคา"><i class="icon-double-angle-right"></i> ข่าวประกวดราคา</a></li>
+            <li <?php echo (@$_GET['module'] == 'ข่าว Highlights')?'class="active"':'';?>><a href="contents/admin/contents?module=ข่าว Highlights"><i class="icon-double-angle-right"></i> ข่าว Highlights</a></li>
+            <li <?php echo (@$_GET['module'] == 'Hot issue')?'class="active"':'';?>><a href="contents/admin/contents?module=Hot issue"><i class="icon-double-angle-right"></i> Hot issue</a></li>
+            <li <?php echo (@$_GET['module'] == 'ข่าวประกาศภายใน')?'class="active"':'';?>><a href="contents/admin/contents?module=ข่าวประกาศภายใน"><i class="icon-double-angle-right"></i> ข่าวประกาศภายใน</a></li>
           </ul>
         </li>
         
-        <li>
+        <li <?php echo (@$_GET['module'] == 'สาระน่ารู้')?'class="active"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>ศุูนย์เอกสารและสื่ออิเลคโทรนิค</span>
@@ -85,7 +85,7 @@
             <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> วีดีโอ</a></li>
             <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สื่อต้นแบบ</a></li>
             <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> งานวิจัย</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สาระน่ารู้</a></li>
+            <li <?php echo (@$_GET['module'] == 'สาระน่ารู้')?'class="active"':'';?>><a href="contents/admin/contents?module=สาระน่ารู้"><i class="icon-double-angle-right"></i> สาระน่ารู้</a></li>
           </ul>
         </li>
         
@@ -176,9 +176,9 @@
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li <?php echo ($_GET['title'] == 'บุคลากร')?'class="active"':'';?>><a href="abouts/admin/abouts/form/1?title=บุคลากร"><i class="icon-double-angle-right"></i> บุคลากร</a></li>
-            <li <?php echo ($_GET['title'] == 'โครงสร้างองค์กร')?'class="active"':'';?>><a href="abouts/admin/abouts/form/2?title=โครงสร้างองค์กร"><i class="icon-double-angle-right"></i> โครงสร้างองค์กร</a></li>
-            <li <?php echo ($_GET['title'] == 'วิสัยทัศน์ พันธกิจ ยุทธศาสตร์')?'class="active"':'';?>><a href="abouts/admin/abouts/form/3?title=วิสัยทัศน์ พันธกิจ ยุทธศาสตร์"><i class="icon-double-angle-right"></i> วิสัยทัศน์ พันธกิจ ยุทธศาสตร์</a></li>
+            <li <?php echo (@$_GET['module'] == 'บุคลากร')?'class="active"':'';?>><a href="abouts/admin/abouts/form/1?module=บุคลากร"><i class="icon-double-angle-right"></i> บุคลากร</a></li>
+            <li <?php echo (@$_GET['module'] == 'โครงสร้างองค์กร')?'class="active"':'';?>><a href="abouts/admin/abouts/form/2?module=โครงสร้างองค์กร"><i class="icon-double-angle-right"></i> โครงสร้างองค์กร</a></li>
+            <li <?php echo (@$_GET['module'] == 'วิสัยทัศน์ พันธกิจ ยุทธศาสตร์')?'class="active"':'';?>><a href="abouts/admin/abouts/form/3?module=วิสัยทัศน์ พันธกิจ ยุทธศาสตร์"><i class="icon-double-angle-right"></i> วิสัยทัศน์ พันธกิจ ยุทธศาสตร์</a></li>
           </ul>
         </li>
         

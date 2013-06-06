@@ -3,7 +3,7 @@ class Content extends ORM {
 
     var $table = 'contents';
 	
-	var $has_one = array('user','category');
+	var $has_one = array('user');
 
     function __construct($id = NULL)
     {

@@ -1,55 +1,88 @@
-<ul class="breadcrumb">
-  <li class="active"><?=$type_name?></li>
-</ul>
+<div class="page-header position-relative">
+    <h1>Contents <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small></h1>
+</div><!--/page-header-->
 
-<div class="page-header">
-	<h1><?=$type_name?></h1>
+<div class="row-fluid">
+<!-- PAGE CONTENT BEGINS HERE -->
+
+<div class="row-fluid">
+    <div class="span12">
+        <table id="table_report" class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>สถานะ</th>
+                    <th>หัวข้อ</th>
+					<th>เขียนโดย</th>
+					<th>วันที่สร้าง</th>
+					<th>แก้ไขล่าสุด</th>
+                    <th><a class="btn btn-mini btn-primary" href="contents/admin/contents/form?module=<?php echo $_GET['module']?>"><i class="icon-pencil"></i> เพิ่มรายการ </a></th>
+                </tr>
+            </thead>
+                                    
+            <tbody>
+            <?php foreach($contents as $row):?>
+                <tr>
+                    <td>
+                        <label><input class="ace-switch ace-switch-4" type="checkbox" name="status" value="<?php echo $row->id ?>" <?php echo ($row->status=="approve")?'checked="checked"':'' ?>/><span class="lbl"></span></label>
+                    </td>
+                    <td><?php echo $row->title?></td>
+					<td><?php echo $row->user->username?></td>
+					<td><?php echo mysql_to_th($row->created,'S',TRUE) ?></td>
+			        <td><?php echo mysql_to_th($row->updated,'S',TRUE) ?></td>
+                    <td>
+                        <div class='hidden-phone visible-desktop btn-group'>
+                            <a href="contents/admin/contents/form/<?php echo $row->id?>?module=<?php echo $_GET['module']?>" class='btn btn-mini btn-info'><i class='icon-edit'></i></a>
+                            <a class='btn btn-mini btn-danger' href="contents/admin/contents/delete/<?php echo $row->id?>?module=<?php echo $_GET['module']?>" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><i class='icon-trash'></i></a>
+                        </div>
+                        <div class='hidden-desktop visible-phone'>
+                            <div class="inline position-relative">
+                                <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down icon-only"></i></button>
+                                <ul class="dropdown-menu dropdown-icon-only dropdown-yellow pull-right dropdown-caret dropdown-close">
+                                    <li><a href="contents/admin/contents/form/<?php echo $row->id?>?module=<?php echo $_GET['module']?>" class="tooltip-success" data-rel="tooltip" title="Edit" data-placement="left"><span class="green"><i class="icon-edit"></i></span></a></li>
+                                    <li><a href="contents/admin/contents/delete/<?php echo $row->id?>?module=<?php echo $_GET['module']?>" class="tooltip-error" data-rel="tooltip" title="Delete" data-placement="left" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><span class="red"><i class="icon-trash"></i></span> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            <?php endforeach;?>
+            </tbody>
+        </table>
+        
+    </div><!--/span-->
+</div><!--/row-->
+
+<!-- PAGE CONTENT ENDS HERE -->
 </div>
 
-<form method="get" class="well form-inline">
-	<table class="form">
-		<tr>
-			<th>หัวข้อ</th><td><input type="text" name="search" value="<?php echo (isset($_GET['search']))?$_GET['search']:'' ?>" /></td>
-			<td><input class="btn" type="submit" value="ค้นหา" /></td>
-		</tr>
-	</table>
-</form>
-	
-<?php echo $contents->pagination()?>
-<form id="order" action="contents/admin/contents/save_orderlist/<?=$type?>" method="post">
-<table class="table table-hover">
-	<thead>
-	<tr>
-		<th width="70">แสดง</th>
-		<?php if($type == 'seat' or $type == 'house'):?>
-			<th>ลำดับ</th>
-		<?php endif;?>
-		<th>หัวข้อ</th>
-		<?php if($type == 'articles'):?>
-        <th><a rel="lightbox" class="btn btn-mini" href="categories/admin/categories/<?=$type?>?iframe=true&width=90%&height=90%">หมวดหมู่</a></th>
-        <?php endif;?>
-		<th width="90">
-			<a class="btn btn-mini" href="contents/admin/contents/form/<?=$type?>">เพิ่มรายการ</a>
-		</th>
-	</tr>
-	</thead>
-	<?php foreach($contents as $row): ?>
-	<tr <?php echo cycle()?>>
-		<td><input type="checkbox" name="status" value="<?php echo $row->id ?>" <?php echo ($row->status=="approve")?'checked="checked"':'' ?> /></td>
-		<?php if($type == 'seat' or $type == 'house'):?>
-			<td><input type="text" name="orderlist[]" size="1" value="<?php echo $row->orderlist?>"><input type="hidden" name="orderid[]" value="<?php echo $row->id ?>"></td>
-		<?php endif;?>
-		<td><?php echo $row->title?></td>
-		<?php if($type == 'articles'):?>
-        <td><?php echo anchor('contents/admin/contents/index/'.$type.'?category_id='.$row->category_id,$row->category->name) ?></td>
-        <?php endif;?>
-		<td>
-			<a class="btn btn-mini" href="contents/admin/contents/form/<?=$type?>/<?php echo $row->id?>" >แก้ไข</a>
-			<a class="btn btn-mini" href="contents/admin/contents/delete/<?=$type?>/<?php echo $row->id?>" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')">ลบ</a>
-		</td>
-		</tr>
-		<?php endforeach; ?>
-	</table>
-<?php echo $contents->pagination()?>
-<input type="hidden" name="type" value="<?=$type?>">
-</form>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("input:checkbox").click(function(){
+        var value = this.checked ? "approve" : "draft";
+        var name = $(this).attr("name");
+        var jsonOptions= {};
+        jsonOptions[name]= value;
+        $.post("contents/admin/contents/approve/" + this.value,jsonOptions);
+    });
+    
+    var oTable1 = $('#table_report').dataTable( {
+    "aoColumns": [
+      { "bSortable": false },
+      null, null,null, null,
+      { "bSortable": false }
+    ] } );
+    
+    
+    $('table th input:checkbox').on('click' , function(){
+        var that = this;
+        $(this).closest('table').find('tr > td:first-child input:checkbox')
+        .each(function(){
+            this.checked = that.checked;
+            $(this).closest('tr').toggleClass('selected');
+        });
+            
+    });
+
+    $('[data-rel=tooltip]').tooltip();
+});
+</script>

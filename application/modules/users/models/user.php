@@ -5,6 +5,8 @@ class User extends ORM
 	
 	public $has_one = array("level","user_type");
 	
+	public $has_many = array("content");
+	
 	//public $has_many = array("");
 	
 	public function __construct($id = NULL)

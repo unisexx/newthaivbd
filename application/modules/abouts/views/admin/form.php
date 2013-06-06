@@ -1,5 +1,5 @@
 <div class="page-header position-relative">
-    <h1>About Us <small><i class="icon-double-angle-right"></i> <?php echo $_GET['title']?></small></h1>
+    <h1>About Us <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small></h1>
 </div><!--/page-header-->
 
 
@@ -15,7 +15,7 @@
         </div>
         
         <div class="form-actions">
-            <?php echo form_hidden('menu_title', $_GET['title']);?>
+            <?php echo form_hidden('menu_title', $_GET['module']);?>
             <button class="btn btn-info" type="submit"><i class="icon-ok"></i> Submit</button>
             &nbsp; &nbsp; &nbsp;
             <button class="btn" type="reset"><i class="icon-undo"></i> Reset</button>
