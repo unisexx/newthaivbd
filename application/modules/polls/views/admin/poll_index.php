@@ -1,6 +1,8 @@
 <div class="page-header position-relative">
-    <h1><?php echo $_GET['module']?> <!-- <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small> --></h1>
+    <h1>แบบสำรวจความคิดเห็น <!-- <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small> --></h1>
 </div><!--/page-header-->
+
+
 
 <div class="row-fluid">
 <!-- PAGE CONTENT BEGINS HERE -->
@@ -12,34 +14,30 @@
                 <tr>
                     <th>สถานะ</th>
                     <th>หัวข้อ</th>
-					<th>เขียนโดย</th>
-					<th>วันที่สร้าง</th>
-					<th>แก้ไขล่าสุด</th>
-                    <th><a class="btn btn-mini btn-primary" href="contents/admin/contents/form?module=<?php echo $_GET['module']?>"><i class="icon-pencil"></i> เพิ่มรายการ </a></th>
+                    <th>เขียนโดย</th>
+                    <th><a class="btn btn-mini btn-primary" href="polls/admin/polls/form"><i class="icon-pencil"></i> เพิ่มรายการ </a></th>
                 </tr>
             </thead>
                                     
             <tbody>
-            <?php foreach($contents as $row):?>
+            <?php foreach($polls as $poll):?>
                 <tr>
                     <td>
-                        <label><input class="ace-switch ace-switch-4" type="checkbox" name="status" value="<?php echo $row->id ?>" <?php echo ($row->status=="approve")?'checked="checked"':'' ?>/><span class="lbl"></span></label>
+                        <label><input class="ace-switch ace-switch-4" type="checkbox" name="status" value="<?php echo $poll->id ?>" <?php echo ($poll->status=="approve")?'checked="checked"':'' ?>/><span class="lbl"></span></label>
                     </td>
-                    <td><?php echo $row->title?></td>
-					<td><?php echo $row->user->username?></td>
-					<td><?php echo mysql_to_th($row->created,'S',TRUE) ?></td>
-			        <td><?php echo mysql_to_th($row->updated,'S',TRUE) ?></td>
+                    <td><?php echo $poll->title?></td>
+                    <td><?php echo $poll->user->display?></td>
                     <td>
                         <div class='hidden-phone visible-desktop btn-group'>
-                            <a href="contents/admin/contents/form/<?php echo $row->id?>?module=<?php echo $_GET['module']?>" class='btn btn-mini btn-info'><i class='icon-edit'></i></a>
-                            <a class='btn btn-mini btn-danger' href="contents/admin/contents/delete/<?php echo $row->id?>?module=<?php echo $_GET['module']?>" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><i class='icon-trash'></i></a>
+                            <a href="polls/admin/polls/form/<?php echo $poll->id?>" class='btn btn-mini btn-info'><i class='icon-edit'></i></a>
+                            <a class='btn btn-mini btn-danger' href="polls/admin/polls/delete/<?php echo $poll->id?>" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><i class='icon-trash'></i></a>
                         </div>
                         <div class='hidden-desktop visible-phone'>
                             <div class="inline position-relative">
                                 <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down icon-only"></i></button>
                                 <ul class="dropdown-menu dropdown-icon-only dropdown-yellow pull-right dropdown-caret dropdown-close">
-                                    <li><a href="contents/admin/contents/form/<?php echo $row->id?>?module=<?php echo $_GET['module']?>" class="tooltip-success" data-rel="tooltip" title="Edit" data-placement="left"><span class="green"><i class="icon-edit"></i></span></a></li>
-                                    <li><a href="contents/admin/contents/delete/<?php echo $row->id?>?module=<?php echo $_GET['module']?>" class="tooltip-error" data-rel="tooltip" title="Delete" data-placement="left" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><span class="red"><i class="icon-trash"></i></span> </a></li>
+                                    <li><a href="polls/admin/polls/form/<?php echo $poll->id?>" class="tooltip-success" data-rel="tooltip" title="Edit" data-placement="left"><span class="green"><i class="icon-edit"></i></span></a></li>
+                                    <li><a href="polls/admin/polls/delete/<?php echo $poll->id?>" class="tooltip-error" data-rel="tooltip" title="Delete" data-placement="left" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><span class="red"><i class="icon-trash"></i></span> </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -62,13 +60,13 @@ $(document).ready(function(){
         var name = $(this).attr("name");
         var jsonOptions= {};
         jsonOptions[name]= value;
-        $.post("contents/admin/contents/approve/" + this.value,jsonOptions);
+        $.post("polls/admin/polls/approve/" + this.value,jsonOptions);
     });
     
     var oTable1 = $('#table_report').dataTable( {
     "aoColumns": [
       { "bSortable": false },
-      null, null,null, null,
+      null, null,
       { "bSortable": false }
     ] } );
     

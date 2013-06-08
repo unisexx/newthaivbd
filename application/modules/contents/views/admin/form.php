@@ -1,5 +1,5 @@
 <div class="page-header position-relative">
-    <h1>Content <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small></h1>
+    <h1><?php echo $_GET['module']?> <!-- <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small> --></h1>
 </div><!--/page-header-->
 
 <div class="row-fluid">

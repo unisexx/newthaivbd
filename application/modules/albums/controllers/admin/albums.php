@@ -97,6 +97,16 @@ class Albums extends Admin_Controller
 		$category->delete();
 		echo form_dropdown('album_category_id',get_option('id','name','album_categories'));
 	}
+    
+    function approve($id){
+        if($_POST)
+        {
+            $album = new Album($id);
+            $album->from_array($_POST);
+            $album->save();
+        }
+
+    }
 	
 }
 ?>

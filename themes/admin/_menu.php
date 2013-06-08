@@ -81,7 +81,7 @@
           <ul class="submenu">
             <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> วารสารโรคติดต่อนำโดยแมลง</a></li>
             <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> แนวทางและคู่มือปฏิบัติการ</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> แฟ้มภาพ</a></li>
+            <li><a href="albums/admin/albums"><i class="icon-double-angle-right"></i> แฟ้มภาพ</a></li>
             <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> วีดีโอ</a></li>
             <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สื่อต้นแบบ</a></li>
             <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> งานวิจัย</a></li>
@@ -89,11 +89,15 @@
           </ul>
         </li>
         
-        <li>
-          <a href="demo/admin/demo/index">
-            <i class="icon-dashboard"></i>
-            <span>โพล</span>
+        <li <?php echo menu_active('polls','polls','class="active open"')?>>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>แบบสำรวจความคิดเห็น</span>
+            <b class="arrow icon-angle-down"></b>
           </a>
+          <ul class="submenu">
+            <li <?php echo menu_active('polls','polls')?>><a href="polls/admin/polls"><i class="icon-double-angle-right"></i> แบบสำรวจความคิดเห็น</a></li>
+          </ul>
         </li>
         
         <li <?php echo (@$_GET['module'] == 'แผนงานด้าน Knowledge management')?'class="active open"':'';?>>
@@ -152,7 +156,7 @@
           </ul>
         </li>
         
-        <li <?php echo menu_active('abouts','abouts','form','active open')?>>
+        <li <?php echo (@$_GET['module'] == 'บุคลากร' or @$_GET['module'] == 'โครงสร้างองค์กร' or @$_GET['module'] == 'วิสัยทัศน์ พันธกิจ ยุทธศาสตร์')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>เกี่ยวกับองค์กร</span>
@@ -165,46 +169,54 @@
           </ul>
         </li>
         
-        <li>
+        <li <?php echo (@$_GET['module'] == 'ข่าวเด่นประเด็นร้อน' or @$_GET['module'] == 'รายงานการประชุมอินทราเน็ต' or @$_GET['module'] == 'ประชาสัมพันธ์จากไอที')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>Intranet</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> ข่าวเด่นประเด็นร้อน</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> รายงานการประชุม</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ประชาสัมพันธ์จากไอที</a></li>
+            <li <?php echo (@$_GET['module'] == 'ข่าวเด่นประเด็นร้อน')?'class="active"':'';?>><a href="projects/admin/projects?module=ข่าวเด่นประเด็นร้อน"><i class="icon-double-angle-right"></i> ข่าวเด่นประเด็นร้อน</a></li>
+            <li <?php echo (@$_GET['module'] == 'รายงานการประชุมอินทราเน็ต')?'class="active"':'';?>><a href="projects/admin/projects?module=รายงานการประชุมอินทราเน็ต"><i class="icon-double-angle-right"></i> รายงานการประชุม</a></li>
+            <li <?php echo (@$_GET['module'] == 'ประชาสัมพันธ์จากไอที')?'class="active"':'';?>><a href="projects/admin/projects?module=ประชาสัมพันธ์จากไอที"><i class="icon-double-angle-right"></i> ประชาสัมพันธ์จากไอที</a></li>
           </ul>
         </li>
         
         <li>
-          <a href="demo/admin/demo/index">
-            <i class="icon-dashboard"></i>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
             <span>ตารางใช้งานห้องประชุม</span>
+            <b class="arrow icon-angle-down"></b>
           </a>
+          <ul class="submenu">
+            <li><a href=""><i class="icon-double-angle-right"></i> ตารางใช้งานห้องประชุม</a></li>
+          </ul>
         </li>
         
-        <li>
-          <a href="demo/admin/demo/index">
-            <i class="icon-dashboard"></i>
-            <span>Site map</span>
+        <li <?php echo (@$_GET['module'] == 'Site map')?'class="active open"':'';?>>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>อื่นๆ</span>
+            <b class="arrow icon-angle-down"></b>
           </a>
+          <ul class="submenu">
+            <li <?php echo (@$_GET['module'] == 'Site map')?'class="active"':'';?>><a href="abouts/admin/abouts/form/4?module=Site map"><i class="icon-double-angle-right"></i> Site map</a></li>
+          </ul>
         </li>
         
-        <li>
+        <li <?php echo (@$_GET['module'] == 'หมวด 1 การนำองค์กร' or @$_GET['module'] == 'หมวด 2 การวางแผนเชิงยุทธศาสตร์' or @$_GET['module'] == 'หมวด 3 ผู้ให้บริการ และ ผู้มีส่วนได้ส่วนเสีย' or @$_GET['module'] == 'หมวด 4 การวัด การวิเคราะห์ และ จักการความรู้' or @$_GET['module'] == 'หมวด 5 ทรัพยากรบุคคล' or @$_GET['module'] == 'หมวด 6 กระบวนการ')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>การพัฒนาองค์กร (PMQA)</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> หมวด 1 การนำองค์กร</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หมวด 2 การวางแผนเชิงยุทธศาสตร์</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หมวด 3 ผู้ให้บริการ และ ผู้มีส่วนได้ส่วนเสีย</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หมวด 4 การวัด การวิเคราะห์ และ จักการความรู้</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หมวด 5 ทรัพยากรบุคคล</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> หมวด 6 กระบวนการ</a></li>
+            <li <?php echo (@$_GET['module'] == 'หมวด 1 การนำองค์กร')?'class="active"':'';?>><a href="reports/admin/reports?module=หมวด 1 การนำองค์กร"><i class="icon-double-angle-right"></i> หมวด 1 การนำองค์กร</a></li>
+            <li <?php echo (@$_GET['module'] == 'หมวด 2 การวางแผนเชิงยุทธศาสตร์')?'class="active"':'';?>><a href="reports/admin/reports?module=หมวด 2 การวางแผนเชิงยุทธศาสตร์"><i class="icon-double-angle-right"></i> หมวด 2 การวางแผนเชิงยุทธศาสตร์</a></li>
+            <li <?php echo (@$_GET['module'] == 'หมวด 3 ผู้ให้บริการ และ ผู้มีส่วนได้ส่วนเสีย')?'class="active"':'';?>><a href="reports/admin/reports?module=หมวด 3 ผู้ให้บริการ และ ผู้มีส่วนได้ส่วนเสีย"><i class="icon-double-angle-right"></i> หมวด 3 ผู้ให้บริการ และ ผู้มีส่วนได้ส่วนเสีย</a></li>
+            <li <?php echo (@$_GET['module'] == 'หมวด 4 การวัด การวิเคราะห์ และ จักการความรู้')?'class="active"':'';?>><a href="reports/admin/reports?module=หมวด 4 การวัด การวิเคราะห์ และ จักการความรู้"><i class="icon-double-angle-right"></i> หมวด 4 การวัด การวิเคราะห์ และ จักการความรู้</a></li>
+            <li <?php echo (@$_GET['module'] == 'หมวด 5 ทรัพยากรบุคคล')?'class="active"':'';?>><a href="reports/admin/reports?module=หมวด 5 ทรัพยากรบุคคล"><i class="icon-double-angle-right"></i> หมวด 5 ทรัพยากรบุคคล</a></li>
+            <li <?php echo (@$_GET['module'] == 'หมวด 6 กระบวนการ')?'class="active"':'';?>><a href="reports/admin/reports?module=หมวด 6 กระบวนการ"><i class="icon-double-angle-right"></i> หมวด 6 กระบวนการ</a></li>
           </ul>
         </li>
         
@@ -216,13 +228,13 @@
           </a>
           <ul class="submenu">
             <li <?php echo (@$_GET['module'] == 'เอกสารทั่วไป')?'class="active"':'';?>><a href="projects/admin/projects?module=เอกสารทั่วไป"><i class="icon-double-angle-right"></i> เอกสารทั่วไป</a></li>
-            <li><a href="projects/admin/projects?module=คำสั่ง"><i class="icon-double-angle-right"></i> คำสั่ง</a></li>
-            <li><a href="projects/admin/projects?module=รายงานการประชุม"><i class="icon-double-angle-right"></i> รายงานการประชุม</a></li>
-            <li><a href="projects/admin/projects?module=หนังสือแจ้งเวียน"><i class="icon-double-angle-right"></i> หนังสือแจ้งเวียน</a></li>
+            <li <?php echo (@$_GET['module'] == 'คำสั่ง')?'class="active"':'';?>><a href="projects/admin/projects?module=คำสั่ง"><i class="icon-double-angle-right"></i> คำสั่ง</a></li>
+            <li <?php echo (@$_GET['module'] == 'รายงานการประชุม')?'class="active"':'';?>><a href="projects/admin/projects?module=รายงานการประชุม"><i class="icon-double-angle-right"></i> รายงานการประชุม</a></li>
+            <li <?php echo (@$_GET['module'] == 'หนังสือแจ้งเวียน')?'class="active"':'';?>><a href="projects/admin/projects?module=หนังสือแจ้งเวียน"><i class="icon-double-angle-right"></i> หนังสือแจ้งเวียน</a></li>
           </ul>
         </li>
         
-        <li>---- demo ----</li>
+        <!-- <li>---- demo ----</li>
         
         <li <?php echo menu_active('demo',false,'index')?>>
           <a href="demo/admin/demo/index">
@@ -326,7 +338,7 @@
             <li <?php echo menu_active('demo',false,'error_500')?>><a href="demo/admin/demo/error_500"><i class="icon-double-angle-right"></i> Error 500</a></li>
             <li <?php echo menu_active('demo',false,'blank')?>><a href="demo/admin/demo/blank"><i class="icon-double-angle-right"></i> Blank Page</a></li>
           </ul>
-        </li>
+        </li> -->
         
     </ul><!--/.nav-list-->
 

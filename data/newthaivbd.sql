@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50045
 File Encoding         : 65001
 
-Date: 2013-06-07 03:21:14
+Date: 2013-06-08 15:33:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -304,13 +304,14 @@ CREATE TABLE `albums` (
   `user_id` int(11) NOT NULL,
   `album_category_id` int(11) default NULL,
   `agency_id` int(11) default NULL,
+  `status` varchar(10) collate utf8_unicode_ci default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of albums
 -- ----------------------------
-INSERT INTO `albums` VALUES ('61', 'ประเมินศูนย์เด็กเล็กและสื่อภาพพลิก จ.เชียงราย', '2012-12-13 11:47:42', '2013-01-26 23:25:47', '49', null, '0');
+INSERT INTO `albums` VALUES ('61', 'ประเมินศูนย์เด็กเล็กและสื่อภาพพลิก จ.เชียงราย', '2012-12-13 11:47:42', '2013-06-08 14:26:21', '49', null, '0', 'approve');
 
 -- ----------------------------
 -- Table structure for `album_categories`
@@ -1804,7 +1805,7 @@ CREATE TABLE `contents` (
   `created` datetime default NULL,
   `updated` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of contents
@@ -1816,6 +1817,9 @@ INSERT INTO `contents` VALUES ('9', 'ข่าว Highlights', 'สิทธิ�
 INSERT INTO `contents` VALUES ('10', 'ข่าว Highlights', null, 'ทดสอบ', 'ทดสอบ', '51b03753e0451.jpg', '316', '0', 'approve', '2013-06-06 12:02:35', '2013-06-06 14:16:35');
 INSERT INTO `contents` VALUES ('13', 'ข่าวประชาสัมพันธ์', null, 'ข่าวประชาสัมพันธ์', 'ข่าวประชาสัมพันธ์', null, '1', '0', 'approve', '2013-06-06 14:42:15', '2013-06-06 14:42:32');
 INSERT INTO `contents` VALUES ('14', 'แผนงาน/โครงการตามยุทธศาสตร์', null, '', null, null, '1', '0', 'approve', '2013-06-07 01:43:46', '2013-06-07 01:43:46');
+INSERT INTO `contents` VALUES ('15', null, null, null, null, null, null, '0', 'approve', '2013-06-08 13:18:03', '2013-06-08 13:18:03');
+INSERT INTO `contents` VALUES ('16', null, null, null, null, null, null, '0', 'approve', '2013-06-08 13:19:33', '2013-06-08 13:19:33');
+INSERT INTO `contents` VALUES ('17', null, null, null, null, null, null, '0', 'approve', '2013-06-08 13:19:44', '2013-06-08 13:19:44');
 
 -- ----------------------------
 -- Table structure for `coverpages`
@@ -11158,6 +11162,276 @@ INSERT INTO `pictures` VALUES ('170', null, '510403958e4ec.jpg', '2013-01-26 23:
 INSERT INTO `pictures` VALUES ('171', null, '510403963ba3c.jpg', '2013-01-26 23:25:58', '2013-01-26 23:25:58', '61');
 
 -- ----------------------------
+-- Table structure for `polldetails`
+-- ----------------------------
+DROP TABLE IF EXISTS `polldetails`;
+CREATE TABLE `polldetails` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) collate utf8_unicode_ci default NULL,
+  `poll_id` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of polldetails
+-- ----------------------------
+INSERT INTO `polldetails` VALUES ('1', 'ดีมาก', '1');
+INSERT INTO `polldetails` VALUES ('2', 'ปานกลาง', '1');
+INSERT INTO `polldetails` VALUES ('32', 'ควรปรับปรุง', '1');
+INSERT INTO `polldetails` VALUES ('35', 'ถูกใจ', '8');
+INSERT INTO `polldetails` VALUES ('36', 'ไม่ชอบ', '8');
+INSERT INTO `polldetails` VALUES ('62', 'กดไลค์', '8');
+INSERT INTO `polldetails` VALUES ('66', '111', '1');
+INSERT INTO `polldetails` VALUES ('67', '222', '1');
+
+-- ----------------------------
+-- Table structure for `pollresults`
+-- ----------------------------
+DROP TABLE IF EXISTS `pollresults`;
+CREATE TABLE `pollresults` (
+  `id` int(11) NOT NULL auto_increment,
+  `poll_id` int(11) default NULL,
+  `polldetail_id` int(11) default NULL,
+  `ip` varchar(50) collate utf8_unicode_ci default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=221 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of pollresults
+-- ----------------------------
+INSERT INTO `pollresults` VALUES ('1', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('2', '1', '1', '');
+INSERT INTO `pollresults` VALUES ('3', '1', '1', '');
+INSERT INTO `pollresults` VALUES ('4', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('5', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('6', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('7', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('8', '1', '2', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('9', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('10', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('11', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('12', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('13', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('14', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('15', '1', '2', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('16', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('18', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('19', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('20', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('21', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('107', '1', '1', '125.24.92.183');
+INSERT INTO `pollresults` VALUES ('108', '1', '1', '125.24.92.183');
+INSERT INTO `pollresults` VALUES ('109', '1', '1', '125.24.92.183');
+INSERT INTO `pollresults` VALUES ('110', '1', '1', '125.24.92.183');
+INSERT INTO `pollresults` VALUES ('111', '1', '1', '125.24.92.183');
+INSERT INTO `pollresults` VALUES ('31', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('32', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('33', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('34', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('37', '1', '1', '125.24.74.224');
+INSERT INTO `pollresults` VALUES ('38', '1', '1', '125.24.74.224');
+INSERT INTO `pollresults` VALUES ('39', '1', '1', '125.24.12.252');
+INSERT INTO `pollresults` VALUES ('40', '1', '1', '203.185.130.105');
+INSERT INTO `pollresults` VALUES ('41', '1', '1', '203.185.130.105');
+INSERT INTO `pollresults` VALUES ('42', '1', '1', '125.24.12.252');
+INSERT INTO `pollresults` VALUES ('43', '1', '1', '125.24.12.252');
+INSERT INTO `pollresults` VALUES ('44', '1', '1', '180.180.137.79');
+INSERT INTO `pollresults` VALUES ('45', '1', '2', '125.24.38.134');
+INSERT INTO `pollresults` VALUES ('46', '1', '1', '125.24.30.240');
+INSERT INTO `pollresults` VALUES ('47', '1', '1', '125.24.30.240');
+INSERT INTO `pollresults` VALUES ('48', '1', '1', '125.24.30.240');
+INSERT INTO `pollresults` VALUES ('49', '1', '32', '223.207.24.9');
+INSERT INTO `pollresults` VALUES ('50', '1', '32', '125.24.90.110');
+INSERT INTO `pollresults` VALUES ('51', '1', '32', '125.24.90.110');
+INSERT INTO `pollresults` VALUES ('52', '1', '32', '125.24.90.110');
+INSERT INTO `pollresults` VALUES ('53', '1', '32', '125.24.90.110');
+INSERT INTO `pollresults` VALUES ('54', '1', '32', '125.24.90.110');
+INSERT INTO `pollresults` VALUES ('55', '1', '32', '125.24.90.110');
+INSERT INTO `pollresults` VALUES ('56', '1', '32', '125.24.90.110');
+INSERT INTO `pollresults` VALUES ('57', '1', '32', '125.24.90.110');
+INSERT INTO `pollresults` VALUES ('58', '1', '32', '125.24.90.110');
+INSERT INTO `pollresults` VALUES ('59', '1', '1', '118.174.3.138');
+INSERT INTO `pollresults` VALUES ('60', '1', '1', '125.24.50.85');
+INSERT INTO `pollresults` VALUES ('61', '1', '1', '125.24.50.85');
+INSERT INTO `pollresults` VALUES ('62', '1', '1', '125.24.50.85');
+INSERT INTO `pollresults` VALUES ('63', '1', '1', '125.24.50.85');
+INSERT INTO `pollresults` VALUES ('64', '1', '1', '125.24.50.85');
+INSERT INTO `pollresults` VALUES ('65', '1', '1', '125.24.50.85');
+INSERT INTO `pollresults` VALUES ('66', '1', '1', '125.24.50.85');
+INSERT INTO `pollresults` VALUES ('67', '1', '1', '67.202.61.101');
+INSERT INTO `pollresults` VALUES ('68', '1', '32', '118.173.224.38');
+INSERT INTO `pollresults` VALUES ('69', '1', '32', '58.9.50.19');
+INSERT INTO `pollresults` VALUES ('70', '1', '1', '203.157.30.1');
+INSERT INTO `pollresults` VALUES ('71', '1', '1', '101.108.75.216');
+INSERT INTO `pollresults` VALUES ('72', '1', '1', '125.24.63.123');
+INSERT INTO `pollresults` VALUES ('73', '1', '1', '125.24.44.234');
+INSERT INTO `pollresults` VALUES ('74', '1', '1', '125.24.44.234');
+INSERT INTO `pollresults` VALUES ('75', '1', '1', '125.24.44.234');
+INSERT INTO `pollresults` VALUES ('76', '1', '1', '125.24.44.234');
+INSERT INTO `pollresults` VALUES ('77', '1', '32', '58.9.47.151');
+INSERT INTO `pollresults` VALUES ('78', '1', '1', '125.24.125.27');
+INSERT INTO `pollresults` VALUES ('79', '1', '32', '119.42.76.236');
+INSERT INTO `pollresults` VALUES ('80', '1', '32', '118.175.74.112');
+INSERT INTO `pollresults` VALUES ('81', '1', '32', '118.175.74.112');
+INSERT INTO `pollresults` VALUES ('82', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('83', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('84', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('85', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('86', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('87', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('88', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('89', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('90', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('91', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('92', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('93', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('94', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('95', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('96', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('97', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('98', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('99', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('100', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('101', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('102', '1', '1', '125.24.4.190');
+INSERT INTO `pollresults` VALUES ('103', '1', '1', '125.26.160.23');
+INSERT INTO `pollresults` VALUES ('104', '1', '1', '203.152.22.15');
+INSERT INTO `pollresults` VALUES ('105', '1', '1', '203.152.22.15');
+INSERT INTO `pollresults` VALUES ('106', '1', '1', '125.24.92.183');
+INSERT INTO `pollresults` VALUES ('112', '1', '1', '125.24.92.183');
+INSERT INTO `pollresults` VALUES ('113', '1', '1', '125.24.92.183');
+INSERT INTO `pollresults` VALUES ('114', '1', '1', '125.24.92.183');
+INSERT INTO `pollresults` VALUES ('115', '1', '2', '61.7.152.186');
+INSERT INTO `pollresults` VALUES ('116', '1', '1', '203.185.130.105');
+INSERT INTO `pollresults` VALUES ('117', '1', '32', '110.164.129.78');
+INSERT INTO `pollresults` VALUES ('118', '1', '32', '182.232.232.151');
+INSERT INTO `pollresults` VALUES ('119', '1', '1', '203.185.130.105');
+INSERT INTO `pollresults` VALUES ('120', '1', '32', '182.52.31.57');
+INSERT INTO `pollresults` VALUES ('121', '1', '1', '110.169.214.47');
+INSERT INTO `pollresults` VALUES ('122', '1', '2', '113.53.200.159');
+INSERT INTO `pollresults` VALUES ('123', '1', '1', '113.53.201.18');
+INSERT INTO `pollresults` VALUES ('124', null, null, '158.108.32.42');
+INSERT INTO `pollresults` VALUES ('125', '1', '1', '118.172.178.107');
+INSERT INTO `pollresults` VALUES ('126', '1', '1', '203.172.199.254');
+INSERT INTO `pollresults` VALUES ('127', '1', '32', '115.87.142.56');
+INSERT INTO `pollresults` VALUES ('128', '1', '32', '218.186.12.248');
+INSERT INTO `pollresults` VALUES ('129', '1', '1', '58.136.98.2');
+INSERT INTO `pollresults` VALUES ('130', '1', '32', '223.204.108.195');
+INSERT INTO `pollresults` VALUES ('131', '1', '1', '118.173.230.109');
+INSERT INTO `pollresults` VALUES ('132', '1', '1', '110.49.225.23');
+INSERT INTO `pollresults` VALUES ('133', '1', '1', '118.172.135.156');
+INSERT INTO `pollresults` VALUES ('134', '1', '2', '58.136.98.2');
+INSERT INTO `pollresults` VALUES ('135', '1', '1', '110.49.225.208');
+INSERT INTO `pollresults` VALUES ('136', '1', '1', '118.172.115.179');
+INSERT INTO `pollresults` VALUES ('137', '1', '32', '180.180.139.230');
+INSERT INTO `pollresults` VALUES ('138', '1', '2', '223.207.32.100');
+INSERT INTO `pollresults` VALUES ('139', '1', '32', '61.47.115.2');
+INSERT INTO `pollresults` VALUES ('140', '1', '1', '182.52.177.234');
+INSERT INTO `pollresults` VALUES ('141', '1', '1', '203.113.103.117');
+INSERT INTO `pollresults` VALUES ('142', '1', '1', '182.93.149.140');
+INSERT INTO `pollresults` VALUES ('143', '1', '1', '119.42.100.95');
+INSERT INTO `pollresults` VALUES ('144', '1', '1', '14.207.207.249');
+INSERT INTO `pollresults` VALUES ('145', '1', '32', '61.19.199.142');
+INSERT INTO `pollresults` VALUES ('146', '1', '1', '124.122.130.211');
+INSERT INTO `pollresults` VALUES ('147', '1', '1', '182.52.184.133');
+INSERT INTO `pollresults` VALUES ('148', '1', '32', '58.136.28.219');
+INSERT INTO `pollresults` VALUES ('149', '1', '32', '118.174.15.186');
+INSERT INTO `pollresults` VALUES ('150', '1', '1', '202.41.167.241');
+INSERT INTO `pollresults` VALUES ('151', '1', '1', '223.204.65.137');
+INSERT INTO `pollresults` VALUES ('152', '1', '1', '118.173.122.246');
+INSERT INTO `pollresults` VALUES ('153', '1', '1', '118.173.15.193');
+INSERT INTO `pollresults` VALUES ('154', '1', '1', '119.42.98.252');
+INSERT INTO `pollresults` VALUES ('155', '1', '32', '183.89.178.213');
+INSERT INTO `pollresults` VALUES ('156', '1', '32', '118.172.208.48');
+INSERT INTO `pollresults` VALUES ('157', '1', '1', '203.154.65.66');
+INSERT INTO `pollresults` VALUES ('158', '1', '32', '115.87.144.225');
+INSERT INTO `pollresults` VALUES ('159', '1', '1', '122.155.36.7');
+INSERT INTO `pollresults` VALUES ('160', null, null, '158.108.32.29');
+INSERT INTO `pollresults` VALUES ('161', '1', '32', '118.175.72.196');
+INSERT INTO `pollresults` VALUES ('162', '1', '32', '119.46.23.51');
+INSERT INTO `pollresults` VALUES ('163', '1', '1', '203.152.22.15');
+INSERT INTO `pollresults` VALUES ('164', '1', '1', '118.172.80.231');
+INSERT INTO `pollresults` VALUES ('165', '1', '32', '110.164.190.234');
+INSERT INTO `pollresults` VALUES ('166', '1', '1', '118.175.194.17');
+INSERT INTO `pollresults` VALUES ('167', '1', '1', '203.185.130.105');
+INSERT INTO `pollresults` VALUES ('168', '1', '32', '223.205.238.168');
+INSERT INTO `pollresults` VALUES ('169', '1', '1', '58.8.238.122');
+INSERT INTO `pollresults` VALUES ('170', '1', '32', '203.157.30.1');
+INSERT INTO `pollresults` VALUES ('171', null, null, '158.108.213.81');
+INSERT INTO `pollresults` VALUES ('172', '1', '32', '119.46.23.51');
+INSERT INTO `pollresults` VALUES ('173', '1', '1', '182.52.68.186');
+INSERT INTO `pollresults` VALUES ('174', '1', '2', '223.204.221.160');
+INSERT INTO `pollresults` VALUES ('175', '1', '1', '124.122.43.64');
+INSERT INTO `pollresults` VALUES ('176', '1', '1', '182.93.185.48');
+INSERT INTO `pollresults` VALUES ('177', '1', '32', '118.173.224.248');
+INSERT INTO `pollresults` VALUES ('178', '1', '32', '118.173.224.248');
+INSERT INTO `pollresults` VALUES ('179', '1', '32', '118.173.233.116');
+INSERT INTO `pollresults` VALUES ('180', null, null, '158.108.213.89');
+INSERT INTO `pollresults` VALUES ('181', '1', '1', '101.109.158.144');
+INSERT INTO `pollresults` VALUES ('182', '1', '1', '124.121.240.166');
+INSERT INTO `pollresults` VALUES ('183', '1', '32', '203.185.130.105');
+INSERT INTO `pollresults` VALUES ('184', '1', '32', '203.185.130.105');
+INSERT INTO `pollresults` VALUES ('185', '1', '2', '203.185.130.105');
+INSERT INTO `pollresults` VALUES ('186', '1', '32', '203.185.130.105');
+INSERT INTO `pollresults` VALUES ('187', '1', '32', '203.185.130.105');
+INSERT INTO `pollresults` VALUES ('188', '1', '2', '118.172.75.47');
+INSERT INTO `pollresults` VALUES ('189', '1', '1', '110.49.250.16');
+INSERT INTO `pollresults` VALUES ('190', '1', '1', '110.49.251.31');
+INSERT INTO `pollresults` VALUES ('191', '1', '32', '203.157.30.1');
+INSERT INTO `pollresults` VALUES ('192', '1', '2', '110.168.7.139');
+INSERT INTO `pollresults` VALUES ('193', '1', '2', '110.168.7.139');
+INSERT INTO `pollresults` VALUES ('194', '1', '1', '110.168.7.139');
+INSERT INTO `pollresults` VALUES ('195', '1', '1', '125.24.56.103');
+INSERT INTO `pollresults` VALUES ('196', '1', '1', '223.207.165.104');
+INSERT INTO `pollresults` VALUES ('197', '1', '32', '124.121.1.49');
+INSERT INTO `pollresults` VALUES ('198', '1', '32', '182.53.56.2');
+INSERT INTO `pollresults` VALUES ('199', '1', '1', '119.46.162.3');
+INSERT INTO `pollresults` VALUES ('200', '1', '2', '183.89.123.40');
+INSERT INTO `pollresults` VALUES ('201', '1', '1', '110.49.224.130');
+INSERT INTO `pollresults` VALUES ('202', '1', '1', '124.122.131.132');
+INSERT INTO `pollresults` VALUES ('203', '1', '2', '125.24.139.171');
+INSERT INTO `pollresults` VALUES ('204', '1', '32', '124.121.170.56');
+INSERT INTO `pollresults` VALUES ('205', '1', '32', '101.108.180.187');
+INSERT INTO `pollresults` VALUES ('206', '1', '1', '125.27.186.243');
+INSERT INTO `pollresults` VALUES ('207', '1', '1', '124.121.201.238');
+INSERT INTO `pollresults` VALUES ('208', '1', '1', '125.27.126.239');
+INSERT INTO `pollresults` VALUES ('209', '1', '1', '113.53.95.150');
+INSERT INTO `pollresults` VALUES ('210', '1', '2', '182.52.113.108');
+INSERT INTO `pollresults` VALUES ('211', '1', '2', '125.26.164.186');
+INSERT INTO `pollresults` VALUES ('212', '8', '35', '125.26.164.186');
+INSERT INTO `pollresults` VALUES ('213', '1', '1', '110.77.230.166');
+INSERT INTO `pollresults` VALUES ('214', '1', '1', '118.174.84.221');
+INSERT INTO `pollresults` VALUES ('215', '1', '2', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('216', '1', '2', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('217', '1', '32', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('218', '1', '32', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('219', '8', '35', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('220', '8', '36', '127.0.0.1');
+
+-- ----------------------------
+-- Table structure for `polls`
+-- ----------------------------
+DROP TABLE IF EXISTS `polls`;
+CREATE TABLE `polls` (
+  `id` int(11) NOT NULL auto_increment,
+  `title` varchar(255) collate utf8_unicode_ci default NULL,
+  `active` tinyint(1) default '0',
+  `approve_id` int(11) default NULL,
+  `approve_date` datetime default NULL,
+  `user_id` int(11) default NULL,
+  `status` varchar(10) collate utf8_unicode_ci default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of polls
+-- ----------------------------
+INSERT INTO `polls` VALUES ('1', 'คุณมีความพึงพอใจเว็บไซค์ thaigcd.ddc.moph.go.th เพียงใด', '0', null, null, '1', 'approve');
+INSERT INTO `polls` VALUES ('8', 'ความพึงพอใจการเข้าถึงกลุ่ม บว.', '1', null, null, '1', 'approve');
+INSERT INTO `polls` VALUES ('18', null, '0', null, null, null, 'approve');
+INSERT INTO `polls` VALUES ('19', null, '0', null, null, null, 'draft');
+
+-- ----------------------------
 -- Table structure for `profiles`
 -- ----------------------------
 DROP TABLE IF EXISTS `profiles`;
@@ -11211,13 +11485,14 @@ CREATE TABLE `projects` (
   `created` datetime default NULL,
   `updated` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of projects
 -- ----------------------------
 INSERT INTO `projects` VALUES ('1', 'แผนงาน/โครงการตามยุทธศาสตร์', 'วอลรัส', 'วอลรัส', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-07 01:54:19', '2013-06-07 02:42:13');
 INSERT INTO `projects` VALUES ('2', 'แผนงาน/โครงการตามยุทธศาสตร์', 'รูปวอลลัส', 'รูปวอลลัส', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-07 01:55:51', '2013-06-07 01:57:32');
+INSERT INTO `projects` VALUES ('3', 'ข่าวเด่นประเด็นร้อน', 'ไม่มีอะ', 'ไม่มีอะ', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-08 09:32:15', '2013-06-08 09:32:15');
 
 -- ----------------------------
 -- Table structure for `provinces`
@@ -11310,6 +11585,33 @@ INSERT INTO `provinces` VALUES ('74', 'ปัตตานี   ', '12');
 INSERT INTO `provinces` VALUES ('75', 'ยะลา   ', '12');
 INSERT INTO `provinces` VALUES ('76', 'นราธิวาส   ', '12');
 INSERT INTO `provinces` VALUES ('77', 'บึงกาฬ', '6');
+
+-- ----------------------------
+-- Table structure for `reports`
+-- ----------------------------
+DROP TABLE IF EXISTS `reports`;
+CREATE TABLE `reports` (
+  `id` int(11) NOT NULL auto_increment,
+  `module` varchar(255) collate utf8_unicode_ci default NULL,
+  `slug` varchar(255) collate utf8_unicode_ci default NULL,
+  `year` int(11) default NULL,
+  `title` varchar(255) collate utf8_unicode_ci default NULL,
+  `files` varchar(255) collate utf8_unicode_ci default NULL,
+  `user_id` int(11) default NULL,
+  `counter` int(11) default '0',
+  `status` varchar(10) collate utf8_unicode_ci default NULL,
+  `created` datetime default NULL,
+  `updated` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of reports
+-- ----------------------------
+INSERT INTO `reports` VALUES ('1', 'แผนงาน/โครงการตามยุทธศาสตร์', 'วอลรัส', null, 'วอลรัส', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-07 01:54:19', '2013-06-07 02:42:13');
+INSERT INTO `reports` VALUES ('2', 'แผนงาน/โครงการตามยุทธศาสตร์', 'รูปวอลลัส', null, 'รูปวอลลัส', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-07 01:55:51', '2013-06-07 01:57:32');
+INSERT INTO `reports` VALUES ('3', 'ข่าวเด่นประเด็นร้อน', 'ไม่มีอะ', null, 'ไม่มีอะ', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-08 09:32:15', '2013-06-08 09:32:15');
+INSERT INTO `reports` VALUES ('5', 'หมวด 1 การนำองค์กร', 'คำอธิบาย', '2554', 'คำอธิบาย', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-08 10:35:26', '2013-06-08 10:38:22');
 
 -- ----------------------------
 -- Table structure for `users`

@@ -4,7 +4,7 @@
 
 <div class="row-fluid">
 <!-- PAGE CONTENT BEGINS HERE -->
-    <form id="validation-form" class="form-horizontal" method="post" action="projects/admin/projects/save/<?php echo $project->id?>?module=<?php echo $_GET['module']?>" enctype="multipart/form-data">
+    <form id="validation-form" class="form-horizontal" method="post" action="reports/admin/reports/save/<?php echo $report->id?>?module=<?php echo $_GET['module']?>" enctype="multipart/form-data">
         
         <!-- upload file -->
         <!-- <div class="control-group">
@@ -19,13 +19,25 @@
             </div>
         </div> -->
         
+        <!-- select box -->
+        <div class="control-group">
+            <label class="control-label" for="form-field-1">ปี</label>
+            <div class="controls">
+                <select name="year" id="form-field-select-1">
+                    <?php for ($x = (date('Y')+543); $x >= 2548; $x--):?>
+                        <option value="<?php echo $x?>" <?php echo ($x == $report->year)?'selected':'';?>><?php echo $x?></option>
+                    <?php endfor;?>
+                </select>
+            </div>
+        </div>
+        
         <!-- file manager -->
         <div class="control-group">
             <label class="control-label" for="form-field-2">ไฟล์</label>
             <div class="controls">
-                <input type="text" id="form-field-2" class="input-xxlarge" name="files" value="<?php echo $project->files?>"> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'file')" /> 
-                <?php if($project->files):?>
-                    <a class="btn btn-danger btn-mini" data-rel="tooltip" title="ดาวน์โหลด" href="projects/admin/projects/download/<?php echo $project->id?>"><i class="icon-download-alt"></i></a>
+                <input type="text" id="form-field-2" class="input-xxlarge" name="files" value="<?php echo $report->files?>"> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'file')" /> 
+                <?php if($report->files):?>
+                    <a class="btn btn-danger btn-mini" data-rel="tooltip" title="ดาวน์โหลด" href="reports/admin/reports/download/<?php echo $report->id?>"><i class="icon-download-alt"></i></a>
                 <?php endif;?>
             </div>
         </div>
@@ -34,7 +46,7 @@
         <div class="control-group">
             <label class="control-label" for="form-field-1">คำอธิบาย</label>
             <div class="controls">
-                <input type="text" id="form-field-1" class="input-xxlarge" name="title" value="<?php echo $project->title?>">
+                <input type="text" id="form-field-1" class="input-xxlarge" name="title" value="<?php echo $report->title?>">
             </div>
         </div>
         
