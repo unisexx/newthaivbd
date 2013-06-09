@@ -9,8 +9,7 @@ class Albums extends Admin_Controller
 	function index()
 	{
 		$data['albums'] = new Album;
-		$data['albums']->order_by('id','desc')->get_page();
-		//$data['albums']->where('agency_id',$_GET['agency_id'])->order_by('id','desc')->get_page();
+		$data['albums']->order_by('id','desc')->get();
 		$this->template->build('admin/album_index',$data);
 	}
 	
@@ -26,37 +25,26 @@ class Albums extends Admin_Controller
 		if($_POST)
 		{
 			$album = new Album($id);
-			$album->user_id = $this->session->userdata('id');
+			if(!$id)$_POST['user_id'] = $this->session->userdata('id');
+            if(!$id)$_POST['status'] = "approve";
 			$album->from_array($_POST);
 			$album->save();
-			
-			fix_file($_FILES['image']);
-			foreach($_FILES['image'] as $key => $image)
-			{
-					$picture = new Picture(@$_POST['picture_id'][$key]);
-					if($image['name'])
-					{
-						if(@$_POST['picture_id'][$key])
-						{
-							$picture->delete_file('uploads/albums/'.$album->id,'image');
-							$picture->delete_file('uploads/albums/thumbnail/'.$album->id,'image');
-						}
-						if(@$_POST['watermark'])
-						{
-							$picture->watermark($_POST['watermark'], $_POST['position']);
-						}
-						$picture->image = $picture->upload($image,'uploads/albums/'.$album->id);
-						$picture->thumb('uploads/albums/'.$album->id.'/thumbnail',275,180);	
-						$picture->album_id = $album->id;
-						$picture->save();
-					}		
-					
-				
-			}
-			
+            
+            if($_POST['image']){
+                foreach($_POST['image'] as $key => $item){
+                    $picture = new Picture(@$_POST['picture_id'][$key]);
+                    if($item)
+                    {
+                        $picture->image = $item;
+                        $picture->album_id = $album->id;
+                        $picture->save();
+                    }   
+                }
+            }
+            
 			set_notify('success', lang('save_data_complete'));
 		}
-		redirect('albums/admin/albums/form/'.$album->id.'?agency_id='.$_POST['agency_id']);
+		redirect('albums/admin/albums/form/'.$album->id);
 	}
 	
 	function delete($id)
@@ -77,25 +65,8 @@ class Albums extends Admin_Controller
 		if($id)
 		{
 			$picture = new Picture($id);
-			$picture->delete_file('uploads/albums/'.$album->id,'image');
-			$picture->delete_file('uploads/albums/thumbnail/'.$album->id,'image');
 			$picture->delete();
 		}
-	}
-	
-	function category_save($id = NULL)
-	{
-		$category = new Album_category($id);
-		$category->from_array($_POST);
-		$category->save();
-		echo form_dropdown('album_category_id',get_option('id','name','album_categories'),$category->id);
-	}
-	
-	function category_delete($id)
-	{
-		$category = new Album_category($id);
-		$category->delete();
-		echo form_dropdown('album_category_id',get_option('id','name','album_categories'));
 	}
     
     function approve($id){
