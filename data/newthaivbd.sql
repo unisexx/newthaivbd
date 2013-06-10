@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50045
 File Encoding         : 65001
 
-Date: 2013-06-08 15:33:32
+Date: 2013-06-10 01:56:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -302,35 +302,14 @@ CREATE TABLE `albums` (
   `created` datetime default NULL,
   `updated` datetime default NULL,
   `user_id` int(11) NOT NULL,
-  `album_category_id` int(11) default NULL,
-  `agency_id` int(11) default NULL,
   `status` varchar(10) collate utf8_unicode_ci default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of albums
 -- ----------------------------
-INSERT INTO `albums` VALUES ('61', 'ประเมินศูนย์เด็กเล็กและสื่อภาพพลิก จ.เชียงราย', '2012-12-13 11:47:42', '2013-06-08 14:26:21', '49', null, '0', 'approve');
-
--- ----------------------------
--- Table structure for `album_categories`
--- ----------------------------
-DROP TABLE IF EXISTS `album_categories`;
-CREATE TABLE `album_categories` (
-  `id` int(11) NOT NULL auto_increment,
-  `name` varchar(255) default NULL,
-  `user_id` int(11) default NULL,
-  `created` datetime default NULL,
-  `updated` datetime default NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of album_categories
--- ----------------------------
-INSERT INTO `album_categories` VALUES ('1', 'สัตว์เลี้ยง', null, '2011-11-17 11:44:57', null);
-INSERT INTO `album_categories` VALUES ('2', 'เกาหลี', null, '2011-11-17 11:48:43', null);
+INSERT INTO `albums` VALUES ('65', 'fff', '2013-06-10 00:41:20', '2013-06-10 01:37:26', '1', 'approve');
 
 -- ----------------------------
 -- Table structure for `amphures`
@@ -11139,27 +11118,13 @@ CREATE TABLE `pictures` (
   `updated` datetime default NULL,
   `album_id` int(11) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=172 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=206 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of pictures
 -- ----------------------------
-INSERT INTO `pictures` VALUES ('164', null, '510403919ceb4.jpg', '2013-01-26 23:25:54', '2013-01-26 23:25:54', '61');
-INSERT INTO `pictures` VALUES ('163', null, '51040390d386e.jpg', '2013-01-26 23:25:53', '2013-01-26 23:25:53', '61');
-INSERT INTO `pictures` VALUES ('161', null, '5104038eebe7f.jpg', '2013-01-26 23:25:52', '2013-01-26 23:25:52', '61');
-INSERT INTO `pictures` VALUES ('162', null, '5104039044578.jpg', '2013-01-26 23:25:52', '2013-01-26 23:25:52', '61');
-INSERT INTO `pictures` VALUES ('166', null, '510403930293c.jpg', '2013-01-26 23:25:55', '2013-01-26 23:25:55', '61');
-INSERT INTO `pictures` VALUES ('165', null, '5104039268b47.jpg', '2013-01-26 23:25:55', '2013-01-26 23:25:55', '61');
-INSERT INTO `pictures` VALUES ('150', null, '5104038b290f2.jpg', '2012-12-13 13:12:22', '2013-01-26 23:25:47', '61');
-INSERT INTO `pictures` VALUES ('149', null, '5104038bb4794.jpg', '2012-12-13 13:11:34', '2013-01-26 23:25:48', '61');
-INSERT INTO `pictures` VALUES ('148', null, '5104038c5a62d.jpg', '2012-12-13 13:11:04', '2013-01-26 23:25:48', '61');
-INSERT INTO `pictures` VALUES ('147', null, '5104038ce48ae.jpg', '2012-12-13 13:10:34', '2013-01-26 23:25:50', '61');
-INSERT INTO `pictures` VALUES ('160', null, '5104038e37ba7.jpg', '2013-01-03 10:56:33', '2013-01-26 23:25:50', '61');
-INSERT INTO `pictures` VALUES ('167', null, '51040393c4143.jpg', '2013-01-26 23:25:56', '2013-01-26 23:25:56', '61');
-INSERT INTO `pictures` VALUES ('168', null, '510403945ef50.jpg', '2013-01-26 23:25:56', '2013-01-26 23:25:56', '61');
-INSERT INTO `pictures` VALUES ('169', null, '51040394efdcc.jpg', '2013-01-26 23:25:57', '2013-01-26 23:25:57', '61');
-INSERT INTO `pictures` VALUES ('170', null, '510403958e4ec.jpg', '2013-01-26 23:25:58', '2013-01-26 23:25:58', '61');
-INSERT INTO `pictures` VALUES ('171', null, '510403963ba3c.jpg', '2013-01-26 23:25:58', '2013-01-26 23:25:58', '61');
+INSERT INTO `pictures` VALUES ('197', null, 'uploads/file/demo/demo.png', '2013-06-10 01:52:40', '2013-06-10 01:53:54', '65');
+INSERT INTO `pictures` VALUES ('204', null, 'ff', '2013-06-10 01:53:54', '2013-06-10 01:53:54', '65');
 
 -- ----------------------------
 -- Table structure for `polldetails`
