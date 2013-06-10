@@ -72,7 +72,7 @@
           </ul>
         </li>
         
-        <li <?php echo (@$_GET['module'] == 'สาระน่ารู้')?'class="active open"':'';?> <?php echo menu_active('albums','albums','active open')?>>
+        <li <?php echo (@$_GET['module'] == 'สาระน่ารู้')?'class="active open"':'';?> <?php echo menu_active('albums','albums','active open')?> <?php echo menu_active('vdos','vdos','active open')?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>ศุูนย์เอกสารและสื่ออิเลคโทรนิค</span>
@@ -82,7 +82,7 @@
             <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> วารสารโรคติดต่อนำโดยแมลง</a></li>
             <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> แนวทางและคู่มือปฏิบัติการ</a></li>
             <li <?php echo menu_active('albums','albums')?>><a href="albums/admin/albums"><i class="icon-double-angle-right"></i> แฟ้มภาพ</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> วีดีโอ</a></li>
+            <li <?php echo menu_active('vdos','vdos')?>><a href="vdos/admin/vdos/index"><i class="icon-double-angle-right"></i> วีดีโอ</a></li>
             <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สื่อต้นแบบ</a></li>
             <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> งานวิจัย</a></li>
             <li <?php echo (@$_GET['module'] == 'สาระน่ารู้')?'class="active"':'';?>><a href="contents/admin/contents?module=สาระน่ารู้"><i class="icon-double-angle-right"></i> สาระน่ารู้</a></li>
