@@ -15,8 +15,7 @@ class Vdos extends Admin_Controller
 	
 	function form($id = NULL)
 	{	
-		$data['vdo'] = new Vdo($id);
-		$this->template->append_metadata(js_lightbox());
+		$data['category'] = new Category($id);
 		$this->template->build('admin/form',$data);	
 	}
 	
@@ -72,9 +71,9 @@ class Vdos extends Admin_Controller
     function approve($id){
         if($_POST)
         {
-            $vdo = new Vdo($id);
-            $vdo->from_array($_POST);
-            $vdo->save();
+            $row = new Category($id);
+            $row->from_array($_POST);
+            $row->save();
         }
 
     }

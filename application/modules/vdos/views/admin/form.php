@@ -1,26 +1,26 @@
 <div class="page-header position-relative">
-    <h1>แฟ้มภาพ <!-- <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small> --></h1>
+    <h1>วีดีโอ <!-- <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small> --></h1>
 </div><!--/page-header-->
 
 <div class="row-fluid">
 <!-- PAGE CONTENT BEGINS HERE -->
-    <form id="validation-form" class="form-horizontal" method="post" action="albums/admin/albums/save/<?php echo $album->id?>" enctype="multipart/form-data">
+    <form id="validation-form" class="form-horizontal" method="post" action="vdos/admin/vdos/save/<?php echo $category->id?>" enctype="multipart/form-data">
         
         <div class="control-group">
-            <label class="control-label" for="form-field-1">อัลบั้ม</label>
+            <label class="control-label" for="form-field-1">หมวดหมู่วีดีโอ</label>
             <div class="controls">
-                <input type="text" id="form-field-1" class="input-xxlarge" name="name" value="<?php echo $album->name?>">
-                <a href="#" class="btn btn-primary btn-mini addans" ><i class="icon-pencil"></i> เพิ่มรูปภาพ</a>
+                <input type="text" id="form-field-1" class="input-xxlarge" name="name" value="<?php echo $category->name?>">
+                <a href="#" class="btn btn-primary btn-mini addans" ><i class="icon-pencil"></i> เพิ่มวีดีโอ</a>
             </div>
         </div>
         
-        <?php foreach($album->picture as $picture): ?>
+        <?php foreach($category->vdo as $vdo): ?>
             <div class="control-group">
                 <label class="control-label" for="form-field-1">รูปภาพ</label>
                 <div class="controls">
-                    <input type="text" id="form-field-1" class="input-xxlarge" name="image[]" value="<?php echo $picture->image ?>"> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'file')" />
+                    <input type="text" id="form-field-1" class="input-xxlarge" name="image[]" value="<?php echo $vdo->image ?>"> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'file')" />
                     <a class="btn btn-mini btn-danger del-pic" href="#" onclick="return confirm('<?php echo lang('notice_confirm_delete')?>')"><i class='icon-trash'></i></a>
-                    <input type="hidden" name="picture_id[]" value="<?php echo $picture->id ?>" />
+                    <input type="hidden" name="picture_id[]" value="<?php echo $vdo->id ?>" />
                 </div>
             </div>
         <?php endforeach; ?>
@@ -30,6 +30,13 @@
             <label class="control-label" for="form-field-2">ไฟล์</label>
             <div class="controls">
                 <input type="text" id="form-field-2" class="input-xxlarge" name="image[]" value=""> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'file')" />
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label" for="form-field-11">ชื่อวีดีโอ</label>
+            <div class="controls">
+                <input type="text" id="form-field-11" class="input-xxlarge" name="title" value="">
             </div>
         </div>
         

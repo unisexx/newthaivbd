@@ -1,5 +1,5 @@
 <div class="page-header position-relative">
-    <h1>แฟ้มภาพ <!-- <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small> --></h1>
+    <h1>วีดีโอ <!-- <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small> --></h1>
 </div><!--/page-header-->
 
 
@@ -60,7 +60,7 @@ $(document).ready(function(){
         var name = $(this).attr("name");
         var jsonOptions= {};
         jsonOptions[name]= value;
-        $.post("albums/admin/albums/approve/" + this.value,jsonOptions);
+        $.post("vdos/admin/vdos/approve/" + this.value,jsonOptions);
     });
     
     var oTable1 = $('#table_report').dataTable( {

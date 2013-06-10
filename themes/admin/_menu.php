@@ -72,7 +72,7 @@
           </ul>
         </li>
         
-        <li <?php echo (@$_GET['module'] == 'สาระน่ารู้')?'class="active open"':'';?> <?php echo menu_active('albums','albums','active open')?> <?php echo menu_active('vdos','vdos','active open')?>>
+        <li <?php echo (@$_GET['module'] == 'สาระน่ารู้')?'class="active open"':'';?> <?php echo menu_active('albums','albums',FALSE,"active open")?> <?php echo menu_active('vdos','vdos',FALSE,"active open")?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>ศุูนย์เอกสารและสื่ออิเลคโทรนิค</span>
@@ -89,7 +89,7 @@
           </ul>
         </li>
         
-        <li <?php echo menu_active('polls','polls','class="active open"')?>>
+        <li <?php echo menu_active('polls','polls',FALSE,"active open")?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>แบบสำรวจความคิดเห็น</span>
