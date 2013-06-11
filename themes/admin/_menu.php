@@ -72,19 +72,19 @@
           </ul>
         </li>
         
-        <li <?php echo (@$_GET['module'] == 'สาระน่ารู้')?'class="active open"':'';?> <?php echo menu_active('albums','albums',FALSE,"active open")?> <?php echo menu_active('vdos','vdos',FALSE,"active open")?>>
+        <li <?php echo (@$_GET['module'] == 'สาระน่ารู้' or @$_GET['module'] == 'วารสารโรคติดต่อนำโดยแมลง' or @$_GET['module'] == 'แนวทางและคู่มือปฏิบัติการ' or @$_GET['module'] == 'สื่อต้นแบบ' or @$_GET['module'] == 'งานวิจัย')?'class="active open"':'';?> <?php echo menu_active('albums','albums',FALSE,"active open")?> <?php echo menu_active('vdos','vdos',FALSE,"active open")?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>ศุูนย์เอกสารและสื่ออิเลคโทรนิค</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> วารสารโรคติดต่อนำโดยแมลง</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> แนวทางและคู่มือปฏิบัติการ</a></li>
+            <li <?php echo (@$_GET['module'] == 'วารสารโรคติดต่อนำโดยแมลง')?'class="active"':'';?>><a href="docs/admin/docs/?module=วารสารโรคติดต่อนำโดยแมลง"><i class="icon-double-angle-right"></i> วารสารโรคติดต่อนำโดยแมลง</a></li>
+            <li <?php echo (@$_GET['module'] == 'แนวทางและคู่มือปฏิบัติการ')?'class="active"':'';?>><a href="docs/admin/docs/?module=แนวทางและคู่มือปฏิบัติการ"><i class="icon-double-angle-right"></i> แนวทางและคู่มือปฏิบัติการ</a></li>
             <li <?php echo menu_active('albums','albums')?>><a href="albums/admin/albums"><i class="icon-double-angle-right"></i> แฟ้มภาพ</a></li>
             <li <?php echo menu_active('vdos','vdos')?>><a href="vdos/admin/vdos/index"><i class="icon-double-angle-right"></i> วีดีโอ</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> สื่อต้นแบบ</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> งานวิจัย</a></li>
+            <li <?php echo (@$_GET['module'] == 'สื่อต้นแบบ')?'class="active"':'';?>><a href="researchs/admin/researchs?module=สื่อต้นแบบ"><i class="icon-double-angle-right"></i> สื่อต้นแบบ</a></li>
+            <li <?php echo (@$_GET['module'] == 'งานวิจัย')?'class="active"':'';?>><a href="researchs/admin/researchs?module=งานวิจัย"><i class="icon-double-angle-right"></i> งานวิจัย</a></li>
             <li <?php echo (@$_GET['module'] == 'สาระน่ารู้')?'class="active"':'';?>><a href="contents/admin/contents?module=สาระน่ารู้"><i class="icon-double-angle-right"></i> สาระน่ารู้</a></li>
           </ul>
         </li>

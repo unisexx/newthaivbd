@@ -1,5 +1,5 @@
 <?php
-class Vdos extends Admin_Controller
+class Researchs extends Admin_Controller
 {
 	function __construct()
 	{
@@ -9,7 +9,7 @@ class Vdos extends Admin_Controller
 	function index()
 	{
 		$data['categories'] = new Category();
-		$data['categories']->where('module = "vdos"')->order_by('id','desc')->get();
+		$data['categories']->where('module = "'.$_GET['module'].'"')->order_by('id','desc')->get();
 		$this->template->build('admin/index',$data);
 	}
 	
@@ -26,18 +26,17 @@ class Vdos extends Admin_Controller
 			$category = new Category($id);
 			if(!$id)$_POST['user_id'] = $this->session->userdata('id');
             if(!$id)$_POST['status'] = "approve";
-			if(!$id)$_POST['module'] = "vdos";
-			if(!$id)$_POST['parents'] = "1";
+			if(!$id)$_POST['module'] = $_GET['module'];
 			$category->from_array($_POST);
 			$category->save();
             
-            if($_POST['vdo_script']){
-                foreach($_POST['vdo_script'] as $key => $item){
-                    $vdo = new Vdo(@$_POST['vdo_id'][$key]);
+            if($_POST['files']){
+                foreach($_POST['files'] as $key => $item){
+                    $vdo = new Research(@$_POST['research_id'][$key]);
                     if($item)
                     {
                     	$vdo->title = $_POST['title'][$key];
-                        $vdo->vdo_script = $item;
+                        $vdo->files = $item;
                         $vdo->category_id = $category->id;
                         $vdo->save();
                     }   
@@ -46,7 +45,7 @@ class Vdos extends Admin_Controller
             
 			set_notify('success', lang('save_data_complete'));
 		}
-		redirect('vdos/admin/vdos/form/'.$category->id);
+		redirect('researchs/admin/researchs/form/'.$category->id.'?module='.$_GET['module']);
 	}
 	
 	function delete($id)
@@ -54,18 +53,18 @@ class Vdos extends Admin_Controller
 		if($id)
 		{
 			$category = new Category($id);
-			$category->vdo->delete_all();
+			$category->research->delete_all();
 			$category->delete();
 			set_notify('success', lang('delete_data_complete'));
 		}
 		redirect($_SERVER['HTTP_REFERER']);
 	}
 	
-	function delete_vid($id)
+	function delete_file($id)
 	{
 		if($id)
 		{
-			$row = new Vdo($id);
+			$row = new Research($id);
 			$row->delete();
 		}
 	}

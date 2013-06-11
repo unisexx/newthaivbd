@@ -1,5 +1,5 @@
 <div class="page-header position-relative">
-    <h1>วีดีโอ <!-- <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small> --></h1>
+    <h1><?php echo $_GET['module']?> <!-- <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small> --></h1>
 </div><!--/page-header-->
 
 
@@ -15,7 +15,7 @@
                     <th>สถานะ</th>
                     <th>หมวดหมู่</th>
                     <th>เขียนโดย</th>
-                    <th><a class="btn btn-mini btn-primary" href="vdos/admin/vdos/form"><i class="icon-pencil"></i> เพิ่มรายการ </a></th>
+                    <th><a class="btn btn-mini btn-primary" href="researchs/admin/researchs/form?module=<?php echo $_GET['module']?>"><i class="icon-pencil"></i> เพิ่มรายการ </a></th>
                 </tr>
             </thead>
                                     
@@ -29,15 +29,15 @@
                     <td><?php echo $row->user->display?></td>
                     <td>
                         <div class='hidden-phone visible-desktop btn-group'>
-                            <a href="vdos/admin/vdos/form/<?php echo $row->id?>" class='btn btn-mini btn-info'><i class='icon-edit'></i></a>
-                            <a href="vdos/admin/vdos/delete/<?php echo $row->id?>" class='btn btn-mini btn-danger' onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><i class='icon-trash'></i></a>
+                            <a href="researchs/admin/researchs/form/<?php echo $row->id?>" class='btn btn-mini btn-info'><i class='icon-edit'></i></a>
+                            <a href="researchs/admin/researchs/delete/<?php echo $row->id?>" class='btn btn-mini btn-danger' onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><i class='icon-trash'></i></a>
                         </div>
                         <div class='hidden-desktop visible-phone'>
                             <div class="inline position-relative">
                                 <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down icon-only"></i></button>
                                 <ul class="dropdown-menu dropdown-icon-only dropdown-yellow pull-right dropdown-caret dropdown-close">
-                                    <li><a href="vdos/admin/vdos/form/<?php echo $row->id?>" class="tooltip-success" data-rel="tooltip" title="Edit" data-placement="left"><span class="green"><i class="icon-edit"></i></span></a></li>
-                                    <li><a href="vdos/admin/vdos/delete/<?php echo $row->id?>" class="tooltip-error" data-rel="tooltip" title="Delete" data-placement="left" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><span class="red"><i class="icon-trash"></i></span> </a></li>
+                                    <li><a href="researchs/admin/researchs/form/<?php echo $row->id?>" class="tooltip-success" data-rel="tooltip" title="Edit" data-placement="left"><span class="green"><i class="icon-edit"></i></span></a></li>
+                                    <li><a href="researchs/admin/researchs/delete/<?php echo $row->id?>" class="tooltip-error" data-rel="tooltip" title="Delete" data-placement="left" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><span class="red"><i class="icon-trash"></i></span> </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -60,7 +60,7 @@ $(document).ready(function(){
         var name = $(this).attr("name");
         var jsonOptions= {};
         jsonOptions[name]= value;
-        $.post("vdos/admin/vdos/approve/" + this.value,jsonOptions);
+        $.post("researchs/admin/researchs/approve/" + this.value,jsonOptions);
     });
     
     var oTable1 = $('#table_report').dataTable( {
