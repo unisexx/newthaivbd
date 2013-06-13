@@ -15,30 +15,37 @@ class Histories extends Admin_Controller
 	
 	function form($id=FALSE)
 	{
-		$data['content'] = new Content($id);
+		$data['history'] = new History($id);
 		$this->template->build('admin/form',$data);
 	}
 	
-	function save($id=false){
+	function save($id=FALSE)
+    {
         if($_POST)
         {
-            $content = new Content($id);
-            if($_FILES['image']['name'])
-            {
-                if($content->id){
-                    $content->delete_file($content->id,'uploads/content','image');
+            $history = new History($id);
+            if(!$id)$_POST['user_id'] = $this->session->userdata('id');
+            if(!$id)$_POST['status'] = "approve";
+            if(!$id)$_POST['module'] = $_GET['module'];
+            $history->from_array($_POST);
+            $history->save();
+            
+            if($_POST['files']){
+                foreach($_POST['files'] as $key => $item){
+                    $file = new History_file(@$_POST['file_id'][$key]);
+                    if($item)
+                    {
+                        $file->title = $_POST['title'][$key];
+                        $file->files = $item;
+                        $file->history_id = $history->id;
+                        $file->save();
+                    }   
                 }
-                $_POST['image'] = $content->upload($_FILES['image'],'uploads/content/');
             }
-			if(!$id)$_POST['user_id'] = $this->session->userdata('id');
-			if(!$id)$_POST['status'] = "approve";
-			$_POST['slug'] = clean_url($_POST['title']);
-			$_POST['module'] = $_GET['module'];
-            $content->from_array($_POST);
-            $content->save();
+            
             set_notify('success', lang('save_data_complete'));
         }
-        redirect($_POST['referer']);
+        redirect('histories/admin/histories/form/'.$history->id.'?module='.$_GET['module'].'&type='.$_GET['type'].'&year='.$_GET['year'].'&week='.$_GET['week']);
     }
 	
 	function delete($id=false)
@@ -51,6 +58,15 @@ class Histories extends Admin_Controller
 		}
 		redirect($_SERVER['HTTP_REFERER']);
 	}
+    
+    function delete_file($id)
+    {
+        if($id)
+        {
+            $row = new History_file($id);
+            $row->delete();
+        }
+    }
 	
 	function approve($id){
         if($_POST)

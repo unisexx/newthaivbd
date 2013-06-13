@@ -75,7 +75,7 @@
         <li <?php echo (@$_GET['module'] == 'สาระน่ารู้' or @$_GET['module'] == 'วารสารโรคติดต่อนำโดยแมลง' or @$_GET['module'] == 'แนวทางและคู่มือปฏิบัติการ' or @$_GET['module'] == 'สื่อต้นแบบ' or @$_GET['module'] == 'งานวิจัย')?'class="active open"':'';?> <?php echo menu_active('albums','albums',FALSE,"active open")?> <?php echo menu_active('vdos','vdos',FALSE,"active open")?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
-            <span>ศุูนย์เอกสารและสื่ออิเลคโทรนิค</span>
+            <span>ศูนย์เอกสารและสื่ออิเลคโทรนิค</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">

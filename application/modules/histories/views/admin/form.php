@@ -4,7 +4,8 @@
 
 <div class="row-fluid">
 <!-- PAGE CONTENT BEGINS HERE -->
-    <form id="validation-form" class="form-horizontal" method="post" action="contents/admin/contents/save/<?php echo $content->id?>?module=<?php echo $_GET['module']?>" enctype="multipart/form-data">
+    <form id="validation-form" class="form-horizontal" method="post" action="histories/admin/histories/save/<?php echo $history->id?>?module=<?php echo $_GET['module']?>&type=<?php echo $_GET['type']?>&year=<?php echo $_GET['year']?>&week=<?php echo $_GET['week']?>" enctype="multipart/form-data">
+        
         
         <div class="control-group">
             <label class="control-label" for="form-field-2">ปี</label>
@@ -16,15 +17,62 @@
         <div class="control-group">
             <label class="control-label" for="form-field-1">สัปดาห์ที่</label>
             <div class="controls">
-                <input type="text" id="form-field-1" class="input-xxlarge" name="title" value="<?php echo $_GET['week']?>">
+                <input type="text" id="form-field-1" class="input-xxlarge" name="week" value="<?php echo $_GET['week']?>">
             </div>
         </div>
         
         <div class="control-group">
-            <label class="control-label" for="form-field-9">รายละเอียด</label>
+            <label class="control-label" for="form-field-2">ประเภท</label>
             <div class="controls">
-                <textarea class="input-xxlarge" rows="5" id="form-field-9" name="detail"><?php echo $content->detail?></textarea>
+                <input type="text" id="form-field-2" class="input-xxlarge" name="type" value="<?php echo $_GET['type']?>">
             </div>
+        </div>
+        
+        <?php foreach($history->history_file as $row): ?>
+            <div class="vid-blk">
+            <div class="control-group">
+                <label class="control-label" for="form-field-10">ชื่อไฟล์</label>
+                <div class="controls">
+                    <input type="text" id="form-field-11" class="input-xxlarge" name="title[]" value="<?php echo $row->title ?>">
+                    <a class="btn btn-mini btn-danger del-vid" href="#" onclick="return confirm('<?php echo lang('notice_confirm_delete')?>')"><i class='icon-trash'></i></a>
+                    <input type="hidden" name="file_id[]" value="<?php echo $row->id ?>" />
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label" for="form-field-2">ไฟล์</label>
+                <div class="controls">
+                    <input type="text" id="form-field-2" class="input-xxlarge" name="files[]" value="<?php echo $row->files?>"> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'file')" /> 
+                    <!-- <?php if($row->files):?>
+                        <a class="btn btn-danger btn-mini" data-rel="tooltip" title="ดาวน์โหลด" href="histories/admin/histories/download/<?php echo $row->id?>"><i class="icon-download-alt"></i></a>
+                    <?php endif;?> -->
+                </div>
+            </div>
+            </div>
+        <?php endforeach; ?>
+        
+        <div class="control-group">
+            <label class="control-label" for="form-field-10"></label>
+            <div class="controls">
+                <input class="btn btn-mini btn-info addans" value="เพิ่มไฟล์แนบ">
+            </div>
+        </div>
+        
+        <div class="clone-blk">
+        <div class="control-group">
+            <label class="control-label" for="form-field-10">ชื่อไฟล์</label>
+            <div class="controls">
+                <input type="text" id="form-field-11" class="input-xxlarge" name="title[]" value="">
+            </div>
+        </div>
+        
+        <!-- file manager -->
+        <div class="control-group">
+            <label class="control-label" for="form-field-2">ไฟล์</label>
+            <div class="controls">
+                <input type="text" id="form-field-2" class="input-xxlarge" name="files[]" value=""> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'file')" />
+            </div>
+        </div>
         </div>
         
         <div class="form-actions">
@@ -49,65 +97,18 @@
 
 <script type="text/javascript">
 $(function() {
+    $(".addans").click(function(){          
+        $('.clone-blk:first').clone().find("input:text").val("").end().insertBefore($('.form-actions'));
+        return false;
+    })
     
-    $('#id-input-file-1').ace_file_input({
-        no_file:'No File ...',
-        btn_choose:'Choose',
-        btn_change:'Change',
-        droppable:false,
-        onchange:null,
-        thumbnail:false //| true | large
-        //whitelist:'gif|png|jpg|jpeg'
-        //blacklist:'exe|php'
-        //onchange:''
-        //
-    });
-    
-    $('#validation-form').validate({
-        errorElement: 'span',
-        errorClass: 'help-inline',
-        focusInvalid: false,
-        rules: {
-            title: {
-                required: true
-            }
-        },
-
-        messages: {
-            title: {
-                required: "กรุณากรอกหัวข้อ"
-            }
-        },
-
-        invalidHandler: function (event, validator) { //display error alert on form submit   
-            $('.alert-error', $('.login-form')).show();
-        },
-
-        highlight: function (e) {
-            $(e).closest('.control-group').removeClass('info').addClass('error');
-        },
-
-        success: function (e) {
-            $(e).closest('.control-group').removeClass('error').addClass('info');
-            $(e).remove();
-        },
-
-        errorPlacement: function (error, element) {
-            if(element.is(':checkbox') || element.is(':radio')) {
-                var controls = element.closest('.controls');
-                if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
-                else error.insertAfter(element.nextAll('.lbl').eq(0));
-            } 
-            else if(element.is('.chzn-select')) {
-                error.insertAfter(element.nextAll('[class*="chzn-container"]').eq(0));
-            }
-            else error.insertAfter(element);
-        },
-
-        // submitHandler: function (form) {
-        // },
-        // invalidHandler: function (form) {
-        // }
+    $('.del-vid').click(function(){
+        $this = $(this);
+        $.post('histories/admin/histories/delete_file/' + $this.next('input[type=hidden]').val(),
+        function(data){
+            $this.closest('.vid-blk').fadeOut();
+        })
+        return false;
     });
 });
 </script>
