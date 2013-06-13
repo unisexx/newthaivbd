@@ -24,7 +24,7 @@
             <div class="infobox-icon"><i class="icon-comments"></i></div>
             <div class="infobox-data">
                 <span class="infobox-data-number">สัปดาห์ที่ <?php echo $i?></span>
-                <span class="infobox-content"><a href="histories/admin/histories/form?module=<?php echo $_GET['module']?>&type=week&year=<?php echo $_GET['year']?>"><i class="icon-pencil"></i> เพิ่มข้อมูล</a></span>
+                <span class="infobox-content"><a href="histories/admin/histories/form?module=<?php echo $_GET['module']?>&type=week&year=<?php echo $_GET['year']?>&week=<?php echo $i?>"><i class="icon-pencil"></i> เพิ่มข้อมูล</a></span>
             </div>
         </div>
         <?php endfor;?>
