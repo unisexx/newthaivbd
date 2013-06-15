@@ -8,8 +8,7 @@ class Histories extends Admin_Controller
 	
 	function index()
 	{
-		$data['contents'] = new History();
-		$data['contents']->where('module = "'.$_GET['module'].'"')->order_by('id','desc')->get();
+		$data['history'] = new History();
 		$this->template->build('admin/index',$data);
 	}
 	
@@ -45,7 +44,7 @@ class Histories extends Admin_Controller
             
             set_notify('success', lang('save_data_complete'));
         }
-        redirect('histories/admin/histories/form/'.$history->id.'?module='.$_GET['module'].'&type='.$_GET['type'].'&year='.$_GET['year'].'&week='.$_GET['week']);
+        redirect('histories/admin/histories/form/'.$history->id.'?module='.$_GET['module'].'&type='.$_GET['type'].'&year='.$_GET['year'].'&week='.$_GET['week'].'&month='.$_GET['month']);
     }
 	
 	function delete($id=false)

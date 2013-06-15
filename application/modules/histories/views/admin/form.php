@@ -4,7 +4,7 @@
 
 <div class="row-fluid">
 <!-- PAGE CONTENT BEGINS HERE -->
-    <form id="validation-form" class="form-horizontal" method="post" action="histories/admin/histories/save/<?php echo $history->id?>?module=<?php echo $_GET['module']?>&type=<?php echo $_GET['type']?>&year=<?php echo $_GET['year']?>&week=<?php echo $_GET['week']?>" enctype="multipart/form-data">
+    <form id="validation-form" class="form-horizontal" method="post" action="histories/admin/histories/save/<?php echo $history->id?>?module=<?php echo $_GET['module']?>&type=<?php echo $_GET['type']?>&year=<?php echo $_GET['year']?>&week=<?php echo @$_GET['week']?>&month=<?php echo @$_GET['month']?>" enctype="multipart/form-data">
         
         
         <div class="control-group">
@@ -14,12 +14,22 @@
             </div>
         </div>
         
+        <?php if($_GET['type'] == 'week'):?>
         <div class="control-group">
             <label class="control-label" for="form-field-1">สัปดาห์ที่</label>
             <div class="controls">
-                <input type="text" id="form-field-1" class="input-xxlarge" name="week" value="<?php echo $_GET['week']?>">
+                <input type="text" id="form-field-1" class="input-xxlarge" name="week" value="<?php echo @$_GET['week']?>">
             </div>
         </div>
+        <?php elseif($_GET['type'] == 'month'):?>
+        <div class="control-group">
+            <label class="control-label" for="form-field-1">เดือน</label>
+            <div class="controls">
+                <input type="text" id="form-field-1" class="input-xxlarge" value="<?php echo @get_month_name($_GET['month'])?>">
+                <input type="hidden" name="month" value="<?php echo @$_GET['month']?>">
+            </div>
+        </div>
+        <?php endif;?>
         
         <div class="control-group">
             <label class="control-label" for="form-field-2">ประเภท</label>

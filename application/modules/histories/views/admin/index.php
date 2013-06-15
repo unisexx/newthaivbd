@@ -19,15 +19,33 @@
             </div>
         </div>
         
-        <?php for ($i=1; $i<=52; $i++):?>
-        <div class="infobox infobox-green">
-            <div class="infobox-icon"><i class="icon-comments"></i></div>
-            <div class="infobox-data">
-                <span class="infobox-data-number">สัปดาห์ที่ <?php echo $i?></span>
-                <span class="infobox-content"><a href="histories/admin/histories/form?module=<?php echo $_GET['module']?>&type=week&year=<?php echo $_GET['year']?>&week=<?php echo $i?>"><i class="icon-pencil"></i> เพิ่มข้อมูล</a></span>
-            </div>
-        </div>
-        <?php endfor;?>
+        <?php if($_GET['type'] == 'week'):?>
+        	
+	        <?php for ($i=1; $i<=52; $i++):?>
+	        	<?php $history = $history->where('module = "'.$_GET['module'].'" and type = "'.$_GET['type'].'" and year ='.$_GET['year'].' and week = '.$i)->get();?>
+	        <div class="infobox <?php echo ($history->id)?'infobox-green':'infobox-red';?>">
+	            <div class="infobox-icon"><i class="icon-comments"></i></div>
+	            <div class="infobox-data">
+	                <span class="infobox-data-number">สัปดาห์ที่ <?php echo $i?></span>
+	                <span class="infobox-content"><a href="histories/admin/histories/form/<?php echo @$history->id?>?module=<?php echo $_GET['module']?>&type=week&year=<?php echo $_GET['year']?>&week=<?php echo $i?>"><i class="icon-pencil"></i> เพิ่มข้อมูล</a></span>
+	            </div>
+	        </div>
+	        <?php endfor;?>
+	        
+        <?php elseif($_GET['type'] == 'month'):?>
+        	
+        	<?php for ($i=1; $i<=12; $i++):?>
+	        	<?php $history = $history->where('module = "'.$_GET['module'].'" and type = "'.$_GET['type'].'" and year ='.$_GET['year'].' and month = '.$i)->get();?>
+	        <div class="infobox <?php echo ($history->id)?'infobox-green':'infobox-red';?>">
+	            <div class="infobox-icon"><i class="icon-comments"></i></div>
+	            <div class="infobox-data">
+	                <span class="infobox-data-number"><?php echo get_month_name($i)?></span>
+	                <span class="infobox-content"><a href="histories/admin/histories/form/<?php echo @$history->id?>?module=<?php echo $_GET['module']?>&type=month&year=<?php echo $_GET['year']?>&month=<?php echo $i?>"><i class="icon-pencil"></i> เพิ่มข้อมูล</a></span>
+	            </div>
+	        </div>
+	        <?php endfor;?>
+	        
+        <?php endif;?>
         
     </div><!--/span-->
 </div><!--/row-->

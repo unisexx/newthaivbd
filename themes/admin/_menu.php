@@ -112,7 +112,7 @@
           </ul>
         </li>
         
-        <li <?php echo (@$_GET['module'] == 'โรคติดต่อนำโดยแมลงอื่นๆ' or @$_GET['module'] == 'ไข้ปวดข้อยุงลาย' or @$_GET['module'] == 'มาลาเรียรายสัปดาห์')?'class="active open"':'';?>>
+        <li <?php echo (@$_GET['module'] == 'โรคติดต่อนำโดยแมลงอื่นๆ' or @$_GET['module'] == 'ไข้ปวดข้อยุงลาย' or @$_GET['module'] == 'มาลาเรียรายสัปดาห์' or @$_GET['module'] == 'ไข้เลือดออก' or @$_GET['module'] == 'มาลาเรียรายเดือน' or @$_GET['module'] == 'เท้าช้างรายเดือน')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>ข้อมูลย้อนหลัง</span>
@@ -120,9 +120,9 @@
           </a>
           <ul class="submenu">
             <li <?php echo (@$_GET['module'] == 'มาลาเรียรายสัปดาห์')?'class="active"':'';?>><a href="histories/admin/histories?module=มาลาเรียรายสัปดาห์&type=week&year=<?php echo (date('Y')+543);?>"><i class="icon-double-angle-right"></i> มาลาเรียรายสัปดาห์</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> มาลาเรียรายเดือน</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ไข้เลือดออก</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> เท้าช้างรายเดือน</a></li>
+            <li <?php echo (@$_GET['module'] == 'มาลาเรียรายเดือน')?'class="active"':'';?>><a href="histories/admin/histories?module=มาลาเรียรายเดือน&type=month&year=<?php echo (date('Y')+543);?>"><i class="icon-double-angle-right"></i> มาลาเรียรายเดือน</a></li>
+            <li <?php echo (@$_GET['module'] == 'ไข้เลือดออก')?'class="active"':'';?>><a href="histories/admin/histories?module=ไข้เลือดออก&type=week&year=<?php echo (date('Y')+543);?>"><i class="icon-double-angle-right"></i> ไข้เลือดออก</a></li>
+            <li <?php echo (@$_GET['module'] == 'เท้าช้างรายเดือน')?'class="active"':'';?>><a href="histories/admin/histories?module=เท้าช้างรายเดือน&type=month&year=<?php echo (date('Y')+543);?>"><i class="icon-double-angle-right"></i> เท้าช้างรายเดือน</a></li>
             <li <?php echo (@$_GET['module'] == 'โรคติดต่อนำโดยแมลงอื่นๆ')?'class="active"':'';?>><a href="docs/admin/docs/?module=โรคติดต่อนำโดยแมลงอื่นๆ"><i class="icon-double-angle-right"></i> โรคติดต่อนำโดยแมลงอื่นๆ</a></li>
             <li <?php echo (@$_GET['module'] == 'ไข้ปวดข้อยุงลาย')?'class="active"':'';?>><a href="docs/admin/docs/?module=ไข้ปวดข้อยุงลาย"><i class="icon-double-angle-right"></i> ไข้ปวดข้อยุงลาย</a></li>
             <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> เท้าช้างรายปี</a></li>
