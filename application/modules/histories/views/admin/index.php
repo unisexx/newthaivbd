@@ -8,18 +8,19 @@
 <div class="row-fluid">
     <div class="span12 infobox-container">
         
-        <!-- select box -->
-        <div class="control-group">
-            <div class="controls">
-                <select name="year" id="form-field-select-1" onchange="window.open(this.options[this.selectedIndex].value,'_self')">
-                    <?php for ($x = (date('Y')+543); $x >= 2548; $x--):?>
-                        <option value="histories/admin/histories?module=<?php echo $_GET['module']?>&type=week&year=<?php echo $x?>" <?php echo ($x == $_GET['year'])?'selected':'';?>>ปี <?php echo $x?></option>
-                    <?php endfor;?>
-                </select>
-            </div>
-        </div>
         
         <?php if($_GET['type'] == 'week'):?>
+            
+            <!-- select box -->
+            <div class="control-group">
+                <div class="controls">
+                    <select name="year" id="form-field-select-1" onchange="window.open(this.options[this.selectedIndex].value,'_self')">
+                        <?php for ($x = (date('Y')+543); $x >= 2548; $x--):?>
+                            <option value="histories/admin/histories?module=<?php echo $_GET['module']?>&type=week&year=<?php echo $x?>" <?php echo ($x == $_GET['year'])?'selected':'';?>>ปี <?php echo $x?></option>
+                        <?php endfor;?>
+                    </select>
+                </div>
+            </div>
         	
 	        <?php for ($i=1; $i<=52; $i++):?>
 	        	<?php $history = $history->where('module = "'.$_GET['module'].'" and type = "'.$_GET['type'].'" and year ='.$_GET['year'].' and week = '.$i)->get();?>
@@ -33,6 +34,17 @@
 	        <?php endfor;?>
 	        
         <?php elseif($_GET['type'] == 'month'):?>
+            
+            <!-- select box -->
+            <div class="control-group">
+                <div class="controls">
+                    <select name="year" id="form-field-select-1" onchange="window.open(this.options[this.selectedIndex].value,'_self')">
+                        <?php for ($x = (date('Y')+543); $x >= 2548; $x--):?>
+                            <option value="histories/admin/histories?module=<?php echo $_GET['module']?>&type=week&year=<?php echo $x?>" <?php echo ($x == $_GET['year'])?'selected':'';?>>ปี <?php echo $x?></option>
+                        <?php endfor;?>
+                    </select>
+                </div>
+            </div>
         	
         	<?php for ($i=1; $i<=12; $i++):?>
 	        	<?php $history = $history->where('module = "'.$_GET['module'].'" and type = "'.$_GET['type'].'" and year ='.$_GET['year'].' and month = '.$i)->get();?>
@@ -44,6 +56,19 @@
 	            </div>
 	        </div>
 	        <?php endfor;?>
+	    
+	    <?php elseif($_GET['type'] == 'year'):?>
+	        
+	        <?php for ($x = (date('Y')+543); $x >= 2548; $x--):?>
+	            <?php $history = $history->where('module = "'.$_GET['module'].'" and type = "'.$_GET['type'].'" and year ='.$x)->get();?>
+            <div class="infobox <?php echo ($history->id)?'infobox-green':'infobox-red';?>">
+                <div class="infobox-icon"><i class="icon-comments"></i></div>
+                <div class="infobox-data">
+                    <span class="infobox-data-number">ปี <?php echo $x?></span>
+                    <span class="infobox-content"><a href="histories/admin/histories/form/<?php echo @$history->id?>?module=<?php echo $_GET['module']?>&type=year&year=<?php echo $_GET['year']?>"><i class="icon-pencil"></i> เพิ่มข้อมูล</a></span>
+                </div>
+            </div>
+            <?php endfor;?>
 	        
         <?php endif;?>
         
