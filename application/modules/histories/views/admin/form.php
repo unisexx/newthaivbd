@@ -116,7 +116,7 @@ $(function() {
         $this = $(this);
         $.post('histories/admin/histories/delete_file/' + $this.next('input[type=hidden]').val(),
         function(data){
-            $this.closest('.vid-blk').fadeOut();
+            $this.closest('.vid-blk').fadeOut(300, function() { $(this).remove(); });
         })
         return false;
     });

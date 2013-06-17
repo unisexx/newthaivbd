@@ -65,7 +65,7 @@
                 <div class="infobox-icon"><i class="icon-comments"></i></div>
                 <div class="infobox-data">
                     <span class="infobox-data-number">ปี <?php echo $x?></span>
-                    <span class="infobox-content"><a href="histories/admin/histories/form/<?php echo @$history->id?>?module=<?php echo $_GET['module']?>&type=year&year=<?php echo $_GET['year']?>"><i class="icon-pencil"></i> เพิ่มข้อมูล</a></span>
+                    <span class="infobox-content"><a href="histories/admin/histories/form/<?php echo @$history->id?>?module=<?php echo $_GET['module']?>&type=year&year=<?php echo $x?>"><i class="icon-pencil"></i> เพิ่มข้อมูล</a></span>
                 </div>
             </div>
             <?php endfor;?>
