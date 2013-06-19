@@ -28,14 +28,14 @@
           </ul>
         </li>
         
-        <li <?php echo (@$_GET['module'] == 'สถานการณ์ไข้ปวดข้อยุงลาย' or @$_GET['module'] == 'สถานการณ์มาลาเรีย' or @$_GET['module'] == 'สถานการณ์เท้าช้าง')?'class="active open"':'';?>>
+        <li <?php echo (@$_GET['module'] == 'สถานการณ์ไข้ปวดข้อยุงลาย' or @$_GET['module'] == 'สถานการณ์มาลาเรีย' or @$_GET['module'] == 'สถานการณ์เท้าช้าง' or @$_GET['module'] == 'สถานการณ์ไข้เลือดออก')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>สถานการณ์</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="#"><i class="icon-double-angle-right"></i> สถานการณ์ไข้เลือดออก</a></li>
+            <li <?php echo (@$_GET['module'] == 'สถานการณ์ไข้เลือดออก')?'class="active"':'';?>><a href="dengues/admin/dengues?module=สถานการณ์ไข้เลือดออก&type=month&year=<?php echo (date('Y')+543);?>"><i class="icon-double-angle-right"></i> สถานการณ์ไข้เลือดออก</a></li>
             <li <?php echo (@$_GET['module'] == 'สถานการณ์ไข้ปวดข้อยุงลาย')?'class="active"':'';?>><a href="contents/admin/contents?module=สถานการณ์ไข้ปวดข้อยุงลาย"><i class="icon-double-angle-right"></i> สถานการณ์ไข้ปวดข้อยุงลาย</a></li>
             <li <?php echo (@$_GET['module'] == 'สถานการณ์มาลาเรีย')?'class="active"':'';?>><a href="contents/admin/contents?module=สถานการณ์มาลาเรีย"><i class="icon-double-angle-right"></i> สถานการณ์มาลาเรีย</a></li>
             <li <?php echo (@$_GET['module'] == 'สถานการณ์เท้าช้าง')?'class="active"':'';?>><a href="contents/admin/contents?module=สถานการณ์เท้าช้าง"><i class="icon-double-angle-right"></i> สถานการณ์เท้าช้าง</a></li>
@@ -144,15 +144,15 @@
           </ul>
         </li>
         
-        <li>
+        <li <?php echo (@$_GET['module'] == 'ไข้เลือดออก GIS' or @$_GET['module'] == 'ไข้มาลาเรีย GIS')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>ฐานข้อมูลการวิเคราะห์ข้อมูล GIS</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> ไข้เลือดออก</a></li>
-            <li><a href="contents/admin/contents/index/weblinks"><i class="icon-double-angle-right"></i> ไข้มาลาเรีย</a></li>
+            <li <?php echo (@$_GET['module'] == 'ไข้เลือดออก GIS')?'class="active"':'';?>><a href="histories/admin/histories?module=ไข้เลือดออก GIS&type=month&year=<?php echo (date('Y')+543);?>"><i class="icon-double-angle-right"></i> ไข้เลือดออก</a></li>
+            <li <?php echo (@$_GET['module'] == 'ไข้มาลาเรีย GIS')?'class="active"':'';?>><a href="histories/admin/histories?module=ไข้มาลาเรีย GIS&type=month&year=<?php echo (date('Y')+543);?>"><i class="icon-double-angle-right"></i> ไข้มาลาเรีย</a></li>
           </ul>
         </li>
         

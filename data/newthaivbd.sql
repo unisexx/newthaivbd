@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50051
 File Encoding         : 65001
 
-Date: 2013-06-16 02:27:47
+Date: 2013-06-19 15:48:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1558,6 +1558,39 @@ CREATE TABLE `coverpages` (
 -- ----------------------------
 INSERT INTO coverpages VALUES ('11', 'Happy New Year', null, 'uploads/coverpage/happy-new-year-4-rose_high.jpg', null, null, 'approve', '49', '2012-12-12 14:34:44', '2012-12-12 15:30:16', '0', '#fce8f8');
 INSERT INTO coverpages VALUES ('12', 'ลอยกระทง', null, 'uploads/coverpage/5068229e176cd.png', null, null, 'approve', '49', '2012-12-12 15:15:29', '2012-12-12 15:23:56', '0', '#0057ad');
+
+-- ----------------------------
+-- Table structure for `dengues`
+-- ----------------------------
+DROP TABLE IF EXISTS `dengues`;
+CREATE TABLE `dengues` (
+  `id` int(11) NOT NULL auto_increment,
+  `module` varchar(255) collate utf8_unicode_ci default NULL,
+  `type` varchar(10) collate utf8_unicode_ci default NULL,
+  `year` int(10) default NULL,
+  `week` int(10) default NULL,
+  `month` int(10) default NULL,
+  `image` varchar(255) collate utf8_unicode_ci default NULL,
+  `user_id` int(11) default NULL,
+  `counter` int(11) default '0',
+  `status` varchar(10) collate utf8_unicode_ci default NULL,
+  `created` datetime default NULL,
+  `updated` datetime default NULL,
+  `dates` date default NULL,
+  `sick` varchar(255) collate utf8_unicode_ci default NULL,
+  `die` varchar(255) collate utf8_unicode_ci default NULL,
+  `sick_rate` varchar(255) collate utf8_unicode_ci default NULL,
+  `die_rate` varchar(255) collate utf8_unicode_ci default NULL,
+  `sickdie_rate` varchar(255) collate utf8_unicode_ci default NULL,
+  `detail` text collate utf8_unicode_ci,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of dengues
+-- ----------------------------
+INSERT INTO dengues VALUES ('1', 'สถานการณ์ไข้เลือดออก', 'month', '2556', null, '2', null, '1', '0', 'approve', '2013-06-19 15:27:05', '2013-06-19 15:27:05', '0000-00-00', 'sick', 'die', 'sick_rate', 'die_rate', 'sickdie_rate', 'fff');
+INSERT INTO dengues VALUES ('2', 'สถานการณ์ไข้เลือดออก', 'month', '2556', null, '9', null, '1', '0', 'approve', '2013-06-19 15:27:51', '2013-06-19 15:27:51', '0000-00-00', 'sick', 'die', 'sick_rate', 'die_rate', 'sickdie_rate', 'ddd');
 
 -- ----------------------------
 -- Table structure for `districts`
@@ -10566,7 +10599,7 @@ CREATE TABLE `histories` (
   `created` datetime default NULL,
   `updated` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of histories
@@ -10579,6 +10612,8 @@ INSERT INTO histories VALUES ('23', 'มาลาเรียรายเดื�
 INSERT INTO histories VALUES ('24', 'มาลาเรียรายเดือน', 'month', '2556', null, '2', '1', '0', 'approve', '2013-06-16 02:15:54', '2013-06-16 02:15:54');
 INSERT INTO histories VALUES ('25', 'มาลาเรียรายเดือน', 'month', '2556', null, '9', '1', '0', 'approve', '2013-06-16 02:20:25', '2013-06-16 02:20:25');
 INSERT INTO histories VALUES ('26', 'เท้าช้างรายเดือน', 'month', '2556', null, '8', '1', '0', 'approve', '2013-06-16 02:23:18', '2013-06-16 02:23:18');
+INSERT INTO histories VALUES ('27', 'ไข้เลือดออก GIS', 'month', '2556', null, '2', '1', '0', 'approve', '2013-06-19 11:00:12', '2013-06-19 11:00:12');
+INSERT INTO histories VALUES ('28', 'ไข้มาลาเรีย GIS', 'month', '2556', null, '8', '1', '0', 'approve', '2013-06-19 11:00:34', '2013-06-19 11:00:34');
 
 -- ----------------------------
 -- Table structure for `history_files`
@@ -10591,7 +10626,7 @@ CREATE TABLE `history_files` (
   `files` varchar(255) default NULL,
   `counter` int(11) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of history_files
@@ -10615,6 +10650,14 @@ INSERT INTO history_files VALUES ('22', '25', 'title[]', 'files[]', '0');
 INSERT INTO history_files VALUES ('25', '25', 'title[]', 'files[]', '0');
 INSERT INTO history_files VALUES ('26', '25', 'title[]', 'files[]', '0');
 INSERT INTO history_files VALUES ('27', '25', 'title[]', 'files[]', '0');
+INSERT INTO history_files VALUES ('30', '27', 'title[]', 'files[]', '0');
+INSERT INTO history_files VALUES ('31', '27', 'title[]', 'files[]', '0');
+INSERT INTO history_files VALUES ('32', '27', 'title[]', 'files[]', '0');
+INSERT INTO history_files VALUES ('33', '27', 'title[]', 'files[]', '0');
+INSERT INTO history_files VALUES ('34', '28', 'title[]', 'files[]', '0');
+INSERT INTO history_files VALUES ('35', '28', 'title[]', 'files[]', '0');
+INSERT INTO history_files VALUES ('36', '28', 'title[]', 'files[]', '0');
+INSERT INTO history_files VALUES ('37', '28', 'title[]', 'files[]', '0');
 
 -- ----------------------------
 -- Table structure for `levels`
