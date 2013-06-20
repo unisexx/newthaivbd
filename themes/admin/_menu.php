@@ -100,14 +100,14 @@
           </ul>
         </li>
         
-        <li <?php echo (@$_GET['module'] == 'แผนงานด้าน Knowledge management')?'class="active open"':'';?>>
+        <li <?php echo (@$_GET['module'] == 'แผนงานด้าน Knowledge management')?'class="active open"':'';?> <?php echo menu_active('calendars','calendars',FALSE,"active open")?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>กิจกรรม</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li><a href="contents/admin/contents/index/articles"><i class="icon-double-angle-right"></i> ปฏิทินปฏิบัติงาน</a></li>
+            <li <?php echo menu_active('calendars','calendars')?>><a href="calendars/admin/calendars"><i class="icon-double-angle-right"></i> ปฏิทินปฏิบัติงาน</a></li>
             <li <?php echo (@$_GET['module'] == 'แผนงานด้าน Knowledge management')?'class="active"':'';?>><a href="projects/admin/projects?module=แผนงานด้าน Knowledge management"><i class="icon-double-angle-right"></i> แผนงานด้าน Knowledge management</a></li>
           </ul>
         </li>
