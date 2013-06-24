@@ -8,7 +8,7 @@ class Calendars extends Admin_Controller
 	
 	function index()
 	{
-		// $this->template->build('admin/calendar_index');
+		//$this->template->build('admin/calendar_index');
 		$this->template->build('admin/index');
 	}
 	
@@ -50,14 +50,12 @@ class Calendars extends Admin_Controller
 		if($_POST)
 		{
 			$calendar = New Calendar($id);
+            $_POST['start'] = date("Y-m-d", strtotime($_POST['start']));
+            $_POST['end'] = date("Y-m-d", strtotime($_POST['end']));
 			$_POST['user_id'] = $this->session->userdata('id');
-			$_POST['start'] = Date2DB($_POST['start']);
-			$_POST['end'] = ($_POST['end']) ? Date2DB($_POST['end']) : $_POST['start'];
 			$calendar->from_array($_POST);
 			$calendar->save();
-			set_notify('success', lang('save_data_complete'));
 		}
-		redirect('calendars/admin/calendars');
 	}
 	
 	function delete($id)

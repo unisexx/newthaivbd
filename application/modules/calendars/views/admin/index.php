@@ -105,6 +105,15 @@ $(function() {
                 // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
                 $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
                 
+                // เซฟเหตการณ์เมื่อลาก label จากข้างนอกมาวางในปฏิทิน
+                $.post('<?php echo base_url()?>calendars/admin/calendars/save',{
+                    title : copiedEventObject.title,
+                    start : copiedEventObject.start,
+                    end : copiedEventObject.start,
+                    className : $extraEventClass
+                });
+                // console.log(copiedEventObject);
+                
                 // is the "remove after drop" checkbox checked?
                 if ($('#drop-remove').is(':checked')) {
                     // if so, remove the element from the "Draggable Events" list
@@ -123,7 +132,7 @@ $(function() {
             selectHelper: true,
             select: function(start, end, allDay) {
                 
-                bootbox.prompt("New Event Title:", function(title) {
+                bootbox.prompt("เพิ่มกิจกรรมใหม่ :", function(title) {
                     if (title !== null) {
                         calendar.fullCalendar('renderEvent',
                             {
@@ -134,12 +143,17 @@ $(function() {
                             },
                             true // make the event "stick"
                         );
+                        
+                        $.post('<?php echo base_url()?>calendars/admin/calendars/save',{
+                            title : title,
+                            start : start,
+                            end : end
+                        });
                     }
                 });
                 
 
                 calendar.fullCalendar('unselect');
-                
             }
             ,
             eventClick: function(calEvent, jsEvent, view) {
@@ -155,6 +169,8 @@ $(function() {
                         "class" : "btn-small btn-danger",
                         "callback": function() {
                             calendar.fullCalendar('removeEvents' , function(ev){
+                                // ลบกิจกรรม
+                                $.post('<?php echo base_url()?>calendars/admin/calendars/delete/'+calEvent._id);
                                 return (ev._id == calEvent._id);
                             })
                         }
@@ -176,10 +192,19 @@ $(function() {
                     calEvent.title = form.find("input[type=text]").val();
                     calendar.fullCalendar('updateEvent', calEvent);
                     div.modal("hide");
+                    
+                    // แก้ไขกิจกรรม
+                    $.post('<?php echo base_url()?>calendars/admin/calendars/save',{
+                        id : calEvent.id,
+                        title : calEvent.title,
+                        start : calEvent.start,
+                        end : calEvent.end
+                    });
+                    
                     return false;
                 });
                 
-            
+                console.log(calEvent);
                 console.log(calEvent.id);
                 console.log(jsEvent);
                 console.log(view);
