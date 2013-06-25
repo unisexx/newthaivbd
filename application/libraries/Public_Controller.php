@@ -6,8 +6,8 @@ class Public_Controller extends Master_Controller
 		parent::__construct();
 		
 		// check lang
-		$this->template->title('ฟรีโพสต์ ฟรีประกาศ ลงโฆษณาฟรี - adfree.in.th');
-		$this->template->set_theme('adfree');
+		$this->template->title('สำนักโรคติดต่อนำโดยแมลง');
+		$this->template->set_theme('thaivbd');
     	$this->template->set_layout('layout');
 		
 		// Set js

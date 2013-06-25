@@ -24,13 +24,13 @@ class Contents extends Admin_Controller
         if($_POST)
         {
             $content = new Content($id);
-            if($_FILES['image']['name'])
-            {
-                if($content->id){
-                    $content->delete_file($content->id,'uploads/content','image');
-                }
-                $_POST['image'] = $content->upload($_FILES['image'],'uploads/content/');
-            }
+            // if($_FILES['image']['name'])
+            // {
+                // if($content->id){
+                    // $content->delete_file($content->id,'uploads/content','image');
+                // }
+                // $_POST['image'] = $content->upload($_FILES['image'],'uploads/content/');
+            // }
 			if(!$id)$_POST['user_id'] = $this->session->userdata('id');
 			if(!$id)$_POST['status'] = "approve";
 			$_POST['slug'] = clean_url($_POST['title']);
