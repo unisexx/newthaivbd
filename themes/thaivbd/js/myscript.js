@@ -1,5 +1,8 @@
 $(function() {
-	$( "#accordion" ).accordion();
+	$( "#accordion" ).accordion({
+      collapsible: true,
+      heightStyle: "content"
+    });
 	
 	var availableTags = [
 		"ActionScript",

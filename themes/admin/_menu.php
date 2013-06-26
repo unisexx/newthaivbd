@@ -35,7 +35,7 @@
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
-            <li <?php echo (@$_GET['module'] == 'สถานการณ์ไข้เลือดออก')?'class="active"':'';?>><a href="dengues/admin/dengues?module=สถานการณ์ไข้เลือดออก&type=month&year=<?php echo (date('Y')+543);?>"><i class="icon-double-angle-right"></i> สถานการณ์ไข้เลือดออก</a></li>
+            <li <?php echo (@$_GET['module'] == 'สถานการณ์ไข้เลือดออก')?'class="active"':'';?>><a href="dengues/admin/dengues?module=สถานการณ์ไข้เลือดออก&type=week&year=<?php echo (date('Y')+543);?>"><i class="icon-double-angle-right"></i> สถานการณ์ไข้เลือดออก</a></li>
             <li <?php echo (@$_GET['module'] == 'สถานการณ์ไข้ปวดข้อยุงลาย')?'class="active"':'';?>><a href="contents/admin/contents?module=สถานการณ์ไข้ปวดข้อยุงลาย"><i class="icon-double-angle-right"></i> สถานการณ์ไข้ปวดข้อยุงลาย</a></li>
             <li <?php echo (@$_GET['module'] == 'สถานการณ์มาลาเรีย')?'class="active"':'';?>><a href="contents/admin/contents?module=สถานการณ์มาลาเรีย"><i class="icon-double-angle-right"></i> สถานการณ์มาลาเรีย</a></li>
             <li <?php echo (@$_GET['module'] == 'สถานการณ์เท้าช้าง')?'class="active"':'';?>><a href="contents/admin/contents?module=สถานการณ์เท้าช้าง"><i class="icon-double-angle-right"></i> สถานการณ์เท้าช้าง</a></li>

@@ -23,12 +23,12 @@
             </div>
         	
 	        <?php for ($i=1; $i<=52; $i++):?>
-	        	<?php $history = $history->where('module = "'.$_GET['module'].'" and type = "'.$_GET['type'].'" and year ='.$_GET['year'].' and week = '.$i)->get();?>
-	        <div class="infobox <?php echo ($history->id)?'infobox-green':'infobox-red';?>">
+	        	<?php $dengue = $dengue->where('module = "'.$_GET['module'].'" and type = "'.$_GET['type'].'" and year ='.$_GET['year'].' and week = '.$i)->get();?>
+	        <div class="infobox <?php echo ($dengue->id)?'infobox-green':'infobox-red';?>">
 	            <div class="infobox-icon"><i class="icon-comments"></i></div>
 	            <div class="infobox-data">
 	                <span class="infobox-data-number">สัปดาห์ที่ <?php echo $i?></span>
-	                <span class="infobox-content"><a href="dengues/admin/dengues/form/<?php echo @$history->id?>?module=<?php echo $_GET['module']?>&type=week&year=<?php echo $_GET['year']?>&week=<?php echo $i?>"><i class="icon-pencil"></i> เพิ่มข้อมูล</a></span>
+	                <span class="infobox-content"><a href="dengues/admin/dengues/form/<?php echo @$dengue->id?>?module=<?php echo $_GET['module']?>&type=week&year=<?php echo $_GET['year']?>&week=<?php echo $i?>"><i class="icon-pencil"></i> เพิ่มข้อมูล</a></span>
 	            </div>
 	        </div>
 	        <?php endfor;?>

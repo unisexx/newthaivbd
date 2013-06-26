@@ -1,3 +1,8 @@
+<style>
+.information li{border-bottom:1px dotted #bcbcbc;}
+.btn_more1{margin-top:15px;}
+</style>
+
 <div id="col2">
 	          <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	          <tr>
@@ -15,12 +20,20 @@
 	              </tr>
 	              <tr>
 	                <td colspan="3"><div id="contentNewsPR" style="padding-top:6px;">
-	                  <ul>
-	                    <li><a href="#"><img src="themes/thaivbd/images/pic1_pr.png" width="74" height="65" class="imgNews"/></a><span class="textNews"><a href="#">ขอเชิญน้องๆ ระดับประถมและมัธยมศึกษา เข้าร่วมประกวดวาดภาพระบายสีในหัวข้อ <b>&quot;กำจัดยุงลาย... วายร้ายทำลายคนรัก&quot;</b></a><b></b></span> <span class="dataNew">(2 มิ.ย. 56)</span></li>
-	                    <div class="clr"></div>
-	                    <hr class="hr1" />
-	                    <li><a href="#"><img src="themes/thaivbd/images/pic2_pr.png" width="74" height="65" class="imgNews"/></a><span class="textNews"><a href="#">!!ใหม่!!!<b> คู่มือ เราคือผู้พิชิต โรคไข้เลือดออก </b>สำหรับ นักเรียนประถมศึกษาและมัธยมศึกษา</a></span> <span class="dataNew">(2 พ.ค. 56)</span></li>
-	                  </ul><div class="btn_more1"><a href="#">&nbsp;</a></div>
+	                  
+						<div class="information">
+			                <div class="newsticker-jcarousellite" style="background: #f3f6f4;">
+			                 <ul>
+			                 	<?php foreach($contents as $content):?>
+			                 		<li>
+			                 			<a href="contents/view/<?php echo $content->id?>"><img src="<?php echo $content->image?>" width="74" height="65" class="imgNews"/></a><span class="textNews"><a href="contents/view/<?php echo $content->id?>"><?php echo $content->title?></a><b></b></span> <span class="dataNew">(<?php echo mysql_to_th($content->created)?>)</span>
+			                 		</li>
+			                 	<?php endforeach;?>
+			                 </ul>
+			                 </div>
+			            </div>
+	                  
+	                  <div class="btn_more1"><a href="contents?module=ข่าวประชาสัมพันธ์">&nbsp;</a></div>
 	                  </div></td>
 	              </tr>
 	            </table></td>
@@ -37,3 +50,14 @@
 	        </table>
 	        
 	      </div>
+	      
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".newsticker-jcarousellite").jCarouselLite({  
+	   vertical: true,  
+	   visible: 2,  
+	   auto:1000,  
+	   speed:2000  
+ 	});  
+});
+</script>

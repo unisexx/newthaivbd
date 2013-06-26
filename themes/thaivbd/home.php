@@ -34,19 +34,14 @@
 	       	  </table>
 	          <br>
 	          <div id="accordion">
-	            <div class="titleGIS">โรคไข้เลือดออก <span class="date">2013-06-22 08:26:53</span></div>
-	            <div>สถานการณ์โรคไข้เลือดออกในประเทศไทย ปี 2556 จำนวนผู้ป่วยสะสม DHF+DF+DSS ณ วันที่ 21/05/2556 (สัปดาห์ที่ 20)</div>
-	            <div class="titleGIS">โรคเท้าช้าง <span class="date">2013-06-22 08:26:53</span></div>
-	            <div>เนื้อหาโรคเท้าช้าง โรคเท้าช้าง</div>
-	            <div class="titleGIS">โรคไข้ปวดข้อยุงลาย <span class="date">2013-06-22 08:26:53</span></div>
-	            <div>เนื้อหาโรคไข้ปวดข้อยุงลาย โรคไข้ปวดข้อยุงลาย</div>
-	            <div class="titleGIS">โรคมาลาเรีย <span class="date">2013-06-22 08:26:53</span></div>
-	            <div>เนื้อหาโรคมาลาเรีย โรคมาลาเรีย โรคมาลาเรีย</div>
-	            <div class="titleGIS">โรคติดต่อนำโดยแมลงอื่นๆ <span class="date">2013-06-22 08:26:53</span></div>
-	            <div>เนื้อหา โรคติดต่อนำโดยแมลงอื่นๆ โรคติดต่อนำโดยแมลงอื่นๆ</div>
+	          	<?php echo modules::run('dengues/inc_dengue'); ?>
+	          	<?php echo modules::run('contents/inc_elephantiasis'); ?>
+	          	<?php echo modules::run('contents/inc_mosquito'); ?>
+	          	<?php echo modules::run('contents/inc_malaria'); ?>
+	          	<?php echo modules::run('contents/inc_other_insect'); ?>
 	          </div>
 	    </div>
-	           <div id="col2_e-auction">
+		<div id="col2_e-auction">
 	             <table width="36%" border="0" cellspacing="0" cellpadding="0">
 	             <tr>
 	               <td width="13" height="12"><img src="themes/thaivbd/images/title_e-auction_coner_topleft.png" width="13" height="12" /></td>
@@ -73,19 +68,9 @@
 	              <tr>
 	                <td width="8" background="themes/thaivbd/images/border_e-auction_left.png"> </td>
 	                <td>
-	                <div class="list">
-	                	<ul>
-	                    	<li><a href="#">ประกาศสอบราคาซื้อสารผสมซีต้ามิทริน 975 ลิตร</a></li>
-	                        <li><a href="#">ประกาศสอบราคาซื้อชุดน้ำยาตรวจไข้เลือดออกอย่างรวด
-	                            เร็วจำนวน 4,000 Test</a></li>
-	                        <li><a href="#">ประกาศ สอบราคาซื้อมุ้งโปลีเอสเตอร์สีขาว ชนิดชุบสาร
-	                            เคมี (LLIN)</a></li>
-	                        <li><a href="#">เผยแพร่คุณลักษณะเฉพาะของชุดน้ำยาตรวจไข้เลือดออกอย่างรวดเร็ว</a></li>
-	                        <li><a href="#">เผยแพร่คุณลักษณะเฉพาะของชุดน้ำยาตรวจไข้เลือดออกอย่างรวดเร็ว</a></li>
-	                        <li><a href="#">เผยแพร่คุณลักษณะเฉพาะของชุดน้ำยาตรวจ</a></li>
-	                        <li><a href="#">ไข้เลือดออกอย่างรวดเร็ว</a></li>
-	                    </ul>
-	                  </div>
+	                	
+	                	<?php echo modules::run('contents/inc_bid'); ?>
+	                	
 	                </td>
 	                <td background="themes/thaivbd/images/border_e-auction_right.png"> </td>
 	             </tr>
@@ -138,6 +123,7 @@
 	        <td align="center"><div class="btn_all"><a href="#">&nbsp;</a></div></td>
 	      </tr>
 	    </table>
+	    	<?php echo modules::run('docs/inc_journal'); ?>
 	    <br>
 	    </td>
 	    <td valign="top" height="13"><img src="themes/thaivbd/images/borderrmedia_topright.png" width="11" height="13" /></td>
