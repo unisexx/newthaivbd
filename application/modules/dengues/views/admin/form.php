@@ -82,7 +82,7 @@
         
         <div class="form-actions">
         	<?php echo form_referer() ?>
-        	<input type="text" name="type" value="<?php echo $_GET['type']?>">
+        	<input type="hidden" name="type" value="<?php echo $_GET['type']?>">
             <button class="btn btn-info" type="submit"><i class="icon-ok"></i> Submit</button>
             &nbsp; &nbsp; &nbsp;
             <button class="btn" type="reset"><i class="icon-undo"></i> Reset</button>

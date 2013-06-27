@@ -1,80 +1,59 @@
 <?php
 class Contents extends Public_Controller
 {
-	public $array = array('articles'=>'บทความ','weblinks'=>'ลิ้งค์เพื่อนบ้าน');
 	
     function __construct()
     {
         parent::__construct();
     }
     
-    function download($id)
-    {
-        if($id){
-            $attach = new Attach($id);
-            $attach->counter();
-            $this->load->helper('download');
-            $data = file_get_contents(urldecode($attach->file));
-            $name = basename($attach->file);
-            force_download($name, $data); 
-        }
+	// ข่าว Highlights
+    function inc_hilight(){
+    	$data['contents'] = new Content();
+		$data['contents']->where('module = "ข่าว Highlights"')->order_by('id','desc')->get(5);
+		$this->load->view('inc_hilight',$data);
     }
 	
-	function inc_header_category(){
-		$data['categories'] = new Category();
-		$data['categories']->where("module = 'articles' and parents != 0")->order_by('id','asc')->get();
-		$this->load->view('inc_header_category',$data);
-	}
-	
-	function inc_footer_articles(){
+	// ข่าวประชาสัมพันธ์
+	function inc_information(){
 		$data['contents'] = new Content();
-		$data['contents']->where("module = 'articles'")->order_by('id','desc')->get();
-		$this->load->view('inc_footer_articles',$data);
+		$data['contents']->where('module = "ข่าวประชาสัมพันธ์"')->order_by('id','desc')->get(10);
+		$this->load->view('inc_information',$data);
 	}
-    
-    function inc_footer_weblinks(){
-        $data['contents'] = new Content();
-        $data['contents']->where("module = 'weblinks'")->order_by('id','desc')->get();
-        $this->load->view('inc_footer_weblinks',$data);
-    }
 	
-	function inc_home_vdos(){
+	// ข่าวประกวดราคา
+	function inc_bid(){
 		$data['contents'] = new Content();
-		$data['contents']->where("module = 'vdos'")->order_by('id','desc')->get(7);
-		$this->load->view('inc_home_vdos',$data);
+		$data['contents']->where('module = "ข่าวประกวดราคา"')->order_by('id','desc')->get(10);
+		$this->load->view('inc_bid',$data);
 	}
 	
-	function more($type){
-		$data['header_img'] = $this->header_img[$type]; 
-		$data['type_name'] = $this->array[$type];
-		$data['contents'] = new Content();
-		$data['contents']->where("module = '".$type."'")->order_by('id','desc')->get_page();
-		if($type=="downloads"){
-			$this->template->build('index_download',$data);
-		}elseif($type == 'vdos'){
-			$this->template->build('index_vdo',$data);
-		}else{
-			$this->template->build('index',$data);
-		}
+	// สถานการณ์เท้าช้าง
+	function inc_elephantiasis(){
+		$data['content'] = new Content();
+		$data['content']->where('module = "สถานการณ์เท้าช้าง"')->order_by('id','desc')->get(1);
+		$this->load->view('inc_elephantiasis',$data);
 	}
 	
-	function view($type,$id){
-	    $data['categories'] = new Category();
-        $data['categories']->where('module = "articles" and parents <> 0')->order_by('orderlist','asc')->get();
-	    
-		$data['content'] = new Content($id);
-		$data['type'] = $data['content']->module;
-		$data['type_name'] = $this->array[$data['content']->module];
-		
-		$this->template->title($data['content']->title.' - adfree.in.th');
-		
-		if($type == 'histories'){
-			$this->template->build('view_onepage',$data);
-		}elseif($type == 'vdos'){
-			$this->template->build('view_vdo',$data);
-		}else{
-			$this->template->build('view',$data);
-		}
+	// สถานการณ์ไข้ปวดข้อยุงลาย
+	function inc_mosquito(){
+		$data['content'] = new Content();
+		$data['content']->where('module = "สถานการณ์ไข้ปวดข้อยุงลาย"')->order_by('id','desc')->get(1);
+		$this->load->view('inc_mosquito',$data);
+	}
+
+	// สถานการณ์มาลาเรีย
+	function inc_malaria(){
+		$data['content'] = new Content();
+		$data['content']->where('module = "สถานการณ์มาลาเรีย"')->order_by('id','desc')->get(1);
+		$this->load->view('inc_malaria',$data);
+	}
+	
+	// โรคติดต่อนำโดยแมลงอื่นๆ
+	function inc_other_insect(){
+		$data['content'] = new Content();
+		$data['content']->where('module = "โรคติดต่อนำโดยแมลงอื่นๆ"')->order_by('id','desc')->get(1);
+		$this->load->view('inc_other_insect',$data);
 	}
 }
 ?>
