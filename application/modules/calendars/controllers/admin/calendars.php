@@ -64,9 +64,9 @@ class Calendars extends Admin_Controller
 		{
 			$calendar = New Calendar($id);
 			$calendar->delete();
-			set_notify('success', lang('delete_data_complete'));
+			// set_notify('success', lang('delete_data_complete'));
 		} 
-		redirect('calendars/admin/calendars');		
+		// redirect('calendars/admin/calendars');		
 	}
 }
 ?>
