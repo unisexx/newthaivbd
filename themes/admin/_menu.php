@@ -234,6 +234,19 @@
           </ul>
         </li>
         
+        <li <?php echo (@$_GET['module'] == 'แบนเนอร์ลิ้งค์' or @$_GET['module'] == 'หน่วยงานส่วนกลาง 1' or @$_GET['module'] == 'หน่วยงานส่วนกลาง 2')?'class="active open"':'';?>>
+          <a href="#" class="dropdown-toggle" >
+            <i class="icon-list-alt"></i>
+            <span>เว็บลิ้งค์</span>
+            <b class="arrow icon-angle-down"></b>
+          </a>
+          <ul class="submenu">
+            <li <?php echo (@$_GET['module'] == 'แบนเนอร์ลิ้งค์')?'class="active"':'';?>><a href="weblinks/admin/weblinks?module=แบนเนอร์ลิ้งค์"><i class="icon-double-angle-right"></i> แบนเนอร์ลิ้งค์</a></li>
+            <li <?php echo (@$_GET['module'] == 'หน่วยงานส่วนกลาง 1')?'class="active"':'';?>><a href="weblinks/admin/weblinks?module=หน่วยงานส่วนกลาง 1"><i class="icon-double-angle-right"></i> หน่วยงานส่วนกลาง 1</a></li>
+            <li <?php echo (@$_GET['module'] == 'หน่วยงานส่วนกลาง 2')?'class="active"':'';?>><a href="weblinks/admin/weblinks?module=หน่วยงานส่วนกลาง 2"><i class="icon-double-angle-right"></i> หน่วยงานส่วนกลาง 2</a></li>
+          </ul>
+        </li>
+        
         <!-- <li>---- demo ----</li>
         
         <li <?php echo menu_active('demo',false,'index')?>>

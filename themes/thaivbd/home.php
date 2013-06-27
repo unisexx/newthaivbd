@@ -98,39 +98,13 @@
 	    <td height="13" valign="top"><img src="themes/thaivbd/images/borderrmedia_topleft.png" width="11" height="13" /></td>
 	    <td rowspan="3" valign="top" class="tdmedia3">
 	    <br>
-	    <!-- <table width="100%" border="0" cellspacing="0" cellpadding="0">
-	      <tr>
-	        <td align="center" width="25%"><img src="themes/thaivbd/images/pic1_media.png" width="117" height="88" /></td>
-	        <td align="center" width="25%"><img src="themes/thaivbd/images/pic2_media.png" width="117" height="88" /></td>
-	        <td align="center" width="25%"><img src="themes/thaivbd/images/pic3_media.png" width="117" height="88" /></td>
-	        <td align="center" width="25%"><img src="themes/thaivbd/images/pic4_media.png" width="117" height="88" /></td>
-	      </tr>
-	      <tr>
-	        <td valign="top" align="center"><span class="titlemedia"><a href="#">วารสารโรคติดต่อนำโดยแมลง</a></span><span class="textMedialink"><a href="#"><br>
-	        วารสารโรคติดต่อนำโดยแมลง<br />
-	        ปีที่ 8 ฉบับที่ 1 <br />
-	        มกราคม - มิถุนายน 2554</a></span></td>
-	        <td valign="top" align="center"><span class="titlemedia"><a href="#">แนวทางและคู่มือปฏิบัติการ
-	สำหรับบุคลากรสาธารณสุข</a></span></td>
-	        <td valign="top" align="center"><span class="titlemedia"><a href="#">ผลงานวิจัย</a></span></td>
-	        <td valign="top" align="center"><span class="titlemedia"><a href="#">สื่อต้นแบบ</a></span><span class="textMedialink"><a href="#"><br>
-	          เราคือผู้พิชิต ไข้เลือดออก คู่มือนักเรียนมัธยมศึกษา</a></span></td>
-	      </tr>
-	      <tr>
-	        <td align="center"><div class="btn_all"><a href="#">&nbsp;</a></div></td>
-	        <td align="center"><div class="btn_all"><a href="#">&nbsp;</a></div></td>
-	        <td align="center"><div class="btn_all"><a href="#">&nbsp;</a></div></td>
-	        <td align="center"><div class="btn_all"><a href="#">&nbsp;</a></div></td>
-	      </tr>
-	    </table> -->
-	    <style>
-			.jrblk{border:1px solid red; float: left; width:222px; text-align: center;}
+    	    <style>
+			.jrblk{float: left; width:222px; text-align: center;}
 			.btn_all a{margin:0 auto;}
-		</style>
-	    
-	    <?php echo modules::run('docs/inc_home'); ?>
-	    <?php echo modules::run('researchs/inc_home'); ?>
-	    	
+    		</style>
+    	    
+    	    <?php echo modules::run('docs/inc_home'); ?>
+    	    <?php echo modules::run('researchs/inc_home'); ?>
 	    <br>
 	    </td>
 	    <td valign="top" height="13"><img src="themes/thaivbd/images/borderrmedia_topright.png" width="11" height="13" /></td>
@@ -146,55 +120,8 @@
 	</table>
 	<br>
 		<?php echo modules::run('albums/inc_home'); ?>
+		<?php echo modules::run('polls/inc_home'); ?>
 		
-	    <div id="poll">
-	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-	  <tr>
-	    <td><img src="themes/thaivbd/images/borderVote_topleft.jpg" width="13" height="13" /></td>
-	    <td background="themes/thaivbd/images/borderVote_top.jpg"> </td>
-	    <td><img src="themes/thaivbd/images/borderVote_topright.jpg" width="13" height="13" /></td>
-	  </tr>
-	  <tr>
-	    <td width="13" background="themes/thaivbd/images/borderVote_left.jpg"> </td>
-	    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-	      <tr>
-	        <td><img src="themes/thaivbd/images/icon_poll.png" width="20" height="20" /></td>
-	        <td><span class="titlePoll">ท่านมีความสนใจข้อมูลส่วนใดของเว็บ</span></td>
-	      </tr>
-	      <tr>
-	        <td>&nbsp;</td>
-	        <td>
-	        <div class="box_radio">
-	        <ul>
-	        	<li><input type="radio" class="radio"><label>สถานการณ์โรค</label></li>
-	            <li><input type="radio" class="radio"><label>ศูนย์เอกสารและสื่ออิเลคโทรนิค</label></li>
-	            <li><input type="radio" class="radio"><label>ความรู้ทั่วไปสำหรับประชาชน</label></li>
-	            <li><input type="radio" class="radio"><label>ศูนย์ข้อมูลโรคติดต่อนำโดยแมลงและ GIS</label></li>
-	            <li><input type="radio" class="radio"><label>ศูนย์ข้อมูลข่าวกรองและเตือนภัย</label></li>
-	        </ul>
-	        </div>
-	        
-	        </td>
-	      </tr>
-	      <tr>
-	        <td>&nbsp;</td>
-	        <td><div class="btn_ok"><a href="#">&nbsp;</a></div><div class="btn_viewvote"><a href="#">&nbsp;</a></div>
-	        <div class="link_other_vote"><a href="#">แสดงความคิดเห็นในหัวข้ออื่นๆ</a></div></td>
-	      </tr>
-	      <tr>
-	        <td height="10"> </td>
-	        <td height="10"> </td>
-	      </tr>
-	    </table></td>
-	    <td width="13" background="themes/thaivbd/images/borderVote_right.jpg"> </td>
-	  </tr>
-	  <tr>
-	    <td><img src="themes/thaivbd/images/borderVote_bottomleft.jpg" width="13" height="13" /></td>
-	    <td background="themes/thaivbd/images/borderVote_bottom.jpg"> </td>
-	    <td><img src="themes/thaivbd/images/borderVote_bottomright.jpg" width="13" height="13" /></td>
-	  </tr>
-	</table>
-	    </div>
 	    <div id="bannerlink">
 	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	      <tr>
@@ -205,41 +132,12 @@
 	      </tr>
 	      <tr>
 	        <td background="themes/thaivbd/images/borderBanner_left.png"> </td>
-	        <td valign="top"><div class="bannerlink">
-	        	<ul>
-	            	<li><a href="#"><img src="themes/thaivbd/images/banner_ddc.jpg" width="173" height="68" border="0"></a></li>
-	            	<li><a href="#"><img src="themes/thaivbd/images/banner_complaint_ddc.jpg" width="173" height="69" border="0"></a></li>
-	                <li><a href="#"><img src="themes/thaivbd/images/banner_hcct.jpg" width="173" height="68" border="0"></a></li>
-	                <li><a href="#"><img src="themes/thaivbd/images/banner_pmqa.jpg" width="173" height="68" border="0"></a></li>
-	                <li><a href="#"><img src="themes/thaivbd/images/banner_budject.jpg" width="173" height="68" border="0"></a></li>
-	                <li><a href="#"><img src="themes/thaivbd/images/banner_newscenter.jpg" width="173" height="68" border="0"></a></li>
-	                <li><a href="#"><img src="themes/thaivbd/images/banner_dbmalaria.jpg" width="173" height="68" border="0"/></a></li>
-	                <li><a href="#"><img src="themes/thaivbd/images/banner_malaria24.jpg" width="173" height="68" border="0"/></a></li>
-	                <li><a href="#"><img src="themes/thaivbd/images/banner_malariaTravel.jpg" width="173" height="68" border="0"/></a></li>
-	                <li><a href="#"><img src="themes/thaivbd/images/banner_knowledgeSharingCenter.jpg" width="173" height="68" border="0"/></a></li>
-	                <li><a href="#"><img src="themes/thaivbd/images/banner_dbkm.jpg" width="173" height="68" border="0"/></a></li>
-	                <li><a href="#"><img src="themes/thaivbd/images/banner_elib_ddc.jpg" width="173" height="69" border="0"/></a></li>
-	        	</ul>
-	            </div>
+	        <td valign="top">
+	            <?php echo modules::run('weblinks/inc_bannerlink'); ?>
 	        </td>
 	        <td valign="top" class="tdbannerlink1"><img src="themes/thaivbd/images/arrow_link.gif" width="4" height="6" style="padding-left:10px;"> <span class="textlink">ลิ้งที่เกี่ยวข้อง</span><br><br>
 	        <div class="textlink2">หน่วยงานส่วนกลาง</div><br>
-	        <div class="styled-select">
-	           <select>
-	              <option>----------------------------------</option>
-	              <option>หน่วยงาน1</option>
-	              <option>หน่วยงาน2</option>
-	           </select>
-	        </div>
-	        <br><br>
-	        <div class="textlink2">หน่วยงานส่วนกลาง</div><br>
-	        <div class="styled-select">
-	           <select>
-	              <option>----------------------------------</option>
-	              <option>หน่วยงาน1</option>
-	              <option>หน่วยงาน2</option>
-	           </select>
-	        </div>
+	           <?php echo modules::run('weblinks/inc_textlink'); ?>
 	        </td>
 	        <td background="themes/thaivbd/images/borderBanner_right.png"> </td>
 	      </tr>

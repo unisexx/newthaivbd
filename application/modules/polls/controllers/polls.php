@@ -27,12 +27,11 @@ order by id asc")->get_page();
 		$this->load->view('poll_view',$data);
 	}
 	
-	function inc_left()
+	function inc_home()
 	{
-
 		$data['poll'] = new Poll();
-		$data['poll']->where('active',1)->get();
-		$this->load->view('poll_inc',$data);	
+		$data['poll']->order_by('id','desc')->get(1);
+		$this->load->view('inc_home',$data);	
 	}
 	
 	function vote()
