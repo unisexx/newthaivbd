@@ -17,7 +17,7 @@
         <?php foreach($category->research as $row): ?>
         	<div class="vid-blk">
         	<div class="control-group">
-	            <label class="control-label" for="form-field-10">ชื่อวีดีโอ</label>
+	            <label class="control-label" for="form-field-10">ชื่อไฟล์</label>
 	            <div class="controls">
 	                <input type="text" id="form-field-11" class="input-xxlarge" name="title[]" value="<?php echo $row->title ?>">
 	                <a class="btn btn-mini btn-danger del-vid" href="#" onclick="return confirm('<?php echo lang('notice_confirm_delete')?>')"><i class='icon-trash'></i></a>

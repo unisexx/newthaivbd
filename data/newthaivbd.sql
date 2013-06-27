@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50051
 File Encoding         : 65001
 
-Date: 2013-06-26 16:40:27
+Date: 2013-06-27 16:32:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -50,7 +50,7 @@ CREATE TABLE `albums` (
 -- ----------------------------
 -- Records of albums
 -- ----------------------------
-INSERT INTO albums VALUES ('65', 'fff', '2013-06-10 00:41:20', '2013-06-10 01:37:26', '1', 'approve');
+INSERT INTO albums VALUES ('65', 'ทดสอบปอัลบัม', '2013-06-10 00:41:20', '2013-06-27 14:37:46', '1', 'approve');
 
 -- ----------------------------
 -- Table structure for `album_categories`
@@ -1377,11 +1377,13 @@ CREATE TABLE `categories` (
   `group_id` int(11) default NULL,
   `approve_id` int(11) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
+INSERT INTO categories VALUES ('6', 'สื่อต้นแบบ', 'วันไข้เลือดออกอาเซียน 2013', null, '0', null, '1', 'approve', '0', null, null, null);
+INSERT INTO categories VALUES ('7', 'งานวิจัย', 'งานวิจัย', null, '0', null, '1', 'approve', '0', null, null, null);
 
 -- ----------------------------
 -- Table structure for `contents`
@@ -10618,13 +10620,17 @@ CREATE TABLE `pictures` (
   `updated` datetime default NULL,
   `album_id` int(11) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=206 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=210 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of pictures
 -- ----------------------------
-INSERT INTO pictures VALUES ('197', null, 'uploads/file/demo/demo.png', '2013-06-10 01:52:40', '2013-06-10 01:53:54', '65');
-INSERT INTO pictures VALUES ('204', null, 'ff', '2013-06-10 01:53:54', '2013-06-10 01:53:54', '65');
+INSERT INTO pictures VALUES ('197', null, 'uploads/file/demo/demo.png', '2013-06-10 01:52:40', '2013-06-27 14:37:46', '65');
+INSERT INTO pictures VALUES ('204', null, 'uploads/file/demo/demo.png', '2013-06-10 01:53:54', '2013-06-27 14:37:46', '65');
+INSERT INTO pictures VALUES ('206', null, 'uploads/file/demo/demo.png', '2013-06-27 14:37:36', '2013-06-27 14:37:46', '65');
+INSERT INTO pictures VALUES ('207', null, 'uploads/file/demo/demo.png', '2013-06-27 14:37:36', '2013-06-27 14:37:46', '65');
+INSERT INTO pictures VALUES ('208', null, 'uploads/file/demo/demo.png', '2013-06-27 14:37:36', '2013-06-27 14:37:46', '65');
+INSERT INTO pictures VALUES ('209', null, 'uploads/file/demo/demo.png', '2013-06-27 14:37:36', '2013-06-27 14:37:46', '65');
 
 -- ----------------------------
 -- Table structure for `polldetails`
@@ -11090,11 +11096,17 @@ CREATE TABLE `researchs` (
   `updated` datetime default NULL,
   `category_id` int(11) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=220 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=226 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of researchs
 -- ----------------------------
+INSERT INTO researchs VALUES ('220', '111', 'uploads/file/demo/demo.png', null, '2013-06-27 14:05:28', '2013-06-27 14:05:28', '6');
+INSERT INTO researchs VALUES ('221', '222', 'uploads/file/demo/demo.png', null, '2013-06-27 14:05:28', '2013-06-27 14:05:28', '6');
+INSERT INTO researchs VALUES ('222', '333', 'uploads/file/demo/demo.png', null, '2013-06-27 14:05:28', '2013-06-27 14:05:28', '6');
+INSERT INTO researchs VALUES ('223', 'งานวิจัย1', 'uploads/file/demo/demo.png', null, '2013-06-27 14:20:44', '2013-06-27 14:20:44', '7');
+INSERT INTO researchs VALUES ('224', 'งานวิจัย2', 'uploads/file/demo/demo.png', null, '2013-06-27 14:20:44', '2013-06-27 14:20:44', '7');
+INSERT INTO researchs VALUES ('225', 'งานวิจัย3', 'uploads/file/demo/demo.png', null, '2013-06-27 14:20:44', '2013-06-27 14:20:44', '7');
 
 -- ----------------------------
 -- Table structure for `users`

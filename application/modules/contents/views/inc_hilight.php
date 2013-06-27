@@ -42,7 +42,7 @@ $(document).ready(function(){
 
 function hilight(){
 	var index = ($("#highlight #run ul li a").index($("#highlight #run ul li a.active")) + 1) % 5;
-	console.log(index);
+	// console.log(index);
 	$("#highlight #run ul li:eq(" + index + ")").find('a').addClass("active").parent().siblings().find('a').removeClass("active");
 	$("#highlight #slider li:eq(" + index + ")").fadeIn('slow').siblings().hide();
 }

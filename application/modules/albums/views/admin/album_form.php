@@ -27,7 +27,8 @@
         
         <!-- file manager -->
         <div class="control-group file-manager">
-            <label class="control-label" for="form-field-2">ไฟล์</label>
+            <label class="control-label" for="form-field-2">รูปภาพ
+</label>
             <div class="controls">
                 <input type="text" id="form-field-2" class="input-xxlarge" name="image[]" value=""> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'file')" />
             </div>

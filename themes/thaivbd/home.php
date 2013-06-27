@@ -98,7 +98,7 @@
 	    <td height="13" valign="top"><img src="themes/thaivbd/images/borderrmedia_topleft.png" width="11" height="13" /></td>
 	    <td rowspan="3" valign="top" class="tdmedia3">
 	    <br>
-	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	    <!-- <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	      <tr>
 	        <td align="center" width="25%"><img src="themes/thaivbd/images/pic1_media.png" width="117" height="88" /></td>
 	        <td align="center" width="25%"><img src="themes/thaivbd/images/pic2_media.png" width="117" height="88" /></td>
@@ -122,8 +122,15 @@
 	        <td align="center"><div class="btn_all"><a href="#">&nbsp;</a></div></td>
 	        <td align="center"><div class="btn_all"><a href="#">&nbsp;</a></div></td>
 	      </tr>
-	    </table>
-	    	<?php echo modules::run('docs/inc_journal'); ?>
+	    </table> -->
+	    <style>
+			.jrblk{border:1px solid red; float: left; width:222px; text-align: center;}
+			.btn_all a{margin:0 auto;}
+		</style>
+	    
+	    <?php echo modules::run('docs/inc_home'); ?>
+	    <?php echo modules::run('researchs/inc_home'); ?>
+	    	
 	    <br>
 	    </td>
 	    <td valign="top" height="13"><img src="themes/thaivbd/images/borderrmedia_topright.png" width="11" height="13" /></td>
@@ -138,40 +145,8 @@
 	  </tr>
 	</table>
 	<br>
-		<div id="picturegallery">
-	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-	  <tr>
-	    <td width="13" height="13"><img src="themes/thaivbd/images/bordergallery_topleft.png" width="13" height="13" /></td>
-	    <td background="themes/thaivbd/images/bordergallery_top.png"> </td>
-	    <td width="13" height="13"><img src="themes/thaivbd/images/bordergallery_topright.png" width="13" height="13" /></td>
-	  </tr>
-	  <tr>
-	    <td width="13" background="themes/thaivbd/images/bordergallery_left_bg.png">&nbsp;</td>
-	    <td bgcolor="#f2f6ee">
-	        <div class="picturegallery">
-	        	<div class="viewpicAll"><a href="#">ดูรูปกิจกรรมทั้งหมด</a></div><br>
-	            <div style="float:left; padding-top:5px; border:0;"><a href="#"><img src="themes/thaivbd/images/arrow_gallery_left.png" width="19" height="107" border="0"/></a></div>
-	        	<div class="picture">
-	            <a href="#" class="highlightit"><img src="themes/thaivbd/images/pic1_gallery1.jpg" width="122" height="95" /></a>
-	            <a href="#">ประชุมเชิงปฏิบัติการ</a></div>
-	            <div class="picture">
-	            <a href="#" class="highlightit"><img src="themes/thaivbd/images/pic1_gallery1.jpg" width="122" height="95" /></a>
-	            <a href="#">xxxxxxxxxxxxx</a></div>
-	            <div class="picture">
-	            <a href="#" class="highlightit"><img src="themes/thaivbd/images/pic1_gallery1.jpg" width="122" height="95" /></a>
-	            <a href="#">ถอดบทเรียน ผนึกพลังต้านภัยไข้เลือดออก</a></div>
-	            <div style="padding-top:5px; border:0;"><a href="#"><img src="themes/thaivbd/images/arrow_gallery_right.png" width="19" height="107" border="0"></a></div>
-	        </div>
-	    </td>
-	    <td background="themes/thaivbd/images/bordergallery_right_bg.png">&nbsp;</td>
-	  </tr>
-	  <tr>
-	    <td width="13" height="13"><img src="themes/thaivbd/images/bordergallery_bottomleft.png" width="13" height="13" /></td>
-	    <td background="" bgcolor="#f2f6ee"> </td>
-	    <td width="13" height="13"><img src="themes/thaivbd/images/bordergallery_bottomright.png" width="13" height="13" /></td>
-	  </tr>
-	</table>
-	    </div>
+		<?php echo modules::run('albums/inc_home'); ?>
+		
 	    <div id="poll">
 	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	  <tr>

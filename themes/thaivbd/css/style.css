@@ -175,7 +175,7 @@ a.linkRegis:hover {color:#c1ab19; text-decoration:underline;}
 
 /* picturegallery */
 #picturegallery{float:left; margin-top:20px; width:520px;}
-.picture{width:132px; height:109px; text-align:center; margin-left:10px; margin-right:10px; margin-bottom:0px; margin-top:5px; float:left; padding-top:1px;
+.picture{width:132px; height:109px; text-align:center; margin-left:10px; margin-right:10px; margin-bottom:0px; float:left; padding-top:1px;
 background: url(../images/pic_gallery_reg2.png) no-repeat;padding-bottom:30px;}
 .picture a{color:#333;}
 .picture a:hover{color:#686968;}
