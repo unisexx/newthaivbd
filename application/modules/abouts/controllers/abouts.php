@@ -5,14 +5,9 @@ class Abouts extends Public_Controller{
 		parent::__construct();
 	}
 	
-	function index(){
-		$data['about'] = new About(1);
-		$this->template->build('about_index',$data);
+	function view($id){
+	    $data['about'] = new About($id);
+        $this->template->build('view',$data);
 	}
-    
-    function inc_home(){
-        $data['about'] = new About(1);
-        $this->load->view('inc_home',$data);
-    }
 }
 ?>

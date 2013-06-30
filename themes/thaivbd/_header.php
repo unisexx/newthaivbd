@@ -28,20 +28,20 @@
         <td width="17" height="41"><img src="themes/thaivbd/images/bg_topmenu_left.png" width="23" height="46" /></td>
         <td height="41" background="themes/thaivbd/images/bg_topmenu_center.png">
          <ul>
-            <li><a href="#">หน้าแรก</a></li>
+            <li><a href="home">หน้าแรก</a></li>
             <li><a href="#">เกี่ยวกับเรา</a>
             	<ul>
-                	<li><a href="#">วิสัยทัศน์</a></li>
-                    <li><a href="#">โครงสร้างองค์กร</a></li>
-                    <li><a href="#">บุคคลากร</a></li>
+                	<li><a href="abouts/view/3">วิสัยทัศน์</a></li>
+                    <li><a href="abouts/view/2">โครงสร้างองค์กร</a></li>
+                    <li><a href="abouts/view/1">บุคคลากร</a></li>
                 </ul>
             </li>
             <li><a href="#">สำหรับบุคลากร</a>
                 <ul>
-                	<li><a href="#">เอกสารทั่วไป</a></li>
-                    <li><a href="#">คำสั่ง</a></li>
-                    <li><a href="#">รายงานการประชุม</a></li>
-                    <li><a href="#">หนังสือแจ้งเวียน</a></li>
+                	<li><a href="projects?title=สำหรับบุคลากร&module=เอกสารทั่วไป">เอกสารทั่วไป</a></li>
+                    <li><a href="projects?title=สำหรับบุคลากร&module=คำสั่ง">คำสั่ง</a></li>
+                    <li><a href="projects?title=สำหรับบุคลากร&module=รายงานการประชุม">รายงานการประชุม</a></li>
+                    <li><a href="projects?title=สำหรับบุคลากร&module=หนังสือแจ้งเวียน">หนังสือแจ้งเวียน</a></li>
                 </ul>
             </li>
             <li><a href="#">สถานการณ์โรค</a>
@@ -85,12 +85,12 @@
             </li>
             <li><a href="#">แผนงาน/โครงการ</a>
              <ul>
-                	<li><a href="#">แผนงาน/โครงการตามยุทธศาสตร์</a></li>
-                    <li><a href="#">โครงการ Global Fund for Malaria</a></li>
-                    <li><a href="#">โครงการ Bill and Melinda Gates Foundation</a></li>
-                    <li><a href="#">คำรับรองปฏิบัติราชการประจำปี</a></li>
-                    <li><a href="#">รายงานประจำปีสำนักโรคติดต่อนำโดยแมลง</a></li>
-                    <li><a href="#">แผนงานด้าน Knowledge management</a></li>
+                	<li><a href="projects?title=แผนงาน/โครงการ&module=แผนงาน/โครงการตามยุทธศาสตร์">แผนงาน/โครงการตามยุทธศาสตร์</a></li>
+                    <li><a href="projects?title=แผนงาน/โครงการ&module=โครงการ Global Fund for Malaria">โครงการ Global Fund for Malaria</a></li>
+                    <li><a href="projects?title=แผนงาน/โครงการ&module=โครงการ Bill and Melinda Gates Foundation">โครงการ Bill and Melinda Gates Foundation</a></li>
+                    <li><a href="projects?title=แผนงาน/โครงการ&module=คำรับรองปฏิบัติราชการประจำปี">คำรับรองปฏิบัติราชการประจำปี</a></li>
+                    <li><a href="projects?title=แผนงาน/โครงการ&module=รายงานประจำปีสำนักโรคติดต่อนำโดยแมลง">รายงานประจำปีสำนักโรคติดต่อนำโดยแมลง</a></li>
+                    <li><a href="projects?title=แผนงาน/โครงการ&module=แผนงานด้าน Knowledge management">แผนงานด้าน Knowledge management</a></li>
               </ul>
             </li>
             <li><a href="#">ติดต่อเรา</a></li>

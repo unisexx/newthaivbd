@@ -4,7 +4,6 @@ Design by http://www.favouritedesign.com
 */
 
 /* ### GENERAL ### */
-
 BODY {margin:0;padding:0; color:#333; font-family: Tahoma, MS Sans Serif, Microsoft Sans Serif, Verdana,Arial, Helvetica, sans-serif;
 font-size:13px; font-weight:normal;  background: url(../images/bg_index.gif) repeat-y; background-position:center; height:100%; }
 
@@ -13,6 +12,7 @@ p { margin:8px 0; padding:0 0 8px;}
 a {text-decoration:none; color:#0575d4;}
 a:hover {color:#0190fe;}
 
+h1{font-size: 1.4em;}
 /* ------- Remove Chrome's border around active fields ------- */
 
 *:focus {outline: none;}
@@ -60,7 +60,7 @@ a.linkRegis:hover {color:#c1ab19; text-decoration:underline;}
 
 
 	/**** SECOND LEVEL MENU ****/
-#topmenu ul li ul{position:absolute;display:none; z-index: 1; /* integer */}
+#topmenu ul li ul{position:absolute;display:none; z-index: 9999; /* integer */}
 #topmenu ul li:hover ul,
 #topmenu ul li.iehover ul{left:0;top:28px; display:block; }
 #topmenu ul li ul li{float:none; width:150px; background:#cae25a; }
@@ -97,7 +97,7 @@ a.linkRegis:hover {color:#c1ab19; text-decoration:underline;}
 .hr3{border:0px; width:100%; float:left; border-top: 1px solid #c4e094;}
 
 .h1{color:#c4e094; font-size:30px; font-weight:bold;}
-.h2{color:#88c32c;font-size:20px; font-weight:bold;}
+.h2{color:#88c32c; font-size:20px; font-weight:bold;}
 
 #accordion{color:#737f6e;}
 .ui-accordion .ui-accordion-header { border-radius:5px; background-color:#e3e8e1;
@@ -131,7 +131,7 @@ a.linkRegis:hover {color:#c1ab19; text-decoration:underline;}
 	
 	.tdpr{padding-top:10px; border-top:2px solid #94D0B9; border-bottom:2px solid #94D0B9;background: url(../images/bg_pr.png) repeat;}
 	#contentNewsPR ul{list-style:none; margin:0; padding:0;}
-	#contentNewsPR ul li  {float: left;list-style:none; margin:0; padding-top:3px; padding-bottom:3px;}
+	#contentNewsPR ul li  {float: left;list-style:none; margin:0; padding-top:3px; padding-bottom:3px; background:#fff;}
 	.imgNews{ float: left; margin-right:7px; border:0;}
 	.textNews {text-align: justify;}
 	.textNews a{color:#333;}
@@ -162,7 +162,7 @@ a.linkRegis:hover {color:#c1ab19; text-decoration:underline;}
 #media{float:left; margin-top:30px; margin-left:33px; width:920px;}
 .tdmedia1{background: url(../images/borderrmedia_left.png) repeat-y;}
 .tdmedia2{background: url(../images/borderrmedia_right.png) repeat-y;}
-.tdmedia3{background: url(../images/borderrmedia_bottom.png) repeat-x bottom; border-top:2px solid #e4f16e;}
+.tdmedia3{background: url(../images/borderrmedia_bottom.png) repeat-x bottom; border-top:2px solid #e4f16e; padding-bottom:10px;}
 .titlemedia{font-weight:bold; color:#437aae;}
 .titlemedia a{color:#437aae;}
 .titlemedia a:hover{color:#017ff4;}
@@ -228,6 +228,9 @@ background: url(../images/pic_gallery_reg2.png) no-repeat;padding-bottom:30px;}
 .imgleaf{ height:16px; background: url(../images/leaf-wormhole.png) no-repeat 7px 5px; background-color:#ECECEC;}
 .location{float:right; font-size:11px; color:#888888; padding-left:15px; padding-top:3px;  background: url(../images/bul.png) no-repeat 7px 7px;} 
 
+.content{padding:10px;}
+.content .list {color: #014568;padding: 7px;background: #F0F0F0; border-bottom:1px dotted #bcbcbc;}
+.content .list span{float:right;}
 
 /****************************************************************/
 

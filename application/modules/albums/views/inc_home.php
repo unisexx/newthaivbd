@@ -9,7 +9,7 @@
 	    <td width="13" background="themes/thaivbd/images/bordergallery_left_bg.png">&nbsp;</td>
 	    <td bgcolor="#f2f6ee">
 	        <div class="picturegallery">
-	        	<div class="viewpicAll"><a href="#">ดูรูปกิจกรรมทั้งหมด</a></div><br>
+	        	<div class="viewpicAll"><a href="albums">ดูรูปกิจกรรมทั้งหมด</a></div><br>
 	            
 	            <div class="carousel" style="margin-top:10px;">
 	            	<div style="float:left; border:0;"><a href="#"><img class="prev"   src="themes/thaivbd/images/arrow_gallery_left.png" width="19" height="107" border="0"/></a></div>

@@ -14,11 +14,13 @@ Class Abouts extends Admin_Controller{
 	{
 		if($_POST){
 			$about = new About($id);
+            if(!$id)$_POST['user_id'] = $this->session->userdata('id');
+            $_POST['module'] = $_GET['module'];
 			$about->from_array($_POST);
 			$about->save();
 			set_notify('success', lang('save_data_complete'));
 		}
-		redirect('abouts/admin/abouts/form/'.$id.'?title='.$_POST['menu_title']);
+		redirect('abouts/admin/abouts/form/'.$id.'?module='.$_GET['module']);
 	}
 	
 }

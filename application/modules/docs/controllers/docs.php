@@ -17,5 +17,16 @@ class Docs extends Public_Controller
 		$this->load->view('inc_home',$data);
     }
 	
+    function index(){
+        $data['docs'] = new Doc();
+        $data['docs']->where('module = "'.$_GET['module'].'"')->get_page();
+        $this->template->build('index',$data);
+    }
+    
+    function view($id){
+        $data['doc'] = new Doc($id);
+        $data['doc']->counter();
+        $this->template->build('view',$data);
+    }
 }
 ?>

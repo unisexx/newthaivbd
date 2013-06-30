@@ -17,5 +17,29 @@ class Researchs extends Public_Controller
 		$this->load->view('inc_home',$data);
     }
 	
+    function index(){
+        $data['categories'] = new Category();
+        $data['categories']->where('module = "'.$_GET['module'].'"')->get_page();
+        $this->template->build('index',$data);
+    }
+    
+    function view($id){
+        $data['researchs'] = new Research();
+        $data['researchs']->where('category_id = '.$id)->get_page();
+        $data['researchs']->category->counter();
+        $this->template->build('view',$data);
+    }
+    
+    function download($id)
+    {
+        if($id){
+            $attach = new Research($id);
+            $attach->counter();
+            $this->load->helper('download');
+            $data = file_get_contents(urldecode($attach->files));
+            $name = basename($attach->files);
+            force_download($name, $data); 
+        }
+    }
 }
 ?>

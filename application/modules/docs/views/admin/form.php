@@ -19,7 +19,7 @@
             </div>
         </div> -->
         
-        <?php if($project->image):?>
+        <!-- <?php if($project->image):?>
         	<div class="control-group">
 	            <div class="controls">
 	                <img class="span1" src="<?php echo $project->image?>">
@@ -27,7 +27,6 @@
 	        </div>
         <?php endif;?>
         	
-        <!-- file manager -->
         <div class="control-group">
             <label class="control-label" for="form-field-8">รูปภาพ</label>
             <div class="controls">
@@ -35,7 +34,6 @@
             </div>
         </div>
         
-        <!-- file manager -->
         <div class="control-group">
             <label class="control-label" for="form-field-2">ไฟล์</label>
             <div class="controls">
@@ -44,7 +42,7 @@
                     <a class="btn btn-danger btn-mini" data-rel="tooltip" title="ดาวน์โหลด" href="docs/admin/docs/download/<?php echo $project->id?>"><i class="icon-download-alt"></i></a>
                 <?php endif;?>
             </div>
-        </div>
+        </div> -->
         
         <!-- text input -->
         <div class="control-group">

@@ -5,7 +5,7 @@
 
 <div class="row-fluid">
 <!-- PAGE CONTENT BEGINS HERE -->
-    <form id="validation-form" class="form-horizontal" method="post" action="abouts/admin/abouts/save/<?php echo $about->id?>" enctype="multipart/form-data">
+    <form id="validation-form" class="form-horizontal" method="post" action="abouts/admin/abouts/save/<?php echo $about->id?>?module=<?php echo $_GET['module']?>" enctype="multipart/form-data">
         
         <div class="control-group">
             <label class="control-label" for="form-field-9">รายละเอียด</label>

@@ -1,7 +1,6 @@
 <?php
 class Contents extends Public_Controller
 {
-	
     function __construct()
     {
         parent::__construct();
@@ -55,5 +54,17 @@ class Contents extends Public_Controller
 		$data['content']->where('module = "โรคติดต่อนำโดยแมลงอื่นๆ"')->order_by('id','desc')->get(1);
 		$this->load->view('inc_other_insect',$data);
 	}
+    
+    function index(){
+        $data['contents'] = new Content();
+        $data['contents']->where('module = "'.$_GET['module'].'"')->get_page();
+        $this->template->build('index',$data);
+    }
+    
+    function view($id){
+        $data['content'] = new Content($id);
+        $data['content']->counter();
+        $this->template->build('view',$data);
+    }
 }
 ?>
