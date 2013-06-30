@@ -3,6 +3,12 @@ $(function() {
       collapsible: true,
       heightStyle: "content"
     });
+    
+    
+	$(function () {
+  		$("a[rel^=lightbox]").prettyPhoto();
+	});
+						
 	
 	var availableTags = [
 		"ActionScript",

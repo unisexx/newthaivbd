@@ -17,5 +17,12 @@ class Albums extends Public_Controller
         $data['albums']->order_by('id','desc')->get_page();
         $this->template->build('index',$data);
     }
+    
+    function view($id){
+        $data['pictures'] = new Picture();
+        $data['pictures']->where('album_id = "'.$id.'"')->get();
+        $data['pictures']->album->counter();
+        $this->template->build('view',$data);
+    }
 }
 ?>

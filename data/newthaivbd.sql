@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50045
 File Encoding         : 65001
 
-Date: 2013-06-28 01:39:48
+Date: 2013-07-01 06:53:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -22,6 +22,8 @@ DROP TABLE IF EXISTS `abouts`;
 CREATE TABLE `abouts` (
   `id` int(11) NOT NULL auto_increment,
   `detail` text,
+  `module` varchar(255) default NULL,
+  `user_id` int(11) default NULL,
   `created` datetime default NULL,
   `updated` datetime default NULL,
   PRIMARY KEY  (`id`)
@@ -30,9 +32,9 @@ CREATE TABLE `abouts` (
 -- ----------------------------
 -- Records of abouts
 -- ----------------------------
-INSERT INTO `abouts` VALUES ('1', 'เปิดทำการตั้งแต่เวลา 8.30 น.- 18.00 น. บ้านเลขที่ 63/1247 ซ.คลองเก้า แขวงสามวาตะวันออก เขตคลองสามวา จังหวัดกรุงเทพ เบอร์โทรติดต่อ 0811164771,0923527767 (สารมารถติดต่อได้ทุกวันทำการ) จัดจำหน่ายสินค้า  ไม้ปาร์เก้  ไม้พื้นรางลิ้น  พื้นลามิเนต ไม้ทำบันได เสากลึงลูกกรงและไม้แปรรูปชนิด ต่างๆ อีกทั้งยังมีบริการติดตั้งไม้ปาร์เก้ ไม้พื้นรางลิ้น และไม้บันได พร้อมขัดทำสีเคลือบเงาไม้ด้วยช่างที่ชำนาญงานและมีประสบการณ์มากกว่า  10ปี  โดยยึดมั่นในหลักการขายสินค้าที่ได้คุณภาพมาตรฐาน ราคายุติธรรม บริการทั้งก่อนและหลังการขายให้กับลูกค้าอย่างซื่อสัตย์และเป็นกันเองด้วยดีตลอดมา ', '2013-05-27 00:52:52', '2013-06-02 14:27:59');
-INSERT INTO `abouts` VALUES ('2', 'โครงสร้างองค์กร', '2013-06-06 09:30:40', '2013-06-06 09:30:40');
-INSERT INTO `abouts` VALUES ('3', 'วิสัยทัศน์ พันธกิจ ยุทธศาสตร์', '2013-06-06 09:31:04', '2013-06-06 09:31:04');
+INSERT INTO `abouts` VALUES ('1', 'เปิดทำการตั้งแต่เวลา 8.30 น.- 18.00 น. บ้านเลขที่ 63/1247 ซ.คลองเก้า แขวงสามวาตะวันออก เขตคลองสามวา จังหวัดกรุงเทพ เบอร์โทรติดต่อ 0811164771,0923527767 (สารมารถติดต่อได้ทุกวันทำการ) จัดจำหน่ายสินค้า  ไม้ปาร์เก้  ไม้พื้นรางลิ้น  พื้นลามิเนต ไม้ทำบันได เสากลึงลูกกรงและไม้แปรรูปชนิด ต่างๆ อีกทั้งยังมีบริการติดตั้งไม้ปาร์เก้ ไม้พื้นรางลิ้น และไม้บันได พร้อมขัดทำสีเคลือบเงาไม้ด้วยช่างที่ชำนาญงานและมีประสบการณ์มากกว่า  10ปี  โดยยึดมั่นในหลักการขายสินค้าที่ได้คุณภาพมาตรฐาน ราคายุติธรรม บริการทั้งก่อนและหลังการขายให้กับลูกค้าอย่างซื่อสัตย์และเป็นกันเองด้วยดีตลอดมา', 'บุคลากร', null, '2013-05-27 00:52:52', '2013-06-29 14:38:59');
+INSERT INTO `abouts` VALUES ('2', 'โครงสร้างองค์กร', 'โครงสร้างองค์กร', null, '2013-06-06 09:30:40', '2013-06-29 14:39:50');
+INSERT INTO `abouts` VALUES ('3', 'วิสัยทัศน์ พันธกิจ ยุทธศาสตร์', 'วิสัยทัศน์ พันธกิจ ยุทธศาสตร์', null, '2013-06-06 09:31:04', '2013-06-29 14:39:56');
 
 -- ----------------------------
 -- Table structure for `albums`
@@ -45,13 +47,14 @@ CREATE TABLE `albums` (
   `updated` datetime default NULL,
   `user_id` int(11) NOT NULL,
   `status` varchar(10) collate utf8_unicode_ci default NULL,
+  `counter` int(11) default '0',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of albums
 -- ----------------------------
-INSERT INTO `albums` VALUES ('65', 'ทดสอบปอัลบัม', '2013-06-10 00:41:20', '2013-06-27 14:37:46', '1', 'approve');
+INSERT INTO `albums` VALUES ('65', 'ทดสอบปอัลบัม', '2013-06-10 00:41:20', '2013-06-30 19:52:59', '1', 'approve', '3');
 
 -- ----------------------------
 -- Table structure for `album_categories`
@@ -1377,14 +1380,16 @@ CREATE TABLE `categories` (
   `approve_date` datetime default NULL,
   `group_id` int(11) default NULL,
   `approve_id` int(11) default NULL,
+  `counter` int(11) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
-INSERT INTO `categories` VALUES ('6', 'สื่อต้นแบบ', 'วันไข้เลือดออกอาเซียน 2013', null, '0', null, '1', 'approve', '0', null, null, null);
-INSERT INTO `categories` VALUES ('7', 'งานวิจัย', 'งานวิจัย', null, '0', null, '1', 'approve', '0', null, null, null);
+INSERT INTO `categories` VALUES ('6', 'สื่อต้นแบบ', 'วันไข้เลือดออกอาเซียน 2013', null, '0', null, '1', 'approve', '0', null, null, null, '8');
+INSERT INTO `categories` VALUES ('7', 'งานวิจัย', 'งานวิจัย', null, '0', null, '1', 'approve', '0', null, null, null, '4');
+INSERT INTO `categories` VALUES ('8', 'สื่อต้นแบบ', 'ddd', null, '0', null, '1', 'approve', '0', null, null, null, '1');
 
 -- ----------------------------
 -- Table structure for `contents`
@@ -1408,32 +1413,32 @@ CREATE TABLE `contents` (
 -- ----------------------------
 -- Records of contents
 -- ----------------------------
-INSERT INTO `contents` VALUES ('3', 'ข่าว Highlights', 'ซีรีย์เกาหลีออนไลน์', 'ซีรีย์เกาหลีออนไลน์', 'fff', 'uploads/file/demo/hilight1.png', '1', '0', 'approve', '2013-03-27 00:48:19', '2013-06-25 13:33:37');
+INSERT INTO `contents` VALUES ('3', 'ข่าว Highlights', 'ซีรีย์เกาหลีออนไลน์', 'ซีรีย์เกาหลีออนไลน์', 'fff', 'uploads/file/demo/hilight1.png', '1', '1', 'approve', '2013-03-27 00:48:19', '2013-06-29 18:54:06');
 INSERT INTO `contents` VALUES ('7', 'ข่าว Highlights', 'adfree-คืออะไร', 'Adfree คืออะไร?', '<div class=\"span8\">\n<div class=\"hero-content\">\n<div class=\"shameless-self-promotion\"><strong>Adfree.in.th</strong> เป็นเว็บไซต์ให้บริการฟรีประกาศ, คุณสามารถจัดการประกาศต่างๆของคุณเองได้อย่างง่ายดายเพียงสมัครสมาชิกกับเรา<br /><br />ในอนาคต <strong>Adfree.in.th</strong> จะมีบริการเสริมเพิ่มเติมอีกมากมายเพื่อให้เกิดประโยชน์สูงสุดกับสมาชิกในเว็บของเราซึ่งทุกอย่างไม่มีการคิดค่าใช้จ่ายแต่อย่างใด</div>\n</div>\n</div>', 'uploads/file/demo/hilight1.png', '1', '0', 'approve', '2013-03-27 03:07:59', '2013-06-25 13:33:22');
 INSERT INTO `contents` VALUES ('8', 'ข่าว Highlights', 'การใช้งานเว็บไซต์เบื้องต้น', 'การใช้งานเว็บไซต์เบื้องต้น', 'การใช้งานเว็บไซต์ Adfree.in.th&nbsp;เบื้องต้น ง่ายๆเพียง 3 ขั้นตอน<br /><br />1. สมัครสมาชิก<br />2. กรอกข้อมูลส่วนตัว (ข้อมูลสำหรับการติดต่อเจ้าของประกาศ)<br />3. ทำการเพิ่ม/ลบ/แก้ไขประกาศได้เลย<br /><br />ปล. ข้อมูลที่ทำการกรอกลงในเว็บไซต์ทั้งหมดควรจะเป็นข้อมูลจริงๆของท่านเพื่อความสะดวกในการติดต่อกับลูกค้าที่สนใจ<br />ปล2. ทางเว็บไซต์ขอสงวนสิทธิ์ในการระงับการให้บริการสมาชิกที่ทำการลงข้อมูลเท็จซึ่งหากมีผู้ร้องเรียนแล้วทางเราทำการตรวจสอบแล้วพบว่าทีการทุจริตจริง ทางเว็บไซต์จะรวบรวมหลักฐานแล้วส่งดำเนินคดีต่อไป...', 'uploads/file/demo/hilight1.png', '1', '0', 'approve', '2013-04-14 01:58:14', '2013-06-25 13:33:12');
-INSERT INTO `contents` VALUES ('9', 'ข่าว Highlights', 'สิทธิประโยชน์ของสมาชิกที่ใช้บริการฟรีประกาศกับเรา', 'สิทธิประโยชน์ของสมาชิกที่ใช้บริการฟรีประกาศกับเรา', 'นอกจากเว็บไซต์ adfree.in.th ได้ถูกออกแบบให้สนับสนุนรองรับในเรื่องของ SEO อย่างเต็มรูปแบบแล้ว ประกาศทุกประกาศของสมาชิกยังจะถูกเผยแพร่ทาง social network อย่าง facebook, twitter โดยอัติโนมัติในเพจของ <a href=\"https://www.facebook.com/adfree.in.th\" target=\"_blank\">adfree.in.th</a>&nbsp;ทั้งนี้เพื่อให้ประกาศของท่านสมาชิกได้เข้าถึงกลุ่มลูกค้าให้ได้มากที่สุด ดังนั้น ยิ่งสมาชิกทำการลงประกาศมากเท่าใด สินค้าของท่านก็ยิ่งผ่านสายตาของผู้คนมากขึ้นเป็นทวีคูณอีกหลายเท่าตัว', 'uploads/file/demo/hilight1.png', '314', '0', 'approve', '2013-05-08 01:33:17', '2013-06-25 13:33:04');
-INSERT INTO `contents` VALUES ('10', 'ข่าว Highlights', 'ทดสอบ', 'ทดสอบ', 'ทดสอบ', 'uploads/file/demo/hilight1.png', '316', '0', 'approve', '2013-06-06 12:02:35', '2013-06-25 13:31:47');
-INSERT INTO `contents` VALUES ('13', 'ข่าวประชาสัมพันธ์', 'ข่าวประชาสัมพันธ์', 'ข่าวประชาสัมพันธ์', 'ข่าวประชาสัมพันธ์', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-06 14:42:15', '2013-06-13 11:17:43');
+INSERT INTO `contents` VALUES ('9', 'ข่าว Highlights', 'สิทธิประโยชน์ของสมาชิกที่ใช้บริการฟรีประกาศกับเรา', 'สิทธิประโยชน์ของสมาชิกที่ใช้บริการฟรีประกาศกับเรา', 'นอกจากเว็บไซต์ adfree.in.th ได้ถูกออกแบบให้สนับสนุนรองรับในเรื่องของ SEO อย่างเต็มรูปแบบแล้ว ประกาศทุกประกาศของสมาชิกยังจะถูกเผยแพร่ทาง social network อย่าง facebook, twitter โดยอัติโนมัติในเพจของ <a href=\"https://www.facebook.com/adfree.in.th\" target=\"_blank\">adfree.in.th</a>&nbsp;ทั้งนี้เพื่อให้ประกาศของท่านสมาชิกได้เข้าถึงกลุ่มลูกค้าให้ได้มากที่สุด ดังนั้น ยิ่งสมาชิกทำการลงประกาศมากเท่าใด สินค้าของท่านก็ยิ่งผ่านสายตาของผู้คนมากขึ้นเป็นทวีคูณอีกหลายเท่าตัว', 'uploads/file/demo/hilight1.png', '314', '2', 'approve', '2013-05-08 01:33:17', '2013-06-29 18:58:31');
+INSERT INTO `contents` VALUES ('10', 'ข่าว Highlights', 'ทดสอบ', 'ทดสอบ', 'ทดสอบ', 'uploads/file/demo/hilight1.png', '316', '1', 'approve', '2013-06-06 12:02:35', '2013-06-29 19:18:29');
+INSERT INTO `contents` VALUES ('13', 'ข่าวประชาสัมพันธ์', 'ข่าวประชาสัมพันธ์', 'ข่าวประชาสัมพันธ์', 'ข่าวประชาสัมพันธ์', 'uploads/file/demo/demo.png', '1', '1', 'approve', '2013-06-06 14:42:15', '2013-06-29 18:57:06');
 INSERT INTO `contents` VALUES ('14', 'แผนงาน/โครงการตามยุทธศาสตร์', null, '', null, null, '1', '0', 'approve', '2013-06-07 01:43:46', '2013-06-07 01:43:46');
 INSERT INTO `contents` VALUES ('15', null, null, null, null, null, null, '0', 'approve', '2013-06-08 13:18:03', '2013-06-08 13:18:03');
 INSERT INTO `contents` VALUES ('16', null, null, null, null, null, null, '0', 'approve', '2013-06-08 13:19:33', '2013-06-08 13:19:33');
 INSERT INTO `contents` VALUES ('17', null, null, null, null, null, null, '0', 'approve', '2013-06-08 13:19:44', '2013-06-08 13:19:44');
-INSERT INTO `contents` VALUES ('18', 'สถานการณ์ไข้ปวดข้อยุงลาย', 'title', 'title', 'detail', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-13 11:12:30', '2013-06-13 11:12:30');
+INSERT INTO `contents` VALUES ('18', 'สถานการณ์ไข้ปวดข้อยุงลาย', 'title', 'title', 'detail', 'uploads/file/demo/demo.png', '1', '1', 'approve', '2013-06-13 11:12:30', '2013-07-01 06:26:35');
 INSERT INTO `contents` VALUES ('19', 'ข่าวประชาสัมพันธ์', 'ข่าวประชาสัมพันธ์2', 'ข่าวประชาสัมพันธ์2', '2', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-25 15:35:17', '2013-06-25 15:35:17');
-INSERT INTO `contents` VALUES ('20', 'ข่าวประชาสัมพันธ์', 'ข่าวประชาสัมพันธ์3', 'ข่าวประชาสัมพันธ์3', '3', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-25 15:35:28', '2013-06-25 15:35:28');
+INSERT INTO `contents` VALUES ('20', 'ข่าวประชาสัมพันธ์', 'ข่าวประชาสัมพันธ์3', 'ข่าวประชาสัมพันธ์3', '3', 'uploads/file/demo/demo.png', '1', '1', 'approve', '2013-06-25 15:35:28', '2013-06-29 19:18:49');
 INSERT INTO `contents` VALUES ('21', 'ข่าวประชาสัมพันธ์', 'ข่าวประชาสัมพันธ์4', 'ข่าวประชาสัมพันธ์4', '4', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-25 15:39:27', '2013-06-25 15:39:27');
 INSERT INTO `contents` VALUES ('22', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-1', 'ข่าวประกวดราคา 1', 'ข่าวประกวดราคา 1', '', '1', '0', 'approve', '2013-06-26 14:24:07', '2013-06-26 14:24:07');
 INSERT INTO `contents` VALUES ('23', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-2', 'ข่าวประกวดราคา 2', 'ข่าวประกวดราคา 2', '', '1', '0', 'approve', '2013-06-26 14:24:17', '2013-06-26 14:24:17');
 INSERT INTO `contents` VALUES ('24', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-3', 'ข่าวประกวดราคา 3', 'ข่าวประกวดราคา 3', '', '1', '0', 'approve', '2013-06-26 14:24:29', '2013-06-26 14:24:29');
 INSERT INTO `contents` VALUES ('25', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-4', 'ข่าวประกวดราคา 4', 'ข่าวประกวดราคา 4', '', '1', '0', 'approve', '2013-06-26 14:24:52', '2013-06-26 14:24:52');
-INSERT INTO `contents` VALUES ('26', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-5', 'ข่าวประกวดราคา 5', 'ข่าวประกวดราคา 5', '', '1', '0', 'approve', '2013-06-26 14:25:02', '2013-06-26 14:25:02');
+INSERT INTO `contents` VALUES ('26', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-5', 'ข่าวประกวดราคา 5', 'ข่าวประกวดราคา 5', '', '1', '1', 'approve', '2013-06-26 14:25:02', '2013-06-29 19:23:22');
 INSERT INTO `contents` VALUES ('27', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-6', 'ข่าวประกวดราคา 6', 'ข่าวประกวดราคา 6', '', '1', '0', 'approve', '2013-06-26 14:25:12', '2013-06-26 14:25:12');
 INSERT INTO `contents` VALUES ('28', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-7', 'ข่าวประกวดราคา 7', 'ข่าวประกวดราคา 7', '', '1', '0', 'approve', '2013-06-26 14:25:23', '2013-06-26 14:25:23');
 INSERT INTO `contents` VALUES ('29', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-8', 'ข่าวประกวดราคา 8', 'ข่าวประกวดราคา 8', '', '1', '0', 'approve', '2013-06-26 14:25:41', '2013-06-26 14:25:41');
 INSERT INTO `contents` VALUES ('30', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-9', 'ข่าวประกวดราคา 9', 'ข่าวประกวดราคา 9', '', '1', '0', 'approve', '2013-06-26 14:25:50', '2013-06-26 14:25:50');
-INSERT INTO `contents` VALUES ('31', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-10', 'ข่าวประกวดราคา 10', 'ข่าวประกวดราคา 10', '', '1', '0', 'approve', '2013-06-26 14:25:57', '2013-06-26 14:25:57');
-INSERT INTO `contents` VALUES ('32', 'สถานการณ์เท้าช้าง', 'สถานการณ์โรคเท้าช้าง', 'สถานการณ์โรคเท้าช้าง', '<h4>สถานการณ์โรคเท้าช้าง</h4>\n<strong>ข่าวโรคเท้าช้าง</strong><span>&nbsp;</span> \n<table class=\"contentpaneopen\">\n<tbody>\n<tr>\n<td colspan=\"2\" valign=\"top\">\n<div><a href=\"http://www.thaivbd.org/php/images/stories/filaria/Manual-Filaria.zip\">คู่ มือโรคเท้าช้าง</a></div>\n</td>\n</tr>\n</tbody>\n</table>\n<span>&nbsp;</span><a href=\"http://www.thaivbd.org/uploads/situation/Elephant/2545-2552.pdf\">สถิติผู้ป่วยโรคเท้าช้าง</a><span>&nbsp;</span><br /> \n<table class=\"contentpaneopen\">\n<tbody>\n<tr>\n<td class=\"contentheading\" width=\"100%\"><strong>สถานการณ์เท้าช้างปี 53</strong></td>\n</tr>\n</tbody>\n</table>\n<strong>สถานการณ์โรคเท้าช้าง&nbsp;</strong><br /> \n<hr />\n<strong>ตารางที่&nbsp;1</strong><span>&nbsp;การกระจายของผู้ป่วยโรคเท้าช้างคนไทย รอบเขต&nbsp;</span><strong>ณ ธันวาคม 2553</strong><br /><br /> \n<table class=\"border_tb\" border=\"1\" cellspacing=\"1\" cellpadding=\"1\" width=\"100%\">\n<tbody>\n<tr>\n<td><span><strong>หน่วยงาน</strong></span></td>\n<td><span><strong>จำนวนผู้ป่วย</strong></span></td>\n<td><span><strong>ร้อยละ</strong></span></td>\n<td><span><strong>อัตราความชุมต่อแสนประชากร</strong></span></td>\n</tr>\n<tr>\n<td><strong>สคร.9</strong></td>\n<td><strong>16</strong></td>\n<td><strong>13.80</strong></td>\n<td><strong>0.46</strong></td>\n</tr>\n<tr>\n<td><strong>สคร.11</strong></td>\n<td><strong>2</strong></td>\n<td><strong>1.73</strong></td>\n<td><strong>0.05</strong></td>\n</tr>\n<tr>\n<td><strong>สคร.12</strong></td>\n<td><strong>98</strong></td>\n<td><strong>84.49</strong></td>\n<td><strong>2.19</strong></td>\n</tr>\n<tr>\n<td><strong>รวม</strong></td>\n<td><strong>116</strong></td>\n<td><strong>100</strong></td>\n<td><strong>0.19</strong></td>\n</tr>\n</tbody>\n</table>\n<div><strong><br /></strong></div>\n<hr />\n<div><strong>ตารางที่ 2</strong>&nbsp;จังหวัดที่พบผู้ป่วยโรคเท้าช้างคนไทย&nbsp;<strong>ณ เดือน มีนาคม 2554</strong></div>\n<div>&nbsp;</div>\n<table class=\"border_tb\" border=\"1\" cellspacing=\"1\" cellpadding=\"1\" width=\"100%\" align=\"center\" bgcolor=\"#666666\">\n<tbody>\n<tr>\n<td rowspan=\"2\" valign=\"top\" bgcolor=\"#ffffff\">\n<div><strong>อันดับที่</strong></div>\n</td>\n<td rowspan=\"2\" width=\"39\" valign=\"top\" bgcolor=\"#ffffff\">\n<div><strong>เขต</strong></div>\n</td>\n<td rowspan=\"2\" width=\"45\" valign=\"top\" bgcolor=\"#ffffff\"><strong>จังหวัด</strong></td>\n<td colspan=\"4\" width=\"189\" valign=\"top\" bgcolor=\"#ffffff\">\n<div><strong>ผู้ป่วยระยะ</strong></div>\n</td>\n<td rowspan=\"2\" width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">\n<div><strong>รวม</strong></div>\n</td>\n<td rowspan=\"2\" width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">\n<div><strong>อัตราความชุกต่อแสนประชากร</strong></div>\n</td>\n</tr>\n<tr>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>M</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>L</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>E</div>\n</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>Ag+</div>\n</td>\n</tr>\n<tr>\n<td width=\"67\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>1</div>\n</td>\n<td width=\"39\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>12</div>\n</td>\n<td width=\"109\" valign=\"top\" bgcolor=\"#ffffff\">นราธิวาส</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>90</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>5</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>1</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>98</div>\n</td>\n<td width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>13.71</div>\n</td>\n</tr>\n<tr>\n<td width=\"67\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>2</div>\n</td>\n<td width=\"39\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>9</div>\n</td>\n<td width=\"109\" valign=\"top\" bgcolor=\"#ffffff\">ตาก</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>16</div>\n</td>\n<td width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>16</div>\n</td>\n<td width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>3.06</div>\n</td>\n</tr>\n<tr>\n<td width=\"67\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>3</div>\n</td>\n<td width=\"39\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>11</div>\n</td>\n<td width=\"109\" valign=\"top\" bgcolor=\"#ffffff\">สรุาษฏร์ธานี</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">1</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">0</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">0</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">0</td>\n<td width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">1</td>\n<td width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">0.11</td>\n</tr>\n<tr>\n<td width=\"67\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>4</div>\n</td>\n<td width=\"39\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>&nbsp;</div>\n</td>\n<td width=\"109\" valign=\"top\" bgcolor=\"#ffffff\">กระบี่</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>1</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>1</div>\n</td>\n<td width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0.25</div>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"215\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>รวม</div>\n</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>91</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>5</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>2</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>16</div>\n</td>\n<td width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>114</div>\n</td>\n<td width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0.19</div>\n</td>\n</tr>\n</tbody>\n</table>\n<div>&nbsp;</div>\n<div>M = ผู้ป่วยระยะแพร่เชื้อพยาธิฯในโลหิต<br />L = ผู้ป่วยระยะต่อมน้ำเหลืองอักเสบ&nbsp;<br />E = ผู้ป่วยระยะอวัยวะะบวมโต<br />Ag+ = ผู้ป่วยตรวจพบแอนติเจนเชื้อพยาธิฯในโลหิต</div>', '', '1', '0', 'approve', '2013-06-26 15:52:16', '2013-06-26 15:52:16');
-INSERT INTO `contents` VALUES ('33', 'สถานการณ์มาลาเรีย', 'สถานการณ์มาลาเรีย', 'สถานการณ์มาลาเรีย', '<h1>สถานการณ์มาลาเรีย</h1>', '', '1', '0', 'approve', '2013-06-26 16:11:24', '2013-06-26 16:11:24');
+INSERT INTO `contents` VALUES ('31', 'ข่าวประกวดราคา', 'ข่าวประกวดราคา-10', 'ข่าวประกวดราคา 10', 'ข่าวประกวดราคา 10', '', '1', '1', 'approve', '2013-06-26 14:25:57', '2013-06-29 19:00:33');
+INSERT INTO `contents` VALUES ('32', 'สถานการณ์เท้าช้าง', 'สถานการณ์โรคเท้าช้าง', 'สถานการณ์โรคเท้าช้าง', '<h4>สถานการณ์โรคเท้าช้าง</h4>\n<strong>ข่าวโรคเท้าช้าง</strong><span>&nbsp;</span> \n<table class=\"contentpaneopen\">\n<tbody>\n<tr>\n<td colspan=\"2\" valign=\"top\">\n<div><a href=\"http://www.thaivbd.org/php/images/stories/filaria/Manual-Filaria.zip\">คู่ มือโรคเท้าช้าง</a></div>\n</td>\n</tr>\n</tbody>\n</table>\n<span>&nbsp;</span><a href=\"http://www.thaivbd.org/uploads/situation/Elephant/2545-2552.pdf\">สถิติผู้ป่วยโรคเท้าช้าง</a><span>&nbsp;</span><br /> \n<table class=\"contentpaneopen\">\n<tbody>\n<tr>\n<td class=\"contentheading\" width=\"100%\"><strong>สถานการณ์เท้าช้างปี 53</strong></td>\n</tr>\n</tbody>\n</table>\n<strong>สถานการณ์โรคเท้าช้าง&nbsp;</strong><br /> \n<hr />\n<strong>ตารางที่&nbsp;1</strong><span>&nbsp;การกระจายของผู้ป่วยโรคเท้าช้างคนไทย รอบเขต&nbsp;</span><strong>ณ ธันวาคม 2553</strong><br /><br /> \n<table class=\"border_tb\" border=\"1\" cellspacing=\"1\" cellpadding=\"1\" width=\"100%\">\n<tbody>\n<tr>\n<td><span><strong>หน่วยงาน</strong></span></td>\n<td><span><strong>จำนวนผู้ป่วย</strong></span></td>\n<td><span><strong>ร้อยละ</strong></span></td>\n<td><span><strong>อัตราความชุมต่อแสนประชากร</strong></span></td>\n</tr>\n<tr>\n<td><strong>สคร.9</strong></td>\n<td><strong>16</strong></td>\n<td><strong>13.80</strong></td>\n<td><strong>0.46</strong></td>\n</tr>\n<tr>\n<td><strong>สคร.11</strong></td>\n<td><strong>2</strong></td>\n<td><strong>1.73</strong></td>\n<td><strong>0.05</strong></td>\n</tr>\n<tr>\n<td><strong>สคร.12</strong></td>\n<td><strong>98</strong></td>\n<td><strong>84.49</strong></td>\n<td><strong>2.19</strong></td>\n</tr>\n<tr>\n<td><strong>รวม</strong></td>\n<td><strong>116</strong></td>\n<td><strong>100</strong></td>\n<td><strong>0.19</strong></td>\n</tr>\n</tbody>\n</table>\n<div><strong><br /></strong></div>\n<hr />\n<div><strong>ตารางที่ 2</strong>&nbsp;จังหวัดที่พบผู้ป่วยโรคเท้าช้างคนไทย&nbsp;<strong>ณ เดือน มีนาคม 2554</strong></div>\n<div>&nbsp;</div>\n<table class=\"border_tb\" border=\"1\" cellspacing=\"1\" cellpadding=\"1\" width=\"100%\" align=\"center\" bgcolor=\"#666666\">\n<tbody>\n<tr>\n<td rowspan=\"2\" valign=\"top\" bgcolor=\"#ffffff\">\n<div><strong>อันดับที่</strong></div>\n</td>\n<td rowspan=\"2\" width=\"39\" valign=\"top\" bgcolor=\"#ffffff\">\n<div><strong>เขต</strong></div>\n</td>\n<td rowspan=\"2\" width=\"45\" valign=\"top\" bgcolor=\"#ffffff\"><strong>จังหวัด</strong></td>\n<td colspan=\"4\" width=\"189\" valign=\"top\" bgcolor=\"#ffffff\">\n<div><strong>ผู้ป่วยระยะ</strong></div>\n</td>\n<td rowspan=\"2\" width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">\n<div><strong>รวม</strong></div>\n</td>\n<td rowspan=\"2\" width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">\n<div><strong>อัตราความชุกต่อแสนประชากร</strong></div>\n</td>\n</tr>\n<tr>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>M</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>L</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>E</div>\n</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>Ag+</div>\n</td>\n</tr>\n<tr>\n<td width=\"67\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>1</div>\n</td>\n<td width=\"39\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>12</div>\n</td>\n<td width=\"109\" valign=\"top\" bgcolor=\"#ffffff\">นราธิวาส</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>90</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>5</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>1</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>98</div>\n</td>\n<td width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>13.71</div>\n</td>\n</tr>\n<tr>\n<td width=\"67\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>2</div>\n</td>\n<td width=\"39\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>9</div>\n</td>\n<td width=\"109\" valign=\"top\" bgcolor=\"#ffffff\">ตาก</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>16</div>\n</td>\n<td width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>16</div>\n</td>\n<td width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>3.06</div>\n</td>\n</tr>\n<tr>\n<td width=\"67\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>3</div>\n</td>\n<td width=\"39\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>11</div>\n</td>\n<td width=\"109\" valign=\"top\" bgcolor=\"#ffffff\">สรุาษฏร์ธานี</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">1</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">0</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">0</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">0</td>\n<td width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">1</td>\n<td width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">0.11</td>\n</tr>\n<tr>\n<td width=\"67\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>4</div>\n</td>\n<td width=\"39\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>&nbsp;</div>\n</td>\n<td width=\"109\" valign=\"top\" bgcolor=\"#ffffff\">กระบี่</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>1</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0</div>\n</td>\n<td width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>1</div>\n</td>\n<td width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0.25</div>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"215\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>รวม</div>\n</td>\n<td width=\"45\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>91</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>5</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>2</div>\n</td>\n<td width=\"48\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>16</div>\n</td>\n<td width=\"47\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>114</div>\n</td>\n<td width=\"156\" valign=\"top\" bgcolor=\"#ffffff\">\n<div>0.19</div>\n</td>\n</tr>\n</tbody>\n</table>\n<div>&nbsp;</div>\n<div>M = ผู้ป่วยระยะแพร่เชื้อพยาธิฯในโลหิต<br />L = ผู้ป่วยระยะต่อมน้ำเหลืองอักเสบ&nbsp;<br />E = ผู้ป่วยระยะอวัยวะะบวมโต<br />Ag+ = ผู้ป่วยตรวจพบแอนติเจนเชื้อพยาธิฯในโลหิต</div>', '', '1', '2', 'approve', '2013-06-26 15:52:16', '2013-06-30 22:45:27');
+INSERT INTO `contents` VALUES ('33', 'สถานการณ์มาลาเรีย', 'สถานการณ์มาลาเรีย', 'สถานการณ์มาลาเรีย', '<h1>สถานการณ์มาลาเรีย</h1>', '', '1', '1', 'approve', '2013-06-26 16:11:24', '2013-07-01 06:34:28');
 INSERT INTO `contents` VALUES ('34', 'โรคติดต่อนำโดยแมลงอื่นๆ', 'โรคติดต่อนำโดยแมลงอื่นๆ', 'โรคติดต่อนำโดยแมลงอื่นๆ', '<h1>โรคติดต่อนำโดยแมลงอื่นๆ</h1>', '', '1', '0', 'approve', '2013-06-26 16:12:15', '2013-06-26 16:12:15');
 
 -- ----------------------------
@@ -1492,8 +1497,8 @@ CREATE TABLE `dengues` (
 -- ----------------------------
 -- Records of dengues
 -- ----------------------------
-INSERT INTO `dengues` VALUES ('3', 'สถานการณ์ไข้เลือดออก', 'week', '2556', '25', null, null, '1', '0', 'approve', '2013-06-26 15:18:40', '2013-06-26 15:18:40', '0000-00-00', 'sick', 'die', 'sick_rate', 'die_rate', 'sickdie_rate', 'รายละเอียด');
-INSERT INTO `dengues` VALUES ('4', 'สถานการณ์ไข้เลือดออก', 'week', '2556', '33', null, null, '1', '0', 'approve', '2013-06-26 15:19:05', '2013-06-26 15:19:05', '0000-00-00', 'sick', 'die', 'sick_rate', 'die_rate', 'sickdie_rate', 'รายละเอียด');
+INSERT INTO `dengues` VALUES ('3', 'สถานการณ์ไข้เลือดออก', 'week', '2556', '25', null, null, '1', '2', 'approve', '2013-06-26 15:18:40', '2013-06-30 21:54:42', '0000-00-00', 'sick', 'die', 'sick_rate', 'die_rate', 'sickdie_rate', 'รายละเอียด');
+INSERT INTO `dengues` VALUES ('4', 'สถานการณ์ไข้เลือดออก', 'week', '2556', '33', null, null, '1', '1', 'approve', '2013-06-26 15:19:05', '2013-06-30 21:54:14', '0000-00-00', 'sick', 'die', 'sick_rate', 'die_rate', 'sickdie_rate', 'รายละเอียด');
 
 -- ----------------------------
 -- Table structure for `districts`
@@ -10447,13 +10452,19 @@ CREATE TABLE `docs` (
   `created` datetime default NULL,
   `updated` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of docs
 -- ----------------------------
 INSERT INTO `docs` VALUES ('5', 'วารสารโรคติดต่อนำโดยแมลง', 'แบบสอบถามความพึงพอใจในการเข้ารับการฝึกอบรม-การใช้โปรแกรมระบบฐานข้อมูลทางสังคม-วันที่-30-เมษายน-2556', 'uploads/file/demo/demo.png', 'แบบสอบถามความพึงพอใจในการเข้ารับการฝึกอบรม การใช้โปรแกรมระบบฐานข้อมูลทางสังคม วันที่ 30 เมษายน 2556', 'fadfasdfasdf', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-11 13:46:02', '2013-06-11 14:04:55');
-INSERT INTO `docs` VALUES ('6', 'แนวทางและคู่มือปฏิบัติการ', 'แนวทางและคู่มือปฏิบัติการ', 'uploads/file/demo/demo.png', 'แนวทางและคู่มือปฏิบัติการ', '<h1>แนวทางและคู่มือปฏิบัติการ</h1>', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-11 14:10:24', '2013-06-11 14:10:24');
+INSERT INTO `docs` VALUES ('6', 'แนวทางและคู่มือปฏิบัติการ', 'แนวทางและคู่มือปฏิบัติการ', 'uploads/file/demo/demo.png', 'แนวทางและคู่มือปฏิบัติการ', 'แนวทางและคู่มือปฏิบัติการ', 'uploads/file/demo/demo.png', '1', '1', 'approve', '2013-06-11 14:10:24', '2013-06-29 20:40:28');
+INSERT INTO `docs` VALUES ('7', 'แนวทางและคู่มือปฏิบัติการ', 'ffff', 'uploads/file/demo/demo.png', 'ffff', 'dddd', 'uploads/file/demo/demo.png', '1', '3', 'approve', '2013-06-29 20:37:16', '2013-06-29 21:17:22');
+INSERT INTO `docs` VALUES ('8', 'แนวทางและคู่มือปฏิบัติการ', 'baek-ji-young-–-gu-family-book-ost-part4', null, 'Baek Ji Young – Gu Family Book OST Part.4', 'fffffff', null, '1', '1', 'approve', '2013-06-29 21:17:11', '2013-06-29 21:17:30');
+INSERT INTO `docs` VALUES ('9', 'ไข้ปวดข้อยุงลาย', 'ttt', null, 'ttt', 'ttt', null, '1', '1', 'approve', '2013-07-01 06:22:20', '2013-07-01 06:26:54');
+INSERT INTO `docs` VALUES ('10', 'ไข้ปวดข้อยุงลาย', 'ee', null, 'ee', 'ee', null, '1', '1', 'approve', '2013-07-01 06:22:28', '2013-07-01 06:26:50');
+INSERT INTO `docs` VALUES ('11', 'โรคติดต่อนำโดยแมลงอื่นๆ', 'fff', null, 'fff', 'fff', null, '1', '0', 'approve', '2013-07-01 06:37:36', '2013-07-01 06:37:36');
+INSERT INTO `docs` VALUES ('12', 'โรคติดต่อนำโดยแมลงอื่นๆ', 'ddd', null, 'ddd', 'ddd', null, '1', '0', 'approve', '2013-07-01 06:37:43', '2013-07-01 06:37:43');
 
 -- ----------------------------
 -- Table structure for `hilights`
@@ -10502,21 +10513,21 @@ CREATE TABLE `histories` (
   `created` datetime default NULL,
   `updated` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of histories
 -- ----------------------------
-INSERT INTO `histories` VALUES ('19', 'มาลาเรียรายสัปดาห์', 'week', '2556', '1', null, '1', '0', 'approve', '2013-06-15 23:40:03', '2013-06-15 23:40:03');
+INSERT INTO `histories` VALUES ('19', 'มาลาเรียรายสัปดาห์', 'week', '2556', '1', null, '1', '1', 'approve', '2013-06-15 23:40:03', '2013-07-01 06:32:54');
 INSERT INTO `histories` VALUES ('20', 'มาลาเรียรายสัปดาห์', 'week', '2556', '33', null, '1', '0', 'approve', '2013-06-15 23:59:29', '2013-06-15 23:59:29');
 INSERT INTO `histories` VALUES ('21', 'มาลาเรียรายสัปดาห์', 'week', '2555', '29', null, '1', '0', 'approve', '2013-06-16 00:00:20', '2013-06-16 00:00:20');
-INSERT INTO `histories` VALUES ('22', 'ไข้เลือดออก', 'week', '2556', '3', null, '1', '0', 'approve', '2013-06-16 01:34:03', '2013-06-16 01:34:03');
+INSERT INTO `histories` VALUES ('22', 'ไข้เลือดออก', 'week', '2556', '3', null, '1', '14', 'approve', '2013-06-16 01:34:03', '2013-06-30 22:45:14');
 INSERT INTO `histories` VALUES ('23', 'มาลาเรียรายเดือน', 'month', '2556', null, '2', '1', '0', 'approve', '2013-06-16 02:12:35', '2013-06-16 02:12:35');
-INSERT INTO `histories` VALUES ('24', 'มาลาเรียรายเดือน', 'month', '2556', null, '2', '1', '0', 'approve', '2013-06-16 02:15:54', '2013-06-16 02:15:54');
-INSERT INTO `histories` VALUES ('25', 'มาลาเรียรายเดือน', 'month', '2556', null, '9', '1', '0', 'approve', '2013-06-16 02:20:25', '2013-06-16 02:20:25');
-INSERT INTO `histories` VALUES ('26', 'เท้าช้างรายเดือน', 'month', '2556', null, '8', '1', '0', 'approve', '2013-06-16 02:23:18', '2013-06-16 02:23:18');
+INSERT INTO `histories` VALUES ('25', 'มาลาเรียรายเดือน', 'month', '2556', null, '9', '1', '1', 'approve', '2013-06-16 02:20:25', '2013-07-01 06:33:15');
+INSERT INTO `histories` VALUES ('26', 'เท้าช้างรายเดือน', 'month', '2556', null, '8', '1', '10', 'approve', '2013-06-16 02:23:18', '2013-06-30 23:35:16');
 INSERT INTO `histories` VALUES ('27', 'ไข้เลือดออก GIS', 'month', '2556', null, '2', '1', '0', 'approve', '2013-06-19 11:00:12', '2013-06-19 11:00:12');
 INSERT INTO `histories` VALUES ('28', 'ไข้มาลาเรีย GIS', 'month', '2556', null, '8', '1', '0', 'approve', '2013-06-19 11:00:34', '2013-06-19 11:00:34');
+INSERT INTO `histories` VALUES ('29', 'เท้าช้างรายปี', 'year', '2556', null, null, '1', '4', 'approve', '2013-06-30 22:37:52', '2013-06-30 23:40:00');
 
 -- ----------------------------
 -- Table structure for `history_files`
@@ -10529,7 +10540,7 @@ CREATE TABLE `history_files` (
   `files` varchar(255) default NULL,
   `counter` int(11) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of history_files
@@ -10537,11 +10548,11 @@ CREATE TABLE `history_files` (
 INSERT INTO `history_files` VALUES ('5', '19', 'title[]', 'uploads/file/demo/demo.png', '0');
 INSERT INTO `history_files` VALUES ('6', '19', 'title[]', 'uploads/file/demo/demo.png', '0');
 INSERT INTO `history_files` VALUES ('7', '19', 'title[]', 'uploads/file/demo/demo.png', '0');
-INSERT INTO `history_files` VALUES ('29', '26', 'title[]', 'files[]', '0');
+INSERT INTO `history_files` VALUES ('29', '26', 'title[]', 'files[]', '1');
 INSERT INTO `history_files` VALUES ('9', '20', '333', '444', '0');
 INSERT INTO `history_files` VALUES ('10', '20', 'title[]', 'files[]', '0');
 INSERT INTO `history_files` VALUES ('11', '21', 'title[]', 'files[]', '0');
-INSERT INTO `history_files` VALUES ('12', '22', 'title[]', 'files[]', '0');
+INSERT INTO `history_files` VALUES ('12', '22', 'title[]', 'files[]', '1');
 INSERT INTO `history_files` VALUES ('13', '22', 'title[]', 'files[]', '0');
 INSERT INTO `history_files` VALUES ('14', '22', 'title[]', 'files[]', '0');
 INSERT INTO `history_files` VALUES ('24', '25', 'title[]', 'files[]', '0');
@@ -10561,6 +10572,9 @@ INSERT INTO `history_files` VALUES ('34', '28', 'title[]', 'files[]', '0');
 INSERT INTO `history_files` VALUES ('35', '28', 'title[]', 'files[]', '0');
 INSERT INTO `history_files` VALUES ('36', '28', 'title[]', 'files[]', '0');
 INSERT INTO `history_files` VALUES ('37', '28', 'title[]', 'files[]', '0');
+INSERT INTO `history_files` VALUES ('38', '29', 'title[]', 'files[]', '0');
+INSERT INTO `history_files` VALUES ('39', '29', 'title[]', 'files[]', '1');
+INSERT INTO `history_files` VALUES ('40', '29', 'title[]', 'files[]', '1');
 
 -- ----------------------------
 -- Table structure for `levels`
@@ -10666,7 +10680,7 @@ CREATE TABLE `pollresults` (
   `polldetail_id` int(11) default NULL,
   `ip` varchar(50) collate utf8_unicode_ci default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=232 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=236 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of pollresults
@@ -10890,6 +10904,10 @@ INSERT INTO `pollresults` VALUES ('228', '8', '35', '127.0.0.1');
 INSERT INTO `pollresults` VALUES ('229', '8', '35', '127.0.0.1');
 INSERT INTO `pollresults` VALUES ('230', '8', '62', '127.0.0.1');
 INSERT INTO `pollresults` VALUES ('231', '8', '35', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('232', '1', '2', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('233', '8', '35', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('234', '1', '1', '127.0.0.1');
+INSERT INTO `pollresults` VALUES ('235', '8', '35', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for `polls`
@@ -10966,15 +10984,19 @@ CREATE TABLE `projects` (
   `created` datetime default NULL,
   `updated` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of projects
 -- ----------------------------
 INSERT INTO `projects` VALUES ('1', 'แผนงาน/โครงการตามยุทธศาสตร์', 'วอลรัส', 'วอลรัส', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-07 01:54:19', '2013-06-07 02:42:13');
 INSERT INTO `projects` VALUES ('2', 'แผนงาน/โครงการตามยุทธศาสตร์', 'รูปวอลลัส', 'รูปวอลลัส', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-07 01:55:51', '2013-06-07 01:57:32');
-INSERT INTO `projects` VALUES ('3', 'ข่าวเด่นประเด็นร้อน', 'ไม่มีอะ', 'ไม่มีอะ', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-08 09:32:15', '2013-06-08 09:32:15');
+INSERT INTO `projects` VALUES ('3', 'ข่าวเด่นประเด็นร้อน', 'ไม่มีอะ', 'ไม่มีอะ', 'uploads/file/demo/demo.png', '1', '1', 'approve', '2013-06-08 09:32:15', '2013-06-29 18:53:08');
 INSERT INTO `projects` VALUES ('4', 'วารสารโรคติดต่อนำโดยแมลง', 'title', 'title', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-11 11:58:47', '2013-06-11 11:58:47');
+INSERT INTO `projects` VALUES ('5', 'เอกสารทั่วไป', 'เอกสารทั่วไป', 'เอกสารทั่วไป', 'uploads/file/demo/demo.png', '1', '1', 'approve', '2013-06-29 15:43:31', '2013-06-29 17:12:48');
+INSERT INTO `projects` VALUES ('6', 'คำสั่ง', 'คำสั่ง', 'คำสั่ง', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-29 15:43:48', '2013-06-29 15:43:48');
+INSERT INTO `projects` VALUES ('7', 'รายงานการประชุม', 'รายงานการประชุม', 'รายงานการประชุม', 'uploads/file/demo/demo.png', '1', '0', 'approve', '2013-06-29 15:43:58', '2013-06-29 15:43:58');
+INSERT INTO `projects` VALUES ('8', 'หนังสือแจ้งเวียน', 'หนังสือแจ้งเวียน', 'หนังสือแจ้งเวียน', 'uploads/file/demo/demo.png', '1', '1', 'approve', '2013-06-29 15:44:09', '2013-06-29 17:01:55');
 
 -- ----------------------------
 -- Table structure for `provinces`
@@ -11107,18 +11129,23 @@ CREATE TABLE `researchs` (
   `created` datetime default NULL,
   `updated` datetime default NULL,
   `category_id` int(11) default NULL,
+  `counter` int(11) default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=226 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=230 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of researchs
 -- ----------------------------
-INSERT INTO `researchs` VALUES ('220', '111', 'uploads/file/demo/demo.png', null, '2013-06-27 14:05:28', '2013-06-27 14:05:28', '6');
-INSERT INTO `researchs` VALUES ('221', '222', 'uploads/file/demo/demo.png', null, '2013-06-27 14:05:28', '2013-06-27 14:05:28', '6');
-INSERT INTO `researchs` VALUES ('222', '333', 'uploads/file/demo/demo.png', null, '2013-06-27 14:05:28', '2013-06-27 14:05:28', '6');
-INSERT INTO `researchs` VALUES ('223', 'งานวิจัย1', 'uploads/file/demo/demo.png', null, '2013-06-27 14:20:44', '2013-06-27 14:20:44', '7');
-INSERT INTO `researchs` VALUES ('224', 'งานวิจัย2', 'uploads/file/demo/demo.png', null, '2013-06-27 14:20:44', '2013-06-27 14:20:44', '7');
-INSERT INTO `researchs` VALUES ('225', 'งานวิจัย3', 'uploads/file/demo/demo.png', null, '2013-06-27 14:20:44', '2013-06-27 14:20:44', '7');
+INSERT INTO `researchs` VALUES ('220', '111', 'uploads/file/demo/demo.png', null, '2013-06-27 14:05:28', '2013-06-27 14:05:28', '6', '0');
+INSERT INTO `researchs` VALUES ('221', '222', 'uploads/file/demo/demo.png', null, '2013-06-27 14:05:28', '2013-06-29 20:10:07', '6', '1');
+INSERT INTO `researchs` VALUES ('222', '333', 'uploads/file/demo/demo.png', null, '2013-06-27 14:05:28', '2013-06-29 20:10:09', '6', '1');
+INSERT INTO `researchs` VALUES ('223', 'งานวิจัย1', 'uploads/file/demo/demo.png', null, '2013-06-27 14:20:44', '2013-06-27 14:20:44', '7', '0');
+INSERT INTO `researchs` VALUES ('224', 'งานวิจัย2', 'uploads/file/demo/demo.png', null, '2013-06-27 14:20:44', '2013-06-29 20:10:38', '7', '1');
+INSERT INTO `researchs` VALUES ('225', 'งานวิจัย3', 'uploads/file/demo/demo.png', null, '2013-06-27 14:20:44', '2013-06-27 14:20:44', '7', '0');
+INSERT INTO `researchs` VALUES ('226', 'title[]', 'files[]', null, '2013-06-29 20:37:42', '2013-06-29 20:37:42', '8', '0');
+INSERT INTO `researchs` VALUES ('227', 'title[]', 'files[]', null, '2013-06-29 20:37:42', '2013-06-29 20:37:42', '8', '0');
+INSERT INTO `researchs` VALUES ('228', 'title[]', 'files[]', null, '2013-06-29 20:37:42', '2013-06-29 20:37:42', '8', '0');
+INSERT INTO `researchs` VALUES ('229', 'title[]', 'files[]', null, '2013-06-29 20:37:42', '2013-06-29 20:37:42', '8', '0');
 
 -- ----------------------------
 -- Table structure for `users`

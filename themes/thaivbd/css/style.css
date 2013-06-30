@@ -235,3 +235,12 @@ background: url(../images/pic_gallery_reg2.png) no-repeat;padding-bottom:30px;}
 /****************************************************************/
 
 
+/* custom */
+.read-more{display: block;
+background: #f1f1f1;
+margin:5px 0 0 0;
+padding: 3px 5px;
+text-align: right;
+color: #004739;}
+.read-more a{color:#004739;}
+

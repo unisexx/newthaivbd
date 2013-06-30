@@ -9,7 +9,7 @@
 	    <td width="13" background="themes/thaivbd/images/bordergallery_left_bg.png">&nbsp;</td>
 	    <td bgcolor="#f2f6ee">
 	        <div class="picturegallery">
-	        	<div class="viewpicAll"><a href="albums">ดูรูปกิจกรรมทั้งหมด</a></div><br>
+	        	<div class="viewpicAll"><a href="albums">ดูภาพกิจกรรมทั้งหมด</a></div><br>
 	            
 	            <div class="carousel" style="margin-top:10px;">
 	            	<div style="float:left; border:0;"><a href="#"><img class="prev"   src="themes/thaivbd/images/arrow_gallery_left.png" width="19" height="107" border="0"/></a></div>
@@ -19,8 +19,8 @@
 				            <?php foreach($pics as $pic):?>
 						  		<li>
 						  			<div class="picture">
-						            <a href="#" class="highlightit"><img src="<?php echo $pic->image?>" width="122" height="95"></a>
-						            <a href="#"><?php echo $pic->album->name?></a></div>
+						            <a rel="lightbox[gal]" href="<?php echo $pic->image?>" class="highlightit" alt="<?php echo $pic->album->name?>"><img src="<?php echo $pic->image?>" width="122" height="95"></a>
+						            <a rel="lightbox[gal2]" href="<?php echo $pic->image?>"><?php echo $pic->album->name?></a></div>
 						  		</li>
 						  	<?php endforeach;?>
 				        </ul>

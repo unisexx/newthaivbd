@@ -26,28 +26,6 @@ $(function(){
 });
 </script>
 
-<!-- <a class="moreleft" href="polls">more</a> -->
-<!-- <div id="poll">
-	<b><?php echo $poll->title ?></b>
-	<div class="chkbox">
-		<?php foreach($poll->polldetail as $item): ?>
-		<label class="radio">
-          <input type="radio" value="<?php echo $item->id ?>" name="poll">
-          <?php echo $item->name ?>
-        </label>
-		<?php endforeach ?>
-		<p style="text-align: right;">
-			<input type="submit" value="ส่งความคิดเห็น" class="btn btn-mini btn-info" name="pollBtn2"> <input value="ดูผลสำรวจ" type="button" class="btn_pollview link_vote" name="viewBtn2">
-			<a href="#" class="link_vote btn btn-mini btn-info">ดูผลโหวต</a>
-		</p>
-		<input type="hidden" name="id" value="<?php echo $poll->id ?>" />
-	</div>
-	<div class="poll-result" style="display:none;"></div>
-</div> -->
-
-
-
-
 <div id="poll">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -81,7 +59,7 @@ $(function(){
                 <input type="hidden" name="id" value="<?php echo $poll->id ?>" />
                 <div class="btn_ok"><a href="#">&nbsp;</a></div>
                 <div class="btn_viewvote"><a href="#">&nbsp;</a></div>
-                <div class="link_other_vote"><a href="#">แสดงความคิดเห็นในหัวข้ออื่นๆ</a></div>
+                <div class="link_other_vote"><a href="polls">แสดงความคิดเห็นในหัวข้ออื่นๆ</a></div>
             </td>
           </tr>
           <tr>
