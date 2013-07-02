@@ -31,13 +31,13 @@ class Vdos extends Admin_Controller
 			$category->from_array($_POST);
 			$category->save();
             
-            if($_POST['vdo_script']){
-                foreach($_POST['vdo_script'] as $key => $item){
+            if($_POST['url']){
+                foreach($_POST['url'] as $key => $item){
                     $vdo = new Vdo(@$_POST['vdo_id'][$key]);
                     if($item)
                     {
                     	$vdo->title = $_POST['title'][$key];
-                        $vdo->vdo_script = $item;
+                        $vdo->url = $item;
                         $vdo->category_id = $category->id;
                         $vdo->save();
                     }   

@@ -78,9 +78,9 @@
             </li>
             <li><a href="#">กิจกรรม</a>
                <ul>
-                	<li><a href="#">ปฏิทิน</a></li>
+                	<li><a href="calendars">ปฏิทิน</a></li>
                     <li><a href="albums">ภาพกิจกรรม</a></li>
-                    <li><a href="#">ภาพวีดีโอ</a></li>
+                    <li><a href="vdos">ภาพวีดีโอ</a></li>
               </ul>
             </li>
             <li><a href="#">แผนงาน/โครงการ</a>

@@ -224,4 +224,12 @@ function get_month_name($number){
 	return $month_th[$number];
 }
 
+function getYouTubeIdFromURL($url) 
+{
+  $pattern = '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i';
+  preg_match($pattern, $url, $matches);
+
+  return isset($matches[1]) ? $matches[1] : false;
+}
+
 ?>

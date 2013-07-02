@@ -1,25 +1,22 @@
-<style>
-.gal-blk img{float:left;margin:0 0 15px 15px;padding:1px;border:}    
-</style>
-
 <div id="breadcrumb">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tbody>
           <tr>
             <td width="10"><img src="themes/thaivbd/images/breadcrumb_left.png" width="10" height="26"></td>
             <td width="910" bgcolor="#ECECEC" class="imgleaf">
-            <div class="textbreadcrumb">ภาพกิจกรรม</div>         
-            <div class="location"><a href="home">หน้าแรก</a> &gt; <a href="albums">ภาพกิจกรรม</a> &gt; <?php echo $pictures->album->name ?></div>
+            <div class="textbreadcrumb">กิจกรรม</div>         
+            <div class="location"><a href="home">หน้าแรก</a> &gt; ภาพวีดีโอ</div>
             </td>
             <td width="10" align="right"><img src="themes/thaivbd/images/breadcrumb_right.png" width="10" height="26"></td>
           </tr>
           <tr>
               <td></td>
               <td class="content">
-                  <h1><?php echo $pictures->album->name ?></h1>
-                    <?php foreach($pictures as $row):?>
+                  <h1>ภาพวีดีโอ</h1>
+                    <?php foreach($vdos as $row):?>
                         <div class="picture">
-                            <a href="<?php echo $row->image ?>" rel="lightbox[gal]" class="highlightit" alt="<?php echo $row->album->name ?>"><img src="<?php echo $row->image ?>" width="122" height="95"></a>
+                            <a href="<?php echo $row->url ?>" rel="lightbox[vdo]" class="highlightit" alt="<?php echo $row->title ?>"><img src="http://img.youtube.com/vi/<?php echo getYouTubeIdFromURL($row->url)?>/0.jpg" width="122" height="95"></a><br>
+                            <span><?php echo $row->title ?></span>
                         </div>
                     <?php endforeach;?>
               </td>

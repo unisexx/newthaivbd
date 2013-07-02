@@ -8,7 +8,10 @@ class Calendars extends Admin_Controller
 	
 	function index()
 	{
-		//$this->template->build('admin/calendar_index');
+		$this->template->build('admin/calendar_index');
+	}
+	
+	function index2(){
 		$this->template->build('admin/index');
 	}
 	
@@ -41,7 +44,7 @@ class Calendars extends Admin_Controller
 	function form($id = FALSE)
 	{
 		$data['calendar'] = New Calendar($id);
-		$this->template->append_metadata(js_datepicker());
+		// $this->template->append_metadata(js_datepicker());
 		$this->template->build('admin/calendar_form',$data);
 	}
 	

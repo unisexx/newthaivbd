@@ -26,9 +26,9 @@
 	        </div>
 	        
             <div class="control-group">
-	            <label class="control-label" for="form-field-10">วิดีโอสคริปท์</label>
+	            <label class="control-label" for="form-field-10">ลิ้งค์ Youtube</label>
 	            <div class="controls">
-	                <textarea class="input-xxlarge" name="vdo_script[]" rows="5"><?php echo $vdo->vdo_script ?></textarea>
+	                <textarea class="input-xxlarge" name="url[]" rows="5"><?php echo $vdo->url ?></textarea>
 	            </div>
 	        </div>
 	        </div>
@@ -43,9 +43,9 @@
         </div>
         
         <div class="control-group">
-            <label class="control-label" for="form-field-10">วิดีโอสคริปท์</label>
+            <label class="control-label" for="form-field-10">ลิ้งค์ Youtube</label>
             <div class="controls">
-                <textarea class="input-xxlarge" name="vdo_script[]" rows="5"></textarea>
+                <textarea class="input-xxlarge" name="url[]" rows="5"></textarea>
             </div>
         </div>
         </div>
@@ -80,7 +80,7 @@ $(function(){
 	    $this = $(this);
 	    $.post('vdos/admin/vdos/delete_vid/' + $this.next('input[type=hidden]').val(),
         function(data){
-            $this.closest('.vid-blk').fadeOut();
+            $this.closest('.vid-blk').fadeOut(function(){$(this).remove();});
         })
 	    return false;
 	});
