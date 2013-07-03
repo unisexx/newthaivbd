@@ -7,25 +7,13 @@
 <div class="row-fluid">
 	
 <div class="block">
-<a href="calendars/admin/calendars/form" class="btn btn-info">เพิ่มตารางนัดหมาย</a>
+<!-- <a href="calendars/admin/calendars/form" class="btn btn-info">เพิ่มตารางนัดหมาย</a> -->
 
-<div style="clear:left;display:inline-block;width:100%">
-	<div style="height:30px;">&nbsp;
-		<div id='loading' style='display:none;text-align:center;'><img src="media/images/ajax-loader.gif" /></div>
-	</div>
-	<div id='calendar'></div>
-	<div style="clear:both;"></div>
-</div>
+<div id='calendar'></div>
 
 </div>
 
-<!-- Calendar -->
-<link rel='stylesheet' type='text/css' href='media/js/fullcalendar-1.4.3/redmond/theme.css' />
-<link rel='stylesheet' type='text/css' href='media/js/fullcalendar-1.4.3/fullcalendar-my.css' />
-<script type='text/javascript' src='media/js/fullcalendar-1.4.3/fullcalendar.js'></script>
-<script type='text/javascript' src='media/js/ui.core.js'></script>
-<script type='text/javascript' src='media/js/ui.draggable.js'></script>
-<script type='text/javascript' src='media/js/ui.resizable.js'></script>
+
 <!-- !Calendar -->
 <script>
 	$(function(){	
@@ -37,7 +25,7 @@
 				center: 'title',
 				right: 'prev,next'
 			},
-			theme: true,
+			theme: false,
 			editable: true,
 			eventDrop: function(event, start) {
 				$.post('<?php echo base_url()?>calendars/admin/calendars/events_move',{id:event.id,start:start,end:start});

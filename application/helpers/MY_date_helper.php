@@ -30,11 +30,22 @@ function DB2Date($Dt){
 	if(($Dt!=NULL)&&($Dt != '0000-00-00')){
 		@list($date,$time) = explode(" ",$Dt);
 		list($y,$m,$d) = explode("-",$date);
-		return $d."/".$m."/".($y+543);
+		return $d."/".$m."/".($y);
 	}else{
 		$Dt = "";
 		return $Dt; 
 	}
+}
+
+function DB2Date_th($Dt){ 
+    if(($Dt!=NULL)&&($Dt != '0000-00-00')){
+        @list($date,$time) = explode(" ",$Dt);
+        list($y,$m,$d) = explode("-",$date);
+        return $d."/".$m."/".($y+543);
+    }else{
+        $Dt = "";
+        return $Dt; 
+    }
 }
 
 function Date2DB($Dt){

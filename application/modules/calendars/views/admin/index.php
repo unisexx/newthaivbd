@@ -106,7 +106,7 @@ $(function() {
                 $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
                 
                 // เซฟเหตการณ์เมื่อลาก label จากข้างนอกมาวางในปฏิทิน
-                $.post('<?php echo base_url()?>calendars/admin/calendars/save',{
+                $.post('<?php echo base_url()?>calendars/admin/calendars/ajax_save',{
                     title : copiedEventObject.title,
                     start : copiedEventObject.start,
                     end : copiedEventObject.start,
@@ -144,7 +144,7 @@ $(function() {
                             true // make the event "stick"
                         );
                         
-                        $.post('<?php echo base_url()?>calendars/admin/calendars/save',{
+                        $.post('<?php echo base_url()?>calendars/admin/calendars/ajax_save',{
                             title : title,
                             start : start,
                             end : end
@@ -170,7 +170,7 @@ $(function() {
                         "callback": function() {
                             calendar.fullCalendar('removeEvents' , function(ev){
                                 // ลบกิจกรรม
-                                $.post('<?php echo base_url()?>calendars/admin/calendars/delete/'+calEvent._id);
+                                $.post('<?php echo base_url()?>calendars/admin/calendars/ajax_delete/'+calEvent._id);
                                 return (ev._id == calEvent._id);
                             })
                         }
@@ -194,7 +194,7 @@ $(function() {
                     div.modal("hide");
                     
                     // แก้ไขกิจกรรม
-                    $.post('<?php echo base_url()?>calendars/admin/calendars/save',{
+                    $.post('<?php echo base_url()?>calendars/admin/calendars/ajax_save',{
                         id : calEvent.id,
                         title : calEvent.title,
                         start : calEvent.start,

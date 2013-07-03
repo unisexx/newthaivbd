@@ -26,7 +26,7 @@ window.jQuery || document.write("<script src='media/js/jquery-1.9.1.min.js'>\x3C
 <script type="text/javascript" src="themes/admin/media/js/jquery.flot.resize.min.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/chosen.jquery.min.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/fuelux.spinner.js"></script>
-<script type="text/javascript" src="themes/admin/media/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="themes/admin/media/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/date.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/daterangepicker.min.js"></script>
@@ -38,7 +38,7 @@ window.jQuery || document.write("<script src='media/js/jquery-1.9.1.min.js'>\x3C
 <script type="text/javascript" src="themes/admin/media/js/fuelux.wizard.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/bootbox.min.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="themes/admin/media/js/fullcalendar.min.js"></script>
+<script type="text/javascript" src="themes/admin/media/js/fullcalendar.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/jquery.colorbox-min.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/fuelux.tree.min.js"></script>
 <script type="text/javascript" src="themes/admin/media/js/markdown.min.js"></script>
