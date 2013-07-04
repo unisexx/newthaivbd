@@ -19,7 +19,7 @@ class Calendars extends Public_Controller
 	
 	function view($id,$group_id=FALSE)
 	{
-		$type = array("e-blue" => "ประชุม","e-red" => "สัมมา","e-green" => "อบรม","e-violet" => "อื่นๆ");
+		//$type = array("e-blue" => "ประชุม","e-red" => "สัมมา","e-green" => "อบรม","e-violet" => "อื่นๆ");
 		$data['calendar'] = new Calendar($id);
 		// if($group_id)
 		// {
@@ -27,7 +27,7 @@ class Calendars extends Public_Controller
 			// //$this->template->set_layout('group_layout');
 		// }
 		$data['calendar']->counter();
-		$data['type'] = $type[$data['calendar']->className];
+		// $data['type'] = $type[$data['calendar']->className];
 		$this->template->build('calendar_view',$data);
 	}
 	

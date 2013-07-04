@@ -19,7 +19,7 @@
          <label>รหัสผ่าน</label>
 		 <input type="password" name="Password" class="input_boxLogin" title="Password"  placeholder="">
          <input name="btn_login" class="btn_login" >
-         <br><label id="linkRegis"><a href="#" class="linkRegis">ลืมรหัสผ่าน</a> | <a href="#" class="linkRegis">สมัครสมาชิก</a></label>
+         <br><label id="linkRegis"><a href="users/forget_pass" class="linkRegis">ลืมรหัสผ่าน</a> | <a href="users/register" class="linkRegis">สมัครสมาชิก</a></label>
     </form></div>
 <div class="clr"></div>
 <div id="topmenu">
@@ -55,8 +55,8 @@
             </li>
             <li><a href="#">GIS</a>
               <ul>
-                	<li><a href="#">โรคไข้เลือดออก</a></li>
-                    <li><a href="#">โรคมาลาเรีย</a></li>
+                	<li><a href="histories?module=ไข้เลือดออก GIS&type=month&year=<?php echo (date('Y')+543);?>">โรคไข้เลือดออก</a></li>
+                    <li><a href="histories?module=ไข้มาลาเรีย GIS&type=month&year=<?php echo (date('Y')+543);?>">โรคมาลาเรีย</a></li>
               </ul>
             </li>
             <li><a href="#">ความรู้ทั่วไปสำหรับประชาชน</a>
@@ -93,7 +93,7 @@
                     <li><a href="projects?title=แผนงาน/โครงการ&module=แผนงานด้าน Knowledge management">แผนงานด้าน Knowledge management</a></li>
               </ul>
             </li>
-            <li><a href="#">ติดต่อเรา</a></li>
+            <li><a href="contacts">ติดต่อเรา</a></li>
         </ul>
         </td>
         <td width="17" height="41"><img src="themes/thaivbd/images/bg_topmenu_right.png" width="24" height="46" /></td>

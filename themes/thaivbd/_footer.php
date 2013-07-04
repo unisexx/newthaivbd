@@ -8,7 +8,7 @@
     <td width="13" bgcolor="#81C572"> </td>
     <td width="894" bgcolor="#81C572">
     <div style="float:left; padding-top:5px;">สำนักโรคติดต่อนำโดยแมลง กรมควบคุมโรค กระทรวงสาธารณสุข  โทร. 02-590-3230  อีเมล์ : <span class="linkmail"><a href="mailto:thaivbd.it@gmail.com" target="_blank">thaivbd.it@gmail.com</a></span></div>
-    <div class="social"><a href="#" title="Facebook"><img src="themes/thaivbd/images/icon_fb.png" width="20" height="20" border="0"></a>&nbsp;&nbsp;<a href="#" title="Twitter"><img src="themes/thaivbd/images/icon_twitter.png" width="20" height="20" border="0"></a></div></td>
+    <div class="social"><a href="https://www.facebook.com/thaivbd" title="Facebook" target="_blank"><img src="themes/thaivbd/images/icon_fb.png" width="20" height="20" border="0"></a>&nbsp;&nbsp;<a href="https://twitter.com/thaivbd" title="Twitter" target="_blank"><img src="themes/thaivbd/images/icon_twitter.png" width="20" height="20" border="0"></a></div></td>
     <td valign="top" bgcolor="#81C572"><img src="themes/thaivbd/images/footer_topright.jpg" width="13" height="13" /></td>
   </tr>
   <tr>

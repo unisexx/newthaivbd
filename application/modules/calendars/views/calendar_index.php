@@ -1,10 +1,7 @@
 <!-- Calendar -->
-<link rel='stylesheet' type='text/css' href='media/js/fullcalendar-1.4.3/redmond/theme.css' />
-<link rel='stylesheet' type='text/css' href='media/js/fullcalendar-1.4.3/fullcalendar-my.css' />
-<script type='text/javascript' src='media/js/fullcalendar-1.4.3/fullcalendar.js'></script>
-<script type='text/javascript' src='media/js/ui.core.js'></script>
-<script type='text/javascript' src='media/js/ui.draggable.js'></script>
-<script type='text/javascript' src='media/js/ui.resizable.js'></script>
+<link rel="stylesheet" href="themes/admin/media/css/fullcalendar.css" />
+<link rel="stylesheet" href="themes/admin/media/css/ace.min.css" />
+<script type="text/javascript" src="themes/admin/media/js/fullcalendar.js"></script>
 <!-- !Calendar -->
 <script type="text/javascript">
 	$(function(){	
@@ -15,7 +12,7 @@
 						center: 'title',
 						right: 'prev,next'
 					},
-			theme: true,
+			theme: false,
 			editable: true,
 			disableDragging : true,
 			disableResizing : true,

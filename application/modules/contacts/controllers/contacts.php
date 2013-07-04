@@ -22,6 +22,7 @@ class Contacts extends Public_Controller{
 				set_notify('error','กรอกรหัสไม่ถูกต้อง');
 				redirect($_SERVER['HTTP_REFERER']);
 			}
+			set_notify('success', lang('ส่งข้อความเรียบร้อยค่ะ'));
         }
         redirect('contacts');
     }

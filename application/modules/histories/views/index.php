@@ -5,7 +5,7 @@
             <td width="10"><img src="themes/thaivbd/images/breadcrumb_left.png" width="10" height="26"></td>
             <td width="910" bgcolor="#ECECEC" class="imgleaf">
             <div class="textbreadcrumb">ข้อมูลย้อนหลัง</div>         
-            <div class="location"><a href="home">หน้าแรก</a> &gt; ข้อมูล<?php echo $_GET['module']?>ย้อนหลัง ปี <?php echo $_GET['year']?></div>
+            <div class="location"><a href="home">หน้าแรก</a> &gt; ข้อมูล<?php echo $_GET['module']?> ปี <?php echo $_GET['year']?></div>
             </td>
             <td width="10" align="right"><img src="themes/thaivbd/images/breadcrumb_right.png" width="10" height="26"></td>
           </tr>
@@ -15,7 +15,7 @@
                   
                 <?php if($_GET['type'] == 'week'):?>
                   
-                  <h1>ข้อมูล<?php echo $_GET['module']?>ย้อนหลัง ปี <?php echo $_GET['year']?></h1>
+                  <h1>ข้อมูล<?php echo $_GET['module']?> ปี <?php echo $_GET['year']?></h1>
                     <center>
                     <select name="year" id="form-field-select-1" onchange="window.open(this.options[this.selectedIndex].value,'_self')">
                         <?php for ($x = (date('Y')+543); $x >= 2548; $x--):?>
@@ -33,7 +33,7 @@
                 
                 <?php elseif($_GET['type'] == 'month'):?>
                     
-                    <h1>ข้อมูล<?php echo $_GET['module']?>ย้อนหลัง</h1>
+                    <h1>ข้อมูล<?php echo $_GET['module']?></h1>
                     <center>
                     <select name="year" id="form-field-select-1" onchange="window.open(this.options[this.selectedIndex].value,'_self')">
                         <?php for ($x = (date('Y')+543); $x >= 2548; $x--):?>
