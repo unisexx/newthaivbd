@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50045
 File Encoding         : 65001
 
-Date: 2013-07-08 00:54:33
+Date: 2013-07-08 01:08:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -11184,7 +11184,7 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', '1', 'admin', '17c18d078e38d6d838280b34c0ffc245', '1', null, '3', '59', 'unisexx@gmail.com', 'active', null, '2011-04-07 04:07:15', '', null, null, 'Administrator', null, null, null, '', '0858616058', 'http://www.kpoplover.com', 'https://www.facebook.com/adfree.in.th', '', '', '', null, null);
+INSERT INTO `users` VALUES ('1', '1', 'admin', '17c18d078e38d6d838280b34c0ffc245', '1', null, '3', '59', 'unisexx@gmail.com', 'active', null, '2011-04-07 04:07:15', '', null, null, 'Administrator', null, null, null, '', '0858616058', 'http://www.kpoplover.com', 'https://www.facebook.com/adfree.in.th', '', '', '', null, '3e8e6111374e9e312c2ac65395773a6e');
 INSERT INTO `users` VALUES ('313', '2', 'dreamcolo', '9132574141d75fcd702e045909357525', null, null, null, null, 'dream-colo@hotmail.com', 'active', null, '2013-04-21 15:48:33', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '110.171.65.34', null);
 INSERT INTO `users` VALUES ('314', '2', 'indesign', 'bea55739dc695f48530d0f713ecb0e0b', null, null, null, null, 'arsenal.fm@hotmail.com', 'active', null, '2013-04-22 15:38:08', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '115.87.54.181', null);
 INSERT INTO `users` VALUES ('315', '2', 'arunya', '444b542015d4392f9b9a81cf875aca64', null, null, null, null, 'arunya_2538@hotmail.com', 'active', null, '2013-04-24 16:17:32', null, null, null, null, null, null, null, null, null, null, null, null, null, null, '223.206.34.221', null);
