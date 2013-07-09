@@ -97,4 +97,61 @@ $(function() {
 		}
 	);
 	
+	
+	// declare a few constants:
+	     var SMALL = 9; //small font size in pixels
+	     var LARGE = 16; //larger size in pixels
+	     var RESET = 13;
+	     var COOKIE_NAME = "Simple-Fontresizer"; //Maybe give this the name of your site.
+
+	     //make it small by default
+	     var fontsize = RESET; 
+
+	     // Only show text resizing links if JS is enabled
+	     $(".fontresize").show();
+
+	     // if cookie exists set font size to saved value, otherwise create cookie
+	     // if($.cookie(COOKIE_NAME)) {
+		     // fontsize = $.cookie(COOKIE_NAME);
+		     // //set initial font size for this page view:
+		     // $("body").css("font-size", fontsize + "px");
+		     // //set up appropriate class on font resize link:
+		     // if(fontsize == SMALL) { $("#small").addClass("current"); }
+		     // else { $("#large").addClass("current"); }
+	     // } else {
+		     // $("#small").addClass("current");
+		     // $.cookie(COOKIE_NAME, fontsize);
+	     // }
+
+	     // large font-size link:
+	     $(".fontSizePlus").bind("click", function() {
+			     if(fontsize == SMALL || fontsize == RESET) {
+				     fontsize = LARGE;
+					     $("body").css("font-size", fontsize + "px");
+					     // $.cookie(COOKIE_NAME, fontsize);
+					     }
+				     return false;	
+			     });
+	     
+	     // small font-size link:
+	     $(".fontSizeMinus").bind("click", function() {
+			     if(fontsize == LARGE || fontsize == RESET) {
+				     fontsize = SMALL;
+					     $("body").css("font-size", fontsize + "px");
+					     // $.cookie(COOKIE_NAME, fontsize);
+					     }
+				     return false;	
+			     });
+			     
+		// small font-size link:
+	     $(".fontReset").bind("click", function() {
+			     if(fontsize == SMALL || fontsize == LARGE) {
+				     fontsize = RESET;
+					     $("body").css("font-size", fontsize + "px");
+					     // $.cookie(COOKIE_NAME, fontsize);
+					     }
+				     return false;	
+			     });
+			     
+	
 });

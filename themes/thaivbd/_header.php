@@ -3,9 +3,9 @@
 <div class="w3c">
 <div style="padding-top:5px; float:left; padding-right:10px; margin-left:40px;">เปลี่ยนการแสดงผล</div>
 <div style="padding-top:3px; float:left;">
-<a href="#"><img src="themes/thaivbd/images/fontSize1.png" width="14" height="13" border="0"></a>&nbsp;
-<a href="#"><img src="themes/thaivbd/images/fontSize2.png" width="16" height="15" border="0"></a>&nbsp;
-<a href="#"><img src="themes/thaivbd/images/fontSize3.png" width="18" height="18" border="0"></a>&nbsp;
+<a class="fontSizeMinus" href="#"><img src="themes/thaivbd/images/fontSize1.png" width="14" height="13" border="0"></a>&nbsp;
+<a class="fontReset" href="#"><img src="themes/thaivbd/images/fontSize2.png" width="16" height="15" border="0"></a>&nbsp;
+<a class="fontSizePlus" href="#"><img src="themes/thaivbd/images/fontSize3.png" width="18" height="18" border="0"></a>&nbsp;
 <a href="#"><img src="themes/thaivbd/images/line1.gif" width="1" height="18" border="0"></a>&nbsp;
 <a href="#"><img src="themes/thaivbd/images/c1.png" width="18" height="18" border="0"></a>&nbsp;
 <a href="#"><img src="themes/thaivbd/images/c2.png" width="18" height="18" border="0"></a>&nbsp;
