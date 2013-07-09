@@ -99,16 +99,13 @@ $(function() {
 	
 	
 	// declare a few constants:
+		 var ELE = "a, p, h1"; //action element
 	     var SMALL = 9; //small font size in pixels
 	     var LARGE = 16; //larger size in pixels
-	     var RESET = 13;
+	     var RESET = 13; //reset size to default
 	     var COOKIE_NAME = "Simple-Fontresizer"; //Maybe give this the name of your site.
-
 	     //make it small by default
-	     var fontsize = RESET; 
-
-	     // Only show text resizing links if JS is enabled
-	     $(".fontresize").show();
+	     var fontsize = RESET;
 
 	     // if cookie exists set font size to saved value, otherwise create cookie
 	     // if($.cookie(COOKIE_NAME)) {
@@ -127,7 +124,7 @@ $(function() {
 	     $(".fontSizePlus").bind("click", function() {
 			     if(fontsize == SMALL || fontsize == RESET) {
 				     fontsize = LARGE;
-					     $("body").css("font-size", fontsize + "px");
+					     $(ELE).css("font-size", fontsize + "px");
 					     // $.cookie(COOKIE_NAME, fontsize);
 					     }
 				     return false;	
@@ -137,7 +134,7 @@ $(function() {
 	     $(".fontSizeMinus").bind("click", function() {
 			     if(fontsize == LARGE || fontsize == RESET) {
 				     fontsize = SMALL;
-					     $("body").css("font-size", fontsize + "px");
+					     $(ELE).css("font-size", fontsize + "px");
 					     // $.cookie(COOKIE_NAME, fontsize);
 					     }
 				     return false;	
@@ -147,7 +144,7 @@ $(function() {
 	     $(".fontReset").bind("click", function() {
 			     if(fontsize == SMALL || fontsize == LARGE) {
 				     fontsize = RESET;
-					     $("body").css("font-size", fontsize + "px");
+					     $(ELE).css("font-size", fontsize + "px");
 					     // $.cookie(COOKIE_NAME, fontsize);
 					     }
 				     return false;	
