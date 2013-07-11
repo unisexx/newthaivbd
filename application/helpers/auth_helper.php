@@ -23,22 +23,7 @@ function is_login($level_name = FALSE)
 {
 	$CI =& get_instance();
 	$user = new User($CI->session->userdata('id'));
-	if($level_name)
-	{
-		$level = new Level();
-		if($user->level->level)
-		{
-			$id = ($level->get_by_level($level_name)->id >= $user->level->id)? true : false ;
-		}
-		else
-		{
-			$id = false;
-		}
-	}
-	else
-	{
-		$id = $user->id;
-	}
+	$id = $user->id;
 	return ($id) ? true : false;
 }
 

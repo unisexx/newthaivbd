@@ -12,15 +12,25 @@
 <a href="#"><img src="themes/thaivbd/images/c3.png" width="18" height="18" border="0"></a></div>
 </div>
 <div class="flag"><a href="#"><img src="themes/thaivbd/images/eng.png" alt="English" width="26" height="20" border="0" /></a>&nbsp;&nbsp;<a href="#"><img src="themes/thaivbd/images/thai.png" alt="ภาษาไทย" width="26" height="20" border="0"/></a></div>
+
+<?php if(!is_login()):?>
 <div class="login">
-	<form>
+	<form method="post" action="users/login">
        	 <label>ชื่อ</label>
-         <input type="text" name="Username" title="E-mail" class="input_boxLogin" placeholder="" >
+         <input type="text" name="username" title="username" class="input_boxLogin" placeholder="" >
          <label>รหัสผ่าน</label>
-		 <input type="password" name="Password" class="input_boxLogin" title="Password"  placeholder="">
-         <input name="btn_login" class="btn_login" >
+		 <input type="password" name="password" class="input_boxLogin" title="password"  placeholder="">
+         <input type="submit" name="btn_login" class="btn_login" >
          <br><label id="linkRegis"><a href="users/forget_pass" class="linkRegis">ลืมรหัสผ่าน</a> | <a href="users/register" class="linkRegis">สมัครสมาชิก</a></label>
-    </form></div>
+    </form>
+</div>
+<?php else:?>
+	<div style="float: right">
+		ยินดีต้อนรับคุณ <?php echo user_login()->username ?> เข้าสู่ระบบค่ะ
+		<br><a href="users/logout">ออกจากระบบ</a>
+	</div>
+<?php endif;?>
+
 <div class="clr"></div>
 <div id="topmenu">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
