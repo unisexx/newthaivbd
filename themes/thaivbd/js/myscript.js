@@ -99,7 +99,7 @@ $(function() {
 	
 	
 	// declare a few constants:
-		 var ELE = "a, p, h1"; //action element
+		 var ELE = "td.content"; //action element
 	     var SMALL = 9; //small font size in pixels
 	     var LARGE = 16; //larger size in pixels
 	     var RESET = 13; //reset size to default

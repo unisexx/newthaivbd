@@ -24,34 +24,34 @@
 			        </div>
         
 				    <div class="control-group">
-				        <label class="control-label" for="inputUsername">Username</label>
+				        <label class="control-label" for="inputUsername">ชื่อในการล็อกอิน</label>
 				        <div class="controls">
-				          <input type="text" name="username" id="inputUsername" placeholder="Username">
+				          <input type="text" name="username" id="inputUsername" placeholder="ชื่อในการล็อกอิน">
 				        </div>
 				    </div>
 				    <div class="control-group">
-				        <label class="control-label" for="inputEmail">Email</label>
+				        <label class="control-label" for="inputEmail">อีเมล์</label>
 				        <div class="controls">
-				          <input type="text" name="email" id="inputEmail" placeholder="Email">
+				          <input type="text" name="email" id="inputEmail" placeholder="อีเมล์">
 				        </div>
 				    </div>
 				    <div class="control-group">
-				        <label class="control-label" for="inputPass">Password</label>
+				        <label class="control-label" for="inputPass">รหัสผ่าน</label>
 				        <div class="controls">
-				          <input type="password" name="password" id="inputPass" placeholder="Password">
+				          <input type="password" name="password" id="inputPass" placeholder="รหัสผ่าน">
 				        </div>
 				    </div>
 				    <div class="control-group">
-				        <label class="control-label" for="re-inputPass">Re Password</label>
+				        <label class="control-label" for="re-inputPass">ยืนยันรหัสผ่าน</label>
 				        <div class="controls">
-				          <input type="password" name="_password" id="re-inputPass" placeholder="Re Password">
+				          <input type="password" name="_password" id="re-inputPass" placeholder="ยืนยันรหัสผ่าน">
 				        </div>
 				    </div>
 				    <div class="control-group">
-				        <label class="control-label" for="inputCaptcha">Captcha</label>
+				        <label class="control-label" for="inputCaptcha">รหัสลับ</label>
 				        <div class="controls">
 				          <img src="users/captcha" /><Br>
-				          <input type="text" name="captcha" class="input-small" id="inputCaptcha" placeholder="Captcha">
+				          <input type="text" name="captcha" class="input-small" id="inputCaptcha" placeholder="รหัสลับ">
 				        </div>
 				    </div>
 				    <div class="control-group">
