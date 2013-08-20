@@ -29,15 +29,15 @@ $(function(){
 <div id="poll">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td><img src="themes/thaivbd/images/borderVote_topleft.jpg" width="13" height="13" /></td>
-        <td background="themes/thaivbd/images/borderVote_top.jpg"> </td>
-        <td><img src="themes/thaivbd/images/borderVote_topright.jpg" width="13" height="13" /></td>
+        <td class="borderVote_topleft"></td>
+        <td class="borderVote_top"> </td>
+        <td class="borderVote_topright"></td>
       </tr>
       <tr>
-        <td width="13" background="themes/thaivbd/images/borderVote_left.jpg"> </td>
+        <td width="13" class="borderVote_left"> </td>
         <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td><img src="themes/thaivbd/images/icon_poll.png" width="20" height="20" /></td>
+            <td class="icon_poll"></td>
             <td><span class="titlePoll"><?php echo $poll->title ?></span></td>
           </tr>
           <tr>
@@ -67,12 +67,12 @@ $(function(){
             <td height="10"> </td>
           </tr>
         </table></td>
-        <td width="13" background="themes/thaivbd/images/borderVote_right.jpg"> </td>
+        <td width="13" class="borderVote_right"> </td>
       </tr>
       <tr>
-        <td><img src="themes/thaivbd/images/borderVote_bottomleft.jpg" width="13" height="13" /></td>
-        <td background="themes/thaivbd/images/borderVote_bottom.jpg"> </td>
-        <td><img src="themes/thaivbd/images/borderVote_bottomright.jpg" width="13" height="13" /></td>
+        <td class="borderVote_bottomleft"></td>
+        <td class="borderVote_bottom"> </td>
+        <td class="borderVote_bottomright"></td>
       </tr>
     </table>
 </div>

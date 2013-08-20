@@ -7,9 +7,12 @@
 <a class="fontReset" href="#"><img src="themes/thaivbd/images/fontSize2.png" width="16" height="15" border="0"></a>&nbsp;
 <a class="fontSizePlus" href="#"><img src="themes/thaivbd/images/fontSize3.png" width="18" height="18" border="0"></a>&nbsp;
 <a href="#"><img src="themes/thaivbd/images/line1.gif" width="1" height="18" border="0"></a>&nbsp;
-<a href="#"><img src="themes/thaivbd/images/c1.png" width="18" height="18" border="0"></a>&nbsp;
-<a href="#"><img src="themes/thaivbd/images/c2.png" width="18" height="18" border="0"></a>&nbsp;
-<a href="#"><img src="themes/thaivbd/images/c3.png" width="18" height="18" border="0"></a></div>
+<span class="theme-switch">
+<a href="#" rel="themes/thaivbd_white/css/style_white.css"><img src="themes/thaivbd/images/c1.png" width="18" height="18" border="0"></a>&nbsp;
+<a href="#" rel="themes/thaivbd/css/style.css"><img src="themes/thaivbd/images/c2.png" width="18" height="18" border="0"></a>&nbsp;
+<a href="#" rel="themes/thaivbd_yellow/css/style_yellow.css"><img src="themes/thaivbd/images/c3.png" width="18" height="18" border="0"></a>
+</span>
+</div>
 </div>
 <div class="flag"><a href="#"><img src="themes/thaivbd/images/eng.png" alt="English" width="26" height="20" border="0" /></a>&nbsp;&nbsp;<a href="#"><img src="themes/thaivbd/images/thai.png" alt="ภาษาไทย" width="26" height="20" border="0"/></a></div>
 
@@ -35,8 +38,8 @@
 <div id="topmenu">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="17" height="41"><img src="themes/thaivbd/images/bg_topmenu_left.png" width="23" height="46" /></td>
-        <td height="41" background="themes/thaivbd/images/bg_topmenu_center.png">
+        <td width="17" height="41" class="bg_topmenu_left"></td>
+        <td height="41" class="bg_topmenu_center">
          <ul>
             <li><a href="home">หน้าแรก</a></li>
             <li><a href="#">เกี่ยวกับเรา</a>
@@ -106,7 +109,7 @@
             <li><a href="contacts">ติดต่อเรา</a></li>
         </ul>
         </td>
-        <td width="17" height="41"><img src="themes/thaivbd/images/bg_topmenu_right.png" width="24" height="46" /></td>
+        <td width="17" height="41" class="bg_topmenu_right"></td>
       </tr>
   </table>
 </div><div class="clr"></div>

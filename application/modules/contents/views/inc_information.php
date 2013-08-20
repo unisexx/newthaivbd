@@ -6,23 +6,23 @@
 <div id="col2">
 	          <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	          <tr>
-	            <td width="21" height="21"><img src="themes/thaivbd/images/borderPR_topleft.png" width="21" height="21" /></td>
+	            <td width="21" height="21" class="borderPR_topleft"></td>
 	            <td rowspan="3" valign="top" class="tdpr"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 	              <tr>
-	                <td colspan="3" height="20"><div style="float:left;"><img src="themes/thaivbd/images/title_newsPR.png" width="131" height="17" /></div>
+	                <td colspan="3" height="20" class="title_newsPR">
 	                  <div class="arrowup_pr"><a href="#" title="เลื่อนขึ้น">&nbsp;</a></div>
 	                  <div class="arrowdown_pr"><a href="#" title="เลื่อนลง">&nbsp;</a></div></td>
 	              </tr>
 	              <tr>
-	                <td width="4" height="3"><img src="themes/thaivbd/images/linePR_left.png" width="4" height="3" /></td>
-	                <td width="338" height="3" background="themes/thaivbd/images/linePR_center.png"></td>
-	                <td width="4" height="3"><img src="themes/thaivbd/images/linePR_right.png" width="4" height="3" /></td>
+	                <td width="4" height="3" class="linePR_left"></td>
+	                <td width="338" height="3" class="linePR_center"></td>
+	                <td width="4" height="3" class="linePR_right"></td>
 	              </tr>
 	              <tr>
 	                <td colspan="3"><div id="contentNewsPR" style="padding-top:6px;">
 	                  
 						<div class="information">
-			                <div class="newsticker-jcarousellite" style="background: #f3f6f4;">
+			                <div class="newsticker-jcarousellite">
 			                 <ul>
 			                 	<?php foreach($contents as $content):?>
 			                 		<li>
@@ -37,15 +37,15 @@
 	                  </div></td>
 	              </tr>
 	            </table></td>
-	            <td width="21" height="21"><img src="themes/thaivbd/images/borderPR_topright.png" width="21" height="21" /></td>
+	            <td width="21" height="21" class="borderPR_topright"></td>
 	          </tr>
 	          <tr>
-	            <td background="themes/thaivbd/images/borderPR_left.png" height="169">&nbsp;</td>
-	            <td background="themes/thaivbd/images/borderPR_right.png">&nbsp;</td>
+	            <td class="borderPR_left" height="169">&nbsp;</td>
+	            <td class="borderPR_right">&nbsp;</td>
 	          </tr>
 	          <tr>
-	            <td width="21" height="21"><img src="themes/thaivbd/images/borderPR_bottomleft.png" width="21" height="21" /></td>
-	            <td width="21" height="21"><img src="themes/thaivbd/images/borderPR_bottomright.png" width="21" height="21" /></td>
+	            <td width="21" height="21" class="borderPR_bottomleft"></td>
+	            <td width="21" height="21" class="borderPR_bottomright"></td>
 	          </tr>
 	        </table>
 	        

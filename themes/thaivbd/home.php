@@ -44,9 +44,9 @@
 		<div id="col2_e-auction">
 	             <table width="36%" border="0" cellspacing="0" cellpadding="0">
 	             <tr>
-	               <td width="13" height="12"><img src="themes/thaivbd/images/title_e-auction_coner_topleft.png" width="13" height="12" /></td>
+	               <td width="13" height="12" class="title_e-auction_coner_topleft"></td>
 	               <td class="tde-auction1"> </td>
-	               <td width="13" height="12"><img src="themes/thaivbd/images/title_e-auction_coner_topright.png" width="13" height="12" /></td>
+	               <td width="13" height="12" class="title_e-auction_coner_topright"></td>
 	             </tr>
 	             <tr>
 	               <td class="tde-auction3"> </td>
@@ -54,30 +54,30 @@
 	               <td class="tde-auction4"> </td>
 	             </tr>
 	             <tr>
-	               <td width="13" height="17" valign="top"><img src="themes/thaivbd/images/title_e-auction_coner_bottomleft.png" width="13" height="12" /></td>
-	               <td class="tde-auction2" align="center"><img src="themes/thaivbd/images/title_e-auction_arrow4.png" width="11" height="19" /></td>
-	               <td width="13" height="17" valign="top"><img src="themes/thaivbd/images/title_e-auction_coner_bottomright.png" width="13" height="12" /></td>
+	               <td width="13" height="17" valign="top" class="title_e-auction_coner_bottomleft"></td>
+	               <td class="tde-auction2" align="center" class="title_e-auction_arrow4"><span class="title_e-auction_arrow4">&nbsp;&nbsp;&nbsp;</span></td>
+	               <td width="13" height="17" valign="top" class="title_e-auction_coner_bottomright"></td>
 	             </tr>
 	           </table>
 	           <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	              <tr>
-	                <td width="8" height="8"><img src="themes/thaivbd/images/border_e-auction_topleft.png" width="8" height="8" /></td>
-	                <td background="themes/thaivbd/images/border_e-auction_top.png"> </td>
-	                <td width="8" height="8"><img src="themes/thaivbd/images/border_e-auction_topright.png" width="8" height="8" /> </td>
+	                <td width="8" height="8" class="border_e-auction_topleft"></td>
+	                <td class="border_e-auction_top"> </td>
+	                <td width="8" height="8" class="border_e-auction_topright"> </td>
 	             </tr>
 	              <tr>
-	                <td width="8" background="themes/thaivbd/images/border_e-auction_left.png"> </td>
+	                <td width="8" class="border_e-auction_left"> </td>
 	                <td>
 	                	
 	                	<?php echo modules::run('contents/inc_bid'); ?>
 	                	
 	                </td>
-	                <td background="themes/thaivbd/images/border_e-auction_right.png"> </td>
+	                <td class="border_e-auction_right"> </td>
 	             </tr>
 	              <tr>
-	                <td><img src="themes/thaivbd/images/border_e-auction_bottomleft.png" width="8" height="8" /></td>
-	                <td background="themes/thaivbd/images/border_e-auction_bottom.png"> </td>
-	                <td width="8" height="8"><img src="themes/thaivbd/images/border_e-auction_bottomright.png" width="8" height="8" /></td>
+	                <td class="border_e-auction_bottomleft"></td>
+	                <td class="border_e-auction_bottom"> </td>
+	                <td width="8" height="8" class="border_e-auction_bottomright"></td>
 	              </tr>
 	            </table>
 	      </div>
@@ -87,15 +87,15 @@
 	    <td>&nbsp;</td>
 	    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
 	      <tr>
-	        <td width="9"><img src="themes/thaivbd/images/title_media_left.png" width="9" height="21" /></td>
+	        <td width="9" class="title_media_left"></td>
 	        <td width="218" class="titlemedia_h">ศูนย์เอกสารและสื่ออิเลคโทรนิค</td>
-	        <td width="704"><img src="themes/thaivbd/images/title_media_right.png" width="9" height="21" /></td>
+	        <td width="704" class="title_media_right"></td>
 	      </tr>
 	    </table></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
-	    <td height="13" valign="top"><img src="themes/thaivbd/images/borderrmedia_topleft.png" width="11" height="13" /></td>
+	    <td height="13" valign="top" class="borderrmedia_topleft"></td>
 	    <td rowspan="3" valign="top" class="tdmedia3">
 	    <br>
     	    <style>
@@ -107,15 +107,21 @@
     	    <?php echo modules::run('researchs/inc_home'); ?>
 	    <br>
 	    </td>
-	    <td valign="top" height="13"><img src="themes/thaivbd/images/borderrmedia_topright.png" width="11" height="13" /></td>
+	    <td valign="top" height="13" class="borderrmedia_topright"></td>
 	  </tr>
 	  <tr>
 	    <td class="tdmedia1">&nbsp;</td>
 	    <td class="tdmedia2">&nbsp;</td>
 	  </tr>
 	  <tr>
-	    <td width="11" valign="bottom" background="themes/thaivbd/images/borderrmedia_left.png"><img src="themes/thaivbd/images/borderrmedia_bottomleft.jpg" width="11" height="83" /></td>
-	    <td width="11" valign="bottom" background="themes/thaivbd/images/borderrmedia_right.png"><img src="themes/thaivbd/images/borderrmedia_bottomright.jpg" width="11" height="83" /></td>
+	    <td width="11" valign="bottom">
+	        <span class="borderrmedia_left"></span>
+	        <span class="borderrmedia_bottomleft"></span>
+	    </td>
+	    <td width="11" valign="bottom">
+	        <span class="borderrmedia_right"></span>
+	        <span class="borderrmedia_bottomright"></span>
+	    </td>
 	  </tr>
 	</table>
 	<br>
@@ -125,13 +131,13 @@
 	    <div id="bannerlink">
 	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	      <tr>
-	        <td width="12" height="12"><img src="themes/thaivbd/images/borderBanner_topleft.png" width="12" height="12" /></td>
-	        <td width="713" background="themes/thaivbd/images/borderBanner_top.png"></td>
-	        <td width="183" background="themes/thaivbd/images/borderBanner_top.png" class="tdbannerlink1"> </td>
-	        <td width="12" height="12"><img src="themes/thaivbd/images/borderBanner_topright.png" width="12" height="12" /></td>
+	        <td width="12" height="12" class="borderBanner_topleft"></td>
+	        <td width="713" class="borderBanner_top"></td>
+	        <td width="183" class="tdbannerlink1 borderBanner_top"> </td>
+	        <td width="12" height="12" class="borderBanner_topright"></td>
 	      </tr>
 	      <tr>
-	        <td background="themes/thaivbd/images/borderBanner_left.png"> </td>
+	        <td class="borderBanner_left"> </td>
 	        <td valign="top">
 	            <?php echo modules::run('weblinks/inc_bannerlink'); ?>
 	        </td>
@@ -139,13 +145,13 @@
 	        <div class="textlink2">หน่วยงานส่วนกลาง</div><br>
 	           <?php echo modules::run('weblinks/inc_textlink'); ?>
 	        </td>
-	        <td background="themes/thaivbd/images/borderBanner_right.png"> </td>
+	        <td class="borderBanner_right"> </td>
 	      </tr>
 	      <tr>
-	        <td><img src="themes/thaivbd/images/borderBanner_bottomleft.png" width="12" height="12" /></td>
-	        <td background="themes/thaivbd/images/borderBanner_bottom.png"></td>
-	        <td background="themes/thaivbd/images/borderBanner_bottom.png" class="tdbannerlink1"> </td>
-	        <td><img src="themes/thaivbd/images/borderBanner_bottomright.png" width="12" height="12" /></td>
+	        <td class="borderBanner_bottomleft"></td>
+	        <td class="borderBanner_bottom"></td>
+	        <td class="tdbannerlink1 borderBanner_bottom"> </td>
+	        <td class="borderBanner_bottomright"></td>
 	      </tr>
 	    </table>
 	    </div>

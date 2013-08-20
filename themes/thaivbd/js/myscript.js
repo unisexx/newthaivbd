@@ -1,4 +1,11 @@
 $(function() {
+	// Theme Switcher
+	$(".theme-switch a").click(function() { 
+		$("link.theme").attr("href",$(this).attr('rel'));
+		return false;
+	});
+	
+	
 	$( "#accordion" ).accordion({
       collapsible: true,
       heightStyle: "content"
