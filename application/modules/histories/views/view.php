@@ -2,12 +2,12 @@
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tbody>
           <tr>
-            <td width="10"><img src="themes/thaivbd/images/breadcrumb_left.png" width="10" height="26"></td>
+            <td width="10" class="breadcrumb_left"></td>
             <td width="910" bgcolor="#ECECEC" class="imgleaf">
             <div class="textbreadcrumb">ข้อมูลย้อนหลัง</div>         
             <div class="location"><a href="home">หน้าแรก</a> &gt; <a href="histories?module=<?php echo $history->module?>&type=<?php echo $history->type?>&year=<?php echo $history->year?>">ข้อมูล<?php echo $history->module?> ปี <?php echo $history->year?></a> &gt; รายงานสถานการณ์โรค<?php echo $history->module?> ปี <?php echo $history->year?></div>
             </td>
-            <td width="10" align="right"><img src="themes/thaivbd/images/breadcrumb_right.png" width="10" height="26"></td>
+            <td width="10" align="right" class="breadcrumb_right"></td>
           </tr>
           <tr>
               <td></td>

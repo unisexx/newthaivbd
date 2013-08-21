@@ -18,7 +18,7 @@
     <div class="footer2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="12" class="footerleft"></td>
-        <td width="422" class="footer_bg_color"><img src="themes/thaivbd/images/icon_visitor_all.png" width="23" height="21" /> ผู้เข้าเยี่ยมชมทั้งหมด 2760332 คน&nbsp;&nbsp;
+        <td width="422" class="footer_bg_label"><img src="themes/thaivbd/images/icon_visitor_all.png" width="23" height="21" /> ผู้เข้าเยี่ยมชมทั้งหมด 2760332 คน&nbsp;&nbsp;
         <img src="themes/thaivbd/images/icon_visitor_online.png" width="16" height="16" /> ขณะนี้มี 11 บุคคลทั่วไปออนไลน์</td>
         <td width="12" class="footerright"></td>
       </tr>
