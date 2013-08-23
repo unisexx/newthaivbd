@@ -1,10 +1,17 @@
 $(function() {
+	// Set Theme from cookie
+	$("link.theme").attr("href",$.cookie('themes'));
+	
 	// Theme Switcher
 	$(".theme-switch a").click(function() { 
 		$("link.theme").attr("href",$(this).attr('rel'));
+		
+		// create cookie (30 วัน)
+		$.removeCookie('themes');
+		$.cookie('themes', $(this).attr('rel'), { expires: 30 });
+		
 		return false;
 	});
-	
 	
 	$( "#accordion" ).accordion({
       collapsible: true,
