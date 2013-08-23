@@ -26,7 +26,7 @@
 			                 <ul>
 			                 	<?php foreach($contents as $content):?>
 			                 		<li>
-			                 			<a href="contents/view/<?php echo $content->id?>"><img src="<?php echo $content->image?>" width="74" height="65" class="imgNews"/></a><span class="textNews"><a href="contents/view/<?php echo $content->id?>"><?php echo $content->title?></a><b></b></span> <span class="dataNew">(<?php echo mysql_to_th($content->created)?>)</span>
+			                 			<a href="contents/view/<?php echo $content->id?>"><img alt="<?php echo $content->title?>" src="<?php echo $content->image?>" width="74" height="65" class="imgNews"/></a><span class="textNews"><a href="contents/view/<?php echo $content->id?>"><?php echo $content->title?></a></span> <span class="dataNew">(<?php echo mysql_to_th($content->created)?>)</span>
 			                 		</li>
 			                 	<?php endforeach;?>
 			                 </ul>

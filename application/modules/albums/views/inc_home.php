@@ -12,14 +12,14 @@
 	        	<div class="viewpicAll"><a href="albums">ดูภาพกิจกรรมทั้งหมด</a></div><br>
 	            
 	            <div class="carousel" style="margin-top:10px;">
-	            	<div style="float:left; border:0;"><a href="#"><span class="prev"></span></a></div>
-	            	<div style="float:right; border:0;"><a href="#"><span class="next"></span></a></div>
+	            	<div style="float:left; border:0; text-indent:-999px;"><a href="#">prev<span class="prev"></span></a></div>
+	            	<div style="float:right; border:0; text-indent:-999px;"><a href="#">next<span class="next"></span></a></div>
 				    <div class="jCarouselLite">
 				        <ul>
 				            <?php foreach($pics as $pic):?>
 						  		<li>
 						  			<div class="picture">
-						            <a rel="lightbox[gal]" href="<?php echo $pic->image?>" class="highlightit" alt="<?php echo $pic->album->name?>"><img src="<?php echo $pic->image?>" width="122" height="95"></a>
+						            <a rel="lightbox[gal]" href="<?php echo $pic->image?>" class="highlightit" alt="<?php echo $pic->album->name?>"><img alt="<?php echo $pic->album->name?>" src="<?php echo $pic->image?>" width="122" height="95"></a>
 						            <a rel="lightbox[gal2]" href="<?php echo $pic->image?>"><?php echo $pic->album->name?></a></div>
 						  		</li>
 						  	<?php endforeach;?>

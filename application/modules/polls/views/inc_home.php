@@ -45,8 +45,8 @@ $(function(){
             <td>
             <div class="box_radio">
             <ul>
-                <?php foreach($poll->polldetail as $item): ?>
-                    <li><input class="radio" type="radio" name="poll" value="<?php echo $item->id ?>"><label><?php echo $item->name ?></label></li>
+                <?php foreach($poll->polldetail as $key=>$item): ?>
+                    <li><input id="<?php echo $key?>" class="radio" type="radio" name="poll" value="<?php echo $item->id ?>"><label for="<?php echo $key?>"><?php echo $item->name ?></label></li>
                 <?php endforeach;?>
             </ul>
             </div>

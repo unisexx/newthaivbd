@@ -3,14 +3,14 @@
 <div class="w3c">
 <div style="padding-top:5px; float:left; padding-right:10px; margin-left:40px;">เปลี่ยนการแสดงผล</div>
 <div style="padding-top:3px; float:left;">
-<a class="fontSizeMinus" href="#"><img src="themes/thaivbd/images/fontSize1.png" width="14" height="13" border="0"></a>&nbsp;
-<a class="fontReset" href="#"><img src="themes/thaivbd/images/fontSize2.png" width="16" height="15" border="0"></a>&nbsp;
-<a class="fontSizePlus" href="#"><img src="themes/thaivbd/images/fontSize3.png" width="18" height="18" border="0"></a>&nbsp;
-<a href="#"><img src="themes/thaivbd/images/line1.gif" width="1" height="18" border="0"></a>&nbsp;
+<a class="fontSizeMinus" href="#"><img alt="ตัวอักษรขนาดเล็ก" src="themes/thaivbd/images/fontSize1.png" width="14" height="13" border="0"></a>&nbsp;
+<a class="fontReset" href="#"><img alt="ตัวอักษรขนาดปกติ" src="themes/thaivbd/images/fontSize2.png" width="16" height="15" border="0"></a>&nbsp;
+<a class="fontSizePlus" href="#"><img alt="ตัวอักษรขนาดใหญ่" src="themes/thaivbd/images/fontSize3.png" width="18" height="18" border="0"></a>&nbsp;
+<a href="#"><img alt="line" src="themes/thaivbd/images/line1.gif" width="1" height="18" border="0"></a>&nbsp;
 <span class="theme-switch">
-<a href="#" rel="themes/thaivbd_white/css/style_white.css"><img src="themes/thaivbd/images/c1.png" width="18" height="18" border="0"></a>&nbsp;
-<a href="#" rel="themes/thaivbd/css/style.css"><img src="themes/thaivbd/images/c2.png" width="18" height="18" border="0"></a>&nbsp;
-<a href="#" rel="themes/thaivbd_yellow/css/style_yellow.css"><img src="themes/thaivbd/images/c3.png" width="18" height="18" border="0"></a>
+<a href="#" rel="themes/thaivbd_white/css/style_white.css"><img alt="ธีมสีขาว" src="themes/thaivbd/images/c1.png" width="18" height="18" border="0"></a>&nbsp;
+<a href="#" rel="themes/thaivbd/css/style.css"><img alt="ธีมสีเขียว" src="themes/thaivbd/images/c2.png" width="18" height="18" border="0"></a>&nbsp;
+<a href="#" rel="themes/thaivbd_yellow/css/style_yellow.css"><img alt="ธีมสีเหลือง" src="themes/thaivbd/images/c3.png" width="18" height="18" border="0"></a>
 </span>
 </div>
 </div>
@@ -23,7 +23,7 @@
          <input type="text" name="username" title="username" class="input_boxLogin" placeholder="" >
          <label>รหัสผ่าน</label>
 		 <input type="password" name="password" class="input_boxLogin" title="password"  placeholder="">
-         <input type="submit" name="btn_login" class="btn_login" >
+         <input type="submit" name="btn_login" class="btn_login" value="login">
          <br><label id="linkRegis"><a href="users/forget_pass" class="linkRegis">ลืมรหัสผ่าน</a> | <a href="users/register" class="linkRegis">สมัครสมาชิก</a></label>
     </form>
 </div>
