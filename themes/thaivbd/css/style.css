@@ -229,7 +229,7 @@ background: url(../images/pic_gallery_reg2.png) no-repeat;padding-bottom:30px;}
 .location{float:right; font-size:11px; color:#888888; padding-left:15px; padding-top:3px;  background: url(../images/bul.png) no-repeat 7px 7px;} 
 
 .content{padding:10px;}
-.content .list {color: #014568;padding: 7px;background: #F0F0F0; border-bottom:1px dotted #bcbcbc;}
+.content .list {padding: 7px;border-bottom:1px dotted #bcbcbc;}
 .content .list span{float:right;}
 
 /****************************************************************/

@@ -599,3 +599,6 @@ margin-left: 180px;
     height:26px;
     width:10px;
 }
+.content{padding:10px;}
+.content .list {padding: 7px;border-bottom:1px dotted #bcbcbc;}
+.content .list span{float:right;}
