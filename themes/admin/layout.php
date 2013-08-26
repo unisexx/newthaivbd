@@ -26,7 +26,7 @@
                     </div><!--/#page-content-->
                       
 
-                    <div id="ace-settings-container">
+                    <!-- <div id="ace-settings-container">
                         <div class="btn btn-app btn-mini btn-warning" id="ace-settings-btn">
                             <i class="icon-cog"></i>
                         </div>
@@ -45,7 +45,8 @@
                             <div><input type="checkbox" class="ace-checkbox-2" id="ace-settings-header" /><label class="lbl" for="ace-settings-header"> Fixed Header</label></div>
                             <div><input type="checkbox" class="ace-checkbox-2" id="ace-settings-sidebar" /><label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label></div>
                         </div>
-                    </div><!--/#ace-settings-container-->
+                    </div> -->
+                    <!--/#ace-settings-container-->
 
 
             </div><!-- #main-content -->

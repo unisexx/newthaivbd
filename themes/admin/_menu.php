@@ -1,5 +1,5 @@
 <div id="sidebar">
-    <div id="sidebar-shortcuts">
+    <!-- <div id="sidebar-shortcuts">
         <div id="sidebar-shortcuts-large">
             <button class="btn btn-small btn-success"><i class="icon-signal"></i></button>
             <button class="btn btn-small btn-info"><i class="icon-pencil"></i></button>
@@ -12,7 +12,8 @@
             <span class="btn btn-warning"></span>
             <span class="btn btn-danger"></span>
         </div>
-    </div><!-- #sidebar-shortcuts -->
+    </div> -->
+    <!-- #sidebar-shortcuts -->
 
     <ul class="nav nav-list">
         
@@ -30,7 +31,7 @@
         
         <li <?php echo (@$_GET['module'] == 'สถานการณ์ไข้ปวดข้อยุงลาย' or @$_GET['module'] == 'สถานการณ์มาลาเรีย' or @$_GET['module'] == 'สถานการณ์เท้าช้าง' or @$_GET['module'] == 'สถานการณ์ไข้เลือดออก')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-eye-open"></i>
             <span>สถานการณ์</span>
             <b class="arrow icon-angle-down"></b>
           </a>
@@ -74,7 +75,7 @@
         
         <li <?php echo (@$_GET['module'] == 'สาระน่ารู้' or @$_GET['module'] == 'วารสารโรคติดต่อนำโดยแมลง' or @$_GET['module'] == 'แนวทางและคู่มือปฏิบัติการ' or @$_GET['module'] == 'สื่อต้นแบบ' or @$_GET['module'] == 'งานวิจัย')?'class="active open"':'';?> <?php echo menu_active('albums','albums',FALSE,"active open")?> <?php echo menu_active('vdos','vdos',FALSE,"active open")?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-picture"></i>
             <span>ศูนย์เอกสารและสื่ออิเลคโทรนิค</span>
             <b class="arrow icon-angle-down"></b>
           </a>
@@ -91,7 +92,7 @@
         
         <li <?php echo menu_active('polls','polls',FALSE,"active open")?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-bar-chart"></i>
             <span>แบบสำรวจความคิดเห็น</span>
             <b class="arrow icon-angle-down"></b>
           </a>
@@ -102,7 +103,7 @@
         
         <li <?php echo (@$_GET['module'] == 'แผนงานด้าน Knowledge management')?'class="active open"':'';?> <?php echo menu_active('calendars','calendars',FALSE,"active open")?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-calendar"></i>
             <span>กิจกรรม</span>
             <b class="arrow icon-angle-down"></b>
           </a>
@@ -114,7 +115,7 @@
         
         <li <?php echo (@$_GET['module'] == 'โรคติดต่อนำโดยแมลงอื่นๆ' or @$_GET['module'] == 'ไข้ปวดข้อยุงลาย' or @$_GET['module'] == 'มาลาเรียรายสัปดาห์' or @$_GET['module'] == 'ไข้เลือดออก' or @$_GET['module'] == 'มาลาเรียรายเดือน' or @$_GET['module'] == 'เท้าช้างรายเดือน' or @$_GET['module'] == 'เท้าช้างรายปี')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-tags"></i>
             <span>ข้อมูลย้อนหลัง</span>
             <b class="arrow icon-angle-down"></b>
           </a>
@@ -131,7 +132,7 @@
         
         <li <?php echo (@$_GET['module'] == 'แผนงาน/โครงการตามยุทธศาสตร์' or @$_GET['module'] == 'โครงการ Global Fund for Malaria' or @$_GET['module'] == 'โครงการ Bill and Melinda Gates Foundation' or @$_GET['module'] == 'คำรับรองปฏิบัติราชการประจำปี' or @$_GET['module'] == 'รายงานผลความก้าวหน้าของโครงการ')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-columns"></i>
             <span>แผนงาน/โครงการ และตัวชี้วัด ประจำปี</span>
             <b class="arrow icon-angle-down"></b>
           </a>
@@ -146,7 +147,7 @@
         
         <li <?php echo (@$_GET['module'] == 'ไข้เลือดออก GIS' or @$_GET['module'] == 'ไข้มาลาเรีย GIS')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-th-list"></i>
             <span>ฐานข้อมูลการวิเคราะห์ข้อมูล GIS</span>
             <b class="arrow icon-angle-down"></b>
           </a>
@@ -158,7 +159,7 @@
         
         <li <?php echo (@$_GET['module'] == 'บุคลากร' or @$_GET['module'] == 'โครงสร้างองค์กร' or @$_GET['module'] == 'วิสัยทัศน์ พันธกิจ ยุทธศาสตร์')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-building"></i>
             <span>เกี่ยวกับองค์กร</span>
             <b class="arrow icon-angle-down"></b>
           </a>
@@ -171,7 +172,7 @@
         
         <li <?php echo (@$_GET['module'] == 'ข่าวเด่นประเด็นร้อน' or @$_GET['module'] == 'รายงานการประชุมอินทราเน็ต' or @$_GET['module'] == 'ประชาสัมพันธ์จากไอที')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-cloud"></i>
             <span>Intranet</span>
             <b class="arrow icon-angle-down"></b>
           </a>
@@ -182,7 +183,7 @@
           </ul>
         </li>
         
-        <li>
+        <!-- <li>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>ตารางใช้งานห้องประชุม</span>
@@ -191,7 +192,7 @@
           <ul class="submenu">
             <li><a href=""><i class="icon-double-angle-right"></i> ตารางใช้งานห้องประชุม</a></li>
           </ul>
-        </li>
+        </li> -->
         
         <li <?php echo (@$_GET['module'] == 'Site map')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
@@ -206,7 +207,7 @@
         
         <li <?php echo (@$_GET['module'] == 'หมวด 1 การนำองค์กร' or @$_GET['module'] == 'หมวด 2 การวางแผนเชิงยุทธศาสตร์' or @$_GET['module'] == 'หมวด 3 ผู้ให้บริการ และ ผู้มีส่วนได้ส่วนเสีย' or @$_GET['module'] == 'หมวด 4 การวัด การวิเคราะห์ และ จักการความรู้' or @$_GET['module'] == 'หมวด 5 ทรัพยากรบุคคล' or @$_GET['module'] == 'หมวด 6 กระบวนการ')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-group"></i>
             <span>การพัฒนาองค์กร (PMQA)</span>
             <b class="arrow icon-angle-down"></b>
           </a>
@@ -222,7 +223,7 @@
         
         <li <?php echo (@$_GET['module'] == 'เอกสารทั่วไป' or @$_GET['module'] == 'คำสั่ง' or @$_GET['module'] == 'รายงานการประชุม' or @$_GET['module'] == 'หนังสือแจ้งเวียน')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-male"></i>
             <span>สำหรับบุคลากร</span>
             <b class="arrow icon-angle-down"></b>
           </a>
@@ -236,7 +237,7 @@
         
         <li <?php echo (@$_GET['module'] == 'แบนเนอร์ลิ้งค์' or @$_GET['module'] == 'หน่วยงานส่วนกลาง 1' or @$_GET['module'] == 'หน่วยงานส่วนกลาง 2')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
-            <i class="icon-list-alt"></i>
+            <i class="icon-link"></i>
             <span>เว็บลิ้งค์</span>
             <b class="arrow icon-angle-down"></b>
           </a>

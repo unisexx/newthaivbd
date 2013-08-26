@@ -90,12 +90,12 @@ function create_breadcrumb_admin(){
   $uri = $ci->uri->segment($i);
   }
     $link .= '</ul><div id="nav-search">
-                            <form class="form-search">
+                            <!--<form class="form-search">
                                     <span class="input-icon">
                                         <input autocomplete="off" id="nav-search-input" type="text" class="input-small search-query" placeholder="Search ..." />
                                         <i id="nav-search-icon" class="icon-search"></i>
                                     </span>
-                            </form>
+                            </form>-->
                         </div></div>';
     return $link;
   }
