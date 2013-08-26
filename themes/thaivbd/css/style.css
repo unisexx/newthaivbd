@@ -33,7 +33,7 @@ h1{font-size: 1.4em;}
 -webkit-box-shadow: inset 1px 2px 2px 0px #e9f1d5;
   -moz-box-shadow: inset 1px 2px 2px 0px #e9f1d5;
   box-shadow: inset 1px 2px 2px 0px #e9f1d5;}
-.btn_login{width:33px; height:23px; cursor:pointer; border:none; background:url(../images/key.png) no-repeat; }
+.btn_login{width:33px; height:23px; cursor:pointer; border:none; background:url(../images/key.png) no-repeat; text-indent:-999px;}
 .btn_login:hover {border:none; background:url(../images/key_hot.png) no-repeat;}
 #linkRegis{float:right; margin-right:5px;}
 a.linkRegis {display:inline-block; color:#80aa1b; padding-top:3px; font-size:12px;}
@@ -229,7 +229,7 @@ background: url(../images/pic_gallery_reg2.png) no-repeat;padding-bottom:30px;}
 .location{float:right; font-size:11px; color:#888888; padding-left:15px; padding-top:3px;  background: url(../images/bul.png) no-repeat 7px 7px;} 
 
 .content{padding:10px;}
-.content .list {color: #014568;padding: 7px;background: #F0F0F0; border-bottom:1px dotted #bcbcbc;}
+.content .list {padding: 7px;border-bottom:1px dotted #bcbcbc;}
 .content .list span{float:right;}
 
 /****************************************************************/
@@ -555,17 +555,17 @@ margin-left: 180px;
     width:613px;
 }
 .footer_topright{
-    background:#81C572 url(../images/footer_topright.png) no-repeat;
+    background:#81C572 url(../images/footer_topright.jpg) no-repeat top right;
     height:13px;
     width:13px;
 }
 .footer_bottomleft{
-    background:#81C572 url(../images/footer_bottomleft.png) no-repeat;
+    background:#81C572 url(../images/footer_bottomleft.jpg) no-repeat left bottom;
     height:13px;
     width:13px;
 }
 .footer_bottomright{
-    background:#81C572;
+    background:#81C572 url(../images/footer_bottomright.jpg) no-repeat left bottom;
     height:13px;
     width:13px;
 }
@@ -575,10 +575,25 @@ margin-left: 180px;
     width:12px;
 }
 .footer_bg_color{
+	background:#81C572;
+}
+.footer_bg_label{
     background:#6AAE5B;
 }
 .footerright{
     background:url(../images/footerright.png) no-repeat;
     height:24px;
     width:12px;
+}
+
+/* หน้าใน */
+.breadcrumb_left{
+	background:url(../images/breadcrumb_left.png) no-repeat;
+    height:26px;
+    width:10px;
+}
+.breadcrumb_right{
+	background:url(../images/breadcrumb_right.png) no-repeat;
+    height:26px;
+    width:10px;
 }

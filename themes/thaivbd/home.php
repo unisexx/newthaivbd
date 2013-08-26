@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="th" lang="th" dir="ltr">
 <head>
     <base href="<?php echo base_url(); ?>" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,7 +19,7 @@
 	        
 	          <div class="clr"></div>
 	          <hr class="hr2" />
-	          <img src="themes/thaivbd/images/logo_moph.png" width="202" height="63" style="margin-top:-20px; position:absolute;"/> </div>
+	          <img alt="สำนักโรคติดต่อนำโดยแมลง" src="themes/thaivbd/images/logo_moph.png" width="202" height="63" style="margin-top:-20px; position:absolute;"/> </div>
 	      </div>
 	      
 	      <div class="clr"></div>
@@ -141,7 +141,7 @@
 	        <td valign="top">
 	            <?php echo modules::run('weblinks/inc_bannerlink'); ?>
 	        </td>
-	        <td valign="top" class="tdbannerlink1"><img src="themes/thaivbd/images/arrow_link.gif" width="4" height="6" style="padding-left:10px;"> <span class="textlink">ลิ้งที่เกี่ยวข้อง</span><br><br>
+	        <td valign="top" class="tdbannerlink1"><img alt="arrow_link" src="themes/thaivbd/images/arrow_link.gif" width="4" height="6" style="padding-left:10px;"> <span class="textlink">ลิ้งที่เกี่ยวข้อง</span><br><br>
 	        <div class="textlink2">หน่วยงานส่วนกลาง</div><br>
 	           <?php echo modules::run('weblinks/inc_textlink'); ?>
 	        </td>
@@ -162,8 +162,6 @@
 	    </div> 
 	  </div> 
 	</div>
-
-
 
 </body>
 </html>

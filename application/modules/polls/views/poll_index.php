@@ -30,12 +30,12 @@ $(function(){
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tbody>
           <tr>
-            <td width="10"><img src="themes/thaivbd/images/breadcrumb_left.png" width="10" height="26"></td>
+            <td width="10" class="breadcrumb_left"></td>
             <td width="910" bgcolor="#ECECEC" class="imgleaf">
             <div class="textbreadcrumb">แบบสำรวจความคิดเห็น</div>         
             <div class="location"><a href="home">หน้าแรก</a> &gt; แบบสำรวจความคิดเห็น</div>
             </td>
-            <td width="10" align="right"><img src="themes/thaivbd/images/breadcrumb_right.png" width="10" height="26"></td>
+            <td width="10" align="right" class="breadcrumb_right"></td>
           </tr>
           <tr>
               <td></td>
