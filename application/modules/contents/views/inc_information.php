@@ -57,7 +57,9 @@ $(document).ready(function(){
 	   vertical: true,  
 	   visible: 2,  
 	   auto:1000,  
-	   speed:2000  
+	   speed:2000,
+	   btnNext: ".arrowup_pr",
+	   btnPrev: ".arrowdown_pr"
  	});  
 });
 </script>

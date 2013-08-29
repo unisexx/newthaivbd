@@ -41,7 +41,7 @@
 	          	<?php echo modules::run('contents/inc_other_insect'); ?>
 	          </div>
 	    </div>
-		<div id="col2_e-auction">
+		<div id="col2_e-auction" style="position:relative;">
 	             <table width="36%" border="0" cellspacing="0" cellpadding="0">
 	             <tr>
 	               <td width="13" height="12" class="title_e-auction_coner_topleft"></td>
@@ -50,7 +50,7 @@
 	             </tr>
 	             <tr>
 	               <td class="tde-auction3"> </td>
-	               <td><span class="text_e-auction" style="position:absolute; left: 592px; top: 437px;">ข่าวประกวดราคา</span></td>
+	               <td><span class="text_e-auction" style="position:absolute; top: 4px;">ข่าวประกวดราคา</span></td>
 	               <td class="tde-auction4"> </td>
 	             </tr>
 	             <tr>
