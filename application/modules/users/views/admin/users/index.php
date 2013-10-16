@@ -10,11 +10,11 @@
         <table id="table_report" class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>สถานะ</th>
-                    <th>หมายเลขสมาชิก</th>
+                    <!-- <th>สถานะ</th> -->
+                    <!-- <th>หมายเลขสมาชิก</th> -->
 					<th>ยูสเซอร์เนม</th>
 					<th>อีเมล์</th>
-					<th>ลงทะเบียนเมื่อ</th>
+					<th>กลุ่ม</th>
                     <th><a class="btn btn-mini btn-primary" href="users/admin/users/form"><i class="icon-pencil"></i> เพิ่มรายการ </a></th>
                 </tr>
             </thead>
@@ -22,13 +22,13 @@
             <tbody>
             <?php foreach($users as $user):?>
                 <tr>
-                    <td>
+                    <!-- <td>
                         <label><input class="ace-switch ace-switch-4" type="checkbox" name="status" value="<?php echo $user->id ?>" <?php echo ($user->status=="approve")?'checked="checked"':'' ?>/><span class="lbl"></span></label>
-                    </td>
-                    <td><?php echo sprintf("%05d",$user->id)?></td>
+                    </td> -->
+                    <!-- <td><?php echo sprintf("%05d",$user->id)?></td> -->
 					<td><?php echo $user->username?></td>
 					<td><?php echo $user->email?></td>
-			        <td><?php echo mysql_to_th($user->created,'S',TRUE) ?></td>
+			        <td><?php echo $user->user_type->name ?></td>
                     <td>
                         <div class='hidden-phone visible-desktop btn-group'>
                             <a href="users/admin/users/form/<?php echo $user->id?>" class='btn btn-mini btn-info'><i class='icon-edit'></i></a>
@@ -66,10 +66,9 @@ $(document).ready(function(){
     });
     
     var oTable1 = $('#table_report').dataTable( {
-    "aoColumns": [
-      { "bSortable": false },
-      null, null,null, null,
-      { "bSortable": false }
+    "aoColumns": [ 
+        null,null, null,
+        { "bSortable": false }
     ] } );
     
     

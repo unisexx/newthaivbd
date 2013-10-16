@@ -6,6 +6,27 @@
 <!-- PAGE CONTENT BEGINS HERE -->
     <form id="validation-form" class="form-horizontal" method="post" action="users/admin/users/save/<?php echo $user->id?>" enctype="multipart/form-data">
         
+        
+        <div class="control-group">
+            <label class="control-label" for="id-input-file-1">รูปภาพ</label>
+            <div class="controls">
+                <?php if($user->image):?>
+                <img class="img" style="width:100px;" src="<?php echo (is_file('uploads/user/'.$user->image))? 'uploads/user/'.$user->image : 'media/images/webboard/noavatar.gif' ?>"  /> <br><br>
+                <?php endif;?>
+                <div class="input-xxlarge">
+                    <input type="file" id="id-input-file-1" name="image"/>
+                </div>
+            </div>
+        </div>
+        
+        <!-- select box -->
+        <div class="control-group">
+            <label class="control-label" for="username">กลุ่ม</label>
+            <div class="controls">
+                <?php echo form_dropdown('user_type_id',get_option('id','name','user_types','order by id asc'),$user->user_type_id,'');?>
+            </div>
+        </div>
+            
 		<div class="control-group">
 		    <label class="control-label" for="username">ยูสเซอร์เนม</label>
 		    <div class="controls">
@@ -20,7 +41,7 @@
 		    </div>
 		</div>
 		
-		<div class="control-group">
+		<!-- <div class="control-group">
 		    <label class="control-label" for="address">ที่อยู่</label>
 		    <div class="controls">
 		      <textarea id="address" class="span5" name="address" rows="3"><?php echo $user->address?></textarea>
@@ -41,14 +62,14 @@
 					echo form_dropdown('amphur_id',(empty($user->province_id)) ? array() : get_option('id','amphur_name','amphures where province_id ='.$user->province_id),$user->amphur_id,'id="amphur_id" class="span5"','--- เลือกอำเภอ ---');
 		       ?>
 		    </div>
-		</div>
+		</div> -->
 		
-		<div class="control-group">
+		<!-- <div class="control-group">
 		    <label class="control-label" for="phone">เบอร์โทรศัพท์</label>
 		    <div class="controls">
 		      <input type="text" id="phone" class="span5" name="phone" value="<?php echo $user->phone?>">
 		    </div>
-		</div>
+		</div> -->
 		
 		<div class="control-group">
 		    <label class="control-label" for="email">อีเมล์</label>
@@ -57,7 +78,7 @@
 		    </div>
 		</div>
 		
-		  <div class="control-group">
+		  <!-- <div class="control-group">
 		    <label class="control-label" for="facebook" >facebook</label>
 		    <div class="controls">
 		      <input type="text" id="facebook" class="span5" name="facebook" value="<?php echo $user->facebook?>">
@@ -80,26 +101,27 @@
 		    <div class="controls">
 		      <textarea id="other" rows="3" class="span5" name="other"><?php echo $user->other?></textarea>
 		    </div>
-		  </div>
+		  </div> -->
+		  
 		  <div class="control-group">
 		        <label class="control-label" for="inputPass">รหัสผ่าน</label>
 		        <div class="controls">
 		          <input type="password" name="password" id="inputPass" placeholder="Password">
 		        </div>
 		    </div>
-		    <div class="control-group">
+		    <!-- <div class="control-group">
 		        <label class="control-label" for="re-inputPass">ยืนยันรหัสผ่าน</label>
 		        <div class="controls">
 		          <input type="password" name="_password" id="re-inputPass" placeholder="Re Password">
 		        </div>
-		    </div>
-		  <div class="control-group">
+		    </div> -->
+		  <!-- <div class="control-group">
 		    <label class="control-label" for="inputCaptcha">รหัสลับ</label>
 		    <div class="controls">
 		      <img src="users/captcha" /><Br>
 		      <input type="text" name="captcha" class="input-small" id="inputCaptcha" placeholder="รหัสลับ">
 		    </div>
-		  </div>
+		  </div> -->
         
         <div class="form-actions">
             <button class="btn btn-info" type="submit"><i class="icon-ok"></i> Submit</button>
