@@ -2,7 +2,7 @@
 
 function login($username,$password)
 {
-    $password = encrypt_pass($password);
+    // $password = encrypt_pass($password);
 	$CI =& get_instance();
 	$user = new User();
 	$user->where(array('username'=>$username,'password'=>$password))->get();
