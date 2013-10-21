@@ -5,7 +5,7 @@
 
               <a class="brand" href="#" target="_blank"><small><i class="icon-leaf"></i> Thaivbd Admin</small> </a>
               <ul class="nav ace-nav pull-right">
-                    <li class="grey">
+                    <!-- <li class="grey">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="icon-tasks"></i>
                             <span class="badge">4</span>
@@ -181,21 +181,23 @@
                             </li>                                   
     
                         </ul>
-                    </li>
+                    </li> -->
 
 
                     <li class="light-blue user-profile">
                         <a class="user-menu dropdown-toggle" href="#" data-toggle="dropdown">
-                            <img alt="Jason's Photo" src="themes/admin/media/images/user.jpg" class="nav-user-photo" />
+                            <?php if(user()->image):?>
+                            <img class="nav-user-photo" style="width:36px;" src="<?php echo 'uploads/user/'.user()->image?>"  />
+                            <?php endif;?>
                             <span id="user_info">
                                 <small>Welcome,</small> <?php echo user()->username ?>
                             </span>
                             <i class="icon-caret-down"></i>
                         </a>
                         <ul id="user_menu" class="pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
-                            <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+                            <!-- <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
                             <li><a href="#"><i class="icon-user"></i> Profile</a></li>
-                            <li class="divider"></li>
+                            <li class="divider"></li> -->
                             <li><a href="users/admin/auth/logout" onclick="return confirm('Do you want to logout?')"><i class="icon-off"></i> Logout</a></li>
                         </ul>
                     </li>
