@@ -7,7 +7,7 @@
 					<ul id="run_highLight">
 						<?php foreach($contents as $content):?>
 							<li style="display:none;">
-								<a href="contents/view/<?php echo $content->id?>"><img alt="<?php echo $content->title?>" src="themes/thaivbd/images/hilight1.png" width="531" height="212" border="0"></a>
+								<a href="contents/view/<?php echo $content->id?>"><img alt="<?php echo $content->title?>" src="<?php echo $content->image?>" width="531" height="212" border="0"></a>
 							</li>
 						<?php endforeach;?>
 			    	</ul>
