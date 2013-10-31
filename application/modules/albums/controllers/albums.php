@@ -8,7 +8,7 @@ class Albums extends Public_Controller
 
 	function inc_home(){
 		$data['pics'] = new Picture();
-		$data['pics']->order_by('id','desc')->get();
+		$data['pics']->order_by('id','desc')->get(10);
 		$this->load->view('inc_home',$data);
 	}
     
