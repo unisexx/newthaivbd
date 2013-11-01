@@ -460,18 +460,18 @@ margin-left: 180px;
     background:url(../images/bordergallery_right_bg.png) repeat-y;
     width:13px;
 }
-/*.prev{
+.gallery-prev-btn{
     background:url(../images/arrow_gallery_left.png) no-repeat;
     width:19px;
     height:107px;
     display:block;
 }
-.next{
+.gallery-next-btn{
     background:url(../images/arrow_gallery_right.png) no-repeat;
     width:19px;
     height:107px;
     display:block;
-}*/
+}
 
 /* Poll */
 .borderVote_topleft{

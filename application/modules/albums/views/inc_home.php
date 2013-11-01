@@ -12,8 +12,8 @@
 	        	<div class="viewpicAll"><a href="albums">ดูภาพกิจกรรมทั้งหมด</a></div><br>
 	            
 	            <div class="carousel" style="margin-top:10px;">
-	            	<div style="float:left; border:0; text-indent:-999px;"><a href="#">prev<span class="prev"></span></a></div>
-	            	<div style="float:right; border:0; text-indent:-999px;"><a href="#">next<span class="next"></span></a></div>
+	            	<div style="float:left; border:0; text-indent:-999px;"><a href="#">prev<span class="gallery-prev-btn"></span></a></div>
+	            	<div style="float:right; border:0; text-indent:-999px;"><a href="#">next<span class="gallery-next-btn"></span></a></div>
 				    <div class="jCarouselLite">
 				        <ul>
 				            <?php foreach($pics as $pic):?>
@@ -45,8 +45,8 @@
 <script type="text/javascript">
 $(function() {
     $(".jCarouselLite").jCarouselLite({
-        btnNext: ".carousel .next",
-        btnPrev: ".carousel .prev"
+        btnNext: ".carousel .gallery-prev-btn",
+        btnPrev: ".carousel .gallery-next-btn"
     });   
 });
 </script>   
