@@ -19,7 +19,8 @@
 				            <?php foreach($pics as $pic):?>
 						  		<li>
 						  			<div class="picture">
-						            <a rel="lightbox[gal]" href="<?php echo $pic->image?>" class="highlightit" alt="<?php echo $pic->album->name?>"><img alt="<?php echo $pic->album->name?>" src="<?php echo $pic->image?>" width="122" height="95"></a>
+						            <a rel="lightbox[gal]" href="<?php echo $pic->image?>" class="highlightit" alt="<?php echo $pic->album->name?>">
+						            	<?php echo thumb($pic->image,122,95,1,'alt="'.$pic->album->name.'"')?></a>
 						            <a rel="lightbox[gal2]" href="<?php echo $pic->image?>"><?php echo $pic->album->name?></a></div>
 						  		</li>
 						  	<?php endforeach;?>

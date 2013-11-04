@@ -19,7 +19,7 @@
                   <h1><?php echo $pictures->album->name ?></h1>
                     <?php foreach($pictures as $row):?>
                         <div class="picture">
-                            <a href="<?php echo $row->image ?>" rel="lightbox[gal]" class="highlightit" alt="<?php echo $row->album->name ?>"><img src="<?php echo $row->image ?>" width="122" height="95"></a>
+                            <a href="<?php echo $row->image ?>" rel="lightbox[gal]" class="highlightit" alt="<?php echo $row->album->name ?>"><?php echo thumb($row->image,122,95,1,'alt="'.$row->album->name.'"')?></a></a>
                         </div>
                     <?php endforeach;?>
               </td>
