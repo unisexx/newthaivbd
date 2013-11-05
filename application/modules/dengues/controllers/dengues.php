@@ -15,7 +15,7 @@ class Dengues extends Public_Controller
     
     function index(){
         $data['dengues'] = new Dengue();
-        $data['dengues']->order_by('id','desc')->get_page();
+        $data['dengues']->where('module = "'.$_GET['module'].'" and type = "'.$_GET['type'].'" and year = '.$_GET['year'])->order_by('id','desc')->get();
         $this->template->build('index',$data);
     }
 	

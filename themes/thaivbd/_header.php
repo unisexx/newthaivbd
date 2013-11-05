@@ -59,7 +59,7 @@
             </li>
             <li><a href="#">สถานการณ์โรค</a>
                 <ul>
-                	<li><a href="dengues">สถานการณ์โรคไข้เลือดออก</a></li>
+                	<li><a href="dengues?module=สถานการณ์ไข้เลือดออก&type=week&year=<?php echo (date('Y')+543);?>">สถานการณ์โรคไข้เลือดออก</a></li>
                 	<li><a href="contents?module=สถานการณ์เท้าช้าง">สถานการณ์โรคเท้าช้าง</a></li>
                     <li><a href="contents?module=สถานการณ์ไข้ปวดข้อยุงลาย">สถานการณ์โรคไข้ปวดข้อยุงลาย</a></li>
                     <li><a href="contents?module=สถานการณ์มาลาเรีย">สถานการณ์โรคมาลาเรีย</a></li>

@@ -602,3 +602,4 @@ margin-left: 180px;
 .content{padding:10px;}
 .content .list {padding: 7px;border-bottom:1px dotted #bcbcbc;}
 .content .list span{float:right;}
+.content .list a{width: 790px;display: inline-block;}

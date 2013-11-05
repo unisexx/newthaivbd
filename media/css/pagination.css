@@ -21,7 +21,7 @@ Author URI: http://www.mis-algoritmos.com
 	border: 1px solid #EEE;
 	text-decoration: none; /* no underline */
 	color: #036CB4;
-	background:#F0F0F0;
+	/*background:#F0F0F0;*/
 }
 
 .pagination a:hover,
@@ -34,13 +34,13 @@ Author URI: http://www.mis-algoritmos.com
 	margin: 2px;
 	border: 1px solid #0085DB;
 	font-weight: bold;
-	background-color: #0085DB;
-	color: #FFF;
+	/*background-color: #0085DB;*/
+	/*color: #FFF;*/
 }
 .pagination .disabled {
 	padding: 2px 8px 2px 8px;
 	margin: 2px;
 	border: 1px solid #EEE;
 	color: #DDD;
-	background:#F0F0F0;
+	/*background:#F0F0F0;*/
 }
