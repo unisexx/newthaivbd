@@ -13,7 +13,7 @@
               <td></td>
               <td class="content">
                   <h1>สถานการณ์โรคไข้เลือดออกในประเทศไทย ปี <?php echo $dengue->year?><br>
-                                                        จำนวนผู้ป่วยสะสม DHF+DF+DSS ณ วันที่ <?php echo mysql_to_th($dengue->created,'S',FALSE)?> (สัปดาห์ที่ <?php echo $dengue->week?>)</h1>
+                                                        จำนวนผู้ป่วยสะสม DHF+DF+DSS ณ วันที่ <?php echo mysql_to_th($dengue->dates,'S',FALSE)?> (สัปดาห์ที่ <?php echo $dengue->week?>)</h1>
                                                         จำนวนผู้ป่วย <span><?php echo $dengue->sick?> ราย</span><br>
                                                         จำนวนผู้ป่วยตาย <span><?php echo $dengue->die?> ราย</span><br>
                                                         อัตราป่วยต่อแสนประชากร <span><?php echo $dengue->sick_rate?> ราย</span><br>
