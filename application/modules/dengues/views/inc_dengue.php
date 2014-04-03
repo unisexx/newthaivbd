@@ -10,5 +10,5 @@
 	อัตราป่วยตาย (ร้อยละ) <span><?php echo $dengue->sickdie_rate?> ราย</span><br>
 	</div>
 	<div style="text-align: right"><a href="dengues/view/<?php echo $dengue->id?>">อ่านรายละเอียดเพิ่มเติม</a></div>
-	<div class="read-more"><a href="histories?module=ไข้เลือดออก&type=week&year=<?php echo $dengue->year?>">ดูข้อมูลย้อนหลัง</a> | <a href="dengues">ดูทั้งหมด...</a></div>
+	<div class="read-more"><a href="histories?module=ไข้เลือดออก&type=week&year=<?php echo $dengue->year?>">ดูข้อมูลย้อนหลัง</a> <!-- | <a href="dengues">ดูทั้งหมด...</a> --></div>
 </div>
