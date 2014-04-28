@@ -226,12 +226,12 @@ background: url(../images/pic_gallery_reg2.png) no-repeat;padding-bottom:30px;}
 .hr3{border:0px; width:97%; float:left; margin-left:8px; border-top: 1px dotted #bcbcbc; height: 1px;}
 .textbreadcrumb{float:left; color:#3bab00; font-weight:bold; font-size:14px; padding-left:30px;}
 .imgleaf{ height:16px; background: url(../images/leaf-wormhole.png) no-repeat 7px 5px; background-color:#ECECEC;}
-.location{float:right; font-size:11px; color:#888888; padding-left:15px; padding-top:3px;  background: url(../images/bul.png) no-repeat 7px 7px;} 
+.location{float:right; font-size:11px; color:#888888; padding-left:15px; padding-top:3px;  background: url(../images/bul.png) no-repeat 7px 7px;height: 14px;overflow: hidden;} 
 
 .content{padding:10px;}
 .content .list {padding: 7px;border-bottom:1px dotted #bcbcbc;}
-.content .list span{float:right;}
-.content .list a{width: 790px;display: inline-block;}
+.content .list span{float:right; width:55px;}
+.content .list a{width: 700px;display: inline-block;}
 
 /****************************************************************/
 

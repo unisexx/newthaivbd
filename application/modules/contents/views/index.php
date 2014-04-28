@@ -16,7 +16,7 @@
                     <?php foreach($contents as $row):?>
                         <div class="list">
                             <a href="contents/view/<?php echo $row->id?>"><?php echo $row->title?></a>
-                            <span><i class="icon-eye-open"></i> <?php echo $row->counter?></span>
+                            <span><i class="icon-eye-open"></i> <?php echo number_format($row->counter)?></span>
                         </div>
                     <?php endforeach;?>
               </td>
@@ -24,4 +24,5 @@
           </tr>
       </tbody>
   </table>
+  <?=$contents->pagination();?>
 </div>

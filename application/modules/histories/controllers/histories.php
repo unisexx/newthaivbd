@@ -9,7 +9,12 @@ class Histories extends Public_Controller
     function index(){
         $data['histories'] = new History();
         $data['histories']->where('module = "'.$_GET['module'].'" and type = "'.$_GET['type'].'" and year = '.$_GET['year'])->order_by('id','desc')->get_page();
-        $this->template->build('index',$data);
+		
+		if($_GET['module'] == 'ไข้มาลาเรีย GIS' || $_GET['module'] == 'ไข้เลือดออก GIS'){
+			$this->template->build('view_gis',$data);
+		}else{
+			$this->template->build('index',$data);
+		}
     }
     
     function view($id){
@@ -28,6 +33,12 @@ class Histories extends Public_Controller
             $name = basename($attach->files);
             force_download($name, $data); 
         }
+    }
+	
+	function getmap(){
+        $data['history'] = new History($_GET['id']);
+        $data['history']->counter();
+        echo '<img src="'.$data['history']->history_file->files.'" style="max-width:100%">';
     }
 }
 ?>

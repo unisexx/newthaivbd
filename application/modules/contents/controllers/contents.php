@@ -57,7 +57,7 @@ class Contents extends Public_Controller
     
     function index(){
         $data['contents'] = new Content();
-        $data['contents']->where('module = "'.$_GET['module'].'"')->get_page();
+        $data['contents']->where('module = "'.$_GET['module'].'"')->order_by('id','desc')->get_page();
         $this->template->build('index',$data);
     }
     

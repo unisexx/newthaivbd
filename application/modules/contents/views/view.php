@@ -1,3 +1,6 @@
+<style type="text/css">
+td.content img{max-width:100%}
+</style>
 <div id="breadcrumb">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tbody>
