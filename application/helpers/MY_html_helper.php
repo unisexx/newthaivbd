@@ -232,4 +232,55 @@ function getYouTubeIdFromURL($url)
   return isset($matches[1]) ? $matches[1] : false;
 }
 
+if(!function_exists('visit_count')) //บันทึกจำนวนคนเข้าเว็บ
+{
+    function visit_count()
+    {
+    	$CI =& get_instance();
+		$counter = new Counter();
+		$counter->date_visit = date("d-m-Y");
+        $counter->ip_visit = $_SERVER['REMOTE_ADDR'];
+		$counter->visit = 1;
+		$counter->save();
+    }
+}
+
+if(!function_exists('visit_count_all')) //บันทึกจำนวนคนเข้าเว็บทั้งหมด ไม่สนไอพี
+{
+    function visit_count_page()
+    {
+    	$CI =& get_instance();
+    	$sql = "select count(ip_visit) as visit From counters";
+		$data = $CI->db->query($sql)->result();
+		$openpage =  str_pad($data[0]->visit,6,0,STR_PAD_LEFT); //ทำเป็นเลข 6 หลักด้วยการเติมเลข  0 ข้างซ้าย
+		return $openpage;
+    }
+}
+
+if(!function_exists('visit_count_today')) //บันทึกจำนวนคนเข้าเว็บวันนี้ (ไอพีซ้ำไม่นับ)
+{
+    function visit_count_today()
+    {
+    	$CI =& get_instance();
+    	$today = date('d-m-Y');  
+    	$sql = "select count(DISTINCT(ip_visit)) as visit From counters where date_visit = '$today'";
+		$data = $CI->db->query($sql)->result();
+		// $today =  str_pad($data[0]->visit,6,0,STR_PAD_LEFT); //ทำเป็นเลข 6 หลักด้วยการเติมเลข  0 ข้างซ้าย
+		$today = $data[0]->visit;
+		return $today;
+    }
+}
+
+if(!function_exists('visit_count_total')) //บันทึกจำนวนคนเข้าเว็บทั้งหมด (ไอพีซ้ำไม่นับ)
+{
+    function visit_count_total()
+    {
+    	$CI =& get_instance(); 
+    	$sql = "select count(DISTINCT(ip_visit)) as visit From counters";
+		$data = $CI->db->query($sql)->result();
+		$total =  str_pad($data[0]->visit,6,0,STR_PAD_LEFT); //ทำเป็นเลข 6 หลักด้วยการเติมเลข  0 ข้างซ้าย
+		return $total; 
+    }
+}
+
 ?>

@@ -25,7 +25,7 @@ class Researchs extends Public_Controller
     
     function view($id){
         $data['researchs'] = new Research();
-        $data['researchs']->where('category_id = '.$id)->get_page();
+        $data['researchs']->where('category_id = '.$id)->get();
         $data['researchs']->category->counter();
         $this->template->build('view',$data);
     }

@@ -8,7 +8,7 @@ Class Weblinks extends Public_Controller
 	
 	function inc_bannerlink(){
 		$data['weblinks'] = new Weblink();
-		$data['weblinks']->where("module = 'แบนเนอร์ลิ้งค์'")->get();
+		$data['weblinks']->where("module = 'แบนเนอร์ลิ้งค์'")->order_by('id','desc')->get();
 		$this->load->view('inc_bannerlink',$data);
 	}
     

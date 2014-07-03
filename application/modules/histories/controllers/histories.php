@@ -8,11 +8,13 @@ class Histories extends Public_Controller
     
     function index(){
         $data['histories'] = new History();
-        $data['histories']->where('module = "'.$_GET['module'].'" and type = "'.$_GET['type'].'" and year = '.$_GET['year'])->order_by('id','desc')->get_page();
+        $data['histories']->where('module = "'.$_GET['module'].'" and type = "'.$_GET['type'].'" and year = '.$_GET['year']);
 		
 		if($_GET['module'] == 'ไข้มาลาเรีย GIS' || $_GET['module'] == 'ไข้เลือดออก GIS'){
+			$data['histories']->order_by('month','asc')->get();
 			$this->template->build('view_gis',$data);
 		}else{
+			$data['histories']->order_by('week','asc')->get();
 			$this->template->build('index',$data);
 		}
     }

@@ -16,6 +16,7 @@
 </div>
 <div class="flag"><a href="#"><img src="themes/thaivbd/images/eng.png" alt="English" width="26" height="20" border="0" /></a>&nbsp;&nbsp;<a href="#"><img src="themes/thaivbd/images/thai.png" alt="ภาษาไทย" width="26" height="20" border="0"/></a></div>
 
+<!-- 
 <?php if(!is_login()):?>
 <div class="login">
 	<form method="post" action="users/login">
@@ -33,6 +34,7 @@
 		<br><a href="users/logout">ออกจากระบบ</a>
 	</div>
 <?php endif;?>
+-->
 
 <div class="clr"></div>
 <div id="topmenu">
@@ -83,7 +85,8 @@
             </li>
             <li><a href="#">ศูนย์เอกสาร</a>
               <ul>
-                	<li><a href="docs?module=วารสารโรคติดต่อนำโดยแมลง">วารสารโรคติดต่อนำโดยแมลง</a></li>
+                	<!-- <li><a href="docs?module=วารสารโรคติดต่อนำโดยแมลง">วารสารโรคติดต่อนำโดยแมลง</a></li> -->
+                	<li><a href="http://thailand.digitaljournals.org/index.php/JVBD" target="_blank">วารสารโรคติดต่อนำโดยแมลง</a></li>
                     <li><a href="docs?module=แนวทางและคู่มือปฏิบัติการ">แนวทางและคู่มือการปฎิบัติการ</a></li>
                     <li><a href="researchs?module=สื่อต้นแบบ">สื่อต้นแบบ</a></li>
                     <li><a href="researchs?module=งานวิจัย">ผลงานวิจัย</a></li>

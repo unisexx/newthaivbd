@@ -33,10 +33,12 @@
 	                 </div>
 	            </div>
               
-              <div class="btn_more1"><a href="contents?module=ข่าวประชาสัมพันธ์">&nbsp;</a></div>
+              
               </div></td>
           </tr>
-        </table></td>
+        </table>
+        <div class="btn_more1"><a href="contents?module=ข่าวประชาสัมพันธ์">&nbsp;</a></div>
+        </td>
         <td width="21" height="21" class="borderPR_topright"></td>
       </tr>
       <tr>
@@ -56,7 +58,7 @@ $(document).ready(function(){
 	$(".newsticker-jcarousellite").jCarouselLite({  
 	   vertical: true,  
 	   visible: 2,  
-	   auto:1000,  
+	   auto:10000,  
 	   speed:2000,
 	   btnNext: ".arrowup_pr",
 	   btnPrev: ".arrowdown_pr"

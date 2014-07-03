@@ -40,7 +40,7 @@
                 <div class="controls">
                     <select name="year" id="form-field-select-1" onchange="window.open(this.options[this.selectedIndex].value,'_self')">
                         <?php for ($x = (date('Y')+543); $x >= 2548; $x--):?>
-                            <option value="histories/admin/histories?module=<?php echo $_GET['module']?>&type=week&year=<?php echo $x?>" <?php echo ($x == $_GET['year'])?'selected':'';?>>ปี <?php echo $x?></option>
+                            <option value="histories/admin/histories?module=<?php echo $_GET['module']?>&type=month&year=<?php echo $x?>" <?php echo ($x == $_GET['year'])?'selected':'';?>>ปี <?php echo $x?></option>
                         <?php endfor;?>
                     </select>
                 </div>

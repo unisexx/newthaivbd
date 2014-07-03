@@ -5,3 +5,4 @@
 <script src="media/js/jquery-cookie/jquery.cookie.js"></script>
 <script src="themes/thaivbd/js/myscript.js"></script>
 <?php echo js_notify()?>
+<?php echo visit_count()?>

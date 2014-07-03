@@ -130,7 +130,7 @@
           </ul>
         </li>
         
-        <li <?php echo (@$_GET['module'] == 'แผนงาน/โครงการตามยุทธศาสตร์' or @$_GET['module'] == 'โครงการ Global Fund for Malaria' or @$_GET['module'] == 'โครงการ Bill and Melinda Gates Foundation' or @$_GET['module'] == 'คำรับรองปฏิบัติราชการประจำปี' or @$_GET['module'] == 'รายงานผลความก้าวหน้าของโครงการ')?'class="active open"':'';?>>
+        <li <?php echo (@$_GET['module'] == 'แผนงาน/โครงการตามยุทธศาสตร์' or @$_GET['module'] == 'โครงการ Global Fund for Malaria' or @$_GET['module'] == 'โครงการ Bill and Melinda Gates Foundation' or @$_GET['module'] == 'คำรับรองปฏิบัติราชการประจำปี' or @$_GET['module'] == 'รายงานผลความก้าวหน้าของโครงการ' or @$_GET['module'] == 'รายงานประจำปีสำนักโรคติดต่อนำโดยแมลง')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-columns"></i>
             <span>แผนงาน/โครงการ และตัวชี้วัด ประจำปี</span>
@@ -141,6 +141,7 @@
             <li <?php echo (@$_GET['module'] == 'โครงการ Global Fund for Malaria')?'class="active"':'';?>><a href="projects/admin/projects?module=โครงการ Global Fund for Malaria"><i class="icon-double-angle-right"></i> โครงการ Global Fund for Malaria</a></li>
             <li <?php echo (@$_GET['module'] == 'โครงการ Bill and Melinda Gates Foundation')?'class="active"':'';?>><a href="projects/admin/projects?module=โครงการ Bill and Melinda Gates Foundation"><i class="icon-double-angle-right"></i> โครงการ Bill and Melinda Gates Foundation</a></li>
             <li <?php echo (@$_GET['module'] == 'คำรับรองปฏิบัติราชการประจำปี')?'class="active"':'';?>><a href="projects/admin/projects?module=คำรับรองปฏิบัติราชการประจำปี"><i class="icon-double-angle-right"></i> คำรับรองปฏิบัติราชการประจำปี</a></li>
+            <li <?php echo (@$_GET['module'] == 'รายงานประจำปีสำนักโรคติดต่อนำโดยแมลง')?'class="active"':'';?>><a href="projects/admin/projects?module=รายงานประจำปีสำนักโรคติดต่อนำโดยแมลง"><i class="icon-double-angle-right"></i> รายงานประจำปีสำนักโรคติดต่อนำโดยแมลง</a></li>
             <li <?php echo (@$_GET['module'] == 'รายงานผลความก้าวหน้าของโครงการ')?'class="active"':'';?>><a href="projects/admin/projects?module=รายงานผลความก้าวหน้าของโครงการ"><i class="icon-double-angle-right"></i> รายงานผลความก้าวหน้าของโครงการ</a></li>
           </ul>
         </li>

@@ -16,16 +16,12 @@
               <td></td>
               <td class="content">
                   <h1>สำนักโรคติดต่อนำโดยแมลง</h1>
-                  	กลุ่มงานเฝ้าระวังและเทคโนโลยีสารสนเทศ	
-
-
-					กรมควบคุมโรค กระทรวงสาธารณสุข
-					ถนนติวานนท์ อำเภอเมือง
-					จ.นนทบุรี
-					ประเทศไทย
-					11000
-					
-					02-590-3103
+                  	ที่อยู่   สำนักโรคติดต่อนำโดยแมลง กรมควบคุมโรค กระทรวงสาธารณสุข <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;88/21 ถนน ติวานนนท์ ตำบลตลาดขวัญ อำเภอเมือง <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;จังหวัดนนทบุรี 11000  <a href="http://www.thaivbd.org/n/contents/view/324346" style="font-weight: bold; text-decoration: underline;">เบอร์โทรศัพท์</a>    <br><br>
+			 
+			       	หรือ กลุ่มงานเฝ้าระวังและเทคโนโลยีสารสนเทศ	กรมควบคุมโรค กระทรวงสาธารณสุข ถนนติวานนท์ <br>
+			                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;อำเภอเมือง จ.นนทบุรี ประเทศไทย 11000   เบอร์โทรศัพท์ 02-590-3103      
 					
                     <div style="margin:30px 0 0 0;">
 					<form class="form-horizontal" method="post" action="contacts/save">

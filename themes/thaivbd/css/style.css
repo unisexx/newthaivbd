@@ -598,3 +598,9 @@ margin-left: 180px;
     height:26px;
     width:10px;
 }
+
+/***** เพิ่มเติม *****/
+.ui-accordion-content > img{
+    width: 470px !important;
+    height:100% !important;
+}

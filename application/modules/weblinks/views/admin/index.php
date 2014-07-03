@@ -11,7 +11,9 @@
             <thead>
                 <tr>
                     <th>สถานะ</th>
+                    <th>แบนเนอร์</th>
                     <th>หัวข้อ</th>
+                    <th>ลิ้งค์</th>
                     <th>เขียนโดย</th>
                     <th>วันที่สร้าง</th>
                     <th>แก้ไขล่าสุด</th>
@@ -25,7 +27,9 @@
                     <td>
                         <label><input class="ace-switch ace-switch-4" type="checkbox" name="status" value="<?php echo $row->id ?>" <?php echo ($row->status=="approve")?'checked="checked"':'' ?>/><span class="lbl"></span></label>
                     </td>
+                    <td><img src="<?=$row->image?>" width="100"></td>
                     <td><?php echo $row->title?></td>
+                    <td><?=$row->url?></td>
                     <td><?php echo $row->user->username?></td>
                     <td><?php echo mysql_to_th($row->created,'S',TRUE) ?></td>
                     <td><?php echo mysql_to_th($row->updated,'S',TRUE) ?></td>
