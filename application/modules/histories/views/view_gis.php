@@ -48,7 +48,7 @@
 			                    <?php endforeach;?>
                     		</td>
                     		<td class="showmap">
-                    			<img src="<?=$histories->history_file->files?>" style="max-width:100%;">
+                    			<img src="<?=$histories->history_file->files?>" style="width: 720px;">
                     		</td>
                     	</tr>
                     </table>

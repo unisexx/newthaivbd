@@ -7,7 +7,7 @@
   <tr>
     <td width="13" class="footer_bg_color"> </td>
     <td width="894" class="footer_bg_color">
-    <div style="float:left; padding-top:5px;">สำนักโรคติดต่อนำโดยแมลง กรมควบคุมโรค กระทรวงสาธารณสุข <a href="http://www.thaivbd.org/n/contents/view/324346" style="color:white; font-weight: bold; text-decoration: underline;">เบอร์โทรศัพท์</a>  อีเมล์ : <span class="linkmail"><a href="mailto:thaivbd.it@gmail.com" target="_blank">thaivbd.it@gmail.com</a></span></div>
+    <div style="float:left; padding-top:5px;">สำนักโรคติดต่อนำโดยแมลง กรมควบคุมโรค กระทรวงสาธารณสุข <a href="http://www.thaivbd.org/n/contents/view/324346"><span style="color:white; font-weight: bold; text-decoration: underline;">เบอร์โทรศัพท์และอีเมล์</span></a></div>
     <div class="social">
     	<a href="https://www.facebook.com/thaivbd" title="Facebook" target="_blank"><img alt="facebook" src="themes/thaivbd/images/icon_fb.png" width="20" height="20" border="0"></a>&nbsp;&nbsp;<a href="https://twitter.com/thaivbd" title="Twitter" target="_blank"><img alt="twitter" src="themes/thaivbd/images/icon_twitter.png" width="20" height="20" border="0"></a>
     </div></td>

@@ -8,7 +8,7 @@ class Projects extends Public_Controller
     
     function index(){
         $data['projects'] = new Project();
-        $data['projects']->where('module = "'.$_GET['module'].'"')->get_page();
+        $data['projects']->where('module = "'.$_GET['module'].'"')->order_by('id','desc')->get_page();
         $this->template->build('index',$data);
     }
     
