@@ -48,7 +48,7 @@
 			                    <?php endforeach;?>
                     		</td>
                     		<td class="showmap">
-                    			<img src="<?=$histories->history_file->files?>" style="width: 720px;">
+                    			<img src="<?=$row->history_file->files?>" style="width: 720px;">
                     		</td>
                     	</tr>
                     </table>
@@ -60,9 +60,10 @@
   </table>
 </div>
 
+
 <script type="text/javascript">
 $(document).ready(function(){
-	$('.list:first').css({"background-color":"#85C340"});
+	$('.list:last').css({"background-color":"#85C340"});
 	
 	$('.click_month').click(function(){
 		$(this).closest('.list').css({"background-color":"#85C340"}).siblings().css({"background-color":"#B0DDA6"});

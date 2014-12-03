@@ -13,6 +13,11 @@
               <td></td>
               <td class="content">
                   <h1><?php echo $_GET['module']?></h1>
+                  
+                  	<form method="get" action="">
+                  		
+                  	</form>
+                  
                     <?php foreach($contents as $row):?>
                         <div class="list">
                             <a href="contents/view/<?php echo $row->id?>"><?php echo $row->title?></a>

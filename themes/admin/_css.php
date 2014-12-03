@@ -28,3 +28,9 @@
 <!--[if lt IE 9]>
   <link rel="stylesheet" href="themes/admin/media/css/ace-ie.min.css" />
 <![endif]-->
+
+<style>
+	textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"]{
+		color:#858585 !important;
+	}
+</style>

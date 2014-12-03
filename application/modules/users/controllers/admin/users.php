@@ -28,7 +28,7 @@ class Users extends Admin_Controller
             // $captcha = $this->session->userdata('captcha');
             // if(($_POST['captcha'] == $captcha) && !empty($captcha)){
                 $user = new User($id);
-                $_POST['password'] = encrypt_pass($_POST['password']);
+                // $_POST['password'] = encrypt_pass($_POST['password']);
                 if($_FILES['image']['name'])
                 {
                     if($user->id){

@@ -1,5 +1,5 @@
 <h1>ติดต่อสอบถาม</h1>
-<table class="form2">
+<table class="table">
 	<tr>
 		<th>ชื่อ-นามสกุล: </th>
 		<td><?php echo $contact->name ?></td>

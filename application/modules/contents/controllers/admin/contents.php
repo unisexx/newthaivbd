@@ -35,6 +35,8 @@ class Contents extends Admin_Controller
 			if(!$id)$_POST['status'] = "approve";
 			$_POST['slug'] = clean_url($_POST['title']);
 			$_POST['module'] = $_GET['module'];
+			$_POST['start_date'] = Date2DB($_POST['start_date']);
+            $_POST['end_date'] = Date2DB($_POST['end_date']);
             $content->from_array($_POST);
             $content->save();
             set_notify('success', lang('save_data_complete'));

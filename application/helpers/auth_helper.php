@@ -70,6 +70,7 @@ function permission($module, $action)
 	$permission = new Permission();
 	$perm = $permission->where("user_type_id = ".$CI->session->userdata('user_type')." and module = '".$module."'")->get();
 	
+	// $permission->check_last_query();
 	if($perm->$action){
 		return TRUE;
 	}else{

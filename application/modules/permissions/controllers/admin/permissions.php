@@ -3,17 +3,22 @@ class Permissions extends Admin_Controller
 {
 	
 	public $module = array(
-		'administrators' => array('label' => 'ผู้ดูแล', 'permission' => array('full')),
-		'coverpages' => array('label' => 'หน้าแรก', 'permission' => array('full')),
-		'hilights' => array('label' => 'ไฮไลท์', 'permission' => array('full')),
-		'informations' => array('label' => 'ข่าวประชาสัมพันธ์', 'permission' => array('full')),
-		'articles' => array('label' => 'บทความน่าสนใจ', 'permission' => array('full')),
-		'vdos' => array('label' => 'vdo แนะนำ', 'permission' => array('full')),
-		'downloads' => array('label' => 'เอกสารดาวน์โหลด', 'permission' => array('full')),
-		'galleries' => array('label' => 'ภาพกิจกรรม', 'permission' => array('full')),
-		'calendars' => array('label' => 'ปฎิทินกิจกรรม', 'permission' => array('full')),
-		'permissions' => array('label' => 'สิทธิ์การใช้งาน', 'permission' => array('full')),
-		'dashboards' => array('label' => 'สถิติโดยรวม', 'permission' => array('full')),
+		'user' => array('label' => 'ผู้ใช้งาน', 'permission' => array('full')),
+		'situation' => array('label' => 'สถานการณ์', 'permission' => array('full')),
+		'knowledge' => array('label' => 'ความรู้ทั่วไปสำหรับประชาชน', 'permission' => array('full')),
+		'news' => array('label' => 'ข่าว', 'permission' => array('full')),
+		'document' => array('label' => 'ศูนย์เอกสารและสื่ออิเลคโทรนิค', 'permission' => array('full')),
+		'poll' => array('label' => 'แบบสำรวจความคิดเห็น', 'permission' => array('full')),
+		'activity' => array('label' => 'กิจกรรม', 'permission' => array('full')),
+		'history' => array('label' => 'ข้อมูลย้อนหลัง', 'permission' => array('full')),
+		'plan' => array('label' => 'แผนงาน', 'permission' => array('full')),
+		'gis' => array('label' => 'ฐานข้อมูลการวิเคราะห์ข้อมูล GIS', 'permission' => array('full')),
+		'about' => array('label' => 'เกี่ยวกับองค์กร', 'permission' => array('full')),
+		'intranet' => array('label' => 'Intranet', 'permission' => array('full')),
+		'other' => array('label' => 'อื่นๆ', 'permission' => array('full')),
+		'organization' => array('label' => 'การพัฒนาองค์กร (PMQA)', 'permission' => array('full')),
+		'staff' => array('label' => 'สำหรับบุคลากร', 'permission' => array('full')),
+		'weblink' => array('label' => 'เว็บลิ้งค์', 'permission' => array('full')),
 	);
 	
 	public $crud = array(

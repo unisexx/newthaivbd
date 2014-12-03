@@ -183,7 +183,6 @@
                         </ul>
                     </li> -->
 
-
                     <li class="light-blue user-profile">
                         <a class="user-menu dropdown-toggle" href="#" data-toggle="dropdown">
                             <?php if(user()->image):?>

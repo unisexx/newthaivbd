@@ -107,7 +107,13 @@ a.linkRegis:hover {color:#c1ab19; text-decoration:underline;}
 
 
 
-.date{float:right; padding-right:30px; padding-top:3px; font-size:11px; font-weight:normal;  background: url(../images/arrowGIS_up.png) no-repeat 117px 4px;  }
+.date{float: right;
+width: 120px;
+padding-right: 30px;
+padding-top: 3px;
+font-size: 11px;
+font-weight: normal;
+background: url(../images/arrowGIS_up.png) no-repeat 122px 4px;}
 
 .ui-accordion .ui-accordion-icons {	padding-left: 2em;}
 .ui-accordion .ui-accordion-icons:hover {	padding-left: 2em;}

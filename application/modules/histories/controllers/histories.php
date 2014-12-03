@@ -40,7 +40,7 @@ class Histories extends Public_Controller
 	function getmap(){
         $data['history'] = new History($_GET['id']);
         $data['history']->counter();
-        echo '<img src="'.$data['history']->history_file->files.'" style="max-width:100%">';
+        echo '<img src="'.$data['history']->history_file->files.'" style="max-width:720px">';
     }
 }
 ?>

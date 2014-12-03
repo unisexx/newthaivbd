@@ -1,66 +1,64 @@
 <div class="page-header position-relative">
-    <h1><?php echo $_GET['module']?> <!-- <small><i class="icon-double-angle-right"></i> <?php echo $_GET['module']?></small> --></h1>
+    <h1>เมนูบาร์</h1>
 </div><!--/page-header-->
 
 <div class="row-fluid">
 <!-- PAGE CONTENT BEGINS HERE -->
-    <form id="validation-form" class="form-horizontal" method="post" action="contents/admin/contents/save/<?php echo $content->id?>?module=<?php echo $_GET['module']?>" enctype="multipart/form-data">
+    <form id="validation-form" class="form-horizontal" method="post" action="menus/admin/menus/save/<?php echo $menu->id?>" enctype="multipart/form-data">
         
+        
+        <!-- file manager -->
         <!-- <div class="control-group">
-            <label class="control-label" for="id-input-file-1">ภาพประกอบข่าว</label>
+            <label class="control-label" for="form-field-2">แบนเนอร์</label>
             <div class="controls">
-                <?php if($content->image):?>
-                <img class="img" style="width:150px;" src="<?php echo (is_file('uploads/content/'.$content->image))? 'uploads/content/'.$content->image : 'media/images/dummy/656x253.gif' ?>"  /> <br><br>
+                <?php if($menu->image):?>
+                <img class="img" style="width:150px;" src="<?php echo (is_file($menu->image))? $menu->image : 'media/images/dummy/656x253.gif' ?>"  /> <br><br>
                 <?php endif;?>
-                <div class="input-xxlarge">
-                    <input type="file" id="id-input-file-1" name="image"/>
-                </div>
+                <input type="text" id="form-field-2" class="input-xxlarge" name="image" value="<?php echo $menu->image?>"> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'file')" />
             </div>
         </div> -->
         
-        <!-- file manager -->
         <div class="control-group">
-            <label class="control-label" for="form-field-2">ภาพประกอบข่าว</label>
+            <label class="control-label" for="form-field-3">ชื่อเมนู</label>
             <div class="controls">
-            	<?php if($content->image):?>
-                <img class="img" style="width:150px;" src="<?php echo (is_file($content->image))? $content->image : 'media/images/dummy/656x253.gif' ?>"  /> <br><br>
-                <?php endif;?>
-                <input type="text" id="form-field-2" class="input-xxlarge" name="image" value="<?php echo $content->image?>"> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'file')" />
+                <input type="text" id="form-field-3" class="input-xxlarge" name="title" value="<?php echo $menu->title?>">
             </div>
         </div>
         
         <div class="control-group">
-            <label class="control-label" for="form-field-1">หัวข้อ</label>
+            <label class="control-label" for="form-field-1">URL</label>
             <div class="controls">
-                <input type="text" id="form-field-1" class="input-xxlarge" name="title" value="<?php echo $content->title?>">
+                <input type="text" id="form-field-1" class="input-xxlarge" name="url" value="<?php echo $menu->url?>">
             </div>
         </div>
         
         <div class="control-group">
-            <label class="control-label" for="form-field-9">รายละเอียด</label>
+            <label class="control-label" for="form-field-1">หมวดหมู่ย่อย</label>
             <div class="controls">
-                <textarea class="input-xxlarge" rows="5" id="form-field-9" name="detail"><?php echo $content->detail?></textarea>
+                <a href="#" class="btn btn-primary btn-mini addans" ><i class="icon-pencil"></i> เพิ่มหมวดหมู่ย่อย</a>
             </div>
         </div>
         
-        <div class="control-group">
-            <label class="control-label">วันที่เริ่มแสดง</label>
-            <div class="input-append date date-picker" style="margin-left: 20px;">
-			    <input size="16" type="text" name="start_date" value="<?php echo DB2Date(($content->start_date)?$content->start_date:date("Y-m-d"))?>">
-			    <span class="add-on"><i class="icon-calendar"></i></span>
-			</div>
-        </div>
+        <?php if($menu->id):?>
+        	<?foreach($smenu as $item):?>
+        		<div class="control-group smenu">
+		            <label class="control-label" for="form-field-1"></label>
+		            <div class="controls">
+		            <input type="text" class="input-mini" name="sorderlist[]" value="<?=$item->orderlist?>" placeholder="ลำดับ"> <input type="text" name="stitle[]" value="<?=$item->title?>" placeholder="ชื่อเมนูย่อย"> <input type="text" name="surl[]" value="<?=$item->url?>" placeholder="url"> <input type="hidden" name="sid[]" value="<?=$item->id?>"> <a class="btn btn-mini btn-danger del-menu" href="#"><i class='icon-trash'></i></a>
+		            </div>
+		        </div>
+        	<?endforeach;?>
+        <?php endif;?>
         
-        <div class="control-group">
-            <label class="control-label">วันที่สิ้นสุด</label>
-            <div class="input-append date date-picker" style="margin-left: 20px;">
-                <input size="16" type="text" name="end_date" value="<?php echo DB2Date($content->end_date)?>">
-                <span class="add-on"><i class="icon-calendar"></i></span>
+        <div class="control-group smenu">
+            <label class="control-label" for="form-field-1"></label>
+            <div class="controls">
+            <input type="text" class="input-mini" name="sorderlist[]" value="" placeholder="ลำดับ"> <input type="text" class="" name="stitle[]" value="" placeholder="ชื่อเมนูย่อย"> <input type="text" name="surl[]" value="" placeholder="url">
             </div>
         </div>
         
         <div class="form-actions">
-        	<?php echo form_referer() ?>
+            <?php echo form_referer() ?>
             <button class="btn btn-info" type="submit"><i class="icon-ok"></i> Submit</button>
             &nbsp; &nbsp; &nbsp;
             <button class="btn" type="reset"><i class="icon-undo"></i> Reset</button>
@@ -81,7 +79,21 @@
 
 <script type="text/javascript">
 $(function() {
-    
+    $(".addans").click(function(){			
+		$('.smenu:first').clone().find("input:text").val("").end().insertBefore($('.form-actions'));
+		return false;
+	});
+	
+	$('.del-menu').click(function(){
+		if (!confirm('Are you sure?')) return false;
+	    $this = $(this);
+	    $.post('menus/admin/menus/delete_submenu/' + $this.prev('input[type=hidden]').val(),
+        function(data){
+            $this.closest('.control-group').fadeOut();
+        })
+	    return false;
+	});
+	
     $('#id-input-file-1').ace_file_input({
         no_file:'No File ...',
         btn_choose:'Choose',
@@ -140,12 +152,6 @@ $(function() {
         // },
         // invalidHandler: function (form) {
         // }
-    });
-    
-    $('.date-picker').datepicker({
-        language: 'th',
-        format: 'dd/mm/yyyy',
-        autoclose: true
     });
 });
 </script>

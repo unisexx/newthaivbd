@@ -34,4 +34,6 @@
         
     </form>
 <!-- PAGE CONTENT ENDS HERE -->
+
+<?=permission('weblink','full')?>
 </div>
