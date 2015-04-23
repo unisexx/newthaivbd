@@ -15,7 +15,10 @@
                   <h1><?php echo $_GET['module']?></h1>
                   
                   	<form method="get" action="">
-                  		
+                  		<fieldset>
+						  <legend>ค้นหา:</legend>
+							หัวข้อ: <input type="text"><br>
+						</fieldset>
                   	</form>
                   
                     <?php foreach($contents as $row):?>

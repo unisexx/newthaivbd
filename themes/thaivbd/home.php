@@ -35,6 +35,7 @@
 	          <br>
 	          <div id="accordion">
 	          	<?php echo modules::run('dengues/inc_dengue'); ?>
+	          	<?php echo modules::run('dengues/inc_scrub'); ?>
 	          	<?php echo modules::run('contents/inc_elephantiasis'); ?>
 	          	<?php echo modules::run('contents/inc_mosquito'); ?>
 	          	<?php echo modules::run('contents/inc_malaria'); ?>

@@ -10,7 +10,15 @@ class Dengues extends Public_Controller
     function inc_dengue(){
     	$data['dengue'] = new Dengue();
 		$data['dengue']->where('module = "สถานการณ์ไข้เลือดออก"')->order_by('id','desc')->get(1);
+		$data['dangue_report'] = new Dengue_report(1);
 		$this->load->view('inc_dengue',$data);
+    }
+	
+	// สถานการณ์โรคสครับไทฟัส
+    function inc_scrub(){
+    	$data['dengue'] = new Dengue();
+		$data['dengue']->where('module = "สถานการณ์โรคสครับไทฟัส"')->order_by('id','desc')->get(1);
+		$this->load->view('inc_scrub',$data);
     }
     
     function index(){
@@ -23,6 +31,17 @@ class Dengues extends Public_Controller
         $data['dengue'] = new Dengue($id);
         $data['dengue']->counter();
         $this->template->build('view',$data);
+    }
+	
+	function download($id)
+    {
+        if($id){
+            $attach = new Dengue_report($id);
+            $this->load->helper('download');
+            $data = file_get_contents(urldecode($attach->files));
+            $name = basename($attach->files);
+            force_download($name, $data); 
+        }
     }
 }
 ?>

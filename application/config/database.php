@@ -41,14 +41,14 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-// $db['default']['hostname'] = 'db1.favouritehosting.com';
-// $db['default']['username'] = 'c40nth_vbd';
-// $db['default']['password'] = 'thvbd20!3';
-// $db['default']['database'] = 'c40nth_vbd';
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '1234';
-$db['default']['database'] = 'newthaivbd';
+$db['default']['hostname'] = 'mysql1.favouritehosting.com';
+$db['default']['username'] = 'c5nth_vbd';
+$db['default']['password'] = 'thvbd20!3';
+$db['default']['database'] = 'c5nth_vbd';
+// $db['default']['hostname'] = 'localhost';
+// $db['default']['username'] = 'root';
+// $db['default']['password'] = '1234';
+// $db['default']['database'] = 'newthaivbd';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

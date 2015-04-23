@@ -9,6 +9,7 @@ class Dengues extends Admin_Controller
 	function index()
 	{
 		$data['dengue'] = new Dengue();
+		$data['dangue_report'] = new Dengue_report(1);
 		$this->template->build('admin/index',$data);
 	}
 	
@@ -61,7 +62,18 @@ class Dengues extends Admin_Controller
             $content->from_array($_POST);
             $content->save();
         }
-
     }
+	
+	function save_report($id=false){
+		if($_POST)
+        {
+        	$id = 1;
+            $rs = new Dengue_report($id);
+            $rs->from_array($_POST);
+            $rs->save();
+            set_notify('success', lang('save_data_complete'));
+        }
+        redirect($_SERVER['HTTP_REFERER']);
+	}
 }
 ?>

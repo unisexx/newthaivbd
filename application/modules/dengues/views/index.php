@@ -12,7 +12,7 @@
           <tr>
               <td></td>
               <td class="content">
-                  <h1><?php echo $dengues->module?></h1>
+                  <h1><?php echo $dengues->module?> <!-- <a href="rss/dengues?<?=$_SERVER['QUERY_STRING']?>"><i class="icon-rss" style="color:orange;"></i></a> --></h1>
                     <center>
                     <select name="year" id="form-field-select-1" onchange="window.open(this.options[this.selectedIndex].value,'_self')">
                         <?php for ($x = (date('Y')+543); $x >= 2548; $x--):?>
@@ -23,7 +23,7 @@
                     
                     <?php foreach($dengues as $row):?>
                         <div class="list">
-                            <a href="dengues/view/<?php echo $row->id?>">สถานการณ์โรคไข้เลือดออกในประเทศไทย ปี <?php echo $row->year?> สัปดาห์ที่ <?php echo $row->week?></a>
+                            <a href="dengues/view/<?php echo $row->id?>"><?php echo $_GET['module']?>ในประเทศไทย ปี <?php echo $row->year?> สัปดาห์ที่ <?php echo $row->week?></a>
                             <span><i class="icon-eye-open"></i> <?php echo $row->counter?></span>
                         </div>
                     <?php endforeach;?>

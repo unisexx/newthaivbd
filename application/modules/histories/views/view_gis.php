@@ -28,6 +28,11 @@
                             <span><i class="icon-eye-open"></i> <?php echo $row->counter?></span>
                         </div> -->
                     <?php //endforeach;?>
+                    <?if(@$histories->month == ""):?>
+                    
+                    *** ยังไม่มีข้อมูล ***
+                    
+                    <?else:?>
                     
                     <style type="text/css">
                     	.gismap th{padding:5px;}
@@ -52,6 +57,8 @@
                     		</td>
                     	</tr>
                     </table>
+                    
+                    <?endif;?>
                 
               </td>
               <td></td>
