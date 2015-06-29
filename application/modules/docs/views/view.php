@@ -12,6 +12,7 @@
           <tr>
               <td></td>
               <td class="content">
+              	  <?=addThis();?>
                   <h1><?php echo $doc->title?></h1>
                   <?php echo $doc->detail?>
               </td>

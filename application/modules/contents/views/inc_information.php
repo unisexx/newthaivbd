@@ -1,3 +1,5 @@
+<?$catArray = array('จัดซื้อจัดจ้าง'=>'label-info','ประกวดราคา'=>'label-success','TOR'=>'label-warning','เผยแพร่ราคากลาง ปปช.'=>'label-important','หนังสือ'=>'label-info','คู่มือ'=>'label-success','ผลงาน'=>'label-warning','วิชาการ'=>'label-important','ประกาศ'=>'label-gray','สมัครงาน'=>'label-inverse');?>
+
 <style>
 .information li{border-bottom:1px dotted #bcbcbc;}
 .btn_more1{margin-top:15px;}
@@ -26,7 +28,7 @@
 	                 <ul>
 	                 	<?php foreach($contents as $content):?>
 	                 		<li>
-	                 			<a href="contents/view/<?php echo $content->id?>"><img alt="<?php echo $content->title?>" src="<?php echo $content->image?>" width="74" height="65" class="imgNews"/></a><span class="textNews"><a href="contents/view/<?php echo $content->id?>"><?php echo $content->title?></a></span> <span class="dataNew">(<?php echo mysql_to_th($content->created)?>)</span>
+	                 			<a href="contents/view/<?php echo $content->id?>"><img alt="<?php echo $content->title?>" src="<?php echo $content->image?>" width="74" height="65" class="imgNews"/></a><span class="textNews"><a href="contents/view/<?php echo $content->id?>"><span class="label <?=$catArray[$content->category]?>"><?=$content->category?></span> <?php echo $content->title?></a></span> <span class="dataNew">(<?php echo mysql_to_th($content->created)?>)</span>
 	                 		</li>
 	                 	<?php endforeach;?>
 	                 </ul>

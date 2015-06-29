@@ -6,7 +6,7 @@ class Contacts extends Public_Controller{
 	}
 	
 	function index(){
-	    $this->template->title("ติดต่อเรา");
+	    $this->template->title("ติดต่อเรา :: สำนักโรคติดต่อนำโดยแมลง");
 		$this->template->build('contacts_index');
 	}
     

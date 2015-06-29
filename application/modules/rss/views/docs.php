@@ -19,14 +19,13 @@ echo '<?xml version="1.0" encoding="utf-8"?>' . "\n";
    <?php foreach($posts as $post):?>    
         <item>
           <title><?php echo xml_convert($post->title); ?></title>
-          <link><?php echo site_url('adfrees/view/' . $post->id) ?></link>
-          <guid><?php echo site_url('adfrees/view/' . $post->id) ?></guid>
+          <link><?php echo site_url('docs/view/' . $post->id) ?></link>
+          <guid><?php echo site_url('docs/view/' . $post->id) ?></guid>
           <description>
-              <?php echo xml_convert('<img src="'.$post->image.'">'); ?>
               <?php echo xml_convert($post->detail); ?>
           </description> 
-          <author><![CDATA[adfree.in.th]]></author>
-          <category><![CDATA[ฟรีโพสต์ ฟรีประกาศ โฆษณาฟรี]]></category>
+          <author><![CDATA[thaivbd.org]]></author>
+          <category><![CDATA[สำนักโรคติดต่อทั่วไป]]></category>
           <pubDate><![CDATA[<?php echo gmdate(DATE_RSS, strtotime($post->created)); ?>]]></pubDate>     
         </item>        
    <?php endforeach; ?>    

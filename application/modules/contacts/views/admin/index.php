@@ -27,14 +27,14 @@
 					<td><?php echo mysql_to_th($contact->created,'S',false) ?></td>
                     <td>
                         <div class='hidden-phone visible-desktop btn-group'>
-                            <!-- <a href="contacts/admin/contacts/form/<?php echo $contact->id?>" class='btn btn-mini btn-info'><i class='icon-edit'></i></a> -->
+                            <a href="contacts/admin/contacts/form/<?php echo $contact->id?>" class='btn btn-mini btn-info'><i class='icon-edit'></i></a>
                             <a class='btn btn-mini btn-danger' href="contacts/admin/contacts/delete/<?php echo $contact->id?>" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><i class='icon-trash'></i></a>
                         </div>
                         <div class='hidden-desktop visible-phone'>
                             <div class="inline position-relative">
                                 <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down icon-only"></i></button>
                                 <ul class="dropdown-menu dropdown-icon-only dropdown-yellow pull-right dropdown-caret dropdown-close">
-                                    <!-- <li><a href="contacts/admin/contacts/form/<?php echo $contact->id?>" class="tooltip-success" data-rel="tooltip" title="Edit" data-placement="left"><span class="green"><i class="icon-edit"></i></span></a></li> -->
+                                    <li><a href="contacts/admin/contacts/form/<?php echo $contact->id?>" class="tooltip-success" data-rel="tooltip" title="Edit" data-placement="left"><span class="green"><i class="icon-edit"></i></span></a></li>
                                     <li><a href="contacts/admin/contacts/delete/<?php echo $contact->id?>" class="tooltip-error" data-rel="tooltip" title="Delete" data-placement="left" onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')"><span class="red"><i class="icon-trash"></i></span> </a></li>
                                 </ul>
                             </div>

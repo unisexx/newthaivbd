@@ -12,7 +12,18 @@
           <tr>
               <td></td>
               <td class="content">
+              	<?=addThis();?>
                   <h1><?php echo $researchs->category->name?></h1>
+                  
+                    <form class="frmsearch" method="get" action="">
+                  		<fieldset>
+						  <legend>ค้นหา:</legend>
+							หัวข้อ: <input type="text" name="txtsearch" value="<?=@$_GET['txtsearch']?>" size="50"> 
+							<input type="hidden" name="module" value="<?=@$_GET['module']?>">
+							<input type="submit" value="ค้นหา">
+						</fieldset>
+                  	</form>
+                  	
                     <?php foreach($researchs as $row):?>
                         <div class="list">
                             <!-- <a href="researchs/download/<?php echo $row->id?>"><img src="<?php echo $row->files?>" width="100"></a><br> -->

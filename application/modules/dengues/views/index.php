@@ -12,7 +12,7 @@
           <tr>
               <td></td>
               <td class="content">
-                  <h1><?php echo $dengues->module?> <!-- <a href="rss/dengues?<?=$_SERVER['QUERY_STRING']?>"><i class="icon-rss" style="color:orange;"></i></a> --></h1>
+                  <h1><?php echo $dengues->module?> <a href="rss/dengues?<?=$_SERVER['QUERY_STRING']?>" target="_blank"><i class="icon-rss" style="color:orange;"></i></a></h1>
                     <center>
                     <select name="year" id="form-field-select-1" onchange="window.open(this.options[this.selectedIndex].value,'_self')">
                         <?php for ($x = (date('Y')+543); $x >= 2548; $x--):?>

@@ -29,6 +29,36 @@
             </div>
         </div>
         
+        <?if($_GET['module'] == "ข่าวประกวดราคา"):?>
+        <div class="control-group">
+            <label class="control-label" for="form-field-1">หมวดหมู่</label>
+            <div class="controls">
+                <select class="form-control" name="category">
+                	<option value="จัดซื้อจัดจ้าง" <?=$content->category == 'จัดซื้อจัดจ้าง' ? 'selected' : '' ;?>>จัดซื้อจัดจ้าง</option>
+                	<option value="ประกวดราคา" <?=$content->category == 'ประกวดราคา' ? 'selected' : '' ;?>>ประกวดราคา</option>
+                	<option value="TOR" <?=$content->category == 'TOR' ? 'selected' : '' ;?>>TOR</option>
+                	<option value="เผยแพร่ราคากลาง ปปช." <?=$content->category == 'เผยแพร่ราคากลาง ปปช.' ? 'selected' : '' ;?>>เผยแพร่ราคากลาง ปปช.</option>
+                </select>
+            </div>
+        </div>
+        <?endif;?>
+        
+        <?if($_GET['module'] == "ข่าวประชาสัมพันธ์"):?>
+        <div class="control-group">
+            <label class="control-label" for="form-field-1">หมวดหมู่</label>
+            <div class="controls">
+                <select class="form-control" name="category">
+                	<option value="หนังสือ" <?=$content->category == 'หนังสือ' ? 'selected' : '' ;?>>หนังสือ</option>
+                	<option value="คู่มือ" <?=$content->category == 'คู่มือ' ? 'selected' : '' ;?>>คู่มือ</option>
+                	<option value="ผลงาน" <?=$content->category == 'ผลงาน' ? 'selected' : '' ;?>>ผลงาน</option>
+                	<option value="วิชาการ" <?=$content->category == 'วิชาการ' ? 'selected' : '' ;?>>วิชาการ</option>
+                	<option value="ประกาศ" <?=$content->category == 'ประกาศ' ? 'selected' : '' ;?>>ประกาศ</option>
+                	<option value="สมัครงาน" <?=$content->category == 'สมัครงาน' ? 'selected' : '' ;?>>สมัครงาน</option>
+                </select>
+            </div>
+        </div>
+        <?endif;?>
+        
         <div class="control-group">
             <label class="control-label" for="form-field-1">หัวข้อ</label>
             <div class="controls">

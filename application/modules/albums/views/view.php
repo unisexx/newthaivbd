@@ -16,6 +16,7 @@
           <tr>
               <td></td>
               <td class="content">
+              	<?=addThis();?>
                   <h1><?php echo $pictures->album->name ?></h1>
                     <?php foreach($pictures as $row):?>
                         <div class="picture">

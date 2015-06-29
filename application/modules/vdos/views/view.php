@@ -14,11 +14,19 @@
               <td class="content">
                   <h1>ภาพวีดีโอ</h1>
                     <?php foreach($vdos as $row):?>
-                        <div class="picture">
+                    	<?if($row->url != ""):?>
+                    	<div class="picture">
                             <a href="<?php echo $row->url ?>" rel="lightbox[vdo]" class="highlightit" alt="<?php echo $row->title ?>"><img src="http://img.youtube.com/vi/<?php echo getYouTubeIdFromURL($row->url)?>/0.jpg" width="122" height="95"></a><br>
                             <span><?php echo $row->title ?></span>
                         </div>
+                       	<?else:?>
+                       	<div class="picture">
+						<a href="vdos/ajax_video/<?=$row->id?>?ajax=true" rel="lightbox[vdo]" class="highlightit" alt="<?php echo $row->title ?>"><img src="<?=$row->image?>" width="122" height="95"></a>
+						<span><?php echo $row->title ?></span>
+						</div>
+                        <?endif;?>
                     <?php endforeach;?>
+                    	
               </td>
               <td></td>
           </tr>

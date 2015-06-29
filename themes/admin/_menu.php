@@ -16,7 +16,13 @@
     <!-- #sidebar-shortcuts -->
 
     <ul class="nav nav-list">
-        
+        <li <?php echo menu_active('coverpages','coverpages',false,'active')?>>
+			<a href="coverpages/admin/coverpages">
+				<i class="icon-list-alt"></i>
+				<span class="menu-text"> หน้าแรก </span>
+			</a>
+		</li>
+		
         <?if(permission('user','full')):?>
         <li <?php echo menu_active('users','users',false,'active open')?><?php echo menu_active('permissions','permissions',FALSE,'active open')?>>
           <a href="#" class="dropdown-toggle" >
@@ -50,13 +56,14 @@
         <?endif;?>
         
         <?if(permission('knowledge','full')):?>
-        <li <?php echo (@$_GET['module'] == 'โรคไข้เลือดออก' or @$_GET['module'] == 'โรคไข้ปวดข้อยุงลาย' or @$_GET['module'] == 'ไข้มาลาเรีย' or @$_GET['module'] == 'โรคเท้าช้าง' or @$_GET['module'] == 'โรคติดต่อนำโดยแมลงอื่นๆ')?'class="active open"':'';?>>
+        <li <?php echo (@$_GET['module'] == 'คำอธิบายโรค (Face Sheet)' or @$_GET['module'] == 'โรคไข้เลือดออก' or @$_GET['module'] == 'โรคไข้ปวดข้อยุงลาย' or @$_GET['module'] == 'ไข้มาลาเรีย' or @$_GET['module'] == 'โรคเท้าช้าง' or @$_GET['module'] == 'โรคติดต่อนำโดยแมลงอื่นๆ')?'class="active open"':'';?>>
           <a href="#" class="dropdown-toggle" >
             <i class="icon-list-alt"></i>
             <span>ความรู้ทั่วไปสำหรับประชาชน</span>
             <b class="arrow icon-angle-down"></b>
           </a>
           <ul class="submenu">
+          	<li <?php echo (@$_GET['module'] == 'คำอธิบายโรค (Face Sheet)')?'class="active"':'';?>><a href="contents/admin/contents?module=คำอธิบายโรค (Face Sheet)"> คำอธิบายโรคต่างๆ (Face Sheet)</a></li>
             <li <?php echo (@$_GET['module'] == 'โรคไข้เลือดออก')?'class="active"':'';?>><a href="contents/admin/contents?module=โรคไข้เลือดออก"><i class="icon-double-angle-right"></i> โรคไข้เลือดออก</a></li>
             <li <?php echo (@$_GET['module'] == 'โรคไข้ปวดข้อยุงลาย')?'class="active"':'';?>><a href="contents/admin/contents?module=โรคไข้ปวดข้อยุงลาย"><i class="icon-double-angle-right"></i> โรคไข้ปวดข้อยุงลาย</a></li>
             <li <?php echo (@$_GET['module'] == 'ไข้มาลาเรีย')?'class="active"':'';?>><a href="contents/admin/contents?module=ไข้มาลาเรีย"><i class="icon-double-angle-right"></i> ไข้มาลาเรีย</a></li>

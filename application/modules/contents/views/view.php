@@ -15,6 +15,7 @@ td.content img{max-width:100%}
           <tr>
               <td></td>
               <td class="content">
+              	  <?=addThis();?>
                   <h1><?php echo $content->title?></h1>
                     <?php echo $content->detail?>
               </td>

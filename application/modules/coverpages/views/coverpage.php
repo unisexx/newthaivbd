@@ -35,7 +35,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>เขตตรวจราชการสาธารณสุข</title>
+	<title>สำนักโรคติดต่อนำโดยแมลง</title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" ></script>
 	<script type="text/javascript" src="../../media/js/cufon/cufon-yui.js"></script>
 	<script type="text/javascript" src="../../media/js/cufon/supermarket_400.font.js"></script>
@@ -55,7 +55,7 @@
   	<center>
   		<img src="../../<?=$coverpage->image?>">
   		<br /><br />
-  		<a href="/bie/region12/home">เข้าสู่เว็บไซต์เครือข่ายบริการสาธารณสุข</a>
+  		<a href="http://www.thaivbd.org/n/home">::: เข้าสู่เว็บไซต์สำนักโรคติดต่อนำโดยแมลง :::</a>
   	</center>
   </div>
 </body>

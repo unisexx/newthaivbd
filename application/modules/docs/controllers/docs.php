@@ -19,13 +19,20 @@ class Docs extends Public_Controller
 	
     function index(){
         $data['docs'] = new Doc();
+		if(@$_GET['txtsearch'])$data['docs']->where("title like '%".$_GET['txtsearch']."%'");
         $data['docs']->where('module = "'.$_GET['module'].'"')->get_page();
+		
+		$this->template->title($_GET['module'].' :: สำนักโรคติดต่อนำโดยแมลง');
+        $this->template->append_metadata( meta('description',$_GET['module'].' :: สำนักโรคติดต่อนำโดยแมลง'));
         $this->template->build('index',$data);
     }
     
     function view($id){
         $data['doc'] = new Doc($id);
         $data['doc']->counter();
+		
+		$this->template->title($data['doc']->title.' :: สำนักโรคติดต่อนำโดยแมลง');
+        $this->template->append_metadata( meta('description',substr(str_replace('"', '', strip_tags($data['doc']->detail)), 0, 500)));
         $this->template->build('view',$data);
     }
 }

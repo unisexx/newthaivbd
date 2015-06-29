@@ -12,7 +12,10 @@
                 <tr>
                     <th>สถานะ</th>
                     <th>หัวข้อ</th>
-					<th>เขียนโดย</th>
+                    <?if($_GET['module'] == "ข่าวประชาสัมพันธ์" || $_GET['module'] == "ข่าวประกวดราคา"):?>
+                    <th width="100">หมวดหมู่</th>
+                    <?endif;?>
+					<th width="75">เขียนโดย</th>
 					<th>วันที่สร้าง</th>
 					<th>แก้ไขล่าสุด</th>
                     <th><a class="btn btn-mini btn-primary" href="contents/admin/contents/form?module=<?php echo $_GET['module']?>"><i class="icon-pencil"></i> เพิ่มรายการ </a></th>
@@ -26,6 +29,9 @@
                         <label><input class="ace-switch ace-switch-4" type="checkbox" name="status" value="<?php echo $row->id ?>" <?php echo ($row->status=="approve")?'checked="checked"':'' ?>/><span class="lbl"></span></label>
                     </td>
                     <td><?php echo $row->title?></td>
+                    <?if($_GET['module'] == "ข่าวประชาสัมพันธ์" || $_GET['module'] == "ข่าวประกวดราคา"):?>
+                    <td><?php echo $row->category?></td>
+                    <?endif;?>
 					<td><?php echo $row->user->username?></td>
 					<td><?php echo mysql_to_th($row->created,'S',TRUE) ?></td>
 			        <td><?php echo mysql_to_th($row->updated,'S',TRUE) ?></td>
@@ -65,12 +71,22 @@ $(document).ready(function(){
         $.post("contents/admin/contents/approve/" + this.value,jsonOptions);
     });
     
-    var oTable1 = $('#table_report').dataTable( {
-    "aoColumns": [
-      { "bSortable": false },
-      null, null,null, null,
-      { "bSortable": false }
-    ] } );
+    var module = "<?=$_GET['module']?>";
+    if(module == 'ข่าวประชาสัมพันธ์' || module == 'ข่าวประกวดราคา'){
+    	var oTable1 = $('#table_report').dataTable( {
+	    "aoColumns": [
+	      { "bSortable": false },
+	      null, null, null, null, null,
+	      { "bSortable": false }
+	    ] } );
+    }else{
+    	var oTable1 = $('#table_report').dataTable( {
+	    "aoColumns": [
+	      { "bSortable": false },
+	      null, null, null, null,
+	      { "bSortable": false }
+	    ] } );
+    }
     
     
     $('table th input:checkbox').on('click' , function(){

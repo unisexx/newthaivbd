@@ -57,14 +57,24 @@ class Contents extends Public_Controller
     
     function index(){
         $data['contents'] = new Content();
-        $data['contents']->where("module = '".$_GET['module']."' and status = 'approve' and start_date <= date(sysdate()) and (end_date >= date(sysdate()) or end_date = date('0000-00-00'))")->order_by('id','desc')->get_page();
+        if(@$_GET['txtsearch'])$data['contents']->where("title like '%".$_GET['txtsearch']."%'");
+        if(@$_GET['category'] != ""){ $data['contents']->where("category = '".$_GET['category']."'"); }
+        $data['contents']->where("module = '".$_GET['module']."' and status = 'approve' and (start_date <= date(sysdate()) and (end_date >= date(sysdate()) or end_date = date('0000-00-00')))")->order_by('id','desc')->get_page();
 		// $data['contents']->check_last_query();
+		
+		$this->template->title($_GET['module'].' :: สำนักโรคติดต่อนำโดยแมลง');
+        // $this->template->append_metadata( meta('description',substr(str_replace('"', '', strip_tags($data['content']->detail)), 0, 500)));
+		
         $this->template->build('index',$data);
     }
     
     function view($id){
         $data['content'] = new Content($id);
         $data['content']->counter();
+		
+		$this->template->title($data['content']->title.' :: สำนักโรคติดต่อนำโดยแมลง');
+        $this->template->append_metadata( meta('description',substr(str_replace('"', '', strip_tags($data['content']->detail)), 0, 500)));
+		
         $this->template->build('view',$data);
     }
 }

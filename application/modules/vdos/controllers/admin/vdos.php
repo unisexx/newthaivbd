@@ -31,13 +31,16 @@ class Vdos extends Admin_Controller
 			$category->from_array($_POST);
 			$category->save();
             
-            if($_POST['url']){
-                foreach($_POST['url'] as $key => $item){
+            if($_POST['title']){
+                foreach($_POST['title'] as $key => $item){
                     $vdo = new Vdo(@$_POST['vdo_id'][$key]);
                     if($item)
                     {
-                    	$vdo->title = $_POST['title'][$key];
-                        $vdo->url = $item;
+                    	$vdo->title = $item;
+						$vdo->type = $_POST['type'][$key];
+                        $vdo->url = $_POST['url'][$key];
+						$vdo->files = $_POST['files'][$key];
+						$vdo->image = $_POST['image'][$key];
                         $vdo->category_id = $category->id;
                         $vdo->save();
                     }   
@@ -77,7 +80,6 @@ class Vdos extends Admin_Controller
             $row->from_array($_POST);
             $row->save();
         }
-
     }
 	
 }

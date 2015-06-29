@@ -12,7 +12,7 @@
           <tr>
               <td></td>
               <td class="content">
-                  
+                    <?=addThis();?>
                     <h1>ข้อมูล<?php echo $_GET['module']?></h1>
                     <center>
                     <select name="year" id="form-field-select-1" onchange="window.open(this.options[this.selectedIndex].value,'_self')">

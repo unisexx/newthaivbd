@@ -12,6 +12,7 @@
           <tr>
               <td></td>
               <td class="content">
+          		  <?=addThis();?>
                   <?php if($history->type == 'week'):?>
                       
                     <h1>รายงานสถานการณ์โรค<?php echo $history->module?> ปี <?php echo $history->year?> สัปดาห์ที่ <?php echo $history->week?></h1>

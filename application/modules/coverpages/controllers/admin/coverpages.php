@@ -9,12 +9,11 @@ class Coverpages extends Admin_Controller
 	function index(){
 		$coverpages = new Coverpage();
 		$data['coverpages'] = $coverpages->get_page();
-		$this->template->append_metadata(js_checkbox('approve'));
 		$this->template->build('admin/cover_index',$data);
 	}
 	
 	function form($id=false){
-		$data['coverpage'] = new Coverpage($id);
+		$data['rs'] = new Coverpage($id);
 		$this->template->append_metadata(js_datepicker());
 		$this->template->build('admin/cover_form',$data);
 	}

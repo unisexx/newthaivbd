@@ -12,6 +12,7 @@
           <tr>
               <td></td>
               <td class="content">
+              	  <?=addThis();?>
                   <h1><?php echo $about->module?></h1>
                   <?php echo $about->detail?>
               </td>

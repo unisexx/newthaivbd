@@ -14,6 +14,8 @@ class Calendars extends Public_Controller
 			// $data['group'] = new group($id);
 			// $this->template->set_layout('group_layout');
 		// }
+		$this->template->title('ปฎิทินกิจกรรม :: สำนักโรคติดต่อนำโดยแมลง');
+        $this->template->append_metadata( meta('description','ปฎิทินกิจกรรม :: สำนักโรคติดต่อนำโดยแมลง'));
 		$this->template->build('calendar_index',$data);
 	}
 	
@@ -28,6 +30,9 @@ class Calendars extends Public_Controller
 		// }
 		$data['calendar']->counter();
 		// $data['type'] = $type[$data['calendar']->className];
+		
+		$this->template->title($data['calendar']->title.' :: สำนักโรคติดต่อนำโดยแมลง');
+        $this->template->append_metadata( meta('description',$data['calendar']->title.' :: สำนักโรคติดต่อนำโดยแมลง'));
 		$this->template->build('calendar_view',$data);
 	}
 	

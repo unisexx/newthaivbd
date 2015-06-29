@@ -19,14 +19,22 @@ class Researchs extends Public_Controller
 	
     function index(){
         $data['categories'] = new Category();
+		if(@$_GET['txtsearch'])$data['categories']->where("name like '%".$_GET['txtsearch']."%'");
         $data['categories']->where('module = "'.$_GET['module'].'"')->get_page();
+		
+		$this->template->title($_GET['module'].' :: สำนักโรคติดต่อนำโดยแมลง');
+        $this->template->append_metadata( meta('description',$_GET['module'].' :: สำนักโรคติดต่อนำโดยแมลง'));
         $this->template->build('index',$data);
     }
     
     function view($id){
         $data['researchs'] = new Research();
+		if(@$_GET['txtsearch'])$data['researchs']->where("title like '%".$_GET['txtsearch']."%'");
         $data['researchs']->where('category_id = '.$id)->get();
         $data['researchs']->category->counter();
+		
+		$this->template->title($data['researchs']->category->name.' :: สำนักโรคติดต่อนำโดยแมลง');
+        $this->template->append_metadata( meta('description',$data['researchs']->category->name.' :: สำนักโรคติดต่อนำโดยแมลง'));
         $this->template->build('view',$data);
     }
     

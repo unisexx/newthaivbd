@@ -25,12 +25,39 @@
 	            </div>
 	        </div>
 	        
-            <div class="control-group">
+	        <div class="control-group">
+	            <label class="control-label" for="form-field-1">ประเภทวิดีโอ</label>
+	            <div class="controls">
+	                <select class="form-control selectType" name="type[]">
+	                	<option value="">-- เลือกรูปแบบวิดีโอ --</option>
+	                	<option value="youtube" <?=$vdo->type == 'youtube' ? 'selected' : '' ;?>>ลิ้งค์ Youtube</option>
+	                	<option value="upload" <?=$vdo->type == 'upload' ? 'selected' : '' ;?>>อัพโหลดจากเว็บไซต์</option>
+	                </select>
+	            </div>
+	        </div>
+	        
+            <div class="control-group blk_youtube">
 	            <label class="control-label" for="form-field-10">ลิ้งค์ Youtube</label>
 	            <div class="controls">
 	                <textarea class="input-xxlarge" name="url[]" rows="5"><?php echo $vdo->url ?></textarea>
 	            </div>
 	        </div>
+	        
+	        <!-- file manager -->
+	        <div class="control-group blk_image">
+	            <label class="control-label" for="form-field-3">รูปวิดีโอ</label>
+	            <div class="controls">
+	                <input type="text" id="form-field-3" class="input-xxlarge" name="image[]" value="<?=$vdo->image?>"> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'image')" />
+	            </div>
+	        </div>
+	        
+	        <div class="control-group blk_upload">
+	            <label class="control-label" for="form-field-2">ไฟล์วิดีโอ</label>
+	            <div class="controls">
+	                <input type="text" id="form-field-2" class="input-xxlarge" name="files[]" value="<?=$vdo->files?>"> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'media')" />
+	            </div>
+	        </div>
+	       	<hr>
 	        </div>
         <?php endforeach; ?>
         
@@ -43,11 +70,38 @@
         </div>
         
         <div class="control-group">
+            <label class="control-label" for="form-field-1">ประเภทวิดีโอ</label>
+            <div class="controls">
+                <select class="form-control selectType" name="type[]">
+                	<option value="">-- เลือกรูปแบบวิดีโอ --</option>
+                	<option value="youtube">ลิ้งค์ Youtube</option>
+                	<option value="upload">อัพโหลดจากเว็บไซต์</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="control-group blk_youtube">
             <label class="control-label" for="form-field-10">ลิ้งค์ Youtube</label>
             <div class="controls">
                 <textarea class="input-xxlarge" name="url[]" rows="5"></textarea>
             </div>
         </div>
+        
+        <!-- file manager -->
+        <div class="control-group blk_image">
+            <label class="control-label" for="form-field-3">รูปวิดีโอ</label>
+            <div class="controls">
+                <input type="text" id="form-field-3" class="input-xxlarge" name="image[]" value=""> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'image')" />
+            </div>
+        </div>
+        
+        <div class="control-group blk_upload">
+            <label class="control-label" for="form-field-2">ไฟล์วิดีโอ</label>
+            <div class="controls">
+                <input type="text" id="form-field-2" class="input-xxlarge" name="files[]" value=""> <input class="btn btn-mini btn-info" type="button" name="browse" value="เลือกไฟล์" onclick="browser($(this).prev(),'media')" />
+            </div>
+        </div>
+        <hr>
         </div>
         
         <div class="form-actions">
@@ -71,6 +125,34 @@
 
 <script type="text/javascript">
 $(function(){
+	$('.blk_upload,.blk_youtube,.blk_image').hide();
+	
+	$('select.selectType').each(function(){
+		if(this.value == "youtube"){
+		  	$(this).closest('.vid-blk').find('.blk_youtube').show();
+		  	$(this).closest('.vid-blk').find('.blk_upload,.blk_image').hide();
+		  }else if(this.value == "upload"){
+		  	$(this).closest('.vid-blk').find('.blk_youtube').hide();
+		  	$(this).closest('.vid-blk').find('.blk_upload,.blk_image').show();
+		  }else{
+		  	$(this).closest('.vid-blk').find('.blk_youtube,.blk_upload,.blk_image').hide();
+		  }
+	});
+	
+	// $('select.selectType').on('change', function() {
+	$('body').on('change', 'select.selectType', function(){
+	  //alert( this.value ); // or $(this).val()
+	  if(this.value == "youtube"){
+	  	$(this).closest('.clone-blk').find('.blk_youtube').show();
+	  	$(this).closest('.clone-blk').find('.blk_upload,.blk_image').hide();
+	  }else if(this.value == "upload"){
+	  	$(this).closest('.clone-blk').find('.blk_youtube').hide();
+	  	$(this).closest('.clone-blk').find('.blk_upload,.blk_image').show();
+	  }else{
+	  	$(this).closest('.clone-blk').find('.blk_youtube,.blk_upload,.blk_image').hide();
+	  }
+	});
+	
 	$(".addans").click(function(){			
 		$('.clone-blk:first').clone().find("input:text,textarea").val("").end().insertBefore($('.form-actions'));
 		return false;
