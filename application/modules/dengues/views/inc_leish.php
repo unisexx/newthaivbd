@@ -2,7 +2,7 @@
 <div>
 	สถานการณ์โรคลิชมาเนีย ปี <?php echo $dengue->year?> <br>
 	<a href="contents/view/324692" target="_blank">คำอธิบายโรคลิชมาเนีย (Face Sheet)</a><br>
-	จำนวนผู้ป่วยสะสม DHF+DF+DSS ณ วันที่ <?php echo mysql_to_th($dengue->dates,'S',FALSE)?> (สัปดาห์ที่ <?php echo $dengue->week?>)<br>
+	จำนวนผู้ป่วยสะสม ณ วันที่ <?php echo mysql_to_th($dengue->dates,'S',FALSE)?> (สัปดาห์ที่ <?php echo $dengue->week?>)<br>
 	<div style="margin-left:20px;">
 	<table>
 		<tr>
