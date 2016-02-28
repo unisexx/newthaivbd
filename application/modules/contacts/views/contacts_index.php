@@ -67,6 +67,11 @@
 			                  <button type="submit" class="btn btn-danger">ส่งข้อความ</button>
 			                </div>
 			              </div>
+			              <div class="control-group">
+			                <div class="controls"><br>
+			                  <a href="http://old.ddc.moph.go.th/complaint/index.php" target="_blank"><img src="themes/thaivbd/images/1143.jpg"></a>
+			                </div>
+			              </div>
 					</form>
 				</div>
               </td>
