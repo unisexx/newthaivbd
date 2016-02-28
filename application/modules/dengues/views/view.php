@@ -17,7 +17,7 @@
               <td class="content">
           		  <?=addThis();?>
                   <h1><?php echo $dengue->module?>ในประเทศไทย ปี <?php echo $dengue->year?><br>
-						จำนวนผู้ป่วยสะสม DHF+DF+DSS ณ วันที่ <?php echo mysql_to_th($dengue->dates,'S',FALSE)?> (สัปดาห์ที่ <?php echo $dengue->week?>)</h1>
+						จำนวนผู้ป่วยสะสม ณ วันที่ <?php echo mysql_to_th($dengue->dates,'S',FALSE)?> (สัปดาห์ที่ <?php echo $dengue->week?>)</h1>
 						<table>
 							<tr>
 								<td width="80%">จำนวนผู้ป่วย</td>
