@@ -1,5 +1,6 @@
-<div class="logo"></div>
-<div class="name"></div>
+<!-- <div class="logo"></div>
+<div class="name"></div> -->
+<img src="themes/thaivbd/images/logo2017.jpg" width="400" class="pull-left">
 <div class="w3c">
 <div style="padding-top:5px; float:left; padding-right:10px; margin-left:40px;">เปลี่ยนการแสดงผล</div>
 <div style="padding-top:3px; float:left;">
