@@ -1,0 +1,30 @@
+<?php
+class Contacts extends Public_Controller{
+	
+	function __construct(){
+		parent::__construct();
+	}
+	
+	function index(){
+	    $this->template->title("ติดต่อเรา :: สำนักโรคติดต่อนำโดยแมลง");
+		$this->template->build('contacts_index');
+	}
+    
+    function save(){
+        if($_POST){
+        	$captcha = $this->session->userdata('captcha');
+			if(($_POST['captcha'] == $captcha) && !empty($captcha)){
+				$contact = new Contact();
+	            $contact->from_array($_POST);
+	            $contact->save();
+	            set_notify('success', 'ส่งข้อความเรียบร้อยแล้วค่ะ');
+			}else{
+				set_notify('error','กรอกรหัสไม่ถูกต้อง');
+				redirect($_SERVER['HTTP_REFERER']);
+			}
+			set_notify('success', lang('ส่งข้อความเรียบร้อยค่ะ'));
+        }
+        redirect('contacts');
+    }
+}
+?>
