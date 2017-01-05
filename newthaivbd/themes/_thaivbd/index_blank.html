@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>สำนักโรคติดต่อนำโดยแมลง</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.1.custom.js"></script>
+<script>
+$(function() {
+		
+		$( "#accordion" ).accordion();
+		
+
+		
+		var availableTags = [
+			"ActionScript",
+			"AppleScript",
+			"Asp",
+			"BASIC",
+			"C",
+			"C++",
+			"Clojure",
+			"COBOL",
+			"ColdFusion",
+			"Erlang",
+			"Fortran",
+			"Groovy",
+			"Haskell",
+			"Java",
+			"JavaScript",
+			"Lisp",
+			"Perl",
+			"PHP",
+			"Python",
+			"Ruby",
+			"Scala",
+			"Scheme"
+		];
+		$( "#autocomplete" ).autocomplete({
+			source: availableTags
+		});
+		
+
+		
+		$( "#button" ).button();
+		$( "#radioset" ).buttonset();
+		
+
+		
+		$( "#tabs" ).tabs();
+		
+
+		
+		$( "#dialog" ).dialog({
+			autoOpen: false,
+			width: 400,
+			buttons: [
+				{
+					text: "Ok",
+					click: function() {
+						$( this ).dialog( "close" );
+					}
+				},
+				{
+					text: "Cancel",
+					click: function() {
+						$( this ).dialog( "close" );
+					}
+				}
+			]
+		});
+
+		// Link to open the dialog
+		$( "#dialog-link" ).click(function( event ) {
+			$( "#dialog" ).dialog( "open" );
+			event.preventDefault();
+		});
+		
+
+		
+		$( "#datepicker" ).datepicker({
+			inline: true
+		});
+		
+
+		
+		$( "#slider" ).slider({
+			range: true,
+			values: [ 17, 67 ]
+		});
+		
+
+		
+		$( "#progressbar" ).progressbar({
+			value: 20
+		});
+		
+
+		// Hover states on the static widgets
+		$( "#dialog-link, #icons li" ).hover(
+			function() {
+				$( this ).addClass( "ui-state-hover" );
+			},
+			function() {
+				$( this ).removeClass( "ui-state-hover" );
+			}
+		);
+	});
+	
+	
+	</script>
+</head>
+<body>
+<div id="wrap">
+<div class="main"><div class="main2">
+    	<div class="logo"></div>
+        <div class="name"></div>
+        <div class="w3c">
+        <div style="padding-top:5px; float:left; padding-right:10px; margin-left:40px;">เปลี่ยนการแสดงผล</div>
+        <div style="padding-top:3px; float:left;">
+        <a href="#"><img src="images/fontSize1.png" width="14" height="13" border="0"></a>&nbsp;
+        <a href="#"><img src="images/fontSize2.png" width="16" height="15" border="0"></a>&nbsp;
+        <a href="#"><img src="images/fontSize3.png" width="18" height="18" border="0"></a>&nbsp;
+        <a href="#"><img src="images/line1.gif" width="1" height="18" border="0"></a>&nbsp;
+        <a href="#"><img src="images/c1.png" width="18" height="18" border="0"></a>&nbsp;
+        <a href="#"><img src="images/c2.png" width="18" height="18" border="0"></a>&nbsp;
+        <a href="#"><img src="images/c3.png" width="18" height="18" border="0"></a></div>
+        </div>
+        <div class="flag"><a href="#"><img src="images/eng.png" alt="English" width="26" height="20" border="0" /></a>&nbsp;&nbsp;<a href="#"><img src="images/thai.png" alt="ภาษาไทย" width="26" height="20" border="0"/></a></div>
+        <div class="login">
+			<form>
+               	 <label>ชื่อ</label>
+                 <input type="text" name="Username" title="E-mail" class="input_boxLogin" placeholder="" >
+                 <label>รหัสผ่าน</label>
+				 <input type="password" name="Password" class="input_boxLogin" title="Password"  placeholder="">
+                 <input name="btn_login" class="btn_login" >
+                 <br><label id="linkRegis"><a href="#" class="linkRegis">ลืมรหัสผ่าน</a> | <a href="#" class="linkRegis">สมัครสมาชิก</a></label>
+            </form></div>
+    <div class="clr"></div>
+        <div id="topmenu">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="17" height="41"><img src="images/bg_topmenu_left.png" width="23" height="46" /></td>
+                <td height="41" background="images/bg_topmenu_center.png">
+                <ul>
+                    <li><a href="#">หน้าแรก</a></li>
+                    <li><a href="#">เกี่ยวกับเรา</a>
+                    	<ul>
+                        	<li><a href="#">วิสัยทัศน์</a></li>
+                            <li><a href="#">โครงสร้างองค์กร</a></li>
+                            <li><a href="#">บุคคลากร</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">สำหรับบุคลากร</a>
+                        <ul>
+                        	<li><a href="#">เอกสารทั่วไป</a></li>
+                            <li><a href="#">คำสั่ง</a></li>
+                            <li><a href="#">รายงานการประชุม</a></li>
+                            <li><a href="#">หนังสือแจ้งเวียน</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">สถานการณ์โรค</a>
+                        <ul>
+                        	<li><a href="#">สถานการณ์โรคไข้เลือดออก</a></li>
+                            <li><a href="#">สถานการณ์โรคชิคุนกุนยา</a></li>
+                            <li><a href="#">สถานการณ์โรคมาลาเรีย</a></li>
+                            <li><a href="#">สถานการณ์โรคเท้าช้าง</a></li>
+                            <li><a href="#">สถานการณ์โรคติดต่อนำโดยแมลงอื่นๆ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">GIS</a>
+                      <ul>
+                        	<li><a href="#">โรคไข้เลือดออก</a></li>
+                            <li><a href="#">โรคมาลาเรีย</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">ความรู้ทั่วไปสำหรับประชาชน</a>
+                      <ul>
+                        	<li><a href="#">โรคไข้เลือดออก</a></li>
+                            <li><a href="#">โรคไข้ปวดข้อยุงลาย</a></li>
+                            <li><a href="#">ไข้มาลาเรีย</a></li>
+                            <li><a href="#">โรคเท้าช้าง</a></li>
+                            <li><a href="#">โรคติดต่อนำโดยแมลงอื่นๆ</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">ศูนย์เอกสาร</a>
+                      <ul>
+                        	<li><a href="#">วารสารโรคติดต่อนำโดยแมลง</a></li>
+                            <li><a href="#">แนวทางและคู่มือการปฎิบัติการ</a></li>
+                            <li><a href="#">สื่อต้นแบบ</a></li>
+                            <li><a href="#">ผลงานวิจัย</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">กิจกรรม</a>
+                       <ul>
+                        	<li><a href="#">ปฏิทิน</a></li>
+                            <li><a href="#">ภาพกิจกรรม</a></li>
+                            <li><a href="#">ภาพวีดีโอ</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">แผนงาน/โครงการ</a>
+                     <ul>
+                        	<li><a href="#">แผนงาน/โครงการตามยุทธศาสตร์</a></li>
+                            <li><a href="#">โครงการ Global Fund for Malaria</a></li>
+                            <li><a href="#">โครงการ Bill and Melinda Gates Foundation</a></li>
+                            <li><a href="#">คำรับรองปฏิบัติราชการประจำปี</a></li>
+                            <li><a href="#">รายงานประจำปีสำนักโรคติดต่อนำโดยแมลง</a></li>
+                            <li><a href="#">แผนงานด้าน Knowledge management</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">ติดต่อเรา</a></li>
+                </ul>
+                </td>
+                <td width="17" height="41"><img src="images/bg_topmenu_right.png" width="24" height="46" /></td>
+              </tr>
+          </table>
+        </div><div class="clr"></div>
+      <div id="content">
+        <div id="col1">
+         <div id="highlight">
+			 	<table border="0" cellpadding="0" cellspacing="0">
+					  <tr>
+						<td valign="top">
+							<div id="slider" >
+								<ul id="run_highLight">
+									<li id="run_highLight"><a href="#"><img src="images/hilight1.png" width="531" height="212" border="0"></a></li>
+						    	</ul>
+							</div>
+                      <div id="run">
+                                <ul>
+                                    <li><a href="#" class="active">&nbsp;</a></li>
+                                    <li><a href="#">&nbsp;</a></li>
+                                    <li><a href="#">&nbsp;</a></li>
+                                    <li><a href="#">&nbsp;</a></li>
+                                </ul>
+                          </div>
+                        </td>
+                  </tr>
+           </table>
+       	  </div>
+        </div>
+     	 <div id="col2">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="21" height="21"><img src="images/borderPR_topleft.png" width="21" height="21" /></td>
+            <td rowspan="3" valign="top" class="tdpr"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td colspan="3" height="20"><div style="float:left;"><img src="images/title_newsPR.png" width="131" height="17" /></div>
+                  <div class="arrowup_pr"><a href="#" title="เลื่อนขึ้น">&nbsp;</a></div>
+                  <div class="arrowdown_pr"><a href="#" title="เลื่อนลง">&nbsp;</a></div></td>
+              </tr>
+              <tr>
+                <td width="4" height="3"><img src="images/linePR_left.png" width="4" height="3" /></td>
+                <td width="338" height="3" background="images/linePR_center.png"></td>
+                <td width="4" height="3"><img src="images/linePR_right.png" width="4" height="3" /></td>
+              </tr>
+              <tr>
+                <td colspan="3"><div id="contentNewsPR" style="padding-top:6px;">
+                  <ul>
+                    <li><a href="#"><img src="images/pic1_pr.png" width="74" height="65" class="imgNews"/></a><span class="textNews"><a href="#">ขอเชิญน้องๆ ระดับประถมและมัธยมศึกษา เข้าร่วมประกวดวาดภาพระบายสีในหัวข้อ <b>&quot;กำจัดยุงลาย... วายร้ายทำลายคนรัก&quot;</b></a><b></b></span> <span class="dataNew">(2 มิ.ย. 56)</span></li>
+                    <div class="clr"></div>
+                    <hr class="hr1" />
+                    <li><a href="#"><img src="images/pic2_pr.png" width="74" height="65" class="imgNews"/></a><span class="textNews"><a href="#">!!ใหม่!!!<b> คู่มือ เราคือผู้พิชิต โรคไข้เลือดออก </b>สำหรับ นักเรียนประถมศึกษาและมัธยมศึกษา</a></span> <span class="dataNew">(2 พ.ค. 56)</span></li>
+                  </ul><div class="btn_more1"><a href="#">&nbsp;</a></div>
+                  </div></td>
+              </tr>
+            </table></td>
+            <td width="21" height="21"><img src="images/borderPR_topright.png" width="21" height="21" /></td>
+          </tr>
+          <tr>
+            <td background="images/borderPR_left.png" height="169">&nbsp;</td>
+            <td background="images/borderPR_right.png">&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="21" height="21"><img src="images/borderPR_bottomleft.png" width="21" height="21" /></td>
+            <td width="21" height="21"><img src="images/borderPR_bottomright.png" width="21" height="21" /></td>
+          </tr>
+        </table>
+        
+      </div>
+
+          <div class="clr"></div>
+        <hr class="hr3" />
+      </div></div>
+          <div class="clr"></div>
+      <div id="breadcrumb">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="10"><img src="images/breadcrumb_left.png" width="10" height="26" /></td>
+            <td width="910" bgcolor="#ECECEC" class="imgleaf">
+            <div class="textbreadcrumb">เกี่ยวกับเรา</div>         
+            <div class="location">หน้าแรก > เกี่ยวกับเรา</div>
+            </td>
+            <td width="10" align="right"><img src="images/breadcrumb_right.png" width="10" height="26" /></td>
+        </tr>
+      </table>
+
+      </div>
+      <div id="content_blank">
+      	<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+      </div>
+		
+    <br>
+    <div id="footer" style="padding-left:35px;">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td colspan="2" valign="bottom"><img src="images/dress.png" width="613" height="60" /></td>
+        <td width="13">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="13" bgcolor="#81C572"> </td>
+        <td width="894" bgcolor="#81C572">
+        <div style="float:left; padding-top:5px;">สำนักโรคติดต่อนำโดยแมลง กรมควบคุมโรค กระทรวงสาธารณสุข  โทร. 02-590-3230  อีเมล์ : <span class="linkmail"><a href="mailto:thaivbd.it@gmail.com" target="_blank">thaivbd.it@gmail.com</a></span></div>
+        <div class="social"><a href="#" title="Facebook"><img src="images/icon_fb.png" width="20" height="20" border="0"></a>&nbsp;&nbsp;<a href="#" title="Twitter"><img src="images/icon_twitter.png" width="20" height="20" border="0"></a></div></td>
+        <td valign="top" bgcolor="#81C572"><img src="images/footer_topright.jpg" width="13" height="13" /></td>
+      </tr>
+      <tr>
+        <td width="13" height="13" valign="bottom" bgcolor="#81C572"><img src="images/footer_bottomleft.jpg" width="13" height="13" /></td>
+        <td bgcolor="#81C572">
+        <div class="copyright">Copyright ⓒ 2013 www.thaivbd.org. All Rights Reserved.</div>
+        <div class="footer2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="12"><img src="images/footerleft.png" width="12" height="24" /></td>
+            <td width="422" bgcolor="#6AAE5B"><img src="images/icon_visitor_all.png" width="23" height="21" /> ผู้เข้าเยี่ยมชมทั้งหมด 2760332 คน&nbsp;&nbsp;
+            <img src="images/icon_visitor_online.png" width="16" height="16" /> ขณะนี้มี 11 บุคคลทั่วไปออนไลน์</td>
+            <td width="12"><img src="images/footerright.png" width="12" height="24" /></td>
+          </tr>
+          </table></div></td>
+        <td width="13" height="13" valign="bottom" bgcolor="#81C572"><img src="images/footer_bottomright.jpg" width="13" height="13" /></td>
+      </tr>
+    </table>
+   
+	<br />
+    </div>
+      
+      <br>
+  </div> 
+  </div> 
+</div>
+
+</body>
+</html>
