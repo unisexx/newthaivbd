@@ -5,8 +5,7 @@ class Dashboards extends Public_Controller
 	function __construct()
 	{
 		parent::__construct();
-		//$this->load->library('Analytics');
-		//$this->lang->load('stat');
+		$this->load->library('analytics');
 	}
 
 	function ajax_load()
@@ -22,6 +21,18 @@ class Dashboards extends Public_Controller
 	function inc_side()
 	{
 		$this->load->view("inc_side");
+	}
+	
+	public function inc_home()
+	{
+		$ga = new analytics();
+
+		// summary
+		$data['today'] = $ga->getToday();
+		$data['month'] = $ga->getMonth();
+		$data['total'] = $ga->getTotal();
+
+		$this->load->view("index2", $data);
 	}
 
 }

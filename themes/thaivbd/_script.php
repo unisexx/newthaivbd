@@ -5,7 +5,7 @@
 <script src="media/js/jquery-cookie/jquery.cookie.js"></script>
 <script src="themes/thaivbd/js/myscript.js"></script>
 <?php echo js_notify()?>
-<?php echo visit_count()?>
+<?php // echo visit_count()?>
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50262e7e6282cf9d" async="async"></script>

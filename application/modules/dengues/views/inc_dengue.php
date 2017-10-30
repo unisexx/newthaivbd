@@ -31,8 +31,12 @@
 			<td align="right">ราย</td>
 		</tr>
 	</table>
+	<!-- <style type="text/css">
+		#dengue_im_blk img{max-width:445px !important; height:100% !important;}
+	</style>
+	<div id="dengue_im_blk"><?php echo $dengue->detail?></div> -->
 	<a href="dengues/download/<?=$dangue_report->id?>" target="_blank" style="float: right;"><?=$dangue_report->title?></a>
 	</div>
 	<div style="text-align: right"><a href="dengues/view/<?php echo $dengue->id?>">อ่านรายละเอียดเพิ่มเติม</a></div>
-	<div class="read-more"><a href="http://www.thaivbd.org/n/dengues?module=%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B9%8C%E0%B9%84%E0%B8%82%E0%B9%89%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94%E0%B8%AD%E0%B8%AD%E0%B8%81&type=week&year=<?php echo $dengue->year?>">ดูข้อมูลย้อนหลัง</a> <!-- | <a href="dengues">ดูทั้งหมด...</a> --></div>
+	<div class="read-more"><a href="http://www.thaivbd.org/n/histories?module=%E0%B9%84%E0%B8%82%E0%B9%89%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94%E0%B8%AD%E0%B8%AD%E0%B8%81&type=week&year=<?php echo $dengue->year?>">ดูข้อมูลย้อนหลัง</a> <!-- | <a href="dengues">ดูทั้งหมด...</a> --></div>
 </div>
