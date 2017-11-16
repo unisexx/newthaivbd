@@ -12,6 +12,9 @@
                 <tr>
                     <th>สถานะ</th>
                     <th>หัวข้อ</th>
+                    <?if($_GET['module'] == "เพจ"):?>
+                    <th>ลิ้งค์</th>
+                    <?endif;?>
                     <?if($_GET['module'] == "ข่าวประชาสัมพันธ์" || $_GET['module'] == "ข่าวประกวดราคา"):?>
                     <th width="100">หมวดหมู่</th>
                     <?endif;?>
@@ -29,6 +32,9 @@
                         <label><input class="ace-switch ace-switch-4" type="checkbox" name="status" value="<?php echo $row->id ?>" <?php echo ($row->status=="approve")?'checked="checked"':'' ?>/><span class="lbl"></span></label>
                     </td>
                     <td><?php echo $row->title?></td>
+                    <?if($_GET['module'] == "เพจ"):?>
+                    <th>http://www.thaivbd.org/n/contents/view/<?=$row->id?></th>
+                    <?endif;?>
                     <?if($_GET['module'] == "ข่าวประชาสัมพันธ์" || $_GET['module'] == "ข่าวประกวดราคา"):?>
                     <td><?php echo $row->category?></td>
                     <?endif;?>
