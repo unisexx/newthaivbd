@@ -54,6 +54,8 @@
             <label class="control-label" for="form-field-1"></label>
             <div class="controls">
             <input type="text" class="input-mini" name="sorderlist[]" value="" placeholder="ลำดับ"> <input type="text" class="" name="stitle[]" value="" placeholder="ชื่อเมนูย่อย"> <input type="text" name="surl[]" value="" placeholder="url">
+            <input name="sid[]" value="" type="hidden">
+            <a class="btn btn-mini btn-danger del-menu" href="#"><i class='icon-trash'></i></a>
             </div>
         </div>
         
@@ -89,7 +91,9 @@ $(function() {
 	    $this = $(this);
 	    $.post('menus/admin/menus/delete_submenu/' + $this.prev('input[type=hidden]').val(),
         function(data){
-            $this.closest('.control-group').fadeOut();
+            $this.closest('.control-group').fadeOut("normal", function() {
+                $(this).remove();
+            });
         })
 	    return false;
 	});

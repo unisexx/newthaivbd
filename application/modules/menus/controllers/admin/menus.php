@@ -33,9 +33,10 @@ class Menus extends Admin_Controller
             $content->from_array($_POST);
             $content->save();
 			
+			$this->db->query("delete from menus where pid = ".$content->id);
 			if($_POST['stitle']){
                 foreach($_POST['stitle'] as $key => $item){
-                    $submenu = new Menu(@$_POST['sid'][$key]);
+                    $submenu = new Menu();
                     if($item)
                     {
                     	$submenu->orderlist = @$_POST['sorderlist'][$key];
