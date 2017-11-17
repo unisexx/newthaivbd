@@ -239,6 +239,7 @@
           	<li><a href="menus/admin/menus"><i class="icon-double-angle-right"></i> Menu</a></li>
             <li <?php echo (@$_GET['module'] == 'Site map')?'class="active"':'';?>><a href="abouts/admin/abouts/form/4?module=Site map"><i class="icon-double-angle-right"></i> Site map</a></li>
             <li><a href="contacts/admin/contacts"><i class="icon-double-angle-right"></i> ติดต่อเรา</a></li>
+            <li><a href="contents/admin/contents?module=เพจ"><i class="icon-double-angle-right"></i> หน้าเพจ</a></li>
           </ul>
         </li>
         <?endif;?>

@@ -50,7 +50,8 @@ class Menus extends Admin_Controller
 			
             set_notify('success', lang('save_data_complete'));
         }
-        redirect($_POST['referer']);
+		// redirect($_POST['referer']);
+		redirect($_SERVER['HTTP_REFERER']);
     }
 	
 	function delete($id=false)

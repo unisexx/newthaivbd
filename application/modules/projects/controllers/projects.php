@@ -8,10 +8,7 @@ class Projects extends Public_Controller
     
     function index(){
         $data['projects'] = new Project();
-		if(@$_GET['txtsearch'])$data['projects']->where("title like '%".$_GET['txtsearch']."%'");
         $data['projects']->where('module = "'.$_GET['module'].'"')->order_by('id','desc')->get_page();
-		$this->template->title($data['projects']->module.' :: สำนักโรคติดต่อนำโดยแมลง');
-        $this->template->append_metadata( meta('description',$_GET['title'].' :: '.$_GET['module']));
         $this->template->build('index',$data);
     }
     

@@ -1,0 +1,2 @@
+<td width="422" class="footer_bg_label"><img alt="visitor-all" src="themes/thaivbd/images/icon_visitor_all.png" width="23" height="21" /> ผู้เข้าเยี่ยมชมทั้งหมด <span id="gaTotal"></span> คน&nbsp;&nbsp;
+	<img alt="visitor-online" src="themes/thaivbd/images/icon_visitor_online.png" width="16" height="16" /> ผู้เข้าเยี่ยมชมวันนี้ <span id="gaToday"></span> คน</td>
