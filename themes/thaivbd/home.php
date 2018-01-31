@@ -5,13 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php echo $template['title'] ?></title>
     <?php echo $template['metadata'] ?>
-    <?php include "_css.php";?>
-    <?php include "_script.php";?>
+    <?php include "_css.php"; ?>
+    <?php include "_script.php"; ?>
 </head>
 <body>
     <div id="wrap">
 	<div class="main"><div class="main2">
-		<?php include "_header.php";?>
+		<?php include "_header.php"; ?>
 	    	
 	      <div id="content">
 	        <?php echo modules::run('contents/inc_hilight'); ?>
@@ -44,7 +44,7 @@
 	          </div>
 	    </div>
 		<div id="col2_e-auction" style="position:relative;">
-	             <table width="36%" border="0" cellspacing="0" cellpadding="0">
+	             <!-- <table width="36%" border="0" cellspacing="0" cellpadding="0">
 	             <tr>
 	               <td width="13" height="12" class="title_e-auction_coner_topleft"></td>
 	               <td class="tde-auction1"> </td>
@@ -71,7 +71,7 @@
 	                <td width="8" class="border_e-auction_left"> </td>
 	                <td>
 	                	
-	                	<?php echo modules::run('contents/inc_bid'); ?>
+	                	<?php // echo modules::run('contents/inc_bid'); ?>
 	                	
 	                </td>
 	                <td class="border_e-auction_right"> </td>
@@ -81,7 +81,9 @@
 	                <td class="border_e-auction_bottom"> </td>
 	                <td width="8" height="8" class="border_e-auction_bottomright"></td>
 	              </tr>
-	            </table>
+	            </table> -->
+							
+							<a href="http://www.gprocurement.go.th" target="_blank"><img src="themes/thaivbd/images/logo2.png" style="width:100%; margin-top:20px;"></a>
 	      </div>
 	      <div id="media">
 	      <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -158,7 +160,7 @@
 	    </table>
 	    </div>
 	    <br>
-	    <?php include "_footer.php";?>
+	    <?php include "_footer.php"; ?>
 	    
 	      <br>
 	    </div> 
