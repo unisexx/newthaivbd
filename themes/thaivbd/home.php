@@ -35,16 +35,17 @@
 	          <br>
 	          <div id="accordion">
 	          	<?php echo modules::run('dengues/inc_dengue'); ?>
+							<?php echo modules::run('contents/inc_malaria'); ?>
+							<div class="titleGIS" onClick="parent.location='http://www.thaivbd.org/n/contents/view/325061'">โรคติดเชื้อไวรัสซิกา</div><div></div>
+							<?php echo modules::run('contents/inc_mosquito'); ?>
 	          	<?php echo modules::run('dengues/inc_scrub'); ?>
 	          	<?php echo modules::run('dengues/inc_leish'); ?>
 	          	<?php echo modules::run('contents/inc_elephantiasis'); ?>
-	          	<?php echo modules::run('contents/inc_mosquito'); ?>
-	          	<?php echo modules::run('contents/inc_malaria'); ?>
-	          	<?php echo modules::run('contents/inc_other_insect'); ?>
+							<?php echo modules::run('contents/inc_other_insect'); ?>
 	          </div>
 	    </div>
 		<div id="col2_e-auction" style="position:relative;">
-	             <!-- <table width="36%" border="0" cellspacing="0" cellpadding="0">
+	             <table width="36%" border="0" cellspacing="0" cellpadding="0">
 	             <tr>
 	               <td width="13" height="12" class="title_e-auction_coner_topleft"></td>
 	               <td class="tde-auction1"> </td>
@@ -71,7 +72,7 @@
 	                <td width="8" class="border_e-auction_left"> </td>
 	                <td>
 	                	
-	                	<?php // echo modules::run('contents/inc_bid'); ?>
+	                	<?php echo modules::run('contents/inc_bid'); ?>
 	                	
 	                </td>
 	                <td class="border_e-auction_right"> </td>
@@ -81,9 +82,9 @@
 	                <td class="border_e-auction_bottom"> </td>
 	                <td width="8" height="8" class="border_e-auction_bottomright"></td>
 	              </tr>
-	            </table> -->
+	            </table>
 							
-							<a href="http://www.gprocurement.go.th" target="_blank"><img src="themes/thaivbd/images/logo2.png" style="width:100%; margin-top:20px;"></a>
+							<!-- <a href="http://www.gprocurement.go.th" target="_blank"><img src="themes/thaivbd/images/logo2.png" style="width:100%; margin-top:20px;"></a> -->
 	      </div>
 	      <div id="media">
 	      <table width="100%" border="0" cellspacing="0" cellpadding="0">
